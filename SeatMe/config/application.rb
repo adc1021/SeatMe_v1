@@ -18,21 +18,17 @@ require "action_cable/engine"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Backend
-  class Application < Rails::Application
-    # ...
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore,
-      key: '_auth_me_session',
-      same_site: :lax,
-      secure: Rails.env.production?
-  end
-end
 
 module SeatMe
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
+    config.middleware.use ActionDispatch::Cookies
+    config.middleware.use ActionDispatch::Session::CookieStore,
+      key: '_seat_me_session',
+      same_site: :lax,
+      secure: Rails.env.production?
 
     # Configuration for the application, engines, and railties goes here.
     #

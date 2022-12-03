@@ -1,9 +1,24 @@
 class ApplicationController < ActionController::API
-    include ActionController::RequestForgeryProtection
+    # include ActionController::RequestForgeryProtection
 
-    protect_from_forgery with: :exception
+    # protect_from_forgery with: :exception
     before_action :snake_case_params
-    before_action :attach_authenticity_token
+    # before_action :attach_authenticity_token
+
+    def test
+        if params.has_key?(:login)
+            debugger
+            login(User.first)
+        elsif params.has_key?(:logout)
+            logout
+        end
+
+        if current_user
+          render json: { user: current_user.slice('id', 'email', 'session_token') }
+        else
+          render json: ['No current user']
+        end
+      end
 
 
     def current_user
@@ -27,6 +42,7 @@ class ApplicationController < ActionController::API
     end
 
     def login(user)
+        debugger
         session[:session_token] = user.reset_session_token!
     end
 
@@ -42,8 +58,8 @@ class ApplicationController < ActionController::API
         params.deep_transform_keys!(&:underscore)
     end
 
-    def attach_authenticity_token
-        headers['X-CSRF-Token'] = masked_authenticity_token(session)
-        # headers['X-CSRF-Token'] = form_authenticity_token
-    end
+    # def attach_authenticity_token
+    #     headers['X-CSRF-Token'] = masked_authenticity_token(session)
+    #     # headers['X-CSRF-Token'] = form_authenticity_token
+    # end
 end
