@@ -3,14 +3,15 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     validates :first_name,
         :last_name, :email, :session_token, :phone_number, presence: true
-    validates :first_name, :last_name, length: { in: 2..30 }
+    validates :first_name, length: { in: 2..30, message: 'First name is required.' }
+    validates :last_name, length: { in: 2..30, message: 'Last name is required.' }
     validates :email,
         length: { in: 3..255 },
         format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Email is required.' },
         uniqueness: true
     validates :phone_number, :session_token, uniqueness: true
     validates :phone_number,
-    format: { with: /\A\d{3}-\d{3}-\d{4}\z/, on: :create } # added a regexp I found on stack overflow for phone number validation
+    format: { with: /\A\d{3}-\d{3}-\d{4}\z/, on: :create, message: 'Phone number is required' } # added a regexp I found on stack overflow for phone number validation
 
 
     # has_many: :reservations
@@ -19,8 +20,8 @@ class User < ApplicationRecord
 
     # has_many: :saved_restaurants
 
-    def self.find_by_credentials(email, phone_number)
-        user = params[:email] ? User.find_by(email: email) : User.find_by(phone_number: phone_number)
+    def self.find_by_credentials(email)
+        user = User.find_by(email: email)
         # has_secure_password gives us the authenticate method
         if user
             return user
