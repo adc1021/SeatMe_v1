@@ -33,13 +33,10 @@ const LoginFormPage = () => {
   const handleClick = (e) => {
     // person will click button when wanting to enter email instead of phone number to sign in
     // or vice versa
-  };
+    const bool = true;
 
-  let inputType = "Use email instead";
-
-  return (
-    <>
-      <form onSubmit={handleSubmit}>
+    let userInput = bool ? (
+      <>
         <ul>
           {errors.map((error) => (
             <li key={error}>{error}</li>
@@ -54,6 +51,14 @@ const LoginFormPage = () => {
             required
           />
         </label>
+      </>
+    ) : (
+      <>
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
         <label>
           Phone Number
           <input
@@ -63,8 +68,43 @@ const LoginFormPage = () => {
             required
           />
         </label>
+      </>
+    );
+
+    return userInput;
+  };
+
+  let inputType = "Use email instead";
+
+  return (
+    <>
+        <form onSubmit={handleSubmit}>
+          {/* <ul>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+          <label>
+            Email
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </label>
+          <label>
+            Phone Number
+            <input
+              type="text"
+              value={phone_number}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+            />
+          </label> */}
+          <userInput />
+        </form>
         <button onClick={handleClick}>{inputType}</button>
-      </form>
     </>
   );
 };

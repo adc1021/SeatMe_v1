@@ -12,7 +12,6 @@ export const restoreSession = async () => {
 const csrfFetch = async (url, options = {}) => {
   options.method ||= 'GET';
   options.headers ||= {};
-  debugger 
   // will need to modify this when using formData to attach resources like photos
       // can't have a Content-Type header
   if (options.method.toUpperCase() !== 'GET') {
