@@ -7,7 +7,6 @@ class ApplicationController < ActionController::API
 
     def test
         if params.has_key?(:login)
-            debugger
             login(User.first)
         elsif params.has_key?(:logout)
             logout
@@ -42,7 +41,6 @@ class ApplicationController < ActionController::API
     end
 
     def login(user)
-        debugger
         session[:session_token] = user.reset_session_token!
     end
 
