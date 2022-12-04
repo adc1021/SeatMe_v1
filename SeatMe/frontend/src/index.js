@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import "./index.css";
 import App from "./App";
+import configureStore from './store/index'
 import { restoreSession } from './store/csrf';
 import { createUser, loginUser, logoutUser } from './store/usersReducer';
-import configureStore from './store/index'
-import { useDispatch } from "react-redux";
+import csrfFetch from "./store/csrf";
+
 
 
 const initializeApp = () => {
@@ -20,19 +22,27 @@ const initializeApp = () => {
       }
     };
   };
+  const store = configureStore(initialState);
 
-
+  window.store = store
   window.createUser = createUser
   window.loginUser = loginUser
   window.logoutUser = logoutUser
+  window.csrfFetch = csrfFetch
 
-  const store = configureStore(initialState);
+  function Root() {
+    return (
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    );
+  }
+
   ReactDOM.render(
     <React.StrictMode>
-      <Provider store={store}>
-
-      <App />
-      </Provider>
+      <Root />
     </React.StrictMode>,
     document.getElementById("root")
     );

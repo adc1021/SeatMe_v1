@@ -9,7 +9,7 @@ export const restoreSession = async () => {
 // adds that users X-CSRF-Token to the session Storage object
 // which will be available in the browser
 
-export const csrfFetch = async (url, options = {}) => {
+const csrfFetch = async (url, options = {}) => {
   options.method ||= 'GET';
   options.headers ||= {};
 
@@ -21,8 +21,10 @@ export const csrfFetch = async (url, options = {}) => {
   }
 
   const res = await fetch(url, options);
+  if (res.status >= 400) throw res;
   return res
 }
 //creating a custom method to include X-csrf-token in our fetch requests as long as they are not get requests
 // GET requests do not receive the options argument
 
+export default csrfFetch; 

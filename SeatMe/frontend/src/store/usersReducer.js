@@ -1,4 +1,4 @@
-import { csrfFetch } from "./csrf";
+import csrfFetch from "./csrf";
 
 const RECEIVE_USER = 'users/RECEIVE_USER';
 const REMOVE_USER = 'users/REMOVE_USER';
@@ -52,7 +52,7 @@ const userReducer = ( state = {}, action ) => {
     switch(action.type) {
         case RECEIVE_USER:
             debugger
-            nextState[action.payload.id] = action.payload;
+            nextState[action.user.id] = action.user;
             return nextState;
         case REMOVE_USER:
             delete nextState[action.userId];
