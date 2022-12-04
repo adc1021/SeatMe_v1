@@ -12,7 +12,7 @@ export const restoreSession = async () => {
 const csrfFetch = async (url, options = {}) => {
   options.method ||= 'GET';
   options.headers ||= {};
-
+  debugger 
   // will need to modify this when using formData to attach resources like photos
       // can't have a Content-Type header
   if (options.method.toUpperCase() !== 'GET') {
@@ -27,4 +27,4 @@ const csrfFetch = async (url, options = {}) => {
 //creating a custom method to include X-csrf-token in our fetch requests as long as they are not get requests
 // GET requests do not receive the options argument
 
-export default csrfFetch; 
+export default csrfFetch;

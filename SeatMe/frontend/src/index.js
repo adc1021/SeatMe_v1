@@ -8,6 +8,7 @@ import configureStore from './store/index'
 import { restoreSession } from './store/csrf';
 import { createUser, loginUser, logoutUser } from './store/usersReducer';
 import csrfFetch from "./store/csrf";
+import * as sessionActions from './store/session';
 
 
 
@@ -24,11 +25,11 @@ const initializeApp = () => {
   };
   const store = configureStore(initialState);
 
-  window.store = store
-  window.createUser = createUser
-  window.loginUser = loginUser
-  window.logoutUser = logoutUser
-  window.csrfFetch = csrfFetch
+  if (process.env.NODE_ENV !== 'production') {
+    window.store = store;
+    window.csrfFetch = csrfFetch;
+    window.sessionActions = sessionActions;
+  }
 
   function Root() {
     return (
