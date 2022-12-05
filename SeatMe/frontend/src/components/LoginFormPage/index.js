@@ -7,15 +7,18 @@ const LoginFormPage = () => {
   const dispatch = useDispatch();
   // const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
-  const [phone_number, setPhoneNumber] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [inputType, setInputType] = useState(true);
+  const [innerLabel, setInnerLabel] = useState('Use phone number instead');
   const [errors, setErrors] = useState([]);
+
 
   // if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ email, phone_number })).catch(
+    return dispatch(sessionActions.login({ email, phoneNumber })).catch(
       async (res) => {
         let data;
         try {
@@ -30,81 +33,54 @@ const LoginFormPage = () => {
     );
   };
 
+
   const handleClick = (e) => {
-    // person will click button when wanting to enter email instead of phone number to sign in
-    // or vice versa
-    const bool = true;
-
-    let userInput = bool ? (
-      <>
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-        <label>
-          Email
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </label>
-      </>
-    ) : (
-      <>
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
-        <label>
-          Phone Number
-          <input
-            type="text"
-            value={phone_number}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            required
-          />
-        </label>
-      </>
-    );
-
-    return userInput;
+    setInputType(!inputType);
   };
 
-  let inputType = "Use email instead";
+
 
   return (
     <>
+       { inputType ? (
+        <>
+       <ul>
+        {errors.map(error => <li key={error}>{error}</li>)}
+      </ul>
         <form onSubmit={handleSubmit}>
-          {/* <ul>
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
+          <label>
+            Phone Number
+            <input
+              type="text"
+              placeholder="Phone number"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+              required
+            />
+          </label>
+        </form>
+        <button onClick={handleClick} value={inputType}>Use email instead</button>
+        </>
+        ) : (
+          <>
+       <ul>
+        {errors.map(error => <li key={error}>{error}</li>)}
+      </ul>
+        <form onSubmit={handleSubmit}>
           <label>
             Email
             <input
               type="text"
+              placeholder="Email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
             />
           </label>
-          <label>
-            Phone Number
-            <input
-              type="text"
-              value={phone_number}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              required
-            />
-          </label> */}
-          <userInput />
         </form>
-        <button onClick={handleClick}>{inputType}</button>
+        <button onClick={handleClick} value={inputType}>Use phone instead</button>
+        </>
+        )}
     </>
   );
 };
