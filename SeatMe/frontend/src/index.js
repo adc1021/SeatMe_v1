@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import "./index.css";
 import App from "./App";
 import configureStore from './store/index'
-// import { restoreSession } from './store/csrf';
 import { restoreSession } from "./store/session";
 // import { createUser, loginUser, logoutUser } from './store/usersReducer';
 import csrfFetch from "./store/csrf";

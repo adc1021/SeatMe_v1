@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 
 const LoginFormPage = () => {
   const dispatch = useDispatch();
-  // const sessionUser = useSelector((state) => state.session.user);
+  const sessionUser = useSelector( state => state.session.user);
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inputType, setInputType] = useState(true);
@@ -14,7 +14,7 @@ const LoginFormPage = () => {
   const [errors, setErrors] = useState([]);
 
 
-  // if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();

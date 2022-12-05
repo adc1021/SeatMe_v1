@@ -3,11 +3,14 @@ import { Link, Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage'
 import LogoutButton from './components/LogoutButton';
 import SignupForm from './components/SignUp';
+import Navigation from "./components/Navigation";
+
 
 function App() {
   return (
     <>
       <h1>SeatMe</h1>
+      <Navigation />
       <Switch>
        <Route path="/login">
           <LoginFormPage />
