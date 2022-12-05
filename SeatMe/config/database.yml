@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: SeatMe_production
-  username: SeatMe
-  password: <%= ENV["SEATME_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
