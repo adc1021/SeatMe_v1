@@ -8,7 +8,6 @@ function App() {
   return (
     <>
       <h1>SeatMe</h1>
-
       <Switch>
        <Route path="/login">
           <LoginFormPage />
