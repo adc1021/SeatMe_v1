@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
+import LogoutButton from "../LogoutButton";
 import { Redirect } from "react-router-dom";
 
 const LoginFormPage = () => {
@@ -61,6 +62,7 @@ const LoginFormPage = () => {
           <button type="submit">Continue</button>
         </form>
         <button onClick={handleClick} value={inputType}>Use email instead</button>
+        <LogoutButton />
         </>
         ) : (
           <>
@@ -81,6 +83,7 @@ const LoginFormPage = () => {
           <button type="submit">Continue</button>
         </form>
         <button onClick={handleClick} value={inputType}>Use phone instead</button>
+        <LogoutButton />
         </>
         )}
     </>

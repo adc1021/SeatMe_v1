@@ -13,7 +13,6 @@ function App() {
           <LoginFormPage />
         </Route>
       </Switch>
-      <LogoutButton />
     </>
   );
 }
