@@ -58,6 +58,7 @@ const LoginFormPage = () => {
               required
             />
           </label>
+          <button type="submit">Continue</button>
         </form>
         <button onClick={handleClick} value={inputType}>Use email instead</button>
         </>
@@ -77,6 +78,7 @@ const LoginFormPage = () => {
               required
             />
           </label>
+          <button type="submit">Continue</button>
         </form>
         <button onClick={handleClick} value={inputType}>Use phone instead</button>
         </>
