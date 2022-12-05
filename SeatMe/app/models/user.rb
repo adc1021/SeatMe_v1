@@ -29,7 +29,7 @@ class User < ApplicationRecord
     #     end
     # end
     def self.find_by_credentials(credential)
-        debugger
+        # debugger
         if credential == URI::MailTo::EMAIL_REGEXP
             user = User.find_by(email: credential)
         else
