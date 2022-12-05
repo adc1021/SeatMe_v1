@@ -12,19 +12,20 @@ import csrfFetch from "./store/csrf";
 import * as sessionActions from './store/session';
 
 
+const store = configureStore();
 
 const initializeApp = () => {
-  let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-  let initialState = {};
+  // let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+  // let initialState = {};
 
-  if (currentUser) {
-    initialState = {
-      users: {
-        [currentUser.id]: currentUser
-      }
-    };
-  };
-  const store = configureStore(initialState);
+  // if (currentUser) {
+  //   initialState = {
+  //     users: {
+  //       [currentUser.id]: currentUser
+  //     }
+  //   };
+  // };
+
 
   if (process.env.NODE_ENV !== 'production') {
     window.store = store;
@@ -50,15 +51,14 @@ const initializeApp = () => {
     );
   };
 
-  restoreSession().then(initializeApp());
+  // restoreSession().then(initializeApp());
 
   // let initialState = {};
-  // const store = configureStore(initialState);
-  // if (
-  //   sessionStorage.getItem("currentUser") === null ||
-  //   sessionStorage.getItem("X-CSRF-Token") === null
-  // ) {
-  //   store.dispatch(sessionActions.restoreSession()).then(initializeApp);
-  // } else {
-  //   initializeApp();
-  // }
+  if (
+    sessionStorage.getItem("currentUser") === null ||
+    sessionStorage.getItem("X-CSRF-Token") === null
+  ) {
+    store.dispatch(sessionActions.restoreSession()).then(initializeApp);
+  } else {
+    initializeApp();
+  }

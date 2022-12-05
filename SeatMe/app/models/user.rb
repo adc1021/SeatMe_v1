@@ -20,9 +20,16 @@ class User < ApplicationRecord
 
     # has_many: :saved_restaurants
 
+    # def self.find_by_credentials(email)
+    #     user = User.find_by(email: email)
+    #     if user
+    #         return user
+    #     else
+    #         nil
+    #     end
+    # end
     def self.find_by_credentials(email)
         user = User.find_by(email: email)
-        # has_secure_password gives us the authenticate method
         if user
             return user
         else

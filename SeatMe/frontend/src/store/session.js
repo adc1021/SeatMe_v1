@@ -32,7 +32,7 @@ export const login = (user) => async (dispatch) => {
   const response = await csrfFetch("/api/session", {
     method: "POST",
     headers: { 'Content-Type': 'application/json'},
-    body: JSON.stringify({ user }),
+    body: JSON.stringify({ email }),
   });
 
   const data = await response.json();
@@ -42,6 +42,7 @@ export const login = (user) => async (dispatch) => {
 };
 
 export const restoreSession = () => async dispatch => {
+  // debugger
   const response = await csrfFetch("/api/session");
   storeCSRFToken(response);
   const data = await response.json();
