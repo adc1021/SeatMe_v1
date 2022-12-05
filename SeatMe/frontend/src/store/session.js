@@ -27,6 +27,7 @@ const storeCurrentUser = user => {
 }
 
 export const signup = (user) => async (dispatch) => {
+  // debugger
   const { firstName, lastName, email, phoneNumber } = user;
   const response = await csrfFetch("/api/users", {
     method: "POST",
@@ -38,6 +39,7 @@ export const signup = (user) => async (dispatch) => {
     })
   });
   const data = await response.json();
+  // debugger
   storeCurrentUser(data.user);
   dispatch(setCurrentUser(data.user));
   return response;
