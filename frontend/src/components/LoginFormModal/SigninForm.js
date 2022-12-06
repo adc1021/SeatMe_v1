@@ -41,13 +41,13 @@ const SigninForm = () => {
     <>
       {inputType ? (
         <>
+          <button className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
           <h2>Enter your phone number</h2>
           <div className="email-content">
             <p>
               You won't receive a text message because this is not the real
-              application.
+              application. Message & data rates won't apply(hopefully).
             </p>
-            <p>Message & data rates won't apply(hopefully).</p>
           </div>
 
           <form className="modal-form" onSubmit={handleSubmit}>
@@ -89,6 +89,7 @@ const SigninForm = () => {
         </>
       ) : (
         <>
+          <button className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
           <h2>Enter your email</h2>
           <p>
             Enter the email associated with your SeatMe account, social login or
