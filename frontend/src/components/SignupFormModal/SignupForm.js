@@ -33,15 +33,16 @@ const SignupForm = () => {
     });
   };
 
-
   return (
-      <>
-       <ul>
+    <>
+      <h1>Get Started</h1>
+      <p>Enter some information about yourself to get started.</p>
+      <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
       </ul>
-      <form onSubmit={handleSubmit}>
+      <form className="modal-form" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="First name"
@@ -49,32 +50,32 @@ const SignupForm = () => {
           onChange={(e) => setfirstName(e.target.value)}
           required
         />
-          <input
-            type="text"
-            placeholder="Last name"
-            value={lastName}
-            onChange={(e) => setlastName(e.target.value)}
-            required
-          />
+        <input
+          type="text"
+          placeholder="Last name"
+          value={lastName}
+          onChange={(e) => setlastName(e.target.value)}
+          required
+        />
 
-          <input
-            type="text"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
+        <input
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-          <input
-            type="text"
-            placeholder="Phone number"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-            required
-          />
-        <button type="submit">Continue</button>
+        <input
+          type="text"
+          placeholder="Phone number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          required
+        />
+        <button className="cont-button" type="submit">Continue</button>
       </form>
-      </>
+    </>
   );
 };
 

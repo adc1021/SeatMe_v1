@@ -16,13 +16,8 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        {/* <NavLink className="nav-link navbar-button" id="sign-up" to="/signup">
-          Sign Up
-        </NavLink> */}
-        {/* <SignupForm />  */}
         <SignupFormModal />
         <LoginFormModal />
-        {/* <NavLink className='nav-link' id="sign-in" to="/login">Sign In</NavLink> */}
       </>
     );
   }
