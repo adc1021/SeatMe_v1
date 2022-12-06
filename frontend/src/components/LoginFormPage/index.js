@@ -50,7 +50,6 @@ const LoginFormPage = () => {
       </ul>
         <form onSubmit={handleSubmit}>
           <label>
-            Phone Number
             <input
               type="text"
               placeholder="Phone number"
@@ -70,7 +69,6 @@ const LoginFormPage = () => {
       </ul>
         <form onSubmit={handleSubmit}>
           <label>
-            Email
             <input
               type="text"
               placeholder="Email"
