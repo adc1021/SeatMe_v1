@@ -5,16 +5,15 @@ import { Redirect } from "react-router-dom";
 
 const SignupForm = () => {
   const dispatch = useDispatch();
-  // const sessionUser = useSelector((state) => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  // const [phoneNumber, setPhoneNumber] = useState("");
-  // const [inputType, setInputType] = useState(true);
   const [errors, setErrors] = useState([]);
+  // const [signUp, setSignUp] = useState();
 
-  // if (sessionUser) return <Redirect to="/" />;
+  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,13 +33,10 @@ const SignupForm = () => {
     });
   };
 
-  // const handleClick = (e) => {
-  //   setInputType(!inputType);
-  // };
 
   return (
-    <>
-      <ul>
+      <>
+       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
@@ -78,7 +74,7 @@ const SignupForm = () => {
           />
         <button type="submit">Continue</button>
       </form>
-    </>
+      </>
   );
 };
 

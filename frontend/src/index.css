@@ -5,6 +5,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 2.75rem;
+    padding: 0 16px;
+    position: relative;
 }
 
 
@@ -16,6 +21,22 @@
     background-color: #247f9e;
     border: 0.0625rem solid #247f9e;
     color: #fff;
+    font-size: 14px;
+    margin: 0 8px;
+    border-radius: 0.1875rem;
+    cursor: pointer;
+    line-height: 2rem;
+    padding: 0 16px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    /* display: block; */
+}
+
+#sign-in {
+    background-color: initial;
+    border: 0.0625rem solid #d8d9db;
+    color: #2d333f;
     font-size: 14px;
     margin: 0 8px;
     border-radius: 0.1875rem;
