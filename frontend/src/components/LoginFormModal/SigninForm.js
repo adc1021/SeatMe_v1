@@ -6,13 +6,12 @@ import { Redirect } from "react-router-dom";
 
 const SigninForm = () => {
   const dispatch = useDispatch();
-  const sessionUser = useSelector( state => state.session.user);
+  const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inputType, setInputType] = useState(true);
-  const [innerLabel, setInnerLabel] = useState('Use phone number instead');
+  const [innerLabel, setInnerLabel] = useState("Use phone number instead");
   const [errors, setErrors] = useState([]);
-
 
   if (sessionUser) return <Redirect to="/" />;
 
@@ -34,54 +33,62 @@ const SigninForm = () => {
     );
   };
 
-
   const handleClick = (e) => {
     setInputType(!inputType);
   };
 
-
-
   return (
     <>
-       { inputType ? (
+      {inputType ? (
         <>
-       <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <input
-              type="text"
-              placeholder="Phone number"
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
-              required
-            />
-          </label>
-          <button type="submit">Continue</button>
-        </form>
-        <button onClick={handleClick} value={inputType}>Use email instead</button>
+          <h2>Enter your phone number</h2>
+          <p>You won't receive a text message because this is not the real application.</p>
+          <p>Message & data rates won't apply(hopefully).</p>
+          <ul>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+          <form className="modal-form" onSubmit={handleSubmit}>
+            <label>
+              <input
+                type="text"
+                placeholder="Phone number"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+                required
+              />
+            </label>
+            <button className="cont-button" type="submit">Continue</button>
+          </form>
+          <button onClick={handleClick} value={inputType}>
+            Use email instead
+          </button>
         </>
-        ) : (
-          <>
-       <ul>
-        {errors.map(error => <li key={error}>{error}</li>)}
-      </ul>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <input
-              type="text"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </label>
-          <button type="submit">Continue</button>
-        </form>
-        <button onClick={handleClick} value={inputType}>Use phone instead</button>
+      ) : (
+        <>
+          <ul>
+            {errors.map((error) => (
+              <li key={error}>{error}</li>
+            ))}
+          </ul>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <input
+                type="text"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </label>
+            <button className="cont-button" type="submit">Continue</button>
+          </form>
+          <button onClick={handleClick} value={inputType}>
+            Use phone instead
+          </button>
         </>
-        )}
+      )}
     </>
   );
 };
