@@ -70,7 +70,7 @@
   }
 
   .form-input {
-    border: initial;
+    border: 0.0625rem solid #d8d9db;
     box-sizing: border-box;
     line-height: 24px;
     min-height: 48px;
@@ -99,6 +99,7 @@
     border: initial;
     border-radius: 4px;
     width: 4.25rem;
+    border: 0.0625rem solid #d8d9db
   }
 
 
@@ -111,4 +112,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 90%;
+  }
+
+  .error-message {
+    /* margin-left: 0;
+    padding-left: 0; */
+    list-style-type: none;
+    color: #931b23;
+    margin-left: 0px;
+    font-size: 14 px;
   }

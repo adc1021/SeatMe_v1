@@ -69,27 +69,27 @@ const SignupForm = () => {
           required
         />
         <div className="phone-info">
-        <select
-          id="country-select"
-          data-test="phone-input-country-input"
-          autoComplete="country"
-          title="Choose Country Code"
-          aria-label="Choose Country Code"
-        >
-          <option>Canada +1</option>
-          <option>Germany +49</option>
-          <option>Italy +39</option>
-          <option>United Kingdom +44</option>
-          <option>United States +1</option>
-        </select>
-        <input
-          className="form-input"
-          type="text"
-          placeholder="Phone number"
-          value={phoneNumber}
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          required
-        />
+          <select
+            id="country-select"
+            data-test="phone-input-country-input"
+            autoComplete="country"
+            title="Choose Country Code"
+            aria-label="Choose Country Code"
+          >
+            <option>🇨🇦</option>
+            <option>🇩🇪</option>
+            <option>🇮🇹</option>
+            <option>🏴󠁧󠁢󠁳󠁣󠁴󠁿</option>
+            <option>🇺🇸</option>
+          </select>
+          <input
+            className="form-input"
+            type="text"
+            placeholder="Phone number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            required
+          />
         </div>
         <button className="cont-button" type="submit">
           Continue

@@ -49,11 +49,7 @@ const SigninForm = () => {
             </p>
             <p>Message & data rates won't apply(hopefully).</p>
           </div>
-          <ul>
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
+
           <form className="modal-form" onSubmit={handleSubmit}>
             <div className="phone-info">
               <select
@@ -78,6 +74,11 @@ const SigninForm = () => {
                 required
               />
             </div>
+            <ul>
+            {errors.map((error) => (
+              <li className="error-message" key={error}>{error}</li>
+            ))}
+          </ul>
             <button className="cont-button" type="submit">
               Continue
             </button>
