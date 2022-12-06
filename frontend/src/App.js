@@ -14,12 +14,9 @@ function App() {
       </div>
       <div id="forms">
         <Switch>
-          <Route path="/login">
-            <LoginFormPage />
-          </Route>
           <Route path="/signup">
             <SignupForm />
-          </Route>
+           </Route>
         </Switch>
       </div>
     </>
