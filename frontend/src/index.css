@@ -1,6 +1,11 @@
 /* TODO Add site wide styles */
+
+body {
+    margin: 0px;
+}
 #info-bar {
-    height: 1.75rem;
+
+    width: 100%;
     background-color: #f1f2f4;
     border-bottom: 0.0625rem solid #f1f2f4;
     box-sizing: border-box;
