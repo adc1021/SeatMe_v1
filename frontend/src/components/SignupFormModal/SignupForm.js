@@ -44,6 +44,7 @@ const SignupForm = () => {
       </ul>
       <form className="modal-form" onSubmit={handleSubmit}>
         <input
+          className="form-input"
           type="text"
           placeholder="First name"
           value={firstName}
@@ -51,6 +52,7 @@ const SignupForm = () => {
           required
         />
         <input
+          className="form-input"
           type="text"
           placeholder="Last name"
           value={lastName}
@@ -59,6 +61,7 @@ const SignupForm = () => {
         />
 
         <input
+          className="form-input"
           type="text"
           placeholder="Email"
           value={email}
@@ -67,6 +70,7 @@ const SignupForm = () => {
         />
 
         <input
+          className="form-input"
           type="text"
           placeholder="Phone number"
           value={phoneNumber}

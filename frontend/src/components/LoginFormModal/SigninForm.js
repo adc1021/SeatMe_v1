@@ -42,7 +42,10 @@ const SigninForm = () => {
       {inputType ? (
         <>
           <h2>Enter your phone number</h2>
-          <p>You won't receive a text message because this is not the real application.</p>
+          <p>
+            You won't receive a text message because this is not the real
+            application.
+          </p>
           <p>Message & data rates won't apply(hopefully).</p>
           <ul>
             {errors.map((error) => (
@@ -52,6 +55,7 @@ const SigninForm = () => {
           <form className="modal-form" onSubmit={handleSubmit}>
             <label>
               <input
+                className="form-input"
                 type="text"
                 placeholder="Phone number"
                 value={phoneNumber}
@@ -59,14 +63,21 @@ const SigninForm = () => {
                 required
               />
             </label>
-            <button className="cont-button" type="submit">Continue</button>
+            <button className="cont-button" type="submit">
+              Continue
+            </button>
           </form>
-          <button onClick={handleClick} value={inputType}>
+          <button className="toggle" onClick={handleClick} value={inputType}>
             Use email instead
           </button>
         </>
       ) : (
         <>
+          <h2>Enter your email</h2>
+          <p>
+            Enter the email associated with your SeatMe account, social login or new email. We'll send a code to that email.
+          </p>
+      
           <ul>
             {errors.map((error) => (
               <li key={error}>{error}</li>
@@ -75,6 +86,7 @@ const SigninForm = () => {
           <form onSubmit={handleSubmit}>
             <label>
               <input
+                className="form-input"
                 type="text"
                 placeholder="Email"
                 value={email}
@@ -82,9 +94,11 @@ const SigninForm = () => {
                 required
               />
             </label>
-            <button className="cont-button" type="submit">Continue</button>
+            <button className="cont-button" type="submit">
+              Continue
+            </button>
           </form>
-          <button onClick={handleClick} value={inputType}>
+          <button className="toggle" onClick={handleClick} value={inputType}>
             Use phone instead
           </button>
         </>
