@@ -62,7 +62,6 @@ const LoginFormPage = () => {
           <button type="submit">Continue</button>
         </form>
         <button onClick={handleClick} value={inputType}>Use email instead</button>
-        <LogoutButton />
         </>
         ) : (
           <>
@@ -83,7 +82,6 @@ const LoginFormPage = () => {
           <button type="submit">Continue</button>
         </form>
         <button onClick={handleClick} value={inputType}>Use phone instead</button>
-        <LogoutButton />
         </>
         )}
     </>
