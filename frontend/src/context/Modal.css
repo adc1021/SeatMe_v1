@@ -80,6 +80,7 @@
     width: 100%;
     overflow: visible;
     border-radius: 4px;
+    margin-top: 15px;
   }
 
   .toggle {
@@ -99,7 +100,8 @@
     border: initial;
     border-radius: 4px;
     width: 4.25rem;
-    border: 0.0625rem solid #d8d9db
+    border: 0.0625rem solid #d8d9db;
+    margin-top: 15px;
   }
 
 
