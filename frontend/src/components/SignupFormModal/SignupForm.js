@@ -35,7 +35,8 @@ const SignupForm = () => {
 
   return (
     <>
-      <h1>Get Started</h1>
+      <button className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
+      <h2>Get Started</h2>
       <p>Enter some information about yourself to get started.</p>
       <ul>
         {errors.map((error) => (

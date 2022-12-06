@@ -25,7 +25,7 @@
   #modal-content {
     position: absolute;
     background-color:white;
-    padding: 4.5rem;
+    padding: 3.5rem;
     /* padding: 48px 32px; */
     min-height: calc(48.0625rem - 96px);
     border-radius: 5px;
@@ -121,4 +121,13 @@
     color: #931b23;
     margin-left: 0px;
     font-size: 14 px;
+  }
+
+  .exit-button {
+    position: absolute;
+    background-color:white;
+    top: 30px;
+    right: 30px;
+    border: none;
+    cursor: pointer;
   }
