@@ -8,8 +8,9 @@ import Navigation from "./components/Navigation";
 
 function App() {
   return (
-    <>
+    <div id='navbar'>
       <h1>SeatMe</h1>
+      <div id='forms'>
       <Navigation />
       <Switch>
        <Route path="/login">
@@ -19,7 +20,8 @@ function App() {
           <SignupForm />
         </Route>
       </Switch>
-    </>
+      </div>
+    </div>
   );
 }
 
