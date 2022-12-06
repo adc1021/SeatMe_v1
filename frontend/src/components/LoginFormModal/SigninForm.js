@@ -42,18 +42,33 @@ const SigninForm = () => {
       {inputType ? (
         <>
           <h2>Enter your phone number</h2>
-          <p>
-            You won't receive a text message because this is not the real
-            application.
-          </p>
-          <p>Message & data rates won't apply(hopefully).</p>
+          <div className="email-content">
+            <p>
+              You won't receive a text message because this is not the real
+              application.
+            </p>
+            <p>Message & data rates won't apply(hopefully).</p>
+          </div>
           <ul>
             {errors.map((error) => (
               <li key={error}>{error}</li>
             ))}
           </ul>
           <form className="modal-form" onSubmit={handleSubmit}>
-            <label>
+            <div className="phone-info">
+              <select
+                id="country-select"
+                data-test="phone-input-country-input"
+                autoComplete="country"
+                title="Choose Country Code"
+                aria-label="Choose Country Code"
+              >
+                <option>🇨🇦</option>
+                <option>🇩🇪</option>
+                <option>🇮🇹</option>
+                <option>🏴󠁧󠁢󠁳󠁣󠁴󠁿</option>
+                <option>🇺🇸</option>
+              </select>
               <input
                 className="form-input"
                 type="text"
@@ -62,7 +77,7 @@ const SigninForm = () => {
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 required
               />
-            </label>
+            </div>
             <button className="cont-button" type="submit">
               Continue
             </button>
@@ -75,9 +90,10 @@ const SigninForm = () => {
         <>
           <h2>Enter your email</h2>
           <p>
-            Enter the email associated with your SeatMe account, social login or new email. We'll send a code to that email.
+            Enter the email associated with your SeatMe account, social login or
+            new email. We'll send a code to that email.
           </p>
-      
+
           <ul>
             {errors.map((error) => (
               <li key={error}>{error}</li>

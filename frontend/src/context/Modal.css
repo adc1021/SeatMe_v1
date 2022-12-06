@@ -9,6 +9,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    margin: auto;
   }
 
   #modal-background {
@@ -28,6 +30,7 @@
     min-height: calc(48.0625rem - 96px);
     border-radius: 5px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.15;
   }
 
   #modal-content > h2 {
@@ -36,8 +39,15 @@
 
   p {
     font-size: rem;
-    margin: 4px 0px 32px;
-    font-weight: 400;
+    /* margin: 4px 0px 32px; */
+    font-weight: 300;
+    /* line-height: .5rem; */
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+
   }
 
   .modal-form {
@@ -56,6 +66,7 @@
     outline: none;
     transition: all 0.3s ease-out 0s;
     width: 100%;
+    margin-top: 15px;
   }
 
   .form-input {
@@ -82,4 +93,22 @@
     padding: 0.75rem 16px;
     font-size: 16px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  select#country-select{
+    border: initial;
+    border-radius: 4px;
+    width: 4.25rem;
+  }
+
+
+  .phone-info {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .email-content {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
   }
