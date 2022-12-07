@@ -1,0 +1,37 @@
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:20:58 -0500
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:20:58 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:20:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:20:59 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:21:28 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:21:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:21:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:21:32 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
+Started GET "/api/session" for 127.0.0.1 at 2022-12-07 10:21:33 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/api/session"):
+  
