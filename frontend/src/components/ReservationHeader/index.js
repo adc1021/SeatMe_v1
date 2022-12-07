@@ -10,13 +10,15 @@ const ReservationHeader = () => {
       <div>
         <h1 id="res-header-title">Find your table for any occasion</h1>
       </div>
-      <div id="date-time-container">
-        <div id="date-menu">
+      <div id="date-time-party-container">
+        <div id="date-menu" className="dropdown">
           <div id="sub-date-menu">
+            <select>
 
+            </select>
           </div>
         </div>
-        <div id="time-container">
+        <div id="time-container" className="dropdown">
           <select>
             <option>11:00 AM</option>
             <option>12:00 PM</option>
@@ -32,6 +34,19 @@ const ReservationHeader = () => {
             <option>10:00 PM</option>
             <option>11:00 PM</option>
           </select>
+        </div>
+        <div id="party-size" className="dropdown">
+          <select>
+            <option>1 person</option>
+            <option>2 people</option>
+            <option>3 people</option>
+          </select>
+        </div>
+        <div>
+          <input id="head-search-bar" type="text" className="dropdown" placeholder="Location, Restaurant, Cuisine" />
+        </div>
+        <div >
+          <button id="cont-button" className="dropdown">Continue</button>
         </div>
       </div>
     </header>
