@@ -11,7 +11,8 @@ class User < ApplicationRecord
         uniqueness: true
     validates :phone_number, :session_token, uniqueness: true
     validates :phone_number,
-    format: { with: /\A\d{3}-\d{3}-\d{4}\z/, on: :create, message: 'Phone number is required' } # added a regexp I found on stack overflow for phone number validation
+    # format: { with: /\A\d{3}-\d{3}-\d{4}\z/, on: :create, message: 'Phone number is required' } # added a regexp I found on stack overflow for phone number validation
+    format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, on: :create, message: 'Phone number is required' } # added a regexp I found on stack overflow for phone number validation
 
 
     # has_many: :reservations
@@ -30,7 +31,7 @@ class User < ApplicationRecord
     # end
     def self.find_by_credentials(credential)
 
-        if credential.split("@").length > 1 
+        if credential.split("@").length > 1
             user = User.find_by(email: credential)
         else
             user = User.find_by(phone_number: credential)

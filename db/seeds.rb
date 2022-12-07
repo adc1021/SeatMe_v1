@@ -21,7 +21,7 @@ ApplicationRecord.transaction do
     User.create!(
       first_name: 'Hulk',
       last_name: 'Hogan',
-      email: 'demo@user.io',
+      email: 'hulkster@gmail.com',
       phone_number: '123-456-7890'
     )
     User.create!(
@@ -36,6 +36,22 @@ ApplicationRecord.transaction do
       email: 'broMan@gmail.io',
       phone_number: '123-456-2321'
     )
+
+    User.create!(
+      first_name: 'Demo',
+      last_name: '-lition',
+      email: 'demo@user.io',
+      phone_number: '222-333-4444'
+    )
+
+    # 10.times do
+    #   User.create!({
+    #     first_name: Faker::Name.first_name,
+    #     last_name: Faker::Name.last_name,
+    #     email: Faker::Internet.email,
+    #     phone_number: "111-222-3333"
+    #   })
+    # end
 
 
 
