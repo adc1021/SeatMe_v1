@@ -10,7 +10,7 @@ const SigninForm = () => {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inputType, setInputType] = useState(true);
-  const [innerLabel, setInnerLabel] = useState("Use phone number instead");
+  // const [innerLabel, setInnerLabel] = useState("Use phone number instead");
   const [errors, setErrors] = useState([]);
 
   if (sessionUser) return <Redirect to="/" />;
@@ -29,12 +29,25 @@ const SigninForm = () => {
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
+
+        if(!data.errors){
+          document.getElementById()
+        }
       }
     );
   };
 
   const handleClick = (e) => {
     setInputType(!inputType);
+  };
+
+  const handleDemo = (e) => {
+    dispatch(
+      sessionActions.login({
+        email: "demo@user.io",
+        phoneNumber: "222-333-4444",
+      })
+    );
   };
 
   return (
@@ -87,6 +100,10 @@ const SigninForm = () => {
           <button className="toggle" onClick={handleClick} value={inputType}>
             Use email instead
           </button>
+
+          <button className="demo-button" onClick={handleDemo}>
+            Sign In as Demo User
+          </button>
         </>
       ) : (
         <>
@@ -118,6 +135,9 @@ const SigninForm = () => {
           </form>
           <button className="toggle" onClick={handleClick} value={inputType}>
             Use phone instead
+          </button>
+          <button className="demo-button" onClick={handleDemo}>
+            Sign In as Demo User
           </button>
         </>
       )}

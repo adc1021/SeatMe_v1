@@ -69,6 +69,25 @@
     margin-top: 15px;
   }
 
+  .demo-button {
+    background-color: #247f9e;
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-out 0s;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  .demo-button:hover {
+    background-color: #0d4d62;
+    transition: all .3s ease-out;
+  }
+
   .cont-button:hover {
     background-color: #931b23;
     transition: all .3s ease-out;
