@@ -2760,3 +2760,191 @@ Processing by Api::SessionsController#create as JSON
 Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 779)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:14:20 -0500
+Started GET "/favicon.ico" for 127.0.0.1 at 2022-12-06 20:14:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (56.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mUser Load (122.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 175ms (Views: 0.3ms | ActiveRecord: 167.0ms | Allocations: 34220)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:14:22 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1009)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:15:57 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:17:41 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 893)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:28:58 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 30ms (Views: 0.4ms | ActiveRecord: 5.2ms | Allocations: 3867)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:07 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"phoneNumber"=>"ljkjllk", "session"=>{"phoneNumber"=>"ljkjllk"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "ljkjllk"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 10ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1723)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:16 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"ljljlkjkl", "session"=>{"email"=>"ljljlkjkl"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "ljljlkjkl"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 761)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:17 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"ljljlkjkl", "session"=>{"email"=>"ljljlkjkl"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "ljljlkjkl"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:36:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 788)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:31 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 865)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:32 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 774)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 801)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 780)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 774)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 780)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 783)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:33 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"achiodi1997@gmail.com", "session"=>{"email"=>"achiodi1997@gmail.com"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "achiodi1997@gmail.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+Completed 422 Unprocessable Entity in 5ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 774)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2022-12-06 20:30:40 -0500
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"email"=>"demo@user.io", "session"=>{"email"=>"demo@user.io"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:34:in `find_by_credentials'
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61:in `generate_unique_session_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@user.io"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "123-456-7890"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "[FILTERED]"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Update (3.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "[FILTERED]"], ["updated_at", "2022-12-07 01:30:40.456108"], ["id", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mTRANSACTION (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/show.json.jbuilder (Duration: 1.1ms | Allocations: 400)
+Completed 200 OK in 57ms (Views: 2.8ms | ActiveRecord: 17.8ms | Allocations: 17793)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2022-12-06 20:46:39 -0500
+Processing by Api::SessionsController#destroy as JSON
+  Parameters: {"session"=>{}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:61:in `generate_unique_session_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "demo@user.io"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["phone_number", "123-456-7890"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "[FILTERED]"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "[FILTERED]"], ["updated_at", "2022-12-07 01:46:39.488028"], ["id", 1]]
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:52:in `reset_session_token!'
+Completed 204 No Content in 81ms (ActiveRecord: 22.4ms | Allocations: 8729)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:55:25 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 56ms (Views: 0.6ms | ActiveRecord: 24.5ms | Allocations: 3738)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-06 20:57:59 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 875)
+
+

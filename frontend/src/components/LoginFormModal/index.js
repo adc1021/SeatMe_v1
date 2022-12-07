@@ -11,6 +11,7 @@ function LoginFormModal() {
       <button onClick={() => setShowModal(true)} className="navbar-button" id="sign-in">Sign In</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
+          <button onClick={() => setShowModal(false)} className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
           <SigninForm />
         </Modal>
       )}

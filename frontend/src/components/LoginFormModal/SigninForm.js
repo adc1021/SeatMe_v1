@@ -41,7 +41,6 @@ const SigninForm = () => {
     <>
       {inputType ? (
         <>
-          <button className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
           <h2>Enter your phone number</h2>
           <div className="email-content">
             <p>
@@ -75,10 +74,12 @@ const SigninForm = () => {
               />
             </div>
             <ul>
-            {errors.map((error) => (
-              <li className="error-message" key={error}>{error}</li>
-            ))}
-          </ul>
+              {errors.map((error) => (
+                <li className="error-message" key={error}>
+                  {error}
+                </li>
+              ))}
+            </ul>
             <button className="cont-button" type="submit">
               Continue
             </button>
@@ -89,7 +90,6 @@ const SigninForm = () => {
         </>
       ) : (
         <>
-          <button className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
           <h2>Enter your email</h2>
           <p>
             Enter the email associated with your SeatMe account, social login or

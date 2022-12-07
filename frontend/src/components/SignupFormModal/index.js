@@ -12,6 +12,7 @@ function SignupFormModal() {
       <button onClick={() => setShowModal(true)} className="navbar-button" id="sign-up">Sign Up</button>
       {showModal && (
         <Modal onClose={() => setShowModal(false)}>
+          <button onClick={() => setShowModal(false)} className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
           <SignupForm />
         </Modal>
       )}

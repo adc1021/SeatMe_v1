@@ -35,7 +35,6 @@ const SignupForm = () => {
 
   return (
     <>
-      <button className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
       <h2>Get Started</h2>
       <p>Enter some information about yourself to get started.</p>
       <ul>
