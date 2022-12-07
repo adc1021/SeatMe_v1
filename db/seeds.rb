@@ -44,15 +44,26 @@ ApplicationRecord.transaction do
       phone_number: '222-333-4444'
     )
 
-    # 10.times do
-    #   User.create!({
-    #     first_name: Faker::Name.first_name,
-    #     last_name: Faker::Name.last_name,
-    #     email: Faker::Internet.email,
-    #     phone_number: "111-222-3333"
-    #   })
-    # end
-
+    Restaurant.create!(
+      name: "Quality Meats",
+      description: "Quality Meats is the best steakhouse in New York City.
+      Located in Midtown Manhattan near Central Park, MOMA,
+       Carnegie Hall, Rockefeller Center, Radio City Music Hall,
+       and Times Square, Quality Meats features modern interpretations of
+        familiar dishes and flavor combinations, resulting in unique tastes,
+        innovative presentations, and a distinctive Quality Meats style.
+         The warm, industrial décor by award-winning designers AvroKO draws
+         on cues from traditional New York City family-owned butcher shops,
+        in the use of warm wood, stainless steel, and white marble.",
+      cuisine: "American",
+      address: "57 West 58th Street, New York, NY 10019",
+      tables: 50,
+      menu: "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,
+      Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,
+      Our Signature Baked Oysters $18.00",
+      average_rating: 4.7,
+      price_point: 50
+    )
 
 
     puts "Done!"
