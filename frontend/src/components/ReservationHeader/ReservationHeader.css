@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+#flex-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 #res-header-title {
     color: #fff;
     font-size: 48px;
@@ -19,10 +25,13 @@
 
 /* SELECT drop downs  */
 #date-time-party-container {
+    /* width: 100%; */
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 100%;
+    min-width: 14rem;
+    border-radius: 4px;
+    background: white;
 }
 
 .dropdown {
@@ -30,6 +39,10 @@
     height: 3rem;
     /* position: relative; */
     box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
 }
 
 #date-menu {
@@ -48,7 +61,7 @@
 #head-search-bar {
     margin-left: 15px;
     min-width: 18.125rem;
-    /* text-decoration: none; */
+    border-radius: 4px;;
 }
 /*  */
 
@@ -82,4 +95,13 @@ header {
     background-color:rgb(218, 55, 67);
     margin-left: 10px;
     color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease-out 0s;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 9.125rem;
 }
