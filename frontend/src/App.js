@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink, Route, Switch } from "react-router-dom";
-import LoginFormPage from "./components/LoginFormPage";
-import LogoutButton from "./components/LogoutButton";
-import SignupForm from "./components/SignUp";
+// import LoginFormPage from "./components/LoginFormPage";
+// import LogoutButton from "./components/LogoutButton";
+// import SignupForm from "./components/SignUp";
 import Navigation from "./components/Navigation";
 import ReservationHeader from "./components/ReservationHeader";
 

@@ -51,7 +51,7 @@ const userReducer = ( state = {}, action ) => {
 
     switch(action.type) {
         case RECEIVE_USER:
-            debugger
+            // debugger
             nextState[action.user.id] = action.user;
             return nextState;
         case REMOVE_USER:
