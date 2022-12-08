@@ -4,7 +4,7 @@ const RestaurantCarousel = () => {
   return (
     <div>
       <ul>
-        
+        {/* <RestaurantCard />  */}
       </ul>
     </div>
   )
