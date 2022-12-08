@@ -19,6 +19,10 @@ body {
 #logo {
     display: flex;
     flex-direction: row;
+    /* border-style: none solid none none; */
+    border-right: 1px solid #d8d9db;
+    padding-right: 5px;
+    margin-left: 18px;
 }
 
 #ot-logo {

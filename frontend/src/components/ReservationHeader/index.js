@@ -46,12 +46,11 @@ const ReservationHeader = () => {
           <input
             id="head-search-bar"
             type="text"
-            className="dropdown"
             placeholder="Location, Restaurant, Cuisine"
           />
         </div>
         <div>
-          <button id="cont-button" className="dropdown">
+          <button id="cont-button">
             Let's Go
           </button>
         </div>

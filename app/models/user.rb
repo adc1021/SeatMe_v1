@@ -1,4 +1,16 @@
-
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :bigint           not null, primary key
+#  email         :string           not null
+#  first_name    :string
+#  last_name     :string
+#  phone_number  :string           not null
+#  session_token :string           not null
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
 class User < ApplicationRecord
     before_validation :ensure_session_token
     validates :first_name,
@@ -21,14 +33,6 @@ class User < ApplicationRecord
 
     # has_many: :saved_restaurants
 
-    # def self.find_by_credentials(email)
-    #     user = User.find_by(email: email)
-    #     if user
-    #         return user
-    #     else
-    #         nil
-    #     end
-    # end
     def self.find_by_credentials(credential)
 
         if credential.split("@").length > 1
