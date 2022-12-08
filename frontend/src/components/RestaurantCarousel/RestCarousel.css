@@ -1,0 +1,67 @@
+#restaurant-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* list-style-type: none;
+    margin: 0;
+    margin-block: 0;
+    padding: 0; */
+}
+
+#carousel-section {
+    margin-top: 32px;
+    display: block;
+}
+
+#section-header {
+    border-bottom: none;
+    display: block;
+    padding-bottom: 0;
+    padding: 0 16px;
+    min-height: 3rem;
+}
+
+#Order-takeout {
+    width: 100%;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 24px;
+    margin: 0 0 0.25rem;
+}
+
+#view-all {
+    color: #da3743;
+}
+
+#outer-carousel-div {
+    position: relative;
+    z-index: 0;
+    display: block;
+}
+
+#inner-carousel-div {
+    margin-top: -8px;
+    overflow-x: auto;
+    padding-top: 8px;
+    white-space: nowrap;
+}
+
+ul {
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1) 0s;
+    padding-left: 16px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    /* padding-inline-start: 40px; */
+}
+
+#rest-cards:not(:last-child) {
+    margin-right: 8px;
+}
+
+#rest-cards {
+    width: 236px!important;
+    isplay: list-item;
+}
