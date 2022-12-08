@@ -12,9 +12,9 @@ function App() {
     <>
       <div id="info-bar">
         <select>
-          <options>Deutsch</options>
-          <options>English</options>
-          <options>Espanol</options>
+          <option>Deutsch</option>
+          <option>English</option>
+          <option>Espanol</option>
         </select>
       </div>
       <div id="navbar">

@@ -29,14 +29,14 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     min-width: 14rem;
     border-radius: 4px;
     background: white;
+    max-height: 3rem;
 }
 
 .dropdown {
-    background: white;
-    height: 3rem;
     /* position: relative; */
     box-sizing: border-box;
     border: none;
@@ -62,6 +62,10 @@
     margin-left: 15px;
     min-width: 18.125rem;
     border-radius: 4px;;
+    background: white;
+    height: 3rem;
+    font-size: 16px;
+    outline: none;
 }
 /*  */
 
@@ -96,12 +100,19 @@ header {
     margin-left: 10px;
     color: white;
     border: none;
+    font-size: 16px;
+    outline: none;
     cursor: pointer;
     font-size: 16px;
     outline: none;
-    transition: all 0.3s ease-out 0s;
     border-radius: 4px;
     width: 100%;
     box-sizing: border-box;
     min-width: 9.125rem;
+    height: 3rem;
+}
+
+#cont-button:hover {
+    transition: all 0.3s ease-out 0s;
+    background-color: rgb(148, 32, 39);
 }
