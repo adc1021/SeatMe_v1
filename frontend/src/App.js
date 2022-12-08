@@ -41,7 +41,7 @@ function App() {
               </span>
               <div id="arrow-container">
                 <div id="arrow-svg"></div>
-                <a id="git-hub-link" href="https://github.com/adc1021">
+                <a id="git-hub-link" target="_blank" href="https://github.com/adc1021">
                   Check me out on Github!
                 </a>
               </div>
