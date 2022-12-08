@@ -29,9 +29,8 @@ export const fetchRest = (restaurantId) => async (dispatch) => {
 
 export const fetchRestaurants = () => async (dispatch) => {
   const res = await csrfFetch(`api/restaurants`);
-
   if (res.ok) {
-    const restaurants = res.json();
+    const restaurants = await res.json();
     // sessionStorage.setItem("restaurantData", data);
     dispatch(receiveRestaurants(restaurants));
   }
@@ -45,8 +44,7 @@ const restaurantsReducer = (oldState = {}, action) => {
       newState[action.restaurant.id] = action.restaurant;
       return newState;
     case RECEIVE_RESTAURANTS:
-      const { restaurants } = action
-      return { ...newState, ...restaurants }
+      return { ...newState, ...action.restaurants }
     default:
       return oldState;
     }

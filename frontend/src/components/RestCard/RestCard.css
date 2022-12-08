@@ -1,0 +1,25 @@
+#card-body {
+    border: 1px solid #d8d9db;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s;
+    width: 100%;
+    z-index: 1;
+    min-height: 10px;
+}
+
+#filler-image {
+    height: 200px;
+    width: 250px;
+}
+
+#restaurant-info {
+    padding: 8px;
+}

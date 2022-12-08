@@ -62,7 +62,8 @@ ApplicationRecord.transaction do
           Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,
           Our Signature Baked Oysters $18.00",
           average_rating: 4.7,
-          price_point: 50
+          price_point: 50,
+          phone_number: "212-371-7777"
         )
 
         Restaurant.create!(
@@ -122,7 +123,8 @@ ApplicationRecord.transaction do
           $22.00
           marinated gigante beans, persillade sauce",
           average_rating: 4.5,
-          price_point: 30
+          price_point: 30,
+          phone_number: "212-873-6423"
         )
 
         Restaurant.create!(
@@ -145,7 +147,112 @@ ApplicationRecord.transaction do
           The Flatiron
           $49.00",
           average_rating: 4.6,
-          price_point: 50
+          price_point: 50,
+          phone_number: "212-401-7986"
+        )
+
+        Restaurant.create!(
+          name: "Sea Wolf - Bushwick",
+          description: "Sea Wolf is Bushwick's own little surf shack
+          for herbivores and omnivores alike. With daily oyster specials,
+          a full bar featuring a selection of rotating frozen cocktails,
+          Sea Wolf is your island oasis in the heart of industrial Brooklyn.",
+          cuisine: "Seafood",
+          address: "19 Wyckoff Ave, Brookly, Ny 11237",
+          tables: 40,
+          menu: "Soup/Salad
+          Chowder
+          Cup
+          $8.00
+          Bowl
+          $12.00
+          Chilled Corn Soup
+          Sweet Corn, Cream
+
+          Cup
+          $8.00
+          Bowl
+          $12.00
+          Sandwiches
+          Cold Lobster Roll
+          $26.00
+          Shrimp Roll
+          $16.00
+          Chives, Scallion, Dill, Parsley, Lemon Brown Butter Herb Mayo
+
+          Brunch Sides
+          Grilled Half Avocado
+          $5.00
+          Fingerlings Brunch
+          $4.00
+          Brunch Small Plates
+          Deviled Eggs
+          $7.00
+          Sriracha Powder
+
+          Fried Clam Strips
+          $12.00
+          Local clams and house-made tartar sauce
+
+          Brunch
+          11am-3:30pm
+
+          Chia Pudding
+          $13.00
+          Avocado Toast Brunch
+          $14.00",
+          average_rating: 4.4,
+          price_point: 31,
+          phone_number: "718-366-3272"
+        )
+        Restaurant.create!(
+          name: "Meadowsweet",
+          description: "Polo and Stephanie opened Meadowsweet together in 2014
+          and they see it as an extension of their home. They both enjoy good
+          food, friendly service and a comfortable atmosphere to dine in
+          and that is exactly what they want their guests to experience
+         when visiting Meadowsweet. When they are not at Meadowsweet you will
+          find them upstate at Meadowsweet Farm with their daughter and son
+         where they grow some amazing vegetables with Polo’s Dad to serve at
+         Meadowsweet. They look forward to seeing you at Meadowsweet soon!",
+          cuisine: "American",
+          address: "149 Broadway, Brooklyn, NY 11211",
+          tables: 15,
+          menu: "olive oil rolls
+          honey butter
+          $19
+          crispy baby artichokes
+          shaved parmesan, baby arugula, parsley & lemon
+          $18
+          burrata & figs
+          black mission & tiger figs, pistachio-basil pesto, pickled kumquats, pistachio-sesame dukkah & sourdough crisp
+          $18
+          heirloom tomato salad
+          kalamata olive, cantabrian white anchovy, feta & fresh herbs
+          $17
+          fried green tomatoes
+          buttermilk ranch, fine herbs & parmesan
+          $18
+          shishito peppers & corn
+          poblano romesco, tahini, labneh & chile-lime dressing
+          $24
+          crispy duck confit
+          marinated mango, endive, labneh, lime & honey
+          $24
+          spanish octopus & chorizo
+          farro, olives, pickled peppers, pimenton aioli & mollica
+          $26
+          tajarin, chanterelles & truffle
+          summer truffle, butter & parmesan
+          $24
+          cavatelli & fennel sausage
+          shishito pepper, pecorino romano & parmesan
+          $24
+          cocoa pappardelle & braised wagyu beef ragu
+          fresh ricotta",
+          average_rating: 4.8,
+          price_point: 31,
+          phone_number: "212-401-7986"
         )
 
 

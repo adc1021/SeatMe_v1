@@ -2,6 +2,7 @@
 
 body {
     margin: 0px;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 #info-bar {
 
@@ -13,7 +14,6 @@ body {
     height: 1.75rem;
     justify-content: flex-end;
     padding: 0 16px;
-    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
 }
 
 #logo {
@@ -104,4 +104,62 @@ li {
 
 #profile-button {
     border-radius: 50px;
+}
+
+#location-banner {
+    padding: 0 16px;
+}
+
+#location-div {
+    border-bottom: 0.0625rem solid #d8d9db;
+    opacity: 1;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    transition: opacity .5s 4s,height .5s 4.5s,padding-bottom .5s 4.5s,padding-top .5s 4.5s;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    display: block;
+}
+
+#section-div-wrap {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity .5s 0s,height 0s .5s;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    align-items: center;
+}
+
+#location-span {
+    margin: 0 8px 0 0;
+    line-height: 1.25rem;
+}
+
+section {
+    display: block;
+}
+
+#git-hub-link {
+    text-decoration: none;
+    color: #da3743;
+}
+#git-hub-link:hover {
+    text-decoration: underline;
+    color: #da3743;
+}
+
+#arrow-svg {
+    background-image: url(//cdn.otstatic.com/cfe/10/images/ic_location_detection_red-3d558b.svg);
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+#arrow-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
