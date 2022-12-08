@@ -1,0 +1,71 @@
+#card-body {
+    border: 1px solid #d8d9db;
+    border-radius: 4px;
+    box-sizing: border-box;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    transition: all .3s;
+    width: 100%;
+    z-index: 1;
+    min-height: 10px;
+}
+
+#filler-image {
+    height: 200px;
+    width: 250px;
+    border-style: none;
+}
+
+
+#restaurant-info {
+    background-color: #fff;
+    color: initial;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 8px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+#rest-header {
+    color: #2d333f;
+    margin: 0 0 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+}
+
+h3{
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+#star-rating{
+    height: 30px;
+    width: 60px;
+}
+
+#rating-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
