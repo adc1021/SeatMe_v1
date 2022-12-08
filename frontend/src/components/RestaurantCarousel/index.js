@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import RestaurantCard from "../RestCard";
 import * as restActions from "../../store/restaurantsReducer";
-import './RestCarousel.css'
+import "./RestCarousel.css";
 
 const RestaurantCarousel = () => {
   const dispatch = useDispatch();
@@ -18,18 +18,28 @@ const RestaurantCarousel = () => {
 
   return (
     <div>
-      <section>
-      <ul id="restaurant-list">
-        {restaurants.map((rest) => {
-          return (
-            <li>
-              <RestaurantCard restaurantId={rest.id} key={rest.id}/>
-              {/* <p>{rest.name}</p>
+      <section id="carousel-section">
+        <header id="section-header">
+          <div id="Order-takeout">
+            <h2>Order takeout</h2>
+          </div>
+          <div id="view-all">View All</div>
+        </header>
+        <div id="outer-carousel-div">
+          <div id="inner-carousel-div">
+            <ul id="restaurant-list">
+              {restaurants.map((rest) => {
+                return (
+                  <li id="rest-cards">
+                    <RestaurantCard restaurantId={rest.id} key={rest.id} />
+                    {/* <p>{rest.name}</p>
               <p>{rest.phoneNumber}</p> */}
-            </li>
-          );
-        })}
-      </ul>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </div>
       </section>
     </div>
   );

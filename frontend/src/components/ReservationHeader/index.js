@@ -14,7 +14,7 @@ const ReservationHeader = () => {
         <div id="date-time-party-container">
           <div>
             <div>
-              <select id="time-container" className="dropdown"></select>
+              <input type="date"></input>
             </div>
           </div>
           <div>
