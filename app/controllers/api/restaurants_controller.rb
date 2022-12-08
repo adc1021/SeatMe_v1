@@ -10,15 +10,15 @@ class Api::RestaurantsController < ApplicationController
     end
   end
 
-  # def index
-  #   @restaurants = Restaurant.find_by(cuisine: restaurant_params[:cuisine]) if restaurant_params[:cuisine]
-
-  #   if @restaurants
-  #     render 'api/restaurants/index'
-  #   else
-  #     render json: { restaurant: nil }
-  #   end
-  # end
+  def index
+    @restaurants = Restaurant.all
+    if @restaurants
+      # debugger
+      render 'api/restaurants/index'
+    else
+      render json: { restaurant: nil }
+    end
+  end
 
   # def create
   #   @restaurant = Restaurant.new()

@@ -6507,3 +6507,420 @@ Processing by Api::SessionsController#show as JSON
 Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 897)
 
 
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:28:12 -0500
+
+AbstractController::ActionNotFound - The action 'index' could not be found for Api::RestaurantsController:
+
+Started POST "/__better_errors/66a222f0f42b05a5/variables" for ::1 at 2022-12-08 09:28:12 -0500
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:39:55 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.2ms | Allocations: 2227)
+Completed 500 Internal Server Error in 6ms (Allocations: 4011)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check @restaurants do |restaurant|
+    json.set! restaurant.id do
+        json.partial! 'restaurant', restaurant: restaurant
+    end
+end:
+  app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Started POST "/__better_errors/fa7573ca53e88588/variables" for ::1 at 2022-12-08 09:39:56 -0500
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:39:57 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  Rendered api/restaurants/index.json.jbuilder (Duration: 0.3ms | Allocations: 1397)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 2000)
+
+
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check @restaurants do |restaurant|
+    json.set! restaurant.id do
+        json.partial! 'restaurant', restaurant: restaurant
+    end
+end:
+  app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Started POST "/__better_errors/23f8ab66845a6484/variables" for ::1 at 2022-12-08 09:39:57 -0500
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:40:13 -0500
+Processing by Api::RestaurantsController#index as JSON
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 2827)
+
+
+
+ActionView::MissingTemplate - Missing template api/restaurants with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/Users/antho/Desktop/SeatMe/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+Did you mean?  api/errors/internal_server_error
+               api/users/show
+               api/restaurants/show
+               api/restaurants/index
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new:
+  app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Started POST "/__better_errors/435304244895d62a/variables" for ::1 at 2022-12-08 09:40:13 -0500
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:40:14 -0500
+Processing by Api::RestaurantsController#index as JSON
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1826)
+
+
+
+ActionView::MissingTemplate - Missing template api/restaurants with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/Users/antho/Desktop/SeatMe/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+Did you mean?  api/errors/internal_server_error
+               api/users/show
+               api/restaurants/show
+               api/restaurants/index
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new:
+  app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Started POST "/__better_errors/a048bd64983d3ae7/variables" for ::1 at 2022-12-08 09:40:14 -0500
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:40:14 -0500
+Processing by Api::RestaurantsController#index as JSON
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms | Allocations: 1825)
+
+
+
+ActionView::MissingTemplate - Missing template api/restaurants with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+Searched in:
+  * "/Users/antho/Desktop/SeatMe/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+Did you mean?  api/errors/internal_server_error
+               api/users/show
+               api/restaurants/show
+               api/restaurants/index
+               rails/conductor/action_mailbox/inbound_emails/new
+               rails/conductor/action_mailbox/inbound_emails/sources/new:
+  app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Started POST "/__better_errors/bcfe650ae1c073a1/variables" for ::1 at 2022-12-08 09:40:14 -0500
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ (eval):72:in `block in render'
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:41:30 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 1.2ms | Allocations: 20307)
+
+Errno::EIO - Input/output error - read:
+	app/controllers/api/restaurants_controller.rb:16:in `index'
+
+Completed 500 Internal Server Error in 16387ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 285851)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-08 09:42:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 4885)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:42:11 -0500
+Processing by Api::RestaurantsController#index as JSON
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/restaurants_controller.rb:16:in `index'
+Started GET "/" for ::1 at 2022-12-08 09:43:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.4/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.8ms | Allocations: 474)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.0ms | Allocations: 3136)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:43:44 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.6ms | Allocations: 5664)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:44:26 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  Rendered api/restaurants/index.json.jbuilder (Duration: 4.5ms | Allocations: 7073)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.4ms | Allocations: 237)
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check @restaurants do |restaurant|
+    json.set! restaurant.id do
+        json.partial! 'restaurant', restaurant: restaurant
+    end
+end
+
+:
+	app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Completed 500 Internal Server Error in 7ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 9014)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:46:02 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 3266)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:46:12 -0500
+Processing by Api::RestaurantsController#index as JSON
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ app/controllers/api/restaurants_controller.rb:17:in `index'
+  Rendering api/restaurants/index.json.jbuilder
+  Rendered api/restaurants/index.json.jbuilder (Duration: 3.3ms | Allocations: 1327)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.3ms | Allocations: 133)
+
+ActionView::SyntaxErrorInTemplate - Encountered a syntax error while rendering template: check @restaurants do |restaurant|
+    json.set! restaurant.id do
+        json.partial! 'restaurant', restaurant: restaurant
+    end
+end
+
+:
+	app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Completed 500 Internal Server Error in 38893ms (Views: 1.0ms | ActiveRecord: 17.8ms | Allocations: 99189)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-08 09:48:35 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 3075)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:48:37 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/index.json.jbuilder (Duration: 9.2ms | Allocations: 6102)
+  Rendering api/errors/internal_server_error.json.jbuilder
+  Rendered api/errors/internal_server_error.json.jbuilder (Duration: 0.7ms | Allocations: 207)
+
+ActionView::Template::Error - Missing partial api/restaurants/_restaurant, application/_restaurant with {:locale=>[:en], :formats=>[:json], :variants=>[], :handlers=>[:jbuilder]}.
+
+Searched in:
+  * "/Users/antho/Desktop/SeatMe/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4/app/views"
+  * "/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionmailbox-7.0.4/app/views"
+
+Did you mean?  layouts/action_text/contents/content
+               action_text/attachables/remote_image
+               action_text/contents/content
+               action_text/attachables/missing_attachable
+               action_text/attachment_galleries/attachment_gallery
+               active_storage/blobs/blob:
+	app/views/api/restaurants/index.json.jbuilder:3
+	app/views/api/restaurants/index.json.jbuilder:2
+	app/views/api/restaurants/index.json.jbuilder:1
+	app/controllers/api/restaurants_controller.rb:17:in `index'
+
+Completed 500 Internal Server Error in 14ms (Views: 0.9ms | ActiveRecord: 2.7ms | Allocations: 8521)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-08 09:51:25 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1028)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-08 09:51:26 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (16.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 16.1ms | Allocations: 899)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:51:28 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 2.2ms | Allocations: 231)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 19)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 19)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 7.7ms | Allocations: 1681)
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.4ms | Allocations: 2497)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:35 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1776)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:35 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 775)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:35 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 784)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (1.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 805)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 766)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (5.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 5.7ms | Allocations: 775)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.8ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 757)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 769)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 772)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 782)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:36 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 760)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:37 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:38 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 772)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:39 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (1.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 763)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:39 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 772)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:51:39 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 778)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-08 09:52:09 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 141)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 19)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 19)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 1.5ms | Allocations: 1255)
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.3ms | Allocations: 1671)
+
+
+Started GET "/api/restaurants/index" for ::1 at 2022-12-08 09:52:20 -0500
+Processing by Api::RestaurantsController#show as JSON
+  Parameters: {"id"=>"index"}
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" WHERE "restaurants"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/api/restaurants_controller.rb:4:in `show'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 769)
+
+
+Started GET "/api/restaurants" for ::1 at 2022-12-08 09:52:23 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 139)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 19)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.5ms | Allocations: 19)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 4.4ms | Allocations: 1253)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1650)
+
+
