@@ -7,7 +7,7 @@
 # Ignore bundler config.
 /.bundle
 .DS_Store
-/public 
+/public
 
 # Ignore all logfiles and tempfiles.
 /log/*
@@ -20,6 +20,7 @@
 !/tmp/pids/
 !/tmp/pids/.keep
 
+/tmp/cache/*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
