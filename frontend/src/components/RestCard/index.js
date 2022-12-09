@@ -8,19 +8,29 @@ const RestaurantCard = ({ restaurantId }) => {
   const restaurant = useSelector((state) =>
     state.restaurants ? state.restaurants[restaurantId] : null
   );
-
-
-
-  const dollarSign = () => {if(restaurant.pricePoint < 20) {
-    return <span id="dollar-span">$<span id="lighter-dollar">$$$</span></span>
-    // span.appendChild(childSpan)
-  } else if(restaurant.pricePoint > 20 && restaurant.pricePoint < 50){
-    return <span id="dollar-span">$$$<span id="lighter-dollar">$</span></span>
-  } else if(restaurant.pricePoint >= 50){
-    return <span id="dollar-span">$$$$<span id="lighter-dollar"></span></span>
-
-  }}
-
+  // debugger
+  const dollarSign = () => {
+    if (restaurant.pricePoint < 20) {
+      return (
+        <span id="dollar-span">
+         - $<span id="lighter-dollar">$$$</span>
+        </span>
+      );
+      // span.appendChild(childSpan)
+    } else if (restaurant.pricePoint > 20 && restaurant.pricePoint < 50) {
+      return (
+        <span id="dollar-span">
+         - $$$<span id="lighter-dollar">$</span>
+        </span>
+      );
+    } else if (restaurant.pricePoint >= 50) {
+      return (
+        <span id="dollar-span">
+         - $$$$<span id="lighter-dollar"></span>
+        </span>
+      );
+    }
+  };
 
   return (
     <a id="card-body">
@@ -32,16 +42,28 @@ const RestaurantCard = ({ restaurantId }) => {
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
           <div id="rating-wrapper">
-            <div><img  id="star-rating" src="https://p.kindpng.com/picc/s/391-3915578_5-star-rating-red-5-star-rating-hd.png"></img></div>
+            <div>
+              <img
+                id="star-rating"
+                src="https://p.kindpng.com/picc/s/391-3915578_5-star-rating-red-5-star-rating-hd.png"
+              ></img>
+            </div>
             <span id="reviews-span">170 reviews</span>
           </div>
           <div id="cuisine-price-wrapper">
             <span id="cuisine-span">{restaurant.cuisine}</span>
-            <span id="price-span">
-              {dollarSign()}
+            <span id="price-span">{dollarSign()}</span>
+            <span id="neighborhood-span"> - {restaurant.neighborhood}</span>
+          </div>
+          <div id="booking-wrapper">
+            <span>
+              Booked 0 times today
+              <span></span>
             </span>
           </div>
-          <div></div>
+          <div id="time-slots">
+            <NavLink id="time-slot-link" to="/">12:30 PM</NavLink>
+          </div>
         </div>
       </div>
     </a>
