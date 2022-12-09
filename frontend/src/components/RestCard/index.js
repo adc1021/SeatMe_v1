@@ -9,27 +9,27 @@ const RestaurantCard = ({ restaurantId }) => {
   let history = useHistory();
 
   const restaurant = useSelector((state) =>
-  state.restaurants ? state.restaurants[restaurantId] : null
+  state.restaurants[restaurantId] ? state.restaurants[restaurantId] : {}
   );
   // debugger
   const dollarSign = () => {
     if (restaurant.pricePoint < 20) {
       return (
         <span id="dollar-span">
-         - $<span id="lighter-dollar">$$$</span>
+         · $<span id="lighter-dollar">$$$</span>
         </span>
       );
       // span.appendChild(childSpan)
     } else if (restaurant.pricePoint > 20 && restaurant.pricePoint < 50) {
       return (
         <span id="dollar-span">
-         - $$$<span id="lighter-dollar">$</span>
+         · $$$<span id="lighter-dollar">$</span>
         </span>
       );
     } else if (restaurant.pricePoint >= 50) {
       return (
         <span id="dollar-span">
-         - $$$$<span id="lighter-dollar"></span>
+         · $$$$<span id="lighter-dollar"></span>
         </span>
       );
     }
@@ -39,11 +39,12 @@ const RestaurantCard = ({ restaurantId }) => {
 
   const handleTime = (e) => {
     e.stopPropagation();
-    history.push(`restaurants/${restaurant.id}`)
+    // history.replace('restaurants/api')
+    // history.push(`restaurants/${restaurantId}`)
   }
 
   return (
-    <NavLink to={`restaurants/${restaurant.id}`} target="_blank" id="card-body">
+    <NavLink to={`restaurants/${restaurantId}`} target="_blank" id="card-body">
       <div>
         <img
           src="https://cdn.vox-cdn.com/thumbor/PrZb_-PS73VhBAlmIArF8cIdZLE=/0x0:4928x3280/1200x0/filters:focal(0x0:4928x3280):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/3913500/Faro_gnocchi.0.jpg"
@@ -63,7 +64,7 @@ const RestaurantCard = ({ restaurantId }) => {
           <div id="cuisine-price-wrapper">
             <span id="cuisine-span">{restaurant.cuisine}</span>
             <span id="price-span">{dollarSign()}</span>
-            <span id="neighborhood-span"> - {restaurant.neighborhood}</span>
+            <span id="neighborhood-span"> · {restaurant.neighborhood}</span>
           </div>
           <div id="booking-wrapper">
             <span>
