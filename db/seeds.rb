@@ -202,7 +202,7 @@ ApplicationRecord.transaction do
           Avocado Toast Brunch
           $14.00",
           average_rating: 4.4,
-          price_point: 31,
+          price_point: 18,
           phone_number: "718-366-3272"
         )
         Restaurant.create!(

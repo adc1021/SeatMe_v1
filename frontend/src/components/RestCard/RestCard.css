@@ -69,3 +69,53 @@ h3{
     align-items: center;
 
 }
+
+#reviews-span {
+    color: #2d333f;
+    margin: 0 0 0 4px;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+#cuisine-price-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #2d333f;
+    margin: 0 0 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#cuisine-span {
+    color: #2d333f;
+    margin: 0 0 8px;
+    margin-top: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+#price-span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 4px;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+}
+
+#dollar-span {
+
+}
+
+#lighter-dollar {
+    color: #0003;
+    margin-left: 0px;
+}
