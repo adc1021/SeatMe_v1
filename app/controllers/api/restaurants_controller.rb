@@ -24,9 +24,6 @@ class Api::RestaurantsController < ApplicationController
   #   @restaurant = Restaurant.new()
   # end
 
-  def destroy
-  end
-
   private
   def restaurant_params
     params.require(:restaurant).permit(:name, :cuisine)
