@@ -32,8 +32,12 @@ const RestaurantCard = ({ restaurantId }) => {
     }
   };
 
+  const handleTime = (e) => {
+    e.stopPropagation();
+  }
+
   return (
-    <a id="card-body">
+    <NavLink to="/" id="card-body">
       <div>
         <img
           src="https://cdn.vox-cdn.com/thumbor/PrZb_-PS73VhBAlmIArF8cIdZLE=/0x0:4928x3280/1200x0/filters:focal(0x0:4928x3280):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/3913500/Faro_gnocchi.0.jpg"
@@ -62,11 +66,11 @@ const RestaurantCard = ({ restaurantId }) => {
             </span>
           </div>
           <div id="time-slots">
-            <NavLink id="time-slot-link" to="/">12:30 PM</NavLink>
+            <NavLink id="time-slot-link" to="/" onClick={handleTime}>12:30 PM</NavLink>
           </div>
         </div>
       </div>
-    </a>
+    </NavLink>
   );
 };
 
