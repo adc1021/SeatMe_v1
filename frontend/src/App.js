@@ -1,8 +1,5 @@
 import React from "react";
-import { NavLink, Route, Switch } from "react-router-dom";
-// import LoginFormPage from "./components/LoginFormPage";
-// import LogoutButton from "./components/LogoutButton";
-// import SignupForm from "./components/SignUp";
+import { Route, Switch } from "react-router-dom";
 import RestShow from "./components/RestShow";
 import Splash from "./components/Splash";
 
