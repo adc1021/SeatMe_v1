@@ -63,7 +63,8 @@ ApplicationRecord.transaction do
           Our Signature Baked Oysters $18.00",
           average_rating: 4.7,
           price_point: 50,
-          phone_number: "212-371-7777"
+          phone_number: "212-371-7777",
+          neighborhood: "Midtown West"
         )
 
         Restaurant.create!(
@@ -124,7 +125,8 @@ ApplicationRecord.transaction do
           marinated gigante beans, persillade sauce",
           average_rating: 4.5,
           price_point: 30,
-          phone_number: "212-873-6423"
+          phone_number: "212-873-6423",
+          neighborhood: "Upper West Side"
         )
 
         Restaurant.create!(
@@ -148,7 +150,8 @@ ApplicationRecord.transaction do
           $49.00",
           average_rating: 4.6,
           price_point: 50,
-          phone_number: "212-401-7986"
+          phone_number: "212-401-7986",
+          neighborhood: "Chelsea"
         )
 
         Restaurant.create!(
@@ -158,7 +161,7 @@ ApplicationRecord.transaction do
           a full bar featuring a selection of rotating frozen cocktails,
           Sea Wolf is your island oasis in the heart of industrial Brooklyn.",
           cuisine: "Seafood",
-          address: "19 Wyckoff Ave, Brookly, Ny 11237",
+          address: "19 Wyckoff Ave, Brooklyn, Ny 11237",
           tables: 40,
           menu: "Soup/Salad
           Chowder
@@ -203,7 +206,8 @@ ApplicationRecord.transaction do
           $14.00",
           average_rating: 4.4,
           price_point: 18,
-          phone_number: "718-366-3272"
+          phone_number: "718-366-3272",
+          neighborhood: "Bushwick"
         )
         Restaurant.create!(
           name: "Meadowsweet",
@@ -252,7 +256,8 @@ ApplicationRecord.transaction do
           fresh ricotta",
           average_rating: 4.8,
           price_point: 31,
-          phone_number: "212-401-7986"
+          phone_number: "212-401-7986",
+          neighborhood: "Williamsburg",
         )
 
 

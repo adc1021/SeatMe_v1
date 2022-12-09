@@ -119,3 +119,38 @@ h3{
     color: #0003;
     margin-left: 0px;
 }
+
+#neighborhood-span {
+    margin-left: 4px;
+}
+
+#booking-wrapper {
+    color: #2d333f;
+    display: block;
+}
+
+#time-slots {
+    align-items: flex-end;
+    display: flex;
+    flex: 1 1 auto;
+    padding: 8px 0;
+}
+
+#time-slot-link {
+    background: #da3743;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 2rem;
+    justify-content: center;
+    line-height: 32px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 4.875rem;
+}

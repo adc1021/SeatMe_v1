@@ -1283,3 +1283,1314 @@ Processing by Api::RestaurantsController#index as JSON
 Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 6.5ms | Allocations: 13299)
 
 
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4610109281091513360)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddNeighborhoodColumn (20221209154532)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.4ms)[0m  [1m[35mALTER TABLE "restaurants" ADD "neighborhood" character varying[0m
+  [1m[36mActiveRecord::SchemaMigration Create (4.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221209154532"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(4610109281091513360)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (7.0ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Cote NYC"], ["description", "COTE, the carnivorous vision of proprietor Simon Kim,\n          blends the dining experience of Korean barbeque together with the\n          hallmarks of a classic American steakhouse. The result is a unique,\n          convivial and interactive atmosphere, accompanied by\n          the highest quality USDA Prime beef, an impeccable 1200+ label\n          wine list, and a suite of classic-but-creative cocktails."], ["cuisine", "Korean"], ["address", "16 West 22nd St, New York, NY 10010"], ["tables", 30], ["menu", "Ribeye\n          $88.00,\n          NY Strip\n          $44.00,\n          Cote Steak\n          $29.00,\n          The Flatiron\n          $49.00"], ["average_rating", 4.6], ["price_point", 50], ["created_at", "2022-12-09 15:49:10.242612"], ["updated_at", "2022-12-09 15:49:10.242612"], ["phone_number", "212-401-7986"], ["neighborhood", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (7.2ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meats"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 15:49:49.521933"], ["updated_at", "2022-12-09 15:49:49.521933"], ["phone_number", "212-371-7777"], ["neighborhood", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (0.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meat"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 15:50:34.395656"], ["updated_at", "2022-12-09 15:50:34.395656"], ["phone_number", "212-371-7777"], ["neighborhood", nil]]
+  [1m[36mTRANSACTION (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Restaurant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Restaurant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (5.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "u6u40u1tozk152zes0jfzb9vx7vu"], ["filename", "stock.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon_dev"], ["byte_size", 138267], ["checksum", "TrmxxBjO3kcwwq5f4On3Vw=="], ["created_at", "2022-12-09 15:52:34.249233"]]
+  [1m[36mActiveStorage::Attachment Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Restaurant"], ["record_id", 8], ["blob_id", 1], ["created_at", "2022-12-09 15:52:34.255026"]]
+  [1m[36mRestaurant Update (0.4ms)[0m  [1m[33mUPDATE "restaurants" SET "updated_at" = $1 WHERE "restaurants"."id" = $2[0m  [["updated_at", "2022-12-09 15:52:34.256836"], ["id", 8]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+[36m  S3 Storage (265.7ms) [0m[32mUploaded file to key: u6u40u1tozk152zes0jfzb9vx7vu (checksum: TrmxxBjO3kcwwq5f4On3Vw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 9c422585-5d2d-4029-b5d3-43e172dbf111) to Async(default) with arguments: #<GlobalID:0x000000010bebba70 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111] Performing ActiveStorage::AnalyzeJob (Job ID: 9c422585-5d2d-4029-b5d3-43e172dbf111) from Async(default) enqueued at 2022-12-09T15:52:34Z with arguments: #<GlobalID:0x000000010c027d00 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [9c422585-5d2d-4029-b5d3-43e172dbf111] Performed ActiveStorage::AnalyzeJob (Job ID: 9c422585-5d2d-4029-b5d3-43e172dbf111) from Async(default) in 180.74ms
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  [1m[36mRestaurant Destroy (0.9ms)[0m  [1m[31mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 8]]
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 9dd78a1d-f262-4575-ba1d-3e6410020cb6) to Async(default) with arguments: #<GlobalID:0x000000010d8c7018 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6] Performing ActiveStorage::PurgeJob (Job ID: 9dd78a1d-f262-4575-ba1d-3e6410020cb6) from Async(default) enqueued at 2022-12-09T15:53:25Z with arguments: #<GlobalID:0x000000010d926180 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mActiveStorage::Attachment Exists? (2.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mActiveStorage::VariantRecord Load (1.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mActiveStorage::Blob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6] [36m  S3 Storage (153.4ms) [0m[31mDeleted file from key: u6u40u1tozk152zes0jfzb9vx7vu[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6] [36m  S3 Storage (110.8ms) [0m[31mDeleted files by key prefix: variants/u6u40u1tozk152zes0jfzb9vx7vu/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9dd78a1d-f262-4575-ba1d-3e6410020cb6] Error performing ActiveStorage::PurgeJob (Job ID: 9dd78a1d-f262-4575-ba1d-3e6410020cb6) from Async(default) in 295.72ms: Aws::S3::Errors::AccessDenied (Access Denied):
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/seahorse/client/plugins/raise_response_errors.rb:17:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/plugins/sse_cpk.rb:24:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/plugins/dualstack.rb:21:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/plugins/accelerate.rb:43:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/plugins/checksum_algorithm.rb:111:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/plugins/jsonvalue_converter.rb:16:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/plugins/idempotency_token.rb:19:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/plugins/param_converter.rb:26:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/seahorse/client/plugins/request_callback.rb:71:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/plugins/response_paging.rb:12:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/seahorse/client/plugins/response_target.rb:24:in `call'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/seahorse/client/request.rb:72:in `send_request'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/client.rb:8573:in `list_objects_v2'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/bucket.rb:912:in `block in objects'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/resources/collection.rb:101:in `each'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/resources/collection.rb:101:in `each'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-core-3.168.4/lib/aws-sdk-core/resources/collection.rb:101:in `block in non_empty_batches'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/object_summary.rb:1471:in `each'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/object_summary.rb:1471:in `each'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/aws-sdk-s3-1.117.2/lib/aws-sdk-s3/object_summary.rb:1471:in `batch_delete!'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activestorage-7.0.4/lib/active_storage/service/s3_service.rb:68:in `block in delete_prefixed'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activestorage-7.0.4/lib/active_storage/service.rb:163:in `instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activestorage-7.0.4/lib/active_storage/service/s3_service.rb:67:in `delete_prefixed'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activestorage-7.0.4/app/models/active_storage/blob.rb:320:in `delete'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activestorage-7.0.4/app/models/active_storage/blob.rb:328:in `purge'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activestorage-7.0.4/app/jobs/active_storage/purge_job.rb:11:in `perform'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/execution.rb:59:in `block in _perform_job'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/i18n-1.12.0/lib/i18n.rb:322:in `with_locale'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/execution.rb:58:in `_perform_job'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:20:in `_perform_job'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/execution.rb:46:in `perform_now'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:25:in `block in instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `block in instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/notifications.rb:206:in `instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:35:in `instrument'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/instrumentation.rb:14:in `perform_now'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `block in perform_now'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:37:in `tagged'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/tagged_logging.rb:99:in `tagged'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/logging.rb:25:in `tag_logger'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/logging.rb:18:in `perform_now'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/execution.rb:24:in `block in execute'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/reloader.rb:72:in `block in wrap'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/execution_wrapper.rb:92:in `wrap'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/reloader.rb:71:in `wrap'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `instance_exec'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4/lib/active_support/callbacks.rb:138:in `run_callbacks'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/execution.rb:22:in `execute'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/activejob-7.0.4/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+/Users/antho/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.1.10/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mRestaurant Create (1.6ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meat"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 15:55:46.983933"], ["updated_at", "2022-12-09 15:55:46.983933"], ["phone_number", "212-371-7777"], ["neighborhood", nil]]
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" INNER JOIN "active_storage_attachments" ON "active_storage_blobs"."id" = "active_storage_attachments"."blob_id" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Restaurant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Restaurant"], ["name", "photo"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "service_name", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["key", "m7bzxflym0h3ipmf9mf48mgbsb8l"], ["filename", "stock.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["service_name", "amazon_dev"], ["byte_size", 138267], ["checksum", "TrmxxBjO3kcwwq5f4On3Vw=="], ["created_at", "2022-12-09 15:56:01.590184"]]
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "photo"], ["record_type", "Restaurant"], ["record_id", 9], ["blob_id", 2], ["created_at", "2022-12-09 15:56:01.592092"]]
+  [1m[36mRestaurant Update (0.2ms)[0m  [1m[33mUPDATE "restaurants" SET "updated_at" = $1 WHERE "restaurants"."id" = $2[0m  [["updated_at", "2022-12-09 15:56:01.592848"], ["id", 9]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+[36m  S3 Storage (169.6ms) [0m[32mUploaded file to key: m7bzxflym0h3ipmf9mf48mgbsb8l (checksum: TrmxxBjO3kcwwq5f4On3Vw==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 67a2ac9b-48be-41de-b8aa-77427c2e3eac) to Async(default) with arguments: #<GlobalID:0x000000010db54c18 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac] Performing ActiveStorage::AnalyzeJob (Job ID: 67a2ac9b-48be-41de-b8aa-77427c2e3eac) from Async(default) enqueued at 2022-12-09T15:56:01Z with arguments: #<GlobalID:0x000000010db76368 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac] Skipping image analysis because the ruby-vips gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac]   [1m[36mActiveStorage::Blob Update (0.3ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac]   [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [67a2ac9b-48be-41de-b8aa-77427c2e3eac] Performed ActiveStorage::AnalyzeJob (Job ID: 67a2ac9b-48be-41de-b8aa-77427c2e3eac) from Async(default) in 14.46ms
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 2]]
+  [1m[36mRestaurant Destroy (0.1ms)[0m  [1m[31mDELETE FROM "restaurants" WHERE "restaurants"."id" = $1[0m  [["id", 9]]
+  [1m[36mTRANSACTION (4.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 996d08e2-ce65-43ba-a0f5-92e6662c0356) to Async(default) with arguments: #<GlobalID:0x000000010dc0d330 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356] Performing ActiveStorage::PurgeJob (Job ID: 996d08e2-ce65-43ba-a0f5-92e6662c0356) from Async(default) enqueued at 2022-12-09T15:56:14Z with arguments: #<GlobalID:0x000000010dc6edd8 @uri=#<URI::GID gid://seat-me/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mActiveStorage::Attachment Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mActiveStorage::VariantRecord Load (0.1ms)[0m  [1m[34mSELECT "active_storage_variant_records".* FROM "active_storage_variant_records" WHERE "active_storage_variant_records"."blob_id" = $1[0m  [["blob_id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mActiveStorage::Blob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356]   [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356] [36m  S3 Storage (120.5ms) [0m[31mDeleted file from key: m7bzxflym0h3ipmf9mf48mgbsb8l[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356] [36m  S3 Storage (30.3ms) [0m[31mDeleted files by key prefix: variants/m7bzxflym0h3ipmf9mf48mgbsb8l/[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [996d08e2-ce65-43ba-a0f5-92e6662c0356] Performed ActiveStorage::PurgeJob (Job ID: 996d08e2-ce65-43ba-a0f5-92e6662c0356) from Async(default) in 201.04ms
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:16:43 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 6.4ms | Allocations: 4824)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:16:43 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (1.0ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.3ms | Allocations: 287)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 17.1ms | Allocations: 10083)
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 10.6ms | Allocations: 13810)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:18:30 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.1ms | Allocations: 2981)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:18:30 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 194)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 8.9ms | Allocations: 5400)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 4.4ms | Allocations: 7254)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (6.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (40.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_development"[0m
+  [1m[35m (29.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_test"[0m
+  [1m[35m (116.2ms)[0m  [1m[35mCREATE DATABASE "SeatMe_development" ENCODING = 'unicode'[0m
+  [1m[35m (146.7ms)[0m  [1m[35mCREATE DATABASE "SeatMe_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:18:44.903642"], ["updated_at", "2022-12-09 16:18:44.903642"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:18:44.909747"], ["updated_at", "2022-12-09 16:18:44.909747"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:18:44.952249"], ["updated_at", "2022-12-09 16:18:44.952249"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-09 16:18:44.955156"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:18:44.957757"], ["updated_at", "2022-12-09 16:18:44.957757"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (47.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_development"[0m
+  [1m[35m (52.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_test"[0m
+  [1m[35m (127.3ms)[0m  [1m[35mCREATE DATABASE "SeatMe_development" ENCODING = 'unicode'[0m
+  [1m[35m (56.0ms)[0m  [1m[35mCREATE DATABASE "SeatMe_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:19:25.795484"], ["updated_at", "2022-12-09 16:19:25.795484"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:19:25.799419"], ["updated_at", "2022-12-09 16:19:25.799419"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:19:25.835888"], ["updated_at", "2022-12-09 16:19:25.835888"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-09 16:19:25.838481"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:19:25.840668"], ["updated_at", "2022-12-09 16:19:25.840668"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hulkster@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7890"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hulkster@gmail.com"], ["first_name", "Hulk"], ["last_name", "Hogan"], ["phone_number", "123-456-7890"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:19:25.869564"], ["updated_at", "2022-12-09 16:19:25.869564"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7555"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kj@gmail.com"], ["first_name", "Kelly"], ["last_name", "Jones"], ["phone_number", "123-456-7555"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:19:25.873174"], ["updated_at", "2022-12-09 16:19:25.873174"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "broMan@gmail.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-2321"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "broMan@gmail.io"], ["first_name", "Brogan"], ["last_name", "Manfredi"], ["phone_number", "123-456-2321"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:19:25.875918"], ["updated_at", "2022-12-09 16:19:25.875918"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "222-333-4444"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "demo@user.io"], ["first_name", "Demo"], ["last_name", "-lition"], ["phone_number", "222-333-4444"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:19:25.878545"], ["updated_at", "2022-12-09 16:19:25.878545"]]
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meat"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 16:19:25.885378"], ["updated_at", "2022-12-09 16:19:25.885378"], ["phone_number", "212-371-7777"], ["neighborhood", "Midtown West"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Nice Matin"], ["description", "For nearly two decades, Nice Matin has been\n            the Upper West Sides most elegant, beautifully designed and\n            sophisticated dining destination. Featuring a Wine Spectator\n            Grand Award-winning Wine List and an extraordinary, inventive,\n            French Provençal-inspired menu created by Chef Andy D’Amico,\n            who was named “Best Chef” by New York Magazine\n            food editor Gillian Duffy, Nice Matin is the\n            essential French Brasserie and Wine Destination of the Upper West Side."], ["cuisine", "French"], ["address", "201 West 79th St, New York, NY 10024"], ["tables", 35], ["menu", "PANISSE\n          $10.00\n          chickpea fries, smoked paprika aioli\n\n          SOUPE AU PISTOU\n          $12.00\n          Nicoise vegetable soup, elbow pasta, basil pesto\n\n          FAVA BEAN HUMMUS\n          $14.00\n          lemon, chili, crudités, flat bread\n\n          ESCARGOTS A LA PROVENCALE\n          $16.00\n          provençale tomato sauce, escargot butter, garlic breadcrumbs\n\n          HONEYNUT SQUASH RISOTTO\n          $18.00\n          shiitakes, crispy pancetta, pecorino, sage\n\n          CRISPY FRIED ARTICHOKES\n          $18.00\n          eggplant purée, chickpea salad, extra virgin olive oil, espelette\n\n          BURRATA\n          $18.00\n          roasted gold beets, arugula, pistachios, micro basil, white balsamic vinaigrette\n\n          SALAD VERTE\n          $16.00\n          avocado, radishes, lime, garlic, honey\n\n          SALADE MEDITERRANEENE\n          $18.00\n          flat beans, chickpeas, cucumbers, tomatoes, peppers, red onions, feta, cilantro, mint, lemon vinaigrette\n\n          TUNA CARPACCIO NICOISE\n          $20.00\n          a deconstructed version of tuna Niçoise salad over a raw tuna carpaccio\n\n          GRILLED OCTOPUS\n          $22.00\n          marinated gigante beans, persillade sauce"], ["average_rating", 4.5], ["price_point", 30], ["created_at", "2022-12-09 16:19:25.886470"], ["updated_at", "2022-12-09 16:19:25.886470"], ["phone_number", "212-873-6423"], ["neighborhood", "Upper West Side"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Cote NYC"], ["description", "COTE, the carnivorous vision of proprietor Simon Kim,\n          blends the dining experience of Korean barbeque together with the\n          hallmarks of a classic American steakhouse. The result is a unique,\n          convivial and interactive atmosphere, accompanied by\n          the highest quality USDA Prime beef, an impeccable 1200+ label\n          wine list, and a suite of classic-but-creative cocktails."], ["cuisine", "Korean"], ["address", "16 West 22nd St, New York, NY 10010"], ["tables", 30], ["menu", "Ribeye\n          $88.00,\n          NY Strip\n          $44.00,\n          Cote Steak\n          $29.00,\n          The Flatiron\n          $49.00"], ["average_rating", 4.6], ["price_point", 50], ["created_at", "2022-12-09 16:19:25.887210"], ["updated_at", "2022-12-09 16:19:25.887210"], ["phone_number", "212-401-7986"], ["neighborhood", "Chelsea"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Sea Wolf - Bushwick"], ["description", "Sea Wolf is Bushwick's own little surf shack\n          for herbivores and omnivores alike. With daily oyster specials,\n          a full bar featuring a selection of rotating frozen cocktails,\n          Sea Wolf is your island oasis in the heart of industrial Brooklyn."], ["cuisine", "Seafood"], ["address", "19 Wyckoff Ave, Brooklyn, Ny 11237"], ["tables", 40], ["menu", "Soup/Salad\n          Chowder\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Chilled Corn Soup\n          Sweet Corn, Cream\n\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Sandwiches\n          Cold Lobster Roll\n          $26.00\n          Shrimp Roll\n          $16.00\n          Chives, Scallion, Dill, Parsley, Lemon Brown Butter Herb Mayo\n\n          Brunch Sides\n          Grilled Half Avocado\n          $5.00\n          Fingerlings Brunch\n          $4.00\n          Brunch Small Plates\n          Deviled Eggs\n          $7.00\n          Sriracha Powder\n\n          Fried Clam Strips\n          $12.00\n          Local clams and house-made tartar sauce\n\n          Brunch\n          11am-3:30pm\n\n          Chia Pudding\n          $13.00\n          Avocado Toast Brunch\n          $14.00"], ["average_rating", 4.4], ["price_point", 18], ["created_at", "2022-12-09 16:19:25.887894"], ["updated_at", "2022-12-09 16:19:25.887894"], ["phone_number", "718-366-3272"], ["neighborhood", "Bushwick"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Meadowsweet"], ["description", "Polo and Stephanie opened Meadowsweet together in 2014\n          and they see it as an extension of their home. They both enjoy good\n          food, friendly service and a comfortable atmosphere to dine in\n          and that is exactly what they want their guests to experience\n         when visiting Meadowsweet. When they are not at Meadowsweet you will\n          find them upstate at Meadowsweet Farm with their daughter and son\n         where they grow some amazing vegetables with Polo’s Dad to serve at\n         Meadowsweet. They look forward to seeing you at Meadowsweet soon!"], ["cuisine", "American"], ["address", "149 Broadway, Brooklyn, NY 11211"], ["tables", 15], ["menu", "olive oil rolls\n          honey butter\n          $19\n          crispy baby artichokes\n          shaved parmesan, baby arugula, parsley & lemon\n          $18\n          burrata & figs\n          black mission & tiger figs, pistachio-basil pesto, pickled kumquats, pistachio-sesame dukkah & sourdough crisp\n          $18\n          heirloom tomato salad\n          kalamata olive, cantabrian white anchovy, feta & fresh herbs\n          $17\n          fried green tomatoes\n          buttermilk ranch, fine herbs & parmesan\n          $18\n          shishito peppers & corn\n          poblano romesco, tahini, labneh & chile-lime dressing\n          $24\n          crispy duck confit\n          marinated mango, endive, labneh, lime & honey\n          $24\n          spanish octopus & chorizo\n          farro, olives, pickled peppers, pimenton aioli & mollica\n          $26\n          tajarin, chanterelles & truffle\n          summer truffle, butter & parmesan\n          $24\n          cavatelli & fennel sausage\n          shishito pepper, pecorino romano & parmesan\n          $24\n          cocoa pappardelle & braised wagyu beef ragu\n          fresh ricotta"], ["average_rating", 4.8], ["price_point", 31], ["created_at", "2022-12-09 16:19:25.888558"], ["updated_at", "2022-12-09 16:19:25.888558"], ["phone_number", "212-401-7986"], ["neighborhood", "Williamsburg"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:19:34 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 4830)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:19:34 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.9ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.5ms | Allocations: 287)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 21.4ms | Allocations: 10088)
+Completed 200 OK in 26ms (Views: 12.1ms | ActiveRecord: 12.0ms | Allocations: 13830)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:19:50 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1107)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:19:50 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.4ms | Allocations: 1809)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.4ms | Allocations: 2250)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:20:25 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 911)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:20:25 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.6ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 3.1ms | Allocations: 1795)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.4ms | Allocations: 2200)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:20:58 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 908)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:20:58 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 37.1ms | Allocations: 1803)
+Completed 200 OK in 38ms (Views: 37.3ms | ActiveRecord: 0.3ms | Allocations: 2216)
+
+
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (58.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_development"[0m
+  [1m[35m (28.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_test"[0m
+  [1m[35m (160.9ms)[0m  [1m[35mCREATE DATABASE "SeatMe_development" ENCODING = 'unicode'[0m
+  [1m[35m (48.7ms)[0m  [1m[35mCREATE DATABASE "SeatMe_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:22:31.353056"], ["updated_at", "2022-12-09 16:22:31.353056"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:22:31.357406"], ["updated_at", "2022-12-09 16:22:31.357406"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:22:31.389129"], ["updated_at", "2022-12-09 16:22:31.389129"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-09 16:22:31.391235"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:22:31.392987"], ["updated_at", "2022-12-09 16:22:31.392987"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hulkster@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7890"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hulkster@gmail.com"], ["first_name", "Hulk"], ["last_name", "Hogan"], ["phone_number", "123-456-7890"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:22:31.420045"], ["updated_at", "2022-12-09 16:22:31.420045"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7555"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kj@gmail.com"], ["first_name", "Kelly"], ["last_name", "Jones"], ["phone_number", "123-456-7555"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:22:31.423470"], ["updated_at", "2022-12-09 16:22:31.423470"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "broMan@gmail.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-2321"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "broMan@gmail.io"], ["first_name", "Brogan"], ["last_name", "Manfredi"], ["phone_number", "123-456-2321"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:22:31.426183"], ["updated_at", "2022-12-09 16:22:31.426183"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "222-333-4444"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "demo@user.io"], ["first_name", "Demo"], ["last_name", "-lition"], ["phone_number", "222-333-4444"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:22:31.428774"], ["updated_at", "2022-12-09 16:22:31.428774"]]
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meat"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 16:22:31.435549"], ["updated_at", "2022-12-09 16:22:31.435549"], ["phone_number", "212-371-7777"], ["neighborhood", "Midtown West"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Nice Matin"], ["description", "For nearly two decades, Nice Matin has been\n            the Upper West Sides most elegant, beautifully designed and\n            sophisticated dining destination. Featuring a Wine Spectator\n            Grand Award-winning Wine List and an extraordinary, inventive,\n            French Provençal-inspired menu created by Chef Andy D’Amico,\n            who was named “Best Chef” by New York Magazine\n            food editor Gillian Duffy, Nice Matin is the\n            essential French Brasserie and Wine Destination of the Upper West Side."], ["cuisine", "French"], ["address", "201 West 79th St, New York, NY 10024"], ["tables", 35], ["menu", "PANISSE\n          $10.00\n          chickpea fries, smoked paprika aioli\n\n          SOUPE AU PISTOU\n          $12.00\n          Nicoise vegetable soup, elbow pasta, basil pesto\n\n          FAVA BEAN HUMMUS\n          $14.00\n          lemon, chili, crudités, flat bread\n\n          ESCARGOTS A LA PROVENCALE\n          $16.00\n          provençale tomato sauce, escargot butter, garlic breadcrumbs\n\n          HONEYNUT SQUASH RISOTTO\n          $18.00\n          shiitakes, crispy pancetta, pecorino, sage\n\n          CRISPY FRIED ARTICHOKES\n          $18.00\n          eggplant purée, chickpea salad, extra virgin olive oil, espelette\n\n          BURRATA\n          $18.00\n          roasted gold beets, arugula, pistachios, micro basil, white balsamic vinaigrette\n\n          SALAD VERTE\n          $16.00\n          avocado, radishes, lime, garlic, honey\n\n          SALADE MEDITERRANEENE\n          $18.00\n          flat beans, chickpeas, cucumbers, tomatoes, peppers, red onions, feta, cilantro, mint, lemon vinaigrette\n\n          TUNA CARPACCIO NICOISE\n          $20.00\n          a deconstructed version of tuna Niçoise salad over a raw tuna carpaccio\n\n          GRILLED OCTOPUS\n          $22.00\n          marinated gigante beans, persillade sauce"], ["average_rating", 4.5], ["price_point", 30], ["created_at", "2022-12-09 16:22:31.436595"], ["updated_at", "2022-12-09 16:22:31.436595"], ["phone_number", "212-873-6423"], ["neighborhood", "Upper West Side"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Cote NYC"], ["description", "COTE, the carnivorous vision of proprietor Simon Kim,\n          blends the dining experience of Korean barbeque together with the\n          hallmarks of a classic American steakhouse. The result is a unique,\n          convivial and interactive atmosphere, accompanied by\n          the highest quality USDA Prime beef, an impeccable 1200+ label\n          wine list, and a suite of classic-but-creative cocktails."], ["cuisine", "Korean"], ["address", "16 West 22nd St, New York, NY 10010"], ["tables", 30], ["menu", "Ribeye\n          $88.00,\n          NY Strip\n          $44.00,\n          Cote Steak\n          $29.00,\n          The Flatiron\n          $49.00"], ["average_rating", 4.6], ["price_point", 50], ["created_at", "2022-12-09 16:22:31.437387"], ["updated_at", "2022-12-09 16:22:31.437387"], ["phone_number", "212-401-7986"], ["neighborhood", "Chelsea"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Sea Wolf - Bushwick"], ["description", "Sea Wolf is Bushwick's own little surf shack\n          for herbivores and omnivores alike. With daily oyster specials,\n          a full bar featuring a selection of rotating frozen cocktails,\n          Sea Wolf is your island oasis in the heart of industrial Brooklyn."], ["cuisine", "Seafood"], ["address", "19 Wyckoff Ave, Brooklyn, Ny 11237"], ["tables", 40], ["menu", "Soup/Salad\n          Chowder\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Chilled Corn Soup\n          Sweet Corn, Cream\n\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Sandwiches\n          Cold Lobster Roll\n          $26.00\n          Shrimp Roll\n          $16.00\n          Chives, Scallion, Dill, Parsley, Lemon Brown Butter Herb Mayo\n\n          Brunch Sides\n          Grilled Half Avocado\n          $5.00\n          Fingerlings Brunch\n          $4.00\n          Brunch Small Plates\n          Deviled Eggs\n          $7.00\n          Sriracha Powder\n\n          Fried Clam Strips\n          $12.00\n          Local clams and house-made tartar sauce\n\n          Brunch\n          11am-3:30pm\n\n          Chia Pudding\n          $13.00\n          Avocado Toast Brunch\n          $14.00"], ["average_rating", 4.4], ["price_point", 18], ["created_at", "2022-12-09 16:22:31.438138"], ["updated_at", "2022-12-09 16:22:31.438138"], ["phone_number", "718-366-3272"], ["neighborhood", "Bushwick"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Meadowsweet"], ["description", "Polo and Stephanie opened Meadowsweet together in 2014\n          and they see it as an extension of their home. They both enjoy good\n          food, friendly service and a comfortable atmosphere to dine in\n          and that is exactly what they want their guests to experience\n         when visiting Meadowsweet. When they are not at Meadowsweet you will\n          find them upstate at Meadowsweet Farm with their daughter and son\n         where they grow some amazing vegetables with Polo’s Dad to serve at\n         Meadowsweet. They look forward to seeing you at Meadowsweet soon!"], ["cuisine", "American"], ["address", "149 Broadway, Brooklyn, NY 11211"], ["tables", 15], ["menu", "olive oil rolls\n          honey butter\n          $19\n          crispy baby artichokes\n          shaved parmesan, baby arugula, parsley & lemon\n          $18\n          burrata & figs\n          black mission & tiger figs, pistachio-basil pesto, pickled kumquats, pistachio-sesame dukkah & sourdough crisp\n          $18\n          heirloom tomato salad\n          kalamata olive, cantabrian white anchovy, feta & fresh herbs\n          $17\n          fried green tomatoes\n          buttermilk ranch, fine herbs & parmesan\n          $18\n          shishito peppers & corn\n          poblano romesco, tahini, labneh & chile-lime dressing\n          $24\n          crispy duck confit\n          marinated mango, endive, labneh, lime & honey\n          $24\n          spanish octopus & chorizo\n          farro, olives, pickled peppers, pimenton aioli & mollica\n          $26\n          tajarin, chanterelles & truffle\n          summer truffle, butter & parmesan\n          $24\n          cavatelli & fennel sausage\n          shishito pepper, pecorino romano & parmesan\n          $24\n          cocoa pappardelle & braised wagyu beef ragu\n          fresh ricotta"], ["average_rating", 4.8], ["price_point", 31], ["created_at", "2022-12-09 16:22:31.438844"], ["updated_at", "2022-12-09 16:22:31.438844"], ["phone_number", "212-401-7986"], ["neighborhood", "Williamsburg"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:25:07 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 7.5ms | Allocations: 4818)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:25:07 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (5.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.4ms | Allocations: 287)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 17.2ms | Allocations: 10088)
+Completed 200 OK in 22ms (Views: 8.7ms | ActiveRecord: 10.8ms | Allocations: 13800)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:25:27 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1110)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:25:27 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.1ms | Allocations: 1809)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.3ms | Allocations: 2232)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:25:28 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 929)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:25:28 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.5ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.1ms | Allocations: 1796)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 2202)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:25:31 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 906)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:25:31 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 8.9ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 45.7ms | Allocations: 1796)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.2ms | Allocations: 2190)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:28:35 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 904)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:28:35 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.0ms | Allocations: 1796)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.3ms | Allocations: 2203)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:28:45 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 893)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:28:45 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.9ms | Allocations: 1795)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2197)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Destroy (4.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 1]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 2]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 3]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hulkster@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7890"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hulkster@gmail.com"], ["first_name", "Hulk"], ["last_name", "Hogan"], ["phone_number", "123-456-7890"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:29:48.698059"], ["updated_at", "2022-12-09 16:29:48.698059"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7555"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kj@gmail.com"], ["first_name", "Kelly"], ["last_name", "Jones"], ["phone_number", "123-456-7555"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:29:48.701133"], ["updated_at", "2022-12-09 16:29:48.701133"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "broMan@gmail.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-2321"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "broMan@gmail.io"], ["first_name", "Brogan"], ["last_name", "Manfredi"], ["phone_number", "123-456-2321"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:29:48.703390"], ["updated_at", "2022-12-09 16:29:48.703390"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "222-333-4444"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "demo@user.io"], ["first_name", "Demo"], ["last_name", "-lition"], ["phone_number", "222-333-4444"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:29:48.705895"], ["updated_at", "2022-12-09 16:29:48.705895"]]
+  [1m[36mRestaurant Create (1.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meat"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 16:29:48.715510"], ["updated_at", "2022-12-09 16:29:48.715510"], ["phone_number", "212-371-7777"], ["neighborhood", "Midtown West"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (7422.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (38.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_development"[0m
+  [1m[35m (29.8ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_test"[0m
+  [1m[35m (131.3ms)[0m  [1m[35mCREATE DATABASE "SeatMe_development" ENCODING = 'unicode'[0m
+  [1m[35m (49.9ms)[0m  [1m[35mCREATE DATABASE "SeatMe_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (1.5ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:30:38.511160"], ["updated_at", "2022-12-09 16:30:38.511160"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:30:38.517377"], ["updated_at", "2022-12-09 16:30:38.517377"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:30:38.556508"], ["updated_at", "2022-12-09 16:30:38.556508"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-09 16:30:38.558996"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:30:38.561461"], ["updated_at", "2022-12-09 16:30:38.561461"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hulkster@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7890"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hulkster@gmail.com"], ["first_name", "Hulk"], ["last_name", "Hogan"], ["phone_number", "123-456-7890"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:30:38.591299"], ["updated_at", "2022-12-09 16:30:38.591299"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7555"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kj@gmail.com"], ["first_name", "Kelly"], ["last_name", "Jones"], ["phone_number", "123-456-7555"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:30:38.594703"], ["updated_at", "2022-12-09 16:30:38.594703"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "broMan@gmail.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-2321"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "broMan@gmail.io"], ["first_name", "Brogan"], ["last_name", "Manfredi"], ["phone_number", "123-456-2321"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:30:38.597544"], ["updated_at", "2022-12-09 16:30:38.597544"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "222-333-4444"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "demo@user.io"], ["first_name", "Demo"], ["last_name", "-lition"], ["phone_number", "222-333-4444"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:30:38.600155"], ["updated_at", "2022-12-09 16:30:38.600155"]]
+  [1m[36mRestaurant Create (0.3ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meat"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 16:30:38.606791"], ["updated_at", "2022-12-09 16:30:38.606791"], ["phone_number", "212-371-7777"], ["neighborhood", "Midtown West"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Nice Matin"], ["description", "For nearly two decades, Nice Matin has been\n            the Upper West Sides most elegant, beautifully designed and\n            sophisticated dining destination. Featuring a Wine Spectator\n            Grand Award-winning Wine List and an extraordinary, inventive,\n            French Provençal-inspired menu created by Chef Andy D’Amico,\n            who was named “Best Chef” by New York Magazine\n            food editor Gillian Duffy, Nice Matin is the\n            essential French Brasserie and Wine Destination of the Upper West Side."], ["cuisine", "French"], ["address", "201 West 79th St, New York, NY 10024"], ["tables", 35], ["menu", "PANISSE\n          $10.00\n          chickpea fries, smoked paprika aioli\n\n          SOUPE AU PISTOU\n          $12.00\n          Nicoise vegetable soup, elbow pasta, basil pesto\n\n          FAVA BEAN HUMMUS\n          $14.00\n          lemon, chili, crudités, flat bread\n\n          ESCARGOTS A LA PROVENCALE\n          $16.00\n          provençale tomato sauce, escargot butter, garlic breadcrumbs\n\n          HONEYNUT SQUASH RISOTTO\n          $18.00\n          shiitakes, crispy pancetta, pecorino, sage\n\n          CRISPY FRIED ARTICHOKES\n          $18.00\n          eggplant purée, chickpea salad, extra virgin olive oil, espelette\n\n          BURRATA\n          $18.00\n          roasted gold beets, arugula, pistachios, micro basil, white balsamic vinaigrette\n\n          SALAD VERTE\n          $16.00\n          avocado, radishes, lime, garlic, honey\n\n          SALADE MEDITERRANEENE\n          $18.00\n          flat beans, chickpeas, cucumbers, tomatoes, peppers, red onions, feta, cilantro, mint, lemon vinaigrette\n\n          TUNA CARPACCIO NICOISE\n          $20.00\n          a deconstructed version of tuna Niçoise salad over a raw tuna carpaccio\n\n          GRILLED OCTOPUS\n          $22.00\n          marinated gigante beans, persillade sauce"], ["average_rating", 4.5], ["price_point", 30], ["created_at", "2022-12-09 16:30:38.607848"], ["updated_at", "2022-12-09 16:30:38.607848"], ["phone_number", "212-873-6423"], ["neighborhood", "Upper West Side"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Cote NYC"], ["description", "COTE, the carnivorous vision of proprietor Simon Kim,\n          blends the dining experience of Korean barbeque together with the\n          hallmarks of a classic American steakhouse. The result is a unique,\n          convivial and interactive atmosphere, accompanied by\n          the highest quality USDA Prime beef, an impeccable 1200+ label\n          wine list, and a suite of classic-but-creative cocktails."], ["cuisine", "Korean"], ["address", "16 West 22nd St, New York, NY 10010"], ["tables", 30], ["menu", "Ribeye\n          $88.00,\n          NY Strip\n          $44.00,\n          Cote Steak\n          $29.00,\n          The Flatiron\n          $49.00"], ["average_rating", 4.6], ["price_point", 50], ["created_at", "2022-12-09 16:30:38.608581"], ["updated_at", "2022-12-09 16:30:38.608581"], ["phone_number", "212-401-7986"], ["neighborhood", "Chelsea"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Sea Wolf - Bushwick"], ["description", "Sea Wolf is Bushwick's own little surf shack\n          for herbivores and omnivores alike. With daily oyster specials,\n          a full bar featuring a selection of rotating frozen cocktails,\n          Sea Wolf is your island oasis in the heart of industrial Brooklyn."], ["cuisine", "Seafood"], ["address", "19 Wyckoff Ave, Brooklyn, Ny 11237"], ["tables", 40], ["menu", "Soup/Salad\n          Chowder\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Chilled Corn Soup\n          Sweet Corn, Cream\n\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Sandwiches\n          Cold Lobster Roll\n          $26.00\n          Shrimp Roll\n          $16.00\n          Chives, Scallion, Dill, Parsley, Lemon Brown Butter Herb Mayo\n\n          Brunch Sides\n          Grilled Half Avocado\n          $5.00\n          Fingerlings Brunch\n          $4.00\n          Brunch Small Plates\n          Deviled Eggs\n          $7.00\n          Sriracha Powder\n\n          Fried Clam Strips\n          $12.00\n          Local clams and house-made tartar sauce\n\n          Brunch\n          11am-3:30pm\n\n          Chia Pudding\n          $13.00\n          Avocado Toast Brunch\n          $14.00"], ["average_rating", 4.4], ["price_point", 18], ["created_at", "2022-12-09 16:30:38.609262"], ["updated_at", "2022-12-09 16:30:38.609262"], ["phone_number", "718-366-3272"], ["neighborhood", "Bushwick"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Meadowsweet"], ["description", "Polo and Stephanie opened Meadowsweet together in 2014\n          and they see it as an extension of their home. They both enjoy good\n          food, friendly service and a comfortable atmosphere to dine in\n          and that is exactly what they want their guests to experience\n         when visiting Meadowsweet. When they are not at Meadowsweet you will\n          find them upstate at Meadowsweet Farm with their daughter and son\n         where they grow some amazing vegetables with Polo’s Dad to serve at\n         Meadowsweet. They look forward to seeing you at Meadowsweet soon!"], ["cuisine", "American"], ["address", "149 Broadway, Brooklyn, NY 11211"], ["tables", 15], ["menu", "olive oil rolls\n          honey butter\n          $19\n          crispy baby artichokes\n          shaved parmesan, baby arugula, parsley & lemon\n          $18\n          burrata & figs\n          black mission & tiger figs, pistachio-basil pesto, pickled kumquats, pistachio-sesame dukkah & sourdough crisp\n          $18\n          heirloom tomato salad\n          kalamata olive, cantabrian white anchovy, feta & fresh herbs\n          $17\n          fried green tomatoes\n          buttermilk ranch, fine herbs & parmesan\n          $18\n          shishito peppers & corn\n          poblano romesco, tahini, labneh & chile-lime dressing\n          $24\n          crispy duck confit\n          marinated mango, endive, labneh, lime & honey\n          $24\n          spanish octopus & chorizo\n          farro, olives, pickled peppers, pimenton aioli & mollica\n          $26\n          tajarin, chanterelles & truffle\n          summer truffle, butter & parmesan\n          $24\n          cavatelli & fennel sausage\n          shishito pepper, pecorino romano & parmesan\n          $24\n          cocoa pappardelle & braised wagyu beef ragu\n          fresh ricotta"], ["average_rating", 4.8], ["price_point", 31], ["created_at", "2022-12-09 16:30:38.609957"], ["updated_at", "2022-12-09 16:30:38.609957"], ["phone_number", "212-401-7986"], ["neighborhood", "Williamsburg"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (88.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_development"[0m
+  [1m[35m (37.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "SeatMe_test"[0m
+  [1m[35m (174.4ms)[0m  [1m[35mCREATE DATABASE "SeatMe_development" ENCODING = 'unicode'[0m
+  [1m[35m (55.7ms)[0m  [1m[35mCREATE DATABASE "SeatMe_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:33:41.958687"], ["updated_at", "2022-12-09 16:33:41.958687"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:33:41.962894"], ["updated_at", "2022-12-09 16:33:41.962894"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_attachments" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "active_storage_attachments" ("id" bigserial primary key, "name" character varying NOT NULL, "record_type" character varying NOT NULL, "record_id" bigint NOT NULL, "blob_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE INDEX "index_active_storage_attachments_on_blob_id" ON "active_storage_attachments" ("blob_id")[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_attachments_uniqueness" ON "active_storage_attachments" ("record_type", "record_id", "name", "blob_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_blobs" CASCADE[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "active_storage_blobs" ("id" bigserial primary key, "key" character varying NOT NULL, "filename" character varying NOT NULL, "content_type" character varying, "metadata" text, "service_name" character varying NOT NULL, "byte_size" bigint NOT NULL, "checksum" character varying, "created_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_blobs_on_key" ON "active_storage_blobs" ("key")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "active_storage_variant_records" CASCADE[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "active_storage_variant_records" ("id" bigserial primary key, "blob_id" bigint NOT NULL, "variation_digest" character varying NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_active_storage_variant_records_uniqueness" ON "active_storage_variant_records" ("blob_id", "variation_digest")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "restaurants" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "restaurants" ("id" bigserial primary key, "name" character varying NOT NULL, "description" text NOT NULL, "cuisine" text NOT NULL, "address" character varying NOT NULL, "tables" integer NOT NULL, "menu" text NOT NULL, "average_rating" float NOT NULL, "price_point" integer NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "phone_number" character varying, "neighborhood" character varying)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_restaurants_on_name" ON "restaurants" ("name")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "first_name" character varying, "last_name" character varying, "phone_number" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_phone_number" ON "users" ("phone_number")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_session_token" ON "users" ("session_token")[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "active_storage_attachments" ADD CONSTRAINT "fk_rails_c3b3935057"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "active_storage_variant_records" ADD CONSTRAINT "fk_rails_993965df05"
+FOREIGN KEY ("blob_id")
+  REFERENCES "active_storage_blobs" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20221209154532)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20221203201936),
+(20221205143959),
+(20221207171355),
+(20221208161831),
+(20221208165722),
+(20221208215824);
+
+[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-12-09 16:33:41.996492"], ["updated_at", "2022-12-09 16:33:41.996492"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2022-12-09 16:33:41.998666"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "66ba08eb87c5359d24c50e96c260eabf7529b921"], ["created_at", "2022-12-09 16:33:42.000449"], ["updated_at", "2022-12-09 16:33:42.000449"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "hulkster@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7890"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "hulkster@gmail.com"], ["first_name", "Hulk"], ["last_name", "Hogan"], ["phone_number", "123-456-7890"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:33:42.029091"], ["updated_at", "2022-12-09 16:33:42.029091"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kj@gmail.com"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-7555"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "kj@gmail.com"], ["first_name", "Kelly"], ["last_name", "Jones"], ["phone_number", "123-456-7555"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:33:42.032395"], ["updated_at", "2022-12-09 16:33:42.032395"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "broMan@gmail.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "123-456-2321"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "broMan@gmail.io"], ["first_name", "Brogan"], ["last_name", "Manfredi"], ["phone_number", "123-456-2321"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:33:42.035061"], ["updated_at", "2022-12-09 16:33:42.035061"]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:66:in `generate_unique_session_token'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "demo@user.io"], ["LIMIT", 1]]
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."phone_number" = $1 LIMIT $2[0m  [["phone_number", "222-333-4444"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "first_name", "last_name", "phone_number", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["email", "demo@user.io"], ["first_name", "Demo"], ["last_name", "-lition"], ["phone_number", "222-333-4444"], ["session_token", "[FILTERED]"], ["created_at", "2022-12-09 16:33:42.037886"], ["updated_at", "2022-12-09 16:33:42.037886"]]
+  [1m[36mRestaurant Create (0.4ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Quality Meats"], ["description", "Quality Meats is the best steakhouse in New York City.\n          Located in Midtown Manhattan near Central Park, MOMA,\n           Carnegie Hall, Rockefeller Center, Radio City Music Hall,\n           and Times Square, Quality Meats features modern interpretations of\n            familiar dishes and flavor combinations, resulting in unique tastes,\n            innovative presentations, and a distinctive Quality Meats style.\n             The warm, industrial décor by award-winning designers AvroKO draws\n             on cues from traditional New York City family-owned butcher shops,\n            in the use of warm wood, stainless steel, and white marble."], ["cuisine", "American"], ["address", "57 West 58th Street, New York, NY 10019"], ["tables", 50], ["menu", "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,\n          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,\n          Our Signature Baked Oysters $18.00"], ["average_rating", 4.7], ["price_point", 50], ["created_at", "2022-12-09 16:33:42.045170"], ["updated_at", "2022-12-09 16:33:42.045170"], ["phone_number", "212-371-7777"], ["neighborhood", "Midtown West"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Nice Matin"], ["description", "For nearly two decades, Nice Matin has been\n            the Upper West Sides most elegant, beautifully designed and\n            sophisticated dining destination. Featuring a Wine Spectator\n            Grand Award-winning Wine List and an extraordinary, inventive,\n            French Provençal-inspired menu created by Chef Andy D’Amico,\n            who was named “Best Chef” by New York Magazine\n            food editor Gillian Duffy, Nice Matin is the\n            essential French Brasserie and Wine Destination of the Upper West Side."], ["cuisine", "French"], ["address", "201 West 79th St, New York, NY 10024"], ["tables", 35], ["menu", "PANISSE\n          $10.00\n          chickpea fries, smoked paprika aioli\n\n          SOUPE AU PISTOU\n          $12.00\n          Nicoise vegetable soup, elbow pasta, basil pesto\n\n          FAVA BEAN HUMMUS\n          $14.00\n          lemon, chili, crudités, flat bread\n\n          ESCARGOTS A LA PROVENCALE\n          $16.00\n          provençale tomato sauce, escargot butter, garlic breadcrumbs\n\n          HONEYNUT SQUASH RISOTTO\n          $18.00\n          shiitakes, crispy pancetta, pecorino, sage\n\n          CRISPY FRIED ARTICHOKES\n          $18.00\n          eggplant purée, chickpea salad, extra virgin olive oil, espelette\n\n          BURRATA\n          $18.00\n          roasted gold beets, arugula, pistachios, micro basil, white balsamic vinaigrette\n\n          SALAD VERTE\n          $16.00\n          avocado, radishes, lime, garlic, honey\n\n          SALADE MEDITERRANEENE\n          $18.00\n          flat beans, chickpeas, cucumbers, tomatoes, peppers, red onions, feta, cilantro, mint, lemon vinaigrette\n\n          TUNA CARPACCIO NICOISE\n          $20.00\n          a deconstructed version of tuna Niçoise salad over a raw tuna carpaccio\n\n          GRILLED OCTOPUS\n          $22.00\n          marinated gigante beans, persillade sauce"], ["average_rating", 4.5], ["price_point", 30], ["created_at", "2022-12-09 16:33:42.046441"], ["updated_at", "2022-12-09 16:33:42.046441"], ["phone_number", "212-873-6423"], ["neighborhood", "Upper West Side"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Cote NYC"], ["description", "COTE, the carnivorous vision of proprietor Simon Kim,\n          blends the dining experience of Korean barbeque together with the\n          hallmarks of a classic American steakhouse. The result is a unique,\n          convivial and interactive atmosphere, accompanied by\n          the highest quality USDA Prime beef, an impeccable 1200+ label\n          wine list, and a suite of classic-but-creative cocktails."], ["cuisine", "Korean"], ["address", "16 West 22nd St, New York, NY 10010"], ["tables", 30], ["menu", "Ribeye\n          $88.00,\n          NY Strip\n          $44.00,\n          Cote Steak\n          $29.00,\n          The Flatiron\n          $49.00"], ["average_rating", 4.6], ["price_point", 50], ["created_at", "2022-12-09 16:33:42.047299"], ["updated_at", "2022-12-09 16:33:42.047299"], ["phone_number", "212-401-7986"], ["neighborhood", "Chelsea"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Sea Wolf - Bushwick"], ["description", "Sea Wolf is Bushwick's own little surf shack\n          for herbivores and omnivores alike. With daily oyster specials,\n          a full bar featuring a selection of rotating frozen cocktails,\n          Sea Wolf is your island oasis in the heart of industrial Brooklyn."], ["cuisine", "Seafood"], ["address", "19 Wyckoff Ave, Brooklyn, Ny 11237"], ["tables", 40], ["menu", "Soup/Salad\n          Chowder\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Chilled Corn Soup\n          Sweet Corn, Cream\n\n          Cup\n          $8.00\n          Bowl\n          $12.00\n          Sandwiches\n          Cold Lobster Roll\n          $26.00\n          Shrimp Roll\n          $16.00\n          Chives, Scallion, Dill, Parsley, Lemon Brown Butter Herb Mayo\n\n          Brunch Sides\n          Grilled Half Avocado\n          $5.00\n          Fingerlings Brunch\n          $4.00\n          Brunch Small Plates\n          Deviled Eggs\n          $7.00\n          Sriracha Powder\n\n          Fried Clam Strips\n          $12.00\n          Local clams and house-made tartar sauce\n\n          Brunch\n          11am-3:30pm\n\n          Chia Pudding\n          $13.00\n          Avocado Toast Brunch\n          $14.00"], ["average_rating", 4.4], ["price_point", 18], ["created_at", "2022-12-09 16:33:42.048127"], ["updated_at", "2022-12-09 16:33:42.048127"], ["phone_number", "718-366-3272"], ["neighborhood", "Bushwick"]]
+  [1m[36mRestaurant Create (0.1ms)[0m  [1m[32mINSERT INTO "restaurants" ("name", "description", "cuisine", "address", "tables", "menu", "average_rating", "price_point", "created_at", "updated_at", "phone_number", "neighborhood") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Meadowsweet"], ["description", "Polo and Stephanie opened Meadowsweet together in 2014\n          and they see it as an extension of their home. They both enjoy good\n          food, friendly service and a comfortable atmosphere to dine in\n          and that is exactly what they want their guests to experience\n         when visiting Meadowsweet. When they are not at Meadowsweet you will\n          find them upstate at Meadowsweet Farm with their daughter and son\n         where they grow some amazing vegetables with Polo’s Dad to serve at\n         Meadowsweet. They look forward to seeing you at Meadowsweet soon!"], ["cuisine", "American"], ["address", "149 Broadway, Brooklyn, NY 11211"], ["tables", 15], ["menu", "olive oil rolls\n          honey butter\n          $19\n          crispy baby artichokes\n          shaved parmesan, baby arugula, parsley & lemon\n          $18\n          burrata & figs\n          black mission & tiger figs, pistachio-basil pesto, pickled kumquats, pistachio-sesame dukkah & sourdough crisp\n          $18\n          heirloom tomato salad\n          kalamata olive, cantabrian white anchovy, feta & fresh herbs\n          $17\n          fried green tomatoes\n          buttermilk ranch, fine herbs & parmesan\n          $18\n          shishito peppers & corn\n          poblano romesco, tahini, labneh & chile-lime dressing\n          $24\n          crispy duck confit\n          marinated mango, endive, labneh, lime & honey\n          $24\n          spanish octopus & chorizo\n          farro, olives, pickled peppers, pimenton aioli & mollica\n          $26\n          tajarin, chanterelles & truffle\n          summer truffle, butter & parmesan\n          $24\n          cavatelli & fennel sausage\n          shishito pepper, pecorino romano & parmesan\n          $24\n          cocoa pappardelle & braised wagyu beef ragu\n          fresh ricotta"], ["average_rating", 4.8], ["price_point", 31], ["created_at", "2022-12-09 16:33:42.048941"], ["updated_at", "2022-12-09 16:33:42.048941"], ["phone_number", "212-401-7986"], ["neighborhood", "Williamsburg"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:34:25 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 2.9ms | Allocations: 4824)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:34:25 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (1.1ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.3ms | Allocations: 287)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 12.4ms | Allocations: 10083)
+Completed 200 OK in 21ms (Views: 8.8ms | ActiveRecord: 6.5ms | Allocations: 13813)
+
+
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants" ORDER BY "restaurants"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:35:48 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1110)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:35:48 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.8ms | Allocations: 1809)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.4ms | Allocations: 2223)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:36:20 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 51ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 926)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:36:20 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.6ms | Allocations: 161)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 20)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 3.9ms | Allocations: 1796)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.7ms | Allocations: 2193)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:37:15 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.2ms | Allocations: 909)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:37:15 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 2.4ms | Allocations: 241)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 18.1ms | Allocations: 2288)
+Completed 200 OK in 35ms (Views: 25.7ms | ActiveRecord: 0.2ms | Allocations: 3148)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:47:25 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 19.3ms | Allocations: 4013)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:47:25 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (3.7ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.3ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.8ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 6.9ms | Allocations: 1934)
+Completed 200 OK in 8ms (Views: 3.6ms | ActiveRecord: 3.7ms | Allocations: 2345)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:47:47 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 905)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:47:47 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.3ms | Allocations: 1856)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.3ms | Allocations: 2270)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 11:48:12 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 902)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:48:12 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.2ms | Allocations: 1856)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.5ms | Allocations: 2277)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 11:53:26 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.5ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.4ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 28.0ms | Allocations: 4717)
+Completed 200 OK in 38ms (Views: 29.9ms | ActiveRecord: 10.6ms | Allocations: 5139)
+
+
