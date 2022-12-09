@@ -4344,3 +4344,73 @@ Processing by Api::SessionsController#show as JSON
 Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 905)
 
 
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 14:47:17 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 899)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 14:47:41 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.2ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 2.2ms | Allocations: 1856)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms | Allocations: 2264)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 14:51:31 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.6ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.2ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 5.6ms | Allocations: 1856)
+Completed 200 OK in 7ms (Views: 5.5ms | ActiveRecord: 0.6ms | Allocations: 2273)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 14:51:54 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.4ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 1.9ms | Allocations: 1856)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.4ms | Allocations: 2273)
+
+
+Started GET "/api/session" for 127.0.0.1 at 2022-12-09 14:52:25 -0500
+Processing by Api::SessionsController#show as JSON
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."session_token" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:26:in `current_user'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.1ms | Allocations: 911)
+
+
+Started GET "/api/restaurants" for 127.0.0.1 at 2022-12-09 14:52:25 -0500
+Processing by Api::RestaurantsController#index as JSON
+  Rendering api/restaurants/index.json.jbuilder
+  [1m[36mRestaurant Load (0.3ms)[0m  [1m[34mSELECT "restaurants".* FROM "restaurants"[0m
+  ↳ app/views/api/restaurants/index.json.jbuilder:1
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.1ms | Allocations: 173)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/_restaurant.json.jbuilder (Duration: 0.0ms | Allocations: 21)
+  Rendered api/restaurants/index.json.jbuilder (Duration: 1.9ms | Allocations: 1856)
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 2264)
+
+
