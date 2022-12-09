@@ -4,6 +4,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+  # namespace :api do
+  #   # ...
+  #   resources :users, only: [:create]
+  #   resource :session, only: [:create, :show, :destroy]
+  #   resources :restaurants, only: [:show, :index, :create]
+  # end
   namespace :api, defaults: {format: :json} do
     # ...
     resources :users, only: [:create]
@@ -11,5 +17,6 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:show, :index, :create]
   end
 
+  # get '/restaurants/:id', to: 'restaurants#show'
   post 'api/test', to: 'application#test'
 end

@@ -18,17 +18,18 @@ export const receiveRestaurants = (restaurants) => {
 }
 
 export const fetchRest = (restaurantId) => async (dispatch) => {
-  const res = await csrfFetch(`api/restaurants/${restaurantId}`);
-
+  // debugger
+  const res = await csrfFetch(`/api/restaurants/${restaurantId}`);
   if (res.ok) {
-    const data = res.json();
+    const data = await res.json();
     // sessionStorage.setItem("restaurantData", data);
-    dispatch(receiveRest(data));
+    dispatch(receiveRest(data.restaurant));
+    // debugger
   }
 };
 
 export const fetchRestaurants = () => async (dispatch) => {
-  const res = await csrfFetch(`api/restaurants`);
+  const res = await csrfFetch(`/api/restaurants`);
   if (res.ok) {
     const restaurants = await res.json();
     // sessionStorage.setItem("restaurantData", data);

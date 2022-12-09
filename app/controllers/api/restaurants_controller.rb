@@ -4,16 +4,19 @@ class Api::RestaurantsController < ApplicationController
     @restaurant = Restaurant.find_by(id: params[:id]) if params[:id]
 
     if @restaurant
-      render 'api/restaurants/show'
+      # render 'api/restaurants/show'
+      # debugger
+      render :show
     else
+      # debugger
       render json: { restaurant: nil }
     end
+
   end
 
   def index
     @restaurants = Restaurant.all
     if @restaurants
-      # debugger
       render 'api/restaurants/index'
     else
       render json: { restaurant: nil }
