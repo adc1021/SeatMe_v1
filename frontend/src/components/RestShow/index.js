@@ -18,9 +18,16 @@ const RestShow = () => {
   return (
     <>
       <NavBar />
-      {restaurant.name}
       <div>
-        <div id="img-container"></div>
+        <div id="img-container">
+          <img id="rest-img"></img>
+          <button id="save-button">
+            <div id="save-button-div">
+              <img alt="" id="save-svg" src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"></img>
+              <div id="text-div">Save this restaurant</div>
+            </div>
+          </button>
+        </div>
       </div>
     </>
   )
