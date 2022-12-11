@@ -46,9 +46,10 @@ const RestaurantCarousel = () => {
               })} */}
               <CarouselProvider
                 naturalSlideWidth={125}
-                naturalSlideHeight={300}
+                isIntrinsicHeight={true}
                 totalSlides={restaurants.length}
                 visibleSlides={4}
+                step={4}
                 dragEnabled={false}
               >
                 <Slider>
