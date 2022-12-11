@@ -9,7 +9,7 @@ const Splash = () => {
     <>
       <NavBar />
       <ReservationHeader />
-      <div>
+      <div id="main-wrap">
         <section id="location-banner">
           <div id="location-div">
             <div id="section-div-wrap">
@@ -29,7 +29,9 @@ const Splash = () => {
             </div>
           </div>
         </section>
+        <div>
         <RestaurantCarousel />
+        </div>
       </div>
     </>
   );

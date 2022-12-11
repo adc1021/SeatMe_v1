@@ -1,11 +1,17 @@
+#rest-wrapper {
+    margin: 36;
+
+}
+
 #restaurant-list{
-    display: flex;
+    /* display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
     /* list-style-type: none;
     margin: 0;
     margin-block: 0;
     padding: 0; */
+    padding-left: 100px;
 }
 
 #carousel-section {
@@ -64,4 +70,42 @@ ul {
 #rest-cards {
     width: 236px!important;
     isplay: list-item;
+}
+
+.scroll-button {
+    top: 200px!important;
+
+    margin-top: 0;
+    position: absolute;
+    z-index: 3;
+    align-items: center;
+    background-color: #fff;
+    border: 0.0625rem solid #d8d9db;
+    border-radius: 50%;
+    box-shadow: 0 0.125rem 0.5rem #9996;
+    display: inline-flex;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+}
+
+
+#right-scroll-button {
+    right: 67px;
+    transform: rotate(-90deg);
+}
+
+#left-scroll-button {
+    left: 75px;
+    transform: rotate(90deg);
+}
+
+svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.scroll-button:hover {
+    border-color: red;
+    border-width: 2px;
 }

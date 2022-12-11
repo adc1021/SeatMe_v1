@@ -3,6 +3,15 @@ import { useDispatch, useSelector } from "react-redux";
 import RestaurantCard from "../RestCard";
 import * as restActions from "../../store/restaurantsReducer";
 import "./RestCarousel.css";
+import React from "react";
+import {
+  CarouselProvider,
+  Slider,
+  Slide,
+  ButtonBack,
+  ButtonNext,
+} from "pure-react-carousel";
+import "pure-react-carousel/dist/react-carousel.es.css";
 
 const RestaurantCarousel = () => {
   const dispatch = useDispatch();
@@ -17,7 +26,7 @@ const RestaurantCarousel = () => {
   }, []);
 
   return (
-    <div>
+    <div id="rest-wrapper">
       <section id="carousel-section">
         <header id="section-header">
           <div id="Order-takeout">
@@ -28,15 +37,41 @@ const RestaurantCarousel = () => {
         <div id="outer-carousel-div">
           <div id="inner-carousel-div">
             <ul id="restaurant-list">
-              {restaurants.map((rest) => {
+              {/* {restaurants.map((rest, i) => {
                 return (
                   <li id="rest-cards">
                     <RestaurantCard restaurantId={rest.id} key={rest.id} />
-                    {/* <p>{rest.name}</p>
-              <p>{rest.phoneNumber}</p> */}
                   </li>
                 );
-              })}
+              })} */}
+              <CarouselProvider
+                naturalSlideWidth={125}
+                naturalSlideHeight={300}
+                totalSlides={restaurants.length}
+                visibleSlides={4}
+                dragEnabled={false}
+              >
+                <Slider>
+                  {restaurants.map((rest, i) => {
+                    return (
+                      <Slide key={rest.id} index={i}>
+                        <li id="rest-cards">
+                          <RestaurantCard restaurantId={rest.id} />
+                        </li>
+                      </Slide>
+                    );
+                  })}
+                  {/* {cards.map((card, i) => {
+                return <Slide index={i} key={card.id}>{card}</Slide>
+              })} */}
+                </Slider>
+                <ButtonNext className="scroll-button" id="right-scroll-button">
+                  <i class="fa-solid fa-v"></i>
+                </ButtonNext>
+                <ButtonBack className="scroll-button" id="left-scroll-button">
+                  <i class="fa-solid fa-v"></i>
+                </ButtonBack>
+              </CarouselProvider>
             </ul>
           </div>
         </div>

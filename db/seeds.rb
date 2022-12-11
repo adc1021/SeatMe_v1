@@ -291,6 +291,75 @@ ApplicationRecord.transaction do
         rest5.photo.attach(io: image5, filename: "Meadowsweet_card.jpeg")
         rest5.save!
 
+        rest6 = Restaurant.create(
+          name: "Double Zero",
+          description: "Double Zero is a plant-based pizza concept from
+          Matthew Kenney in New York City’s East Village. Serving small plates,
+          organic pizza prepared in a wood burning oven,
+          vegan ice cream and organic wines, Double Zero showcases
+          Matthew Kenney’s delicious, beautiful, vibrant, and nutritious
+          cuisine in one of New York’s favorite neighborhoods.",
+          cuisine: "Italian",
+          address: "65 2nd Ave, New York, NY 10003",
+          tables: 10,
+          menu: "Brunch
+          All brunch items are served with homemade roasted potatoes
+
+          Pancakes*
+          $16.00
+          Seasonal fruit, maple syrup, ricotta cheese
+
+          BLT*
+          $15.00
+          Eggplant, lettuce, tomatoes, avocado, pesto
+
+          Egg Sandwish*
+          $15.00
+          Egg tofu, avocado, tomatoes, onions, arrabbiata sauce
+
+          Avocado Toast*
+          $15.00
+          Avocado, onions, raddish, zaatar, cilantro
+
+          Mushrooms Toast
+          $15.00
+          Wild mushrooms, truffle cashew, herbs
+
+          Egg Pizza
+          $19.00
+          Egg tofu scramble, tomatoes, roasted homemade potatoe, peppers, cashew cheese",
+          average_rating: 4.5,
+          price_point: 29,
+          phone_number: "212-777-1608",
+          neighborhood: "East Village",
+        )
+
+        image6 = URI.open("https://seatme-dev.s3.amazonaws.com/double_zero_card.jpeg")
+        rest6.photo.attach(io: image6, filename: "double_zero_card.jpeg")
+        rest6.save!
+
+
+        rest7 = Restaurant.create(
+          name: "Bar Primi",
+          description: "Bar Primi is a corner pasta shop devoted to
+          ‘primi piatti,’ the pasta course. What began as an idea for a
+           small space in New York's East Village has since become an
+            essential in chef and co-owner Andrew Carmellini's range:
+             fresh pasta traditionally prepared and cooked to order",
+          cuisine: "Italian",
+          address: "325 Bowery, New York, NY 10003",
+          tables: 25,
+          menu: "View menu on restaurant's website",
+          average_rating: 4.6,
+          price_point: 28,
+          phone_number: "212-777-1608",
+          neighborhood: "Lower East Side",
+        )
+
+        image7 = URI.open("https://seatme-dev.s3.amazonaws.com/double_zero_card.jpeg")
+        rest7.photo.attach(io: image7, filename: "double_zero_card.jpeg")
+        rest7.save!
+
 
     puts "Done!"
   end
