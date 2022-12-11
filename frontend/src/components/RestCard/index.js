@@ -9,45 +9,44 @@ const RestaurantCard = ({ restaurantId }) => {
   let history = useHistory();
 
   const restaurant = useSelector((state) =>
-  state.restaurants[restaurantId] ? state.restaurants[restaurantId] : {}
+    state.restaurants[restaurantId] ? state.restaurants[restaurantId] : {}
   );
   // debugger
   const dollarSign = () => {
     if (restaurant.pricePoint < 20) {
       return (
         <span id="dollar-span">
-         · $<span id="lighter-dollar">$$$</span>
+          · $<span id="lighter-dollar">$$$</span>
         </span>
       );
       // span.appendChild(childSpan)
     } else if (restaurant.pricePoint > 20 && restaurant.pricePoint < 50) {
       return (
         <span id="dollar-span">
-         · $$$<span id="lighter-dollar">$</span>
+          · $$$<span id="lighter-dollar">$</span>
         </span>
       );
     } else if (restaurant.pricePoint >= 50) {
       return (
         <span id="dollar-span">
-         · $$$$<span id="lighter-dollar"></span>
+          · $$$$<span id="lighter-dollar"></span>
         </span>
       );
     }
   };
 
-
-
   const handleTime = (e) => {
     e.stopPropagation();
     // history.replace('restaurants/api')
     // history.push(`restaurants/${restaurantId}`)
-  }
-
+  };
+  
   return (
     <NavLink to={`restaurants/${restaurantId}`} target="_blank" id="card-body">
       <div>
         <img
-          src="https://cdn.vox-cdn.com/thumbor/PrZb_-PS73VhBAlmIArF8cIdZLE=/0x0:4928x3280/1200x0/filters:focal(0x0:4928x3280):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/3913500/Faro_gnocchi.0.jpg"
+          alt=""
+          src={restaurant.photoUrl}
           id="filler-image"
         ></img>
         <div id="restaurant-info">
@@ -55,6 +54,7 @@ const RestaurantCard = ({ restaurantId }) => {
           <div id="rating-wrapper">
             <div>
               <img
+                alt=""
                 id="star-rating"
                 src="https://p.kindpng.com/picc/s/391-3915578_5-star-rating-red-5-star-rating-hd.png"
               ></img>
@@ -73,7 +73,9 @@ const RestaurantCard = ({ restaurantId }) => {
             </span>
           </div>
           <div id="time-slots">
-            <NavLink id="time-slot-link" to="/show" onClick={handleTime}>12:30 PM</NavLink>
+            <NavLink id="time-slot-link" to="/show" onClick={handleTime}>
+              12:30 PM
+            </NavLink>
           </div>
         </div>
       </div>

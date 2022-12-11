@@ -1,0 +1,38 @@
+#name-span {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 16px 8px;
+}
+
+#logout-button {
+    color: #da3743;
+    font-size: 16px;
+    padding: 8px 16px;
+    background: #fff;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+}
+
+#logout-button:hover {
+    background-color: rgb(243, 238, 238);
+    color: black;
+}
+
+#profile-show-button {
+    font-size: 16px;
+    padding: 8px 16px;
+    background: #fff;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: relative;
+    text-align: left;
+}
+
+#profile-show-button:hover {
+    background-color: rgb(243, 238, 238);
+    color: black;
+}

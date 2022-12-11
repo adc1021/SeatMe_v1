@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { useDispatch } from 'react-redux';
-import * as sessionActions from '../../store/session';
+import { useDispatch } from "react-redux";
+import { Redirect, useHistory } from "react-router-dom";
+import * as sessionActions from "../../store/session";
+import './ProfileButton.css'
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
+  const history = useHistory();
 
   const openMenu = () => {
     if (showMenu) return;
@@ -18,7 +21,7 @@ function ProfileButton({ user }) {
       setShowMenu(false);
     };
 
-    document.addEventListener('click', closeMenu);
+    document.addEventListener("click", closeMenu);
 
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
@@ -28,19 +31,29 @@ function ProfileButton({ user }) {
     dispatch(sessionActions.logout());
   };
 
+  const profileRedirect = (e) => {
+    history.push(`/users/${user.id}`)
+  }
+
   return (
     <>
-      <button id="profile-button" onClick={openMenu}>
-        <i class="fa-regular fa-user"></i>
-      </button>
+      <div>
+        <div id="prof-button-div">
+        <button id="profile-button" onClick={openMenu}>
+          <div id="inner-profile-div">
+            <i class="fa-regular fa-user"></i>
+          </div>
+        </button>
+        </div>
+      </div>
+
       {showMenu && (
-        <ul className="profile-dropdown">
-          <li>{user.email}</li>
-          <li>{user.phoneNumber}</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
-        </ul>
+        <div className="profile-dropdown">
+            <span id="name-span">Hello, {user.firstName}!</span>
+            <button onClick={profileRedirect} id="profile-show-button">My Profile</button>
+            <button onClick={logout} id="logout-button">Sign Out</button>
+
+        </div>
       )}
     </>
   );

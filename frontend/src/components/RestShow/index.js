@@ -1,36 +1,86 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
-import './RestShow.css'
+import "./RestShow.css";
 
 const RestShow = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const restaurant = useSelector(state => (
-     state.restaurants[id] ?  state.restaurants[id] : {} ))
+  const [bool, setBool] = useState(true);
+  const restaurant = useSelector((state) =>
+    state.restaurants[id] ? state.restaurants[id] : {}
+  );
 
-     useEffect(() => {
-      dispatch(fetchRest(id))
-     }, [])
+  const saveTag = bool ? (<img
+    alt=""
+    id="save-svg"
+    src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
+  ></img>) : (
+    <img
+                alt=""
+                id="save-svg"
+                src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg"
+              ></img>
+  )
+
+  useEffect(() => {
+    dispatch(fetchRest(id));
+  }, []);
+
+  const handleSave = (e) => {
+    e.preventDefault();
+    setBool(!bool)
+
+  }
+
 
   return (
     <>
       <NavBar />
       <div>
         <div id="img-container">
-          <img id="rest-img"></img>
-          <button id="save-button">
+          <div></div>
+          <img id="rest-img" alt="" src={restaurant.photoUrl}></img>
+          <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
-              <img alt="" id="save-svg" src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"></img>
+              {/* <img
+                alt=""
+                id="save-svg"
+                src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
+              ></img> */}
+              {saveTag}
               <div id="text-div">Save this restaurant</div>
             </div>
           </button>
         </div>
+        <div id="description-review-div">
+          <div id="content-div">
+            <section id="anchor-tags">
+              <nav id="anchor-nav">
+                <ol id="nav-ol">
+                  <li>
+                    <button className="anchor">Overview</button>
+                  </li>
+                  <li>
+                    <button className="anchor">Menu</button>
+                  </li>
+                  <li>
+                    <button className="anchor">Reviews</button>
+                  </li>
+                </ol>
+              </nav>
+            </section>
+            <section>
+              <h1 id="restaurant-header">{restaurant.name}</h1>
+            </section>
+          </div>
+          <div></div>
+        </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default RestShow;
