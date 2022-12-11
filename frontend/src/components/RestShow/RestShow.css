@@ -6,6 +6,7 @@
 
 #rest-img {
     width: 100%;
+    object-fit: cover;
     height: 460px;
 }
 
@@ -64,4 +65,91 @@ img {
 
 #save-svg {
     padding-right: 7px;
+}
+
+#description-review-div {
+    padding: 0 16px 16px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    margin-top: -51px;
+    position: relative;
+}
+
+body {
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symb
+}
+
+#content-div {
+    background-color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-right: 32px;
+    padding: 0 16px calc(128px - 0.25rem);
+    width: 40rem;
+}
+
+#anchor-tags {
+    border-radius: 4px;
+    padding: 16px 16px 0;
+    background: #fff;
+    padding-top: 16px;
+    position: sticky;
+    top: -0.0625rem;
+    transition: all .15s ease-in-out;
+    z-index: 2;
+}
+
+#anchor-nav {
+    box-shadow: inset 0 -0.0625rem 0 0 #d8d9db;
+    position: relative;
+    display: block;
+}
+
+#nav-ol {
+    list-style-type: none;
+    margin: 0;
+    overflow-x: auto;
+    padding: 0;
+    scrollbar-width: none;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+button.anchor {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    appearance: none;
+    background-color: initial;
+    border: none;
+    color: #6f737b;
+    cursor: pointer;
+    margin: 0 0 16px;
+    padding: 0;
+    text-transform: none;
+    overflow: visible;
+
+}
+
+#restaurant-header {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 36px;
+    border-bottom: 0.0625rem solid #d8d9db;
+    margin: 0;
+    padding: 32px 0;
+}
+
+#menu {
+    margin-top: 32px;
+    display: block;
 }

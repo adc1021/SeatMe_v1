@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:show, :index, :create]
   end
 
-  # get '/restaurants/:id', to: 'restaurants#show'
+  get '/restaurants/:id', to: 'restaurants#show'
   post 'api/test', to: 'application#test'
+
 end

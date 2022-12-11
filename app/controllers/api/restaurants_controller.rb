@@ -16,11 +16,11 @@ class Api::RestaurantsController < ApplicationController
 
   def index
     @restaurants = Restaurant.all
-    if @restaurants
-      render 'api/restaurants/index'
-    else
-      render json: { restaurant: nil }
-    end
+    # if @restaurants
+    #   render 'api/restaurants/index'
+    # else
+    #   render json: { restaurant: nil }
+    # end
   end
 
   # def create
