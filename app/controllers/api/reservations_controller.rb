@@ -12,7 +12,12 @@ class Api::ReservationsController < ApplicationController
     end
 
     def show
+        # debugger
         @reservation = Reservation.find_by(id: params[:id])
+
+        if !@reservation
+            render json: { reservation: nil }
+        end
     end
 
     def index

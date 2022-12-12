@@ -30,7 +30,7 @@ const Splash = () => {
           </div>
         </section>
         <div>
-        <RestaurantCarousel />
+          <RestaurantCarousel />
         </div>
       </div>
     </>

@@ -1,6 +1,12 @@
+import { useState } from 'react';
 import './ReservationForm.css';
 
 const ReservationForm = () => {
+  const [partySize, setPartySize] = useState("")
+  const [date, setDate] = useState("")
+  const [time, setTime] = useState("")
+
+
   return (<div style={{ width: "20rem" }}>
     <div id="sticky-div">
       <article>
@@ -10,7 +16,7 @@ const ReservationForm = () => {
             <label style={{fontSize: "14px", fontWeight: "500", marginLeft: "16px" }}>Party Size</label>
           </div>
           <div style={{background: "#fff", height: "3rem", position: "relative"}}>
-            <select id="party-size-select">
+            <select id="party-size-select" value={partySize} onChange={ e => setPartySize(e.target.value)} >
               <option value={1}>1 person</option>
               <option value={2}>2 people</option>
               <option value={3}>3 people</option>
@@ -40,9 +46,8 @@ const ReservationForm = () => {
 
           </div>
           <div style={{display: "flex"}}>
-            <input type="date"></input>
-            <select>
-            <option>11:00 AM</option>
+            <input type="date" value={date} onChange={e => setDate(e.target.value)}></input>
+            <select value={time} onChange={ e => setTime(e.target.value)}>
               <option value="2000-02-01T12:00:00">12:00 PM</option>
               <option value="2000-02-01T13:00:00">1:00 PM</option>
               <option value="2000-02-01T14:00:00">2:00 PM</option>
