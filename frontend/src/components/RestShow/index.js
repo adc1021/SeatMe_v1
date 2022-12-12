@@ -77,7 +77,7 @@ const RestShow = () => {
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
           </div>
-         <ReservationForm />
+         <ReservationForm restaurantId={ id }/>
         </div>
       </div>
     </>

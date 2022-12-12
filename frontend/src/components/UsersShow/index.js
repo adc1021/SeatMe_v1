@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import React from "react";
 import NavBar from "../NavBar";
 import "./UsersShow.css";
@@ -25,11 +25,11 @@ const UsersShow = () => {
             <div id="nav-page-wrapper">
               <nav id="page-nav">
                 <ul>
-                  <li>Reservations</li>
-                  <li>Saved Restaurants</li>
-                  <li>Account Details</li>
-                  <li>Preferences</li>
-                  <li>Payment Methods</li>
+                  <li ><Link class="link">Reservations</Link></li>
+                  <li><Link class="link">Saved Restaurants</Link></li>
+                  <li><Link class="link">Account Details</Link></li>
+                  <li><Link class="link">Preferences</Link></li>
+                  <li><Link class="link">Payment Methods</Link></li>
                 </ul>
               </nav>
             </div>
