@@ -77,3 +77,14 @@ li {
     margin: 8px;
     font-weight: 500;
 }
+
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: red;
+}

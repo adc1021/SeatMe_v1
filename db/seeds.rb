@@ -360,9 +360,12 @@ ApplicationRecord.transaction do
         rest7.photo.attach(io: image7, filename: "double_zero_card.jpeg")
         rest7.save!
 
-        Reservation.create(date: "12-8-2022", time: "8:00", party_size: 5, user_id: 1, restaurant_id: 1 )
-        Reservation.create(date: "12-12-2022", time: "7:00", party_size: 4, user_id: 4, restaurant_id: 1 )
-        Reservation.create(date: "12-8-2022", time: "4:00", party_size: 1, user_id: 3, restaurant_id: 1 )
+        Reservation.create(date: "12-8-2022", time: "8:00",
+        party_size: 5, user_id: 1, restaurant_id: 1 )
+        Reservation.create(date: "12-12-2022", time: "7:00", party_size: 4,
+        user_id: 4, restaurant_id: 1 )
+        Reservation.create(date: "12-8-2022", time: "4:00", party_size: 1,
+         user_id: 3, restaurant_id: 1 )
 
 
     puts "Done!"

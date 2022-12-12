@@ -2,8 +2,7 @@ import csrfFetch from "./csrf";
 
 export const RECEIVE_RESERVATION = "reservations/RECEIVE_RESERVATION";
 export const RECEIVE_RESERVATIONS = "reservations/RECEIVE_RESERVATIONS";
-export const REMOVE_RESERVATION = "reservations/REMOVE_RESERVATIONS"
-
+export const REMOVE_RESERVATION = "reservations/REMOVE_RESERVATIONS";
 
 export const receiveReservation = (reservation) => {
   // debugger
@@ -16,65 +15,80 @@ export const receiveReservation = (reservation) => {
 export const receiveReservations = (reservations) => {
   return {
     type: RECEIVE_RESERVATIONS,
-    reservations
-  }
-}
+    reservations,
+  };
+};
 
 export const removeReservation = (reservationId) => {
   return {
     type: REMOVE_RESERVATION,
-    reservationId
-  }
-}
-
-
+    reservationId,
+  };
+};
 
 export const fetchReservation = (reservationId) => async (dispatch) => {
   // debugger
-  const res = await fetch(`/api/reservations/${reservationId}`)
+  const res = await fetch(`/api/reservations/${reservationId}`);
+  // debugger
+  if (res.ok) {
+    const data = await res.json();
+
+    dispatch(receiveReservation(data));
+  }
+};
+
+export const fetchReservations = () => async (dispatch) => {
+  const res = await fetch(`/api/reservations`);
+
+  if (res.ok) {
+    const reservations = await res.json();
+
+    dispatch(receiveReservations(reservations));
+  }
+};
+
+export const createReservation = (reservation) => async (dispatch) => {
+  // debugger
+  const res = await csrfFetch(`/api/reservations`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(reservation),
+  });
   // debugger
   if(res.ok) {
-    const data = await res.json();
+    const data = res.json();
 
     dispatch(receiveReservation(data))
   }
-}
-
-export const fetchReservations = () => async (dispatch) => {
-  const res = await fetch(`api/reservations`)
-
-  if(res.ok) {
-    const reservations = await res.json();
-
-    dispatch(receiveReservations(reservations))
-  }
-}
+};
 
 // export const updateReservations = (reservationId) => async (dispatch) => {
 //   const res = await fetch(`api/reservations/${reservationId}`, { method: 'POST'})
 // }
 
-export const deleteReservation = (reservationId) => async(dispatch) => {
-  const res = await fetch(`api/reservations/${reservationId}`, { method: 'DELETE'})
+export const deleteReservation = (reservationId) => async (dispatch) => {
+  const res = await fetch(`/api/reservations/${reservationId}`, {
+    method: "DELETE",
+  });
 
-  dispatch(removeReservation(reservationId))
-}
+  dispatch(removeReservation(reservationId));
+};
 
 const reservationsReducer = (oldState = {}, action) => {
-  const newState = { ...oldState }
+  const newState = { ...oldState };
 
-  switch(action.type) {
+  switch (action.type) {
     case RECEIVE_RESERVATION:
-      newState[action.reservation.id] = action.reservation
-      return newState
+      newState[action.reservation.id] = action.reservation;
+      return newState;
     case RECEIVE_RESERVATIONS:
-      return { ...newState, ...action.reservations }
+      return { ...newState, ...action.reservations };
     case REMOVE_RESERVATION:
-      delete newState[action.reservationId]
-      return newState
+      delete newState[action.reservationId];
+      return newState;
     default:
-    return newState
+      return newState;
   }
-}
+};
 
 export default reservationsReducer;
