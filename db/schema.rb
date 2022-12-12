@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_09_154532) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_12_003037) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -42,6 +42,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_154532) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "restaurant_id", null: false
+    t.datetime "date", null: false
+    t.datetime "time", null: false
+    t.integer "party_size", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "restaurant_id"], name: "index_reservations_on_user_id_and_restaurant_id", unique: true
+  end
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name", null: false
     t.text "description", null: false
@@ -56,6 +67,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_154532) do
     t.string "phone_number"
     t.string "neighborhood"
     t.index ["name"], name: "index_restaurants_on_name", unique: true
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "restaurant_id", null: false
+    t.text "comment", null: false
+    t.integer "overall_rating", null: false
+    t.integer "food_rating", null: false
+    t.integer "service_rating", null: false
+    t.integer "ambience_rating", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "restaurant_id"], name: "index_reviews_on_user_id_and_restaurant_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -73,4 +97,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_09_154532) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "reservations", "restaurants"
+  add_foreign_key "reservations", "users"
 end

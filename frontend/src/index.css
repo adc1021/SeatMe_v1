@@ -17,14 +17,13 @@ body {
 }
 
 #main-wrap {
-    padding: 0 32px; 
+    padding: 0 32px;
 }
 
 #logo {
     display: flex;
     flex-direction: row;
-    /* border-style: none solid none none; */
-    border-right: 1px solid #d8d9db;
+    border-right: 0.0625rem solid #0000000f;
     padding-right: 5px;
     margin-left: 18px;
 }
@@ -51,6 +50,7 @@ body {
     height: 3.375rem;
     padding: 0 16px;
     position: relative;
+    border-bottom: 0.0625rem solid #0000000f;
 }
 
 
