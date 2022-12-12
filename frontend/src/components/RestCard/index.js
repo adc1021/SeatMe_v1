@@ -19,8 +19,13 @@ const RestaurantCard = ({ restaurantId }) => {
           · $<span id="lighter-dollar">$$$</span>
         </span>
       );
-      // span.appendChild(childSpan)
-    } else if (restaurant.pricePoint > 20 && restaurant.pricePoint < 50) {
+    } else if (restaurant.pricePoint >= 20 && restaurant.pricePoint < 30) {
+      return (
+        <span id="dollar-span">
+          · $$<span id="lighter-dollar">$$</span>
+        </span>
+      );
+    } else if (restaurant.pricePoint >= 30 && restaurant.pricePoint < 40) {
       return (
         <span id="dollar-span">
           · $$$<span id="lighter-dollar">$</span>
@@ -40,15 +45,11 @@ const RestaurantCard = ({ restaurantId }) => {
     // history.replace('restaurants/api')
     // history.push(`restaurants/${restaurantId}`)
   };
-  
+
   return (
     <NavLink to={`restaurants/${restaurantId}`} target="_blank" id="card-body">
       <div>
-        <img
-          alt=""
-          src={restaurant.photoUrl}
-          id="filler-image"
-        ></img>
+        <img alt="" src={restaurant.photoUrl} id="filler-image"></img>
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
           <div id="rating-wrapper">

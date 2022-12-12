@@ -73,7 +73,7 @@ ul {
 }
 
 .scroll-button {
-    top: 200px!important;
+    top: 220px;
 
     margin-top: 0;
     position: absolute;
@@ -91,12 +91,12 @@ ul {
 
 
 #right-scroll-button {
-    right: 67px;
+    right: 50px;
     transform: rotate(-90deg);
 }
 
 #left-scroll-button {
-    left: 75px;
+    left: 90px;
     transform: rotate(90deg);
 }
 

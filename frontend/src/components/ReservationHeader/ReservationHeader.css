@@ -19,7 +19,7 @@
 
 #res-header-title {
     color: #fff;
-    font-size: 48px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 56px;
 }
@@ -34,7 +34,31 @@
     min-width: 14rem;
     border-radius: 4px;
     background: white;
-    max-height: 3rem;
+    min-height: 3rem;
+}
+
+@media (max-width: 767px) {
+    #date-time-party-container {
+        display: block;
+        flex-direction: column;
+        margin: 0;
+        min-width: 100%;
+        width: 100%;
+    }
+
+    #flex-box {
+        flex-direction: column;
+        max-width: 25rem;
+        min-width: 18rem;
+    }
+}
+
+@media (min-width: 767px) {
+    #res-header-title {
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+    }
 }
 
 .dropdown {
@@ -44,15 +68,23 @@
     cursor: pointer;
     font-size: 16px;
     outline: none;
+    text-decoration: none;
 }
 
 #date-menu {
-    border-style: none solid none none;
-    /* box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.3); */
+    border-right: 0.0625rem solid #0000000f;
+    min-height: 3rem;
+}
+
+#date-win {
+    min-height: 3rem;
+    border: none;
+    border-right: 0.0625rem solid #0000000f;
 }
 
 #time-container {
-    border-style: none solid none none;
+    border-right: 0.0625rem solid #0000000f;
+    min-height: 3rem;
 }
 
 #party-size {

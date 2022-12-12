@@ -1,0 +1,79 @@
+#users-header {
+    background: #fff;
+    border-bottom: 0.0625rem solid #d8d9db;
+    width: 100%;
+    display: block;
+}
+
+#user-name-div {
+    margin: auto;
+    max-width: 64rem;
+    padding: 16px 1.5rem;
+}
+
+#user-name {
+    color: #2d333f;
+    display: flex;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 36px;
+    margin: 0;
+    font-family: BrandonText,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+}
+
+#page-container {
+    background: #f7f7f7;
+    min-height: 500px;
+    width: 100%;
+    position: relative;
+}
+
+#max-width {
+    margin: auto;
+    max-width: 64rem;
+    position: relative;
+}
+
+#user-info {
+    position: relative;
+    height: 100%;
+}
+
+@media (min-width: 65em) {
+    #user-info {
+        padding-left: 200px;
+    }
+}
+
+#nav-page-wrapper {
+    overflow: visible;
+    display: block;
+}
+
+@media (min-width: 65em) {
+    #nav-page-wrapper {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1.875rem 0 1rem;
+        width: 200px;
+    }
+}
+
+#page-nav {
+    position: relative;
+    width: 200px;
+}
+
+@media (min-width: 65em) {
+    #page-nav {
+        padding-left: 2rem;
+    }
+}
+
+li {
+    padding: 8px;
+    margin: 8px;
+    font-weight: 500;
+}
