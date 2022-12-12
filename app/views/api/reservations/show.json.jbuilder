@@ -1,4 +1,3 @@
-# json.reservation do
-#     debugger
-#     json.extract! @reservation, :date, :time, :party_size
-# end
+json.reservation do
+    json.extract! @reservation, :date, :time, :party_size
+end

@@ -10,6 +10,7 @@ import { restoreSession } from "./store/session";
 // import { createUser, loginUser, logoutUser } from './store/usersReducer';
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
+import * as reservationActions from "./store/reservationsReducer"
 
 const store = configureStore();
 
@@ -30,6 +31,7 @@ const initializeApp = () => {
     window.store = store;
     window.csrfFetch = csrfFetch;
     window.sessionActions = sessionActions;
+    window.reservationActions = reservationActions; 
   }
 
   function Root() {
