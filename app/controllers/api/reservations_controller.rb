@@ -16,6 +16,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def index
+        # debugger
         @reservations = Reservation.all
     end
 
