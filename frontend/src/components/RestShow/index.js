@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
+import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 
 const RestShow = () => {
@@ -76,7 +77,7 @@ const RestShow = () => {
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
           </div>
-          <div></div>
+         <ReservationForm />
         </div>
       </div>
     </>
