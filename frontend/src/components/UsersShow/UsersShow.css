@@ -48,6 +48,13 @@
 #nav-page-wrapper {
     overflow: visible;
     display: block;
+    display: flex;
+    color: #2d333f;
+    display: flex;
+    margin: auto;
+    max-width: 64rem;
+    padding: 0 1.5rem 64px;
+    width: 100%;
 }
 
 @media (min-width: 65em) {
@@ -64,6 +71,8 @@
 #page-nav {
     position: relative;
     width: 200px;
+    padding: 32px 0;
+    width: 12.5rem;
 }
 
 @media (min-width: 65em) {
@@ -71,6 +80,8 @@
         padding-left: 2rem;
     }
 }
+
+
 
 li {
     padding: 8px;
@@ -82,9 +93,46 @@ li {
 .link {
     text-decoration: none;
     color: black;
+    width: 200px;
 }
 
 .link:hover {
     text-decoration: none;
     color: red;
+}
+
+.points-reservations {
+    margin: 32px 16px;
+    min-height: 32rem;
+    width: calc(100% - 15.5rem);
+}
+
+@media (max-width: 1055px) {
+    .points-reservations {
+        width: auto;
+    }
+}
+
+#points-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 0.0625rem solid #d8d9db;
+    border-radius: 4px;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+}
+
+
+
+h2 {
+    margin-top: 0; 
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
 }
