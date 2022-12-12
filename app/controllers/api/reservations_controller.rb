@@ -2,8 +2,9 @@ class Api::ReservationsController < ApplicationController
     wrap_parameters include: User.attribute_names + [:partySize, :date, :time, :restaurantId, :userId]
 
     def create
-        @reservation = Reservation.new(reservation_params)
         # debugger
+        @reservation = Reservation.new(reservation_params)
+        debugger
         if @reservation.save
             render 'api/reservations/show'
         else

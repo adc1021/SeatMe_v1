@@ -27,11 +27,7 @@ class User < ApplicationRecord
     format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, on: :create, message: 'Phone number is required' } # added a regexp I found on stack overflow for phone number validation
 
 
-    # has_many: :reservations
-
-    # has_many: :reviews
-
-    # has_many: :saved_restaurants
+    has_many :reservations
 
     def self.find_by_credentials(credential)
 

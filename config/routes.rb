@@ -12,11 +12,13 @@ Rails.application.routes.draw do
   # end
   namespace :api, defaults: {format: :json} do
     # ...
-    resources :users, only: [:create]
+    resources :users, only: [:create, :show] do 
+      resources :reservations, only: [:index]
+    end
     resource :session, only: [:create, :show, :destroy]
     resources :restaurants, only: [:show, :index, :create]
 
-    resources :reservations, only: [:index, :show, :destroy, :update, :create]
+    resources :reservations, only: [:show, :destroy, :update, :create]
   end
 
   get '/restaurants/:id', to: 'restaurants#show'

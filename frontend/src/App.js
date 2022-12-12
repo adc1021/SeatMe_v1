@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import RestShow from "./components/RestShow";
 import Splash from "./components/Splash";
 import UsersShow from "./components/UsersShow";
+import ReservationsIndex from "./components/ReservationsIndex";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
         </Route>
         <Route path={"/users/:id"}>
           <UsersShow />
+        </Route>
+        <Route path={"/user/:id/reservations"}>
+          <ReservationsIndex />
         </Route>
         <Route path={"/"}>
           <Splash />
