@@ -153,3 +153,25 @@ button.anchor {
     margin-top: 32px;
     display: block;
 }
+
+#sticky-div {
+    position: sticky;
+    top: 0;
+    z-index: 11;
+}
+
+article {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px #2d333f33;
+    padding: 16px;
+    display: block;
+}
+
+#input-field {
+    border-bottom: 0.0625rem solid #d8d9db;
+    color: #2d333f;
+    margin: 0;
+    padding: 0 0 0.75rem;
+    text-align: center;
+}
