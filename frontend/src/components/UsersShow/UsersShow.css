@@ -64,7 +64,7 @@
         bottom: 0;
         left: 0;
         padding: 1.875rem 0 1rem;
-        width: 200px;
+        /* width: 200px; */
     }
 }
 
@@ -109,7 +109,7 @@ li {
 
 @media (max-width: 1055px) {
     .points-reservations {
-        width: auto;
+        /* width: auto; */
     }
 }
 

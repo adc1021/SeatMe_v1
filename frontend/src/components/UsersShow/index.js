@@ -79,14 +79,14 @@ const UsersShow = () => {
                       }}
                     >
                       <h2>Points</h2>
+                      <div></div>
+                    </header>
+                  </div>
                       {resArr.map((res) => {
                         if (res.userId === user.id) {
                           return <ReservationShow resData={res} />;
                         }
                       })}
-                      <div></div>
-                    </header>
-                  </div>
                 </div>
               </div>
             </div>
