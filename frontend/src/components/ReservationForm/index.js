@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import "./ReservationForm.css";
 
 import * as reservationActions from "../../store/reservationsReducer";
 
 const ReservationForm = ({ restaurantId }) => {
   const dispatch = useDispatch();
+  let history = useHistory();
   // debugger
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
@@ -27,23 +28,7 @@ const ReservationForm = ({ restaurantId }) => {
         userId: user.id,
       })
     );
-    // .catch(
-    //   async (res) => {
-    //     let data;
-    //     try {
-    //       data = await res.clone().json();
-    //     } catch {
-    //       data = await res.text();
-    //     }
-    //     if (data?.errors) setErrors(data.errors);
-    //     else if (data) setErrors([data]);
-    //     else setErrors([res.statusText]);
-
-    //     if(!data.errors){
-    //       document.getElementById()
-    //     }
-    //   }
-    // );
+    // history.replace({ pathname: `/users/${user.id}`});
   };
 
   return (
@@ -51,13 +36,6 @@ const ReservationForm = ({ restaurantId }) => {
       <div id="sticky-div">
         <article>
           <h2 id="input-field">Make a reservation</h2>
-          {/* <ul>
-              {errors.map((error) => (
-                <li className="error-message" key={error}>
-                  {error}
-                </li>
-              ))}
-            </ul> */}
           <div style={{ margin: "16px -16px 0" }}>
             <div>
               <label

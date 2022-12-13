@@ -27,7 +27,6 @@ const UsersShow = () => {
   //   res.userId === user.id
   // ))
 
-
   return (
     <>
       <NavBar />
@@ -82,11 +81,14 @@ const UsersShow = () => {
                       <div></div>
                     </header>
                   </div>
-                      {resArr.map((res) => {
-                        if (res.userId === user.id) {
-                          return <ReservationShow resData={res} />;
-                        }
-                      })}
+                  <div id="upcoming-reservations" style={{padding: '16px'}}>
+                    <h2 style={{ margin: "0" }}>Upcoming Reservations</h2>
+                    {resArr.map((res) => {
+                      if (res.userId === user.id) {
+                        return <ReservationShow resData={res} />;
+                      }
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
