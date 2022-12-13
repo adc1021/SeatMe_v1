@@ -19,6 +19,12 @@ ApplicationRecord.transaction do
     puts "Creating users..."
     # Create one user with an easy to remember username, email, and password:
     User.create!(
+      first_name: 'Demo',
+      last_name: '-lition',
+      email: 'demo@user.io',
+      phone_number: '222-333-4444'
+    )
+    User.create!(
       first_name: 'Hulk',
       last_name: 'Hogan',
       email: 'hulkster@gmail.com',
@@ -37,12 +43,6 @@ ApplicationRecord.transaction do
       phone_number: '123-456-2321'
     )
 
-    User.create!(
-      first_name: 'Demo',
-      last_name: '-lition',
-      email: 'demo@user.io',
-      phone_number: '222-333-4444'
-    )
 
         rest1 = Restaurant.create(
           name: "Quality Meats",

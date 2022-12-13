@@ -1,0 +1,57 @@
+#upcoming-reservations:last-child {
+    margin-bottom: 0;
+}
+
+@media (minwidth: 1056px) {
+    #upcoming-reservations {
+        padding: 1.5rem;
+    }
+
+    #rest-card-img {
+        border-radius: 4px;
+        height: 8rem;
+        width: 8rem;
+    }
+
+    #rest-name-span {
+        padding-left: 4px;
+    }
+}
+
+@media (min-width: 768px) {
+    #upcoming-reservations {
+        margin: 0 0 16px;
+    }
+
+    #rest-card-img {
+        border-radius: 4px;
+        height: 8rem;
+        width: 8rem;
+    }
+
+    #rest-name-span {
+        padding-left: 0 0 0 4px;
+    }
+}
+
+#upcoming-reservations {
+    background: #fff;
+    border-bottom: 0.0625rem solid #d8d9db;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    color: #2d333f;
+}
+
+#display-info-div {
+    margin-top: 16px;
+    padding: 16px;
+    border-radius: 1px;
+    width: 100%;
+    display: flex;
+    justify-content: normal;
+}
+
+#display-info-div:last-child {
+    margin: 0px;
+}

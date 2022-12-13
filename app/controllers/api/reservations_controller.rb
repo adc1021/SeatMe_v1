@@ -4,7 +4,7 @@ class Api::ReservationsController < ApplicationController
     def create
         # debugger
         @reservation = Reservation.new(reservation_params)
-        debugger
+        # debugger
         if @reservation.save
             render 'api/reservations/show'
         else
