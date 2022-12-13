@@ -8,12 +8,11 @@ const ReservationShow = ({ resData }) => {
 
   useEffect(() => {
     dispatch(restaurantActions.fetchRest(resData.restaurantId));
-  }, [dispatch, resData.restaurantId]);
+  });
 
   const restaurantData = useSelector((state) =>
     state.restaurants ? state.restaurants[resData.restaurantId] : {}
   );
-  debugger;
 
   return (
     <>
@@ -22,7 +21,7 @@ const ReservationShow = ({ resData }) => {
         <div id="display-info-div">
           <img id="rest-card-img" alt="" src={restaurantData.photoUrl}></img>
           <div id="rest-name-span">
-            <span>{restaurantData.name}</span>
+            <span style={{width: '100%'}}>{restaurantData.name}</span>
           </div>
         </div>
       </div>
