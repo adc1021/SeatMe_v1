@@ -28,7 +28,7 @@ export const removeReservation = (reservationId) => {
 
 export const fetchReservation = (reservationId) => async (dispatch) => {
   // debugger
-  const res = await fetch(`/api/reservations/${reservationId}`);
+  const res = await csrfFetch(`/api/reservations/${reservationId}`);
   // debugger
   if (res.ok) {
     const data = await res.json();
@@ -38,8 +38,7 @@ export const fetchReservation = (reservationId) => async (dispatch) => {
 };
 
 export const fetchReservations = () => async (dispatch) => {
-  const res = await fetch(`/api/reservations`);
-
+  const res = await csrfFetch(`/api/reservations`);
   if (res.ok) {
     const reservations = await res.json();
 
@@ -67,7 +66,7 @@ export const createReservation = (reservation) => async (dispatch) => {
 // }
 
 export const deleteReservation = (reservationId) => async (dispatch) => {
-  const res = await fetch(`/api/reservations/${reservationId}`, {
+  const res = await csrfFetch(`/api/reservations/${reservationId}`, {
     method: "DELETE",
   });
 

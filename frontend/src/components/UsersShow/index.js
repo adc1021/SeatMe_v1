@@ -26,7 +26,7 @@ const UsersShow = () => {
   // const userReservations = resArr.filter((res) => (
   //   res.userId === user.id
   // ))
-  debugger;
+
 
   return (
     <>
