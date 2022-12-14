@@ -31,7 +31,7 @@ class User < ApplicationRecord
 
     has_many :rest_reservations,
         through: :reservations,
-        source: :restaurant 
+        source: :restaurant
 
     def self.find_by_credentials(credential)
 
