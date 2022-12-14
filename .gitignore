@@ -8,7 +8,7 @@
 /.bundle
 .DS_Store
 /public
-/node_modules 
+/node_modules
 
 # Ignore all logfiles and tempfiles.
 /log/*
