@@ -29,6 +29,10 @@ class User < ApplicationRecord
 
     has_many :reservations
 
+    has_many :rest_reservations,
+        through: :reservations,
+        source: :restaurant 
+
     def self.find_by_credentials(credential)
 
         if credential.split("@").length > 1

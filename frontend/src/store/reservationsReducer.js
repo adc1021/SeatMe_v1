@@ -12,10 +12,11 @@ export const receiveReservation = (reservation) => {
   };
 };
 
-export const receiveReservations = (reservations) => {
+export const receiveReservations = ({ reservations, restaurants }) => {
   return {
     type: RECEIVE_RESERVATIONS,
     reservations,
+    restaurants
   };
 };
 
@@ -40,9 +41,9 @@ export const fetchReservation = (reservationId) => async (dispatch) => {
 export const fetchReservations = () => async (dispatch) => {
   const res = await csrfFetch(`/api/reservations`);
   if (res.ok) {
-    const reservations = await res.json();
+    const payload = await res.json();
 
-    dispatch(receiveReservations(reservations));
+    dispatch(receiveReservations(payload));
   }
 };
 

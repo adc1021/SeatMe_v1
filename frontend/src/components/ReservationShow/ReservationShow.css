@@ -7,6 +7,7 @@
         padding: 1.5rem;
     }
 
+
     #rest-card-img {
         border-radius: 4px;
         height: 8rem;
@@ -30,7 +31,9 @@
     }
 
     #rest-name-span {
-        padding-left: 16px
+        padding-left: 16px;
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -49,8 +52,44 @@
     width: 100%;
     display: flex;
     justify-content: normal;
+    border: 0.0625rem solid #d8d9db;
+    border-radius: 4px;
 }
 
-#display-info-div:last-child {
+/* #display-info-div:last-child {
     margin: 0px;
+} */
+
+#reservation-status {
+    align-items: center;
+    display: flex;
+    margin-top: 4px;
+}
+
+#svg {
+    fill: green;
+    padding-right: 8px;
+}
+
+#little-man {
+    display: inline-block;
+    /* font-size: 0rem; */
+    /* height: 1.5rem;
+    line-height: 1;
+    min-width: 1.5rem;
+    width: 1.5rem; */
+    display: flex;
+    align-items: center;
+    padding-right: 8px;
+    margin-top: 4px;
+    /* padding: 0 8px 0 16px; */
+}
+
+#lil-man-svg {
+    padding-right: 8px;
+}
+
+#calendar {
+    margin-top: 5px;
+    margin-left: 16px;
 }

@@ -1,4 +1,6 @@
+import { bindActionCreators } from "redux";
 import csrfFetch from "./csrf";
+import { RECEIVE_RESERVATIONS } from "./reservationsReducer";
 
 export const RECEIVE_RESTAURANT = "restaurants/RECEIVE_RESTAURANT";
 export const RECEIVE_RESTAURANTS = "restaurants/RECEIVE_RESTAURANTS";
@@ -44,6 +46,7 @@ const restaurantsReducer = (oldState = {}, action) => {
     case RECEIVE_RESTAURANT:
       newState[action.restaurant.id] = action.restaurant;
       return newState;
+    case RECEIVE_RESERVATIONS:
     case RECEIVE_RESTAURANTS:
       return { ...newState, ...action.restaurants }
     default:

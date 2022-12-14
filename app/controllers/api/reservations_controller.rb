@@ -23,8 +23,9 @@ class Api::ReservationsController < ApplicationController
     end
 
     def index
-        # debugger
-        @reservations = Reservation.all
+        # @reservations = Reservation.all
+        @reservations = current_user.reservations
+        @restaurants = current_user.rest_reservations
     end
 
     def update

@@ -13,15 +13,16 @@ const UsersShow = () => {
     // debugger
     return state.session ? state.session.user : {};
   });
+
   const reservations = useSelector((state) => {
     return state.reservations ? state.reservations : {};
   });
 
   useEffect(() => {
     dispatch(reservationActions.fetchReservations());
-  }, []);
+  }, [dispatch]);
 
-  const resArr = Object.values(reservations);
+  const resArr = Object.values(reservations)
 
   // const userReservations = resArr.filter((res) => (
   //   res.userId === user.id
@@ -84,9 +85,9 @@ const UsersShow = () => {
                   <div id="upcoming-reservations" style={{padding: '16px'}}>
                     <h2 style={{ margin: "0" }}>Upcoming Reservations</h2>
                     {resArr.map((res) => {
-                      if (res.userId === user.id) {
+                      // if (res.userId === user.id) {
                         return <ReservationShow resData={res} />;
-                      }
+                      // }
                     })}
                   </div>
                 </div>
