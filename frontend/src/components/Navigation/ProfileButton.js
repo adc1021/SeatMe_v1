@@ -43,7 +43,7 @@ function ProfileButton({ user }) {
         <div id="prof-button-div">
         <button id="profile-button" onClick={openMenu}>
           <div id="inner-profile-div">
-            <i class="fa-regular fa-user"></i>
+            <i className="fa-regular fa-user"></i>
           </div>
         </button>
         </div>

@@ -4,6 +4,8 @@ import RestShow from "./components/RestShow";
 import Splash from "./components/Splash";
 import UsersShow from "./components/UsersShow";
 import ReservationsIndex from "./components/ReservationsIndex";
+import UpdateReservation from "./components/ReservationShow/UpdateReservation";
+import UpdateReservationForm from "./components/UpdateReservationForm";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         </Route>
         <Route path={"/user/:id/reservations"}>
           <ReservationsIndex />
+        </Route>
+        <Route path={"/reservations/:id/update"}>
+          <UpdateReservationForm />
         </Route>
         <Route path={"/"}>
           <Splash />

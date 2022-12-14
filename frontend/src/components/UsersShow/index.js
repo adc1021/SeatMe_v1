@@ -6,6 +6,7 @@ import "./UsersShow.css";
 import * as reservationActions from "../../store/reservationsReducer";
 import csrfFetch from "../../store/csrf";
 import ReservationShow from "../ReservationShow";
+import UsersPoints from "./UsersPoints";
 
 const UsersShow = () => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const UsersShow = () => {
     dispatch(reservationActions.fetchReservations());
   }, [dispatch]);
 
-  const resArr = Object.values(reservations)
+  const resArr = Object.values(reservations);
 
   // const userReservations = resArr.filter((res) => (
   //   res.userId === user.id
@@ -46,47 +47,37 @@ const UsersShow = () => {
                 <nav id="page-nav">
                   <ul>
                     <li>
-                      <Link to="" class="link">
+                      <Link to="" className="link">
                         Reservations
                       </Link>
                     </li>
                     <li>
-                      <Link to="" class="link">
+                      <Link to="" className="link">
                         Saved Restaurants
                       </Link>
                     </li>
                     <li>
-                      <Link to="" class="link">
+                      <Link to="" className="link">
                         Account Details
                       </Link>
                     </li>
                     <li>
-                      <Link to="" class="link">
+                      <Link to="" className="link">
                         Preferences
                       </Link>
                     </li>
                     <li>
-                      <Link class="link">Payment Methods</Link>
+                      <Link to="" className="link">Payment Methods</Link>
                     </li>
                   </ul>
                 </nav>
                 <div className="points-reservations">
-                  <div id="points-box">
-                    <header
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                      }}
-                    >
-                      <h2>Points</h2>
-                      <div></div>
-                    </header>
-                  </div>
-                  <div id="upcoming-reservations" style={{padding: '16px'}}>
+                  <UsersPoints />
+                  <div id="upcoming-reservations" style={{ padding: "16px" }}>
                     <h2 style={{ margin: "0" }}>Upcoming Reservations</h2>
                     {resArr.map((res) => {
                       // if (res.userId === user.id) {
-                        return <ReservationShow resData={res} />;
+                      return <ReservationShow resData={res} />;
                       // }
                     })}
                   </div>

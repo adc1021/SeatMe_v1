@@ -22,6 +22,7 @@ const Splash = () => {
                   id="git-hub-link"
                   target="_blank"
                   href="https://github.com/adc1021"
+                  rel="noreferrer"
                 >
                   Check me out on Github!
                 </a>

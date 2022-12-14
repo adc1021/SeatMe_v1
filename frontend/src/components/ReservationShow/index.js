@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import * as restaurantActions from "../../store/restaurantsReducer";
+import DeleteReservation from "./DeleteReservation";
 import "./ReservationShow.css";
+import UpdateReservation from "./UpdateReservation";
 
 const ReservationShow = ({ resData }) => {
   const dispatch = useDispatch();
@@ -98,6 +99,10 @@ const ReservationShow = ({ resData }) => {
             </span>
             <p style={{marginLeft: "8px"}}>{resData.date.slice(0, 10)}</p>
             <p style={{marginLeft: "8px"}}>{resData.time.slice(11, 16)} PM</p>
+          </span>
+          <span style={{display: "flex", flexDirection: "row"}}>
+          <UpdateReservation resData={resData}/>
+          <DeleteReservation resData={resData}/>
           </span>
         </div>
       </div>

@@ -1,0 +1,83 @@
+#update-container-div {
+    background: #fff;
+    height: 100%;
+    max-width: 100%;
+    padding: 32px 0 5rem;
+}
+
+#inner-update-container-div {
+    max-width: 61rem;
+    margin: 32px 0;
+    padding: 0 32px;
+}
+
+@media (max-width: 1055px) and (min-width: 768px) {
+   #inner-update-container-div {
+    margin: 32px 0;
+    padding: 0 32px;
+   }
+}
+
+.main {
+    display: block;
+    min-width: auto;
+    max-width: 38.75rem;
+}
+
+#update-res-header {
+    margin: 0 0 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5rem;
+
+}
+
+#rest-card-img-2 {
+    border-radius: 4px;
+    height: 4rem;
+    width: 4rem;
+    margin-right: 16px;
+}
+
+#header-div {
+    color: #2d333f;
+    display: flex;
+    justify-content: flex-start;
+}
+
+#modifier {
+    margin: 16px 0 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+}
+
+.random {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+    #dtp-picker {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: row;
+        margin-bottom: 16px;
+        /* border: 0.0625rem solid #d8d9db;
+        border-radius: 4px;
+        height: 3rem;
+        min-width: unset; */
+    }
+
+
+
+#date-picker {
+    background: #fff;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px;
+    overflow: visible;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex: 1 1 33%;
+}

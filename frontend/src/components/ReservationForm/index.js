@@ -28,7 +28,7 @@ const ReservationForm = ({ restaurantId }) => {
         userId: user.id,
       })
     );
-    // history.replace({ pathname: `/users/${user.id}`});
+    history.replace({ pathname: `/users/${user.id}`});
   };
 
   return (
