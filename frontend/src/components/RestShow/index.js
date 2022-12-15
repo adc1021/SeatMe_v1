@@ -46,11 +46,6 @@ const RestShow = () => {
           <img id="rest-img" alt="" src={restaurant.photoUrl}></img>
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
-              {/* <img
-                alt=""
-                id="save-svg"
-                src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
-              ></img> */}
               {saveTag}
               <div id="text-div">Save this restaurant</div>
             </div>
@@ -76,6 +71,7 @@ const RestShow = () => {
             <section>
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
+            <p style={{lineHeight: "2rem"}}>{restaurant.description}</p>
           </div>
          <ReservationForm restaurantId={ id }/>
         </div>

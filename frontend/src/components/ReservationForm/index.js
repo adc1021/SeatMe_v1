@@ -91,14 +91,14 @@ const ReservationForm = ({ restaurantId }) => {
                 Time
               </label>
             </div>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: "flex", height: "3rem", alignItems: "center" }}>
               <input
                 type="date"
                 value={date}
-                id="today"
+                className="today"
                 onChange={(e) => setDate(e.target.value)}
               ></input>
-              <select value={time} onChange={(e) => setTime(e.target.value)}>
+              <select className="today" value={time} onChange={(e) => setTime(e.target.value)}>
                 <option value="2000-02-01T12:00:00">12:00 PM</option>
                 <option value="2000-02-01T13:00:00">1:00 PM</option>
                 <option value="2000-02-01T14:00:00">2:00 PM</option>

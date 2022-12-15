@@ -31,7 +31,8 @@ article {
      position: absolute;
      right: 0;
     top: 0;
-     width: 100%;
+     width: 90%;
+     margin-left: 10px;
      overflow: visible !important;
     text-rendering: auto;
     color: fieldtext;
@@ -44,16 +45,13 @@ article {
     white-space: pre;
     -webkit-rtl-ordering: logical;
     background-color: field;
-    border-width: 1px;
-    border-style: solid;
-    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-    border-image: initial;
-    border-radius: 0px;
+    border: none;
 }
 
 hr {
     border-top: 0.0625rem solid #d8d9db;
     margin: 0 16px 8px;
+    width: 90%;
     background-color: #d8d9db;
     border-width: 60%;
     height: 0.0625rem;
@@ -92,3 +90,14 @@ hr {
     transition: all .3s ease-out;
     width: 100%;
 }
+
+.today {
+    width: 45%;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 0.0625rem solid #d8d9db;
+    border-width: 95%;
+}
+
