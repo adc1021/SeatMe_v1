@@ -356,8 +356,8 @@ ApplicationRecord.transaction do
           neighborhood: "Lower East Side",
         )
 
-        image7 = URI.open("https://seatme-dev.s3.amazonaws.com/double_zero_card.jpeg")
-        rest7.photo.attach(io: image7, filename: "double_zero_card.jpeg")
+        image7 = URI.open("https://seatme-dev.s3.amazonaws.com/bar_primi_card.jpeg")
+        rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
         rest7.save!
 
         Reservation.create(date: "12-8-2022", time: "8:00",

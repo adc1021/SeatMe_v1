@@ -15,7 +15,7 @@ const DeleteReservation = ({ resData }) => {
 
   return (
     <>
-    <button onClick={handleDelete}>
+    <button className="CRUD-button" onClick={handleDelete}>
       Delete Reservation
     </button>
     </>

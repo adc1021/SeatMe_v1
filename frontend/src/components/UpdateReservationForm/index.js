@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import {
   fetchReservation,
-  fetchReservations, updateReservation
+  fetchReservations,
+  updateReservation,
 } from "../../store/reservationsReducer";
 import NavBar from "../NavBar";
 import ReservationShow from "../ReservationShow";
@@ -11,7 +12,7 @@ import "./UpdateReservationForm.css";
 
 const UpdateReservationForm = () => {
   const { id } = useParams();
-  const history = useHistory()
+  const history = useHistory();
   const dispatch = useDispatch();
   const [partySize, setPartySize] = useState(1);
   const [date, setDate] = useState("");
@@ -43,7 +44,7 @@ const UpdateReservationForm = () => {
         userId: reservation.userId,
       })
     );
-    history.replace({ pathname: `/users/${reservation.userId}`});
+    history.replace({ pathname: `/users/${reservation.userId}` });
   };
 
   return (
@@ -54,17 +55,16 @@ const UpdateReservationForm = () => {
           <div id="inner-update-container-div">
             <main className="main">
               <h2 id="update-res-header">Your current reservation</h2>
-              <div style={{ display: "flex", marginBottom: "16px" }}>
+              <div id="res-info-wrapper">
                 <img
                   id="rest-card-img-2"
                   style={{ display: "flex", marginRight: "16px" }}
                   src={restaurant.photoUrl}
                   alt=""
                 ></img>
-
                 <div>
                   <div id="header-div">
-                    <h2 style={{ margin: "none" }}>{restaurant.name}</h2>
+                    <h3 style={{ margin: "none" }}>{restaurant.name}</h3>
                   </div>
                   <span>
                     <svg
@@ -90,60 +90,67 @@ const UpdateReservationForm = () => {
                 <h3 id="modifier">Modify your reservation</h3>
                 <div className="random">
                   <div id="dtp-picker">
-                    <div>
+                    <div style={{ width: "33%" }}>
                       <input
+                        style={{ width: "98%", height: "2.75rem" }}
                         type="date"
                         id="date-picker"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
                       />
                     </div>
-                    <select
-                      value={time}
-                      onChange={(e) => setTime(e.target.value)}
-                    >
-                      <option value="2000-02-01T12:00:00">12:00 PM</option>
-                      <option value="2000-02-01T13:00:00">1:00 PM</option>
-                      <option value="2000-02-01T14:00:00">2:00 PM</option>
-                      <option value="2000-02-01T15:00:00">3:00 PM</option>
-                      <option value="2000-02-01T16:00:00">4:00 PM</option>
-                      <option value="2000-02-01T17:00:00">5:00 PM</option>
-                      <option value="2000-02-01T18:00:00">6:00 PM</option>
-                      <option value="2000-02-01T19:00:00">7:00 PM</option>
-                      <option value="2000-02-01T20:00:00">8:00 PM</option>
-                      <option value="2000-02-01T21:00:00">9:00 PM</option>
-                      <option value="2000-02-01T22:00:00">10:00 PM</option>
-                      <option value="2000-02-01T23:00:00">11:00 PM</option>
-                    </select>
-                    <select
-                      value={partySize}
-                      onChange={(e) => setPartySize(e.target.value)}
-                    >
-                      <option value={1}>1 person</option>
-                      <option value={2}>2 people</option>
-                      <option value={3}>3 people</option>
-                      <option value={4}>4 people</option>
-                      <option value={5}>5 people</option>
-                      <option value={6}>6 people</option>
-                      <option value={7}>7 people</option>
-                      <option value={8}>8 people</option>
-                      <option value={9}>9 people</option>
-                      <option value={10}>10 people</option>
-                      <option value={11}>11 people</option>
-                      <option value={12}>12 people</option>
-                      <option value={13}>13 people</option>
-                      <option value={14}>14 people</option>
-                      <option value={15}>15 people</option>
-                      <option value={16}>16 people</option>
-                      <option value={17}>17 people</option>
-                      <option value={18}>18 people</option>
-                      <option value={19}>19 people</option>
-                      <option value={20}>20 people</option>
-                    </select>
+                    <div style={{ width: "33%" }}>
+                      <select
+                        style={{ width: "100%",  height: "3rem" }}
+                        value={time}
+                        onChange={(e) => setTime(e.target.value)}
+                      >
+                        <option value="2000-02-01T12:00:00">12:00 PM</option>
+                        <option value="2000-02-01T13:00:00">1:00 PM</option>
+                        <option value="2000-02-01T14:00:00">2:00 PM</option>
+                        <option value="2000-02-01T15:00:00">3:00 PM</option>
+                        <option value="2000-02-01T16:00:00">4:00 PM</option>
+                        <option value="2000-02-01T17:00:00">5:00 PM</option>
+                        <option value="2000-02-01T18:00:00">6:00 PM</option>
+                        <option value="2000-02-01T19:00:00">7:00 PM</option>
+                        <option value="2000-02-01T20:00:00">8:00 PM</option>
+                        <option value="2000-02-01T21:00:00">9:00 PM</option>
+                        <option value="2000-02-01T22:00:00">10:00 PM</option>
+                        <option value="2000-02-01T23:00:00">11:00 PM</option>
+                      </select>
+                    </div>
+                    <div style={{ width: "33%" }}>
+                      <select
+                        style={{ width: "100%", height: "100%" }}
+                        value={partySize}
+                        onChange={(e) => setPartySize(e.target.value)}
+                      >
+                        <option value={1}>1 person</option>
+                        <option value={2}>2 people</option>
+                        <option value={3}>3 people</option>
+                        <option value={4}>4 people</option>
+                        <option value={5}>5 people</option>
+                        <option value={6}>6 people</option>
+                        <option value={7}>7 people</option>
+                        <option value={8}>8 people</option>
+                        <option value={9}>9 people</option>
+                        <option value={10}>10 people</option>
+                        <option value={11}>11 people</option>
+                        <option value={12}>12 people</option>
+                        <option value={13}>13 people</option>
+                        <option value={14}>14 people</option>
+                        <option value={15}>15 people</option>
+                        <option value={16}>16 people</option>
+                        <option value={17}>17 people</option>
+                        <option value={18}>18 people</option>
+                        <option value={19}>19 people</option>
+                        <option value={20}>20 people</option>
+                      </select>
+                    </div>
                   </div>
                   <button id="time-button" onClick={handleSubmit}>
-                Find a new table
-              </button>
+                    Find a new table
+                  </button>
                 </div>
               </div>
             </main>

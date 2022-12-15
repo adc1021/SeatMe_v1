@@ -13,7 +13,7 @@ const UpdateReservation = ({ resData }) => {
 
   return (
     <>
-    <button onClick={handleUpdate}>Update Reservation</button>
+    <button className="CRUD-button" onClick={handleUpdate}>Update Reservation</button>
     </>
   )
 }

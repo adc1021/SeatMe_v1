@@ -92,3 +92,18 @@
     margin-top: 5px;
     margin-left: 16px;
 }
+
+.CRUD-button {
+    border: none;
+    background: inherit;
+    margin-right: 10px;
+    color: red;
+    cursor: pointer;
+}
+
+.CRUD-button:hover {
+    color: rgb(195, 65, 65);
+    text-decoration: underline;
+    /* font-size: 14px; */
+    /* transition: ; */
+}
