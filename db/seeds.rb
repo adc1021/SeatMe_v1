@@ -360,12 +360,185 @@ ApplicationRecord.transaction do
         rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
         rest7.save!
 
+        rest8 = Restaurant.create(
+          name: "La Nonna Ristorante & Bar",
+          description: "Join us for an incredible dining experience here
+          at La Nonna Ristorante & Bar located in Williamsburg, Brooklyn.
+          Executive Chef Cono Morena delivers nothing but the most unique dishes
+          using only the highest of quality ingredients. Each bite will make
+          you feel you are at Nonna’s table on a Sunday",
+          cuisine: "Italian",
+          address: "184 Kent Avenue, Brooklyn, NY 11249",
+          tables: 55,
+          menu: "Pesce
+          Grigliata Mista di Pesce
+          $34.00
+          Grilled Branzino Filet, Calamari, Octopus, Shrimp, Extra Virgin Olive Oil, Lemon
+
+          Branzino allo Scoglio
+          $33.00
+          Branzio Filet, Manila, Clams, Mussels, Shrimp, Pomodorini
+
+          Salmone
+          $37.00
+          Pan Seared Salmon, Crusted With Crabmeat Served With Shrimp & Mango Sauce
+
+          Tonno
+          $30.00
+          Pan Seared Sesame Seeds Crusted Tuna, Avocado Mousse, Diced Tomatoes, Ginger Sweet & Spicy Pickled Carrots
+
+          Dentice Rosso Pescatore
+          $36.00
+          Pan Seared Red Snapper, Mussels, Clams, Calamari in a Marechiaro Sauce",
+          average_rating: 4.7,
+          price_point: 50,
+          phone_number: "(718) 302-1100",
+          neighborhood: "Williamsburg"
+          )
+
+          image8 = URI.open("https://seatme-dev.s3.amazonaws.com/la-nonna-card.jpeg")
+        rest8.photo.attach(io: image8, filename: "la-nonna-card.jpeg")
+        rest8.save!
+
+        rest9 = Restaurant.create(
+          name: "The Cookery",
+          description: "The Cookery was founded by Chef David DiBari.
+          Comfortably located in Dobbs Ferry, one of Westchester’s quaintest
+          and most beautiful river towns, The Cookery has embraced the positive
+          energy exchanged from its local patrons and uses it to fuel the quest
+          for great food and ceaseless creativity. The neo-nostalgic Italian
+          menu proves evident of Chef DiBari’s style of cooking,
+          which is to progressively approach simplicity.",
+          cuisine: "Italian",
+          address: "39 Chestnut St, Dobbs Ferry, NY 10522",
+          tables: 30,
+          menu: "view menu on restaurants website",
+          average_rating: 4.7,
+          price_point: 28,
+          phone_number: "(914) 305-2336",
+          neighborhood: "Dobbs Ferry"
+          )
+
+          image9 = URI.open("https://seatme-dev.s3.amazonaws.com/the_cookery_card.jpeg")
+          rest9.photo.attach(io: image9, filename: "the_cookery_card.jpeg")
+          rest9.save!
+
+
+          rest10 = Restaurant.create(
+            name: "Olio e Più",
+            description: "Inspired by the warmth and comfort of the Italian
+            countryside, Olio e Più and Chef Pedro Cruz bring tradition and
+            authentic Italian cuisine to the West Village. Enjoy fresh,
+            house-made pastas dressed with the highest quality ingredients and
+            a hand-selected collection of excellent wines and cocktails to pair
+            with your dish. An expertly crafted wood-fire oven crackles and
+            glows, cooking house-made dough into perfect, crisp Neapolitan-style
+            pizza while creating an inviting atmosphere.",
+            cuisine: "Italian",
+            address: "3 Greenwich Ave, New York, NY 10014",
+            tables: 50,
+            menu: "Primi Piatti
+            Fresh Handmade Pastas
+
+            Spaghetti Chitarra alla Carbonara
+            $28.00
+            Prosciutto, black pepper, egg, parmesan, chili oil
+
+            Tagliatelle Verdi al Ragù Bolognese
+            $29.00
+            The classic preparation
+
+            Fusilli e Manzo
+            $29.00
+            Braised beef brisket, tomato, parmesan
+
+            Fettuccine Tartufo
+            $58.00
+            Black truffles, butter, parmesan
+
+            Paccheri Nere
+            $44.00
+            Squid ink paccheri, sepia, shrimps, mussels, tomatoes, white wine, peperoncino, pancito
+
+            Burrata & Limoncello Ravioli
+            $33.00
+            Jumbo lump crabmeat, escarole, herbs
+
+            Gnocchi al Pesto
+            $29.00
+            Fresh ricotta cheese dumplings, artichokes, pistachio pesto, pecorino sardo, herbs",
+            average_rating: 4.7,
+            price_point: 25,
+            phone_number: "(212) 243-6546",
+            neighborhood: "West Village"
+            )
+
+            image10 = URI.open("https://seatme-dev.s3.amazonaws.com/olio_card.jpeg")
+          rest10.photo.attach(io: image10, filename: "olio_card.jpeg")
+          rest10.save!
+
+
+          rest11 = Restaurant.create(
+            name: "Cafe Fiorello",
+            description: "A forum for Lincoln Center’s performing arts culture
+             for nearly 30 years, Café Fiorello features a sprawling bar filled
+              with more than 50 kinds of antipasti. Finished in warm wood,
+              brass and mirrors, the main dining room suggests a timeless charm.
+              In addition to the hot and cold antipasto specialties of vegetables
+              and seafood, the menu features updated Italian classics and
+              specialty dishes, as well as a selection of seafood, steak, veal & pasta.",
+            cuisine: "Italian",
+            address: "1900 Broadway, New York, NY 10023",
+            tables: 60,
+            menu: "Main Course
+            Mediterranean Branzino
+            perla's lemon spinach (supp $6)
+
+            Petit Dover Sole
+            perla's lemon spinach (supp $10)
+
+            Jumbo Lump Crab & Avocado Salad
+            fennel, orange (supp $9)
+
+            Five Pomodoro Spaghetti
+            bufala ricotta
+
+            Rigatoni alla Vodka
+            guanciale bacon, bread crumbs
+
+            Margherita Pizza
+            burrata mozzarella, pomodoro, basil
+
+            A Lot of Pepperoni
+            'nduja sausage, spicy honey
+
+            Our Famous Chicken Parmigiana
+            guanciale bread crumbs
+
+            Chicken Milanese Picatta Style
+            artichoke, capers, beurre blanc
+
+            Herbed Chicken Paillard
+            marilena salad",
+            average_rating: 4.6,
+            price_point: 40,
+            phone_number: "(212) 595-5330",
+            neighborhood: "Lincoln Center"
+            )
+
+            image11 = URI.open("https://seatme-dev.s3.amazonaws.com/cafe_fiorello_card.jpeg")
+          rest11.photo.attach(io: image11, filename: "cafe_fiorello_card.jpeg")
+          rest11.save!
+
+
         Reservation.create(date: "12-8-2022", time: "8:00",
         party_size: 5, user_id: 1, restaurant_id: 1 )
         Reservation.create(date: "12-12-2022", time: "7:00", party_size: 4,
         user_id: 1, restaurant_id: 2 )
         Reservation.create(date: "12-8-2022", time: "4:00", party_size: 1,
          user_id: 1, restaurant_id: 3)
+
+
 
 
     puts "Done!"

@@ -11,7 +11,7 @@
     margin: 0;
     margin-block: 0;
     padding: 0; */
-    padding-left: 100px;
+    /* padding-left: 100px; */
 }
 
 #carousel-section {
@@ -21,7 +21,9 @@
 
 #section-header {
     border-bottom: none;
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-bottom: 0;
     padding: 0 16px;
     min-height: 3rem;
@@ -40,6 +42,10 @@ h2 {
 
 #view-all {
     color: #da3743;
+    width: 100%;
+    position: relative;
+    left: 600px;
+
 }
 
 #outer-carousel-div {
@@ -91,12 +97,12 @@ ul {
 
 
 #right-scroll-button {
-    right: 50px;
+    right: 7px;
     transform: rotate(-90deg);
 }
 
 #left-scroll-button {
-    left: 90px;
+    left: 8px;
     transform: rotate(90deg);
 }
 
