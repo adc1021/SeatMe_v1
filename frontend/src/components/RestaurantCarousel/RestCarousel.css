@@ -11,7 +11,7 @@
     margin: 0;
     margin-block: 0;
     padding: 0; */
-    padding-left: 100px;
+    /* padding-left: px; */
 }
 
 #carousel-section {
@@ -91,12 +91,12 @@ ul {
 
 
 #right-scroll-button {
-    right: 50px;
+    right: 10px;
     transform: rotate(-90deg);
 }
 
 #left-scroll-button {
-    left: 90px;
+    left: 10px;
     transform: rotate(90deg);
 }
 

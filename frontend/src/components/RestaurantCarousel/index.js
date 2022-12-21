@@ -48,7 +48,7 @@ const RestaurantCarousel = () => {
                 naturalSlideWidth={125}
                 isIntrinsicHeight={true}
                 totalSlides={restaurants.length}
-                visibleSlides={4}
+                visibleSlides={5}
                 step={4}
                 dragEnabled={false}
               >

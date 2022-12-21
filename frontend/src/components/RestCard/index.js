@@ -57,7 +57,7 @@ const RestaurantCard = ({ restaurantId }) => {
               <img
                 alt=""
                 id="star-rating"
-                src="https://p.kindpng.com/picc/s/391-3915578_5-star-rating-red-5-star-rating-hd.png"
+                src="https://www.kindpng.com/picc/m/391-3915578_5-star-rating-red-5-star-rating-hd.png"
               ></img>
             </div>
             <span id="reviews-span">170 reviews</span>
