@@ -19,7 +19,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:show, :destroy, :update, :create, :index]
   end
 
-  get '/restaurants/:id', to: 'restaurants#show'
+  # get '/restaurants/:id', to: 'restaurants#show'
   post 'api/test', to: 'application#test'
 
 end
