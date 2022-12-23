@@ -248,3 +248,9 @@ section {
     transform: rotate(45deg);
     width: 0;
 }
+
+
+.carousel__slide-focus-ring {
+    outline: none !important;
+    border: none !important;
+}
