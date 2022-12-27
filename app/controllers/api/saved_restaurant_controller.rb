@@ -1,7 +1,11 @@
 class Api::SavedRestaurantController < ApplicationController
 
-    def show
+    def create
         
+    end
+
+    def show
+
     end
 
 end
