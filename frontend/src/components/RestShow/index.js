@@ -8,23 +8,26 @@ import "./RestShow.css";
 
 const RestShow = () => {
   const { id } = useParams();
+  debugger
   const dispatch = useDispatch();
   const [bool, setBool] = useState(true);
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
   );
 
-  const saveTag = bool ? (<img
-    alt=""
-    id="save-svg"
-    src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
-  ></img>) : (
+  const saveTag = bool ? (
     <img
-                alt=""
-                id="save-svg"
-                src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg"
-              ></img>
-  )
+      alt=""
+      id="save-svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
+    ></img>
+  ) : (
+    <img
+      alt=""
+      id="save-svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg"
+    ></img>
+  );
 
   useEffect(() => {
     dispatch(fetchRest(id));
@@ -32,10 +35,8 @@ const RestShow = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    setBool(!bool)
-
-  }
-
+    setBool(!bool);
+  };
 
   return (
     <>
@@ -71,9 +72,9 @@ const RestShow = () => {
             <section>
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
-            <p style={{lineHeight: "2rem"}}>{restaurant.description}</p>
+            <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
           </div>
-         <ReservationForm restaurantId={ id }/>
+          <ReservationForm restaurantId={id} />
         </div>
       </div>
     </>
