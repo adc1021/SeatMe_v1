@@ -1,17 +1,18 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar";
 import "./UsersShow.css";
+import "./index.css"
 import * as reservationActions from "../../store/reservationsReducer";
-import csrfFetch from "../../store/csrf";
-import ReservationShow from "../ReservationShow";
-import UsersPoints from "./UsersPoints";
+import UserReservations from "./UserReservations";
+import UsersRestaurants from "./UsersRestaurants";
 
 const UsersShow = () => {
+  const [toggleReservations, setToggleReservations] = useState(true)
+  const [toggleSaves, setToggleSaves] = useState(false)
   const dispatch = useDispatch();
   const user = useSelector((state) => {
-    // debugger
     return state.session ? state.session.user : {};
   });
 
@@ -23,11 +24,17 @@ const UsersShow = () => {
     dispatch(reservationActions.fetchReservations());
   }, [dispatch]);
 
-  const resArr = Object.values(reservations);
+  // const resArr = Object.values(reservations);
 
-  // const userReservations = resArr.filter((res) => (
-  //   res.userId === user.id
-  // ))
+  const handleReservations = (e) => {
+    setToggleReservations(true)
+    setToggleSaves(false)
+  }
+
+  const handleSaves = (e) => {
+    setToggleSaves(true)
+    setToggleReservations(false)
+  }
 
   return (
     <>
@@ -47,43 +54,34 @@ const UsersShow = () => {
                 <nav id="page-nav">
                   <ul>
                     <li>
-                      <Link to="" className="link">
+                      <Link to={`/users/${user.id}`} className="link" onClick={handleReservations}>
                         Reservations
                       </Link>
                     </li>
                     <li>
-                      <Link to="" className="link">
+                      <Link to={`/users/${user.id}`} className="link" onClick={handleSaves} >
                         Saved Restaurants
                       </Link>
                     </li>
                     <li>
-                      <Link to="" className="link">
+                      <Link to={`/users/${user.id}`} className="link">
                         Account Details
                       </Link>
                     </li>
                     <li>
-                      <Link to="" className="link">
+                      <Link to={`/users/${user.id}`} className="link">
                         Preferences
                       </Link>
                     </li>
                     <li>
-                      <Link to="" className="link">
+                      <Link to={`/users/${user.id}`} className="link">
                         Payment Methods
                       </Link>
                     </li>
                   </ul>
                 </nav>
-                <div className="points-reservations">
-                  <UsersPoints />
-                  <div id="upcoming-reservations" style={{ padding: "16px" }}>
-                    <h2 style={{ margin: "0" }}>Upcoming Reservations</h2>
-                    {resArr.map((res) => {
-                      // if (res.userId === user.id) {
-                      return <ReservationShow resData={res} />;
-                      // }
-                    })}
-                  </div>
-                </div>
+                { toggleReservations && <UserReservations user={user} reservations={reservations}/>}
+                { toggleSaves && <UsersRestaurants user={user} reservations={reservations}/>}
               </div>
             </div>
           </div>
