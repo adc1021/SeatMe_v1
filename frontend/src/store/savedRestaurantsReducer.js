@@ -49,7 +49,7 @@ export const fetchSavedRestaurants = () => async (dispatch) => {
 
 export const createSavedRestaurant = (data) => async (dispatch) => {
   try {
-    const newSave = await csrfFetch(`/api/savedRestaurant`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
+    const newSave = await csrfFetch(`/api/saved_restaurant`, { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)})
     const savedRestaurant = await newSave.json();
     dispatch(receiveSavedRestaurant(savedRestaurant))
   } catch (err) {
@@ -85,4 +85,4 @@ const savedRestaurantReducer = (oldState = {}, action) => {
   }
 }
 
-export default savedRestaurantReducer; 
+export default savedRestaurantReducer;

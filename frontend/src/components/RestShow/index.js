@@ -5,16 +5,21 @@ import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
+import * as savedRestActions from "../../store/savedRestaurantsReducer"
 
 const RestShow = () => {
   const { id } = useParams();
-  debugger
+
   const dispatch = useDispatch();
   const [bool, setBool] = useState(true);
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
   );
 
+  const user = useSelector((state) =>
+  state.session.user ? state.session.user : {}
+  );
+  // debugger
   const saveTag = bool ? (
     <img
       alt=""
@@ -36,6 +41,7 @@ const RestShow = () => {
   const handleSave = (e) => {
     e.preventDefault();
     setBool(!bool);
+    dispatch(savedRestActions.createSavedRestaurant({ userId: user.id, restaurantId: id }))
   };
 
   return (
