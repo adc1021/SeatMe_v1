@@ -5,7 +5,6 @@ const UserReservations = ({ user, reservations }) => {
   const resArr = Object.values(reservations);
 
   const filteredArr = resArr.filter( (res) => {
-    debugger
     return res.userId === user.id
   })
   return (

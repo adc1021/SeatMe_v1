@@ -14,9 +14,15 @@ class Api::SavedRestaurantController < ApplicationController
 
     end
 
+    def index
+        # debugger
+        @saved_restaurants = SavedRestaurant.all
+    end
+
     def destroy
-        @savedRestaurant = SavedRestaurant.find_by(restaurant_id: params[:restaurant_id])
-        @savedRestaurant.delete
+        @saved_restaurant = SavedRestaurant.find_by(id: params[:id])
+
+        @saved_restaurant.delete
     end
 
 

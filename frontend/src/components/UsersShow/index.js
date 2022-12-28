@@ -7,6 +7,7 @@ import "./index.css"
 import * as reservationActions from "../../store/reservationsReducer";
 import UserReservations from "./UserReservations";
 import UsersRestaurants from "./UsersRestaurants";
+import { fetchSavedRestaurants } from "../../store/savedRestaurantsReducer";
 
 const UsersShow = () => {
   const userId = useParams()
@@ -20,12 +21,22 @@ const UsersShow = () => {
   const reservations = useSelector((state) => {
     return state.reservations ? state.reservations : {};
   });
-   console.log(reservations)
+
   useEffect(() => {
     dispatch(reservationActions.fetchReservations());
   }, [dispatch]);
 
-  // const resArr = Object.values(reservations);
+  const savedRestaurants = useSelector((state) => {
+    return state.savedRestaurants ? state.savedRestaurants : {};
+  })
+
+  console.log(reservations)
+  console.log(savedRestaurants)
+  debugger
+
+  useEffect(() => {
+    dispatch(fetchSavedRestaurants())
+  }, [dispatch])
 
   const handleReservations = (e) => {
     setToggleReservations(true)

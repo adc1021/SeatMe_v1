@@ -38,7 +38,7 @@ export const fetchSavedRestaurant = (restaurantId) => async (dispatch) => {
 }
 
 export const fetchSavedRestaurants = () => async (dispatch) => {
-  debugger
+  // debugger
   try {
     const savedRestaurants = await csrfFetch(`/api/saved_restaurant`)
     const data = await savedRestaurants.json()
@@ -58,13 +58,13 @@ export const createSavedRestaurant = (data) => async (dispatch) => {
   }
 }
 
-export const deleteSavedRestaurant = (restaurantId) => async (dispatch) => {
+export const deleteSavedRestaurant = (savedRestaurantId) => async (dispatch) => {
+  debugger
   try {
-    const res = await csrfFetch(`/api/savedRestaurant`,
-      { method: "DELETE",
-        body: JSON.stringify(restaurantId)
+    const res = await csrfFetch(`/api/saved_restaurant/${savedRestaurantId}`,
+      { method: "DELETE"
     });
-    dispatch(REMOVE_SAVED_RESTAURANT(restaurantId))
+    dispatch(REMOVE_SAVED_RESTAURANT(savedRestaurantId))
   } catch (err) {
     console.log(err)
   }
