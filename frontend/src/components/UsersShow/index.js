@@ -9,6 +9,7 @@ import UserReservations from "./UserReservations";
 import UsersRestaurants from "./UsersRestaurants";
 
 const UsersShow = () => {
+  const userId = useParams()
   const [toggleReservations, setToggleReservations] = useState(true)
   const [toggleSaves, setToggleSaves] = useState(false)
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const UsersShow = () => {
   const reservations = useSelector((state) => {
     return state.reservations ? state.reservations : {};
   });
-
+   console.log(reservations)
   useEffect(() => {
     dispatch(reservationActions.fetchReservations());
   }, [dispatch]);

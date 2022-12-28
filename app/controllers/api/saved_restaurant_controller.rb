@@ -14,6 +14,11 @@ class Api::SavedRestaurantController < ApplicationController
 
     end
 
+    def destroy
+        @savedRestaurant = SavedRestaurant.find_by(restaurant_id: params[:restaurant_id])
+        @savedRestaurant.delete
+    end
+
 
     private
 

@@ -5,7 +5,7 @@ import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
-import * as savedRestActions from "../../store/savedRestaurantsReducer"
+import * as savedRestActions from "../../store/savedRestaurantsReducer";
 
 const RestShow = () => {
   const { id } = useParams();
@@ -17,20 +17,20 @@ const RestShow = () => {
   );
 
   const user = useSelector((state) =>
-  state.session.user ? state.session.user : {}
+    state.session.user ? state.session.user : {}
   );
   // debugger
   const saveTag = bool ? (
     <img
       alt=""
       id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
     ></img>
   ) : (
     <img
       alt=""
       id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
     ></img>
   );
 
@@ -41,7 +41,14 @@ const RestShow = () => {
   const handleSave = (e) => {
     e.preventDefault();
     setBool(!bool);
-    dispatch(savedRestActions.createSavedRestaurant({ userId: user.id, restaurantId: id }))
+    bool
+      ? dispatch(savedRestActions.deleteSavedRestaurant(id))
+      : dispatch(
+          savedRestActions.createSavedRestaurant({
+            userId: user.id,
+            restaurantId: id,
+          })
+        );
   };
 
   return (

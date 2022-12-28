@@ -38,8 +38,9 @@ export const fetchSavedRestaurant = (restaurantId) => async (dispatch) => {
 }
 
 export const fetchSavedRestaurants = () => async (dispatch) => {
+  debugger
   try {
-    const savedRestaurants = await csrfFetch(`/api/savedRestaurant`)
+    const savedRestaurants = await csrfFetch(`/api/saved_restaurant`)
     const data = await savedRestaurants.json()
     dispatch(receiveSavedRestaurants(data))
   }catch (err) {
@@ -59,8 +60,9 @@ export const createSavedRestaurant = (data) => async (dispatch) => {
 
 export const deleteSavedRestaurant = (restaurantId) => async (dispatch) => {
   try {
-    const res = await csrfFetch(`/api/savedRestaurant/${restaurantId}`, {
-      method: "DELETE",
+    const res = await csrfFetch(`/api/savedRestaurant`,
+      { method: "DELETE",
+        body: JSON.stringify(restaurantId)
     });
     dispatch(REMOVE_SAVED_RESTAURANT(restaurantId))
   } catch (err) {
@@ -78,7 +80,7 @@ const savedRestaurantReducer = (oldState = {}, action) => {
     case RECEIVE_SAVED_RESTAURANTS:
       return { ...newState, ...action.savedRestaurants }
     case REMOVE_SAVED_RESTAURANT:
-      delete newState[action.savedRestaurant.id]
+      delete newState[action.savedRestaurant.restaurantId]
       return newState
     default:
       return oldState

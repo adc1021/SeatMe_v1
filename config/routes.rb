@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:show, :index, :create]
 
     resources :reservations, only: [:show, :destroy, :update, :create, :index]
-    resources :saved_restaurant, only: [:create, :show]
+    resources :saved_restaurant, only: [:create, :show, :destroy]
   end
 
   # get '/restaurants/:id', to: 'restaurants#show'
