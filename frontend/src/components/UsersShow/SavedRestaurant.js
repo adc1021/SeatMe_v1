@@ -14,10 +14,15 @@ const SavedRestaurant = ({ rest }) => {
 
   useEffect(() => {
     dispatch(restActions.fetchRest(rest.restaurantId));
-  }, []);
+  }, [rest]);
+
+  const handleDelete = (e) => {
+    dispatch(savedRestActions.deleteSavedRestaurant(rest.id))
+  }
 
   return (
     <>
+    
       <div id="display-info-div">
         <img id="rest-card-img" alt="" src={restaurant.photoUrl}></img>
         <div id="rest-name-span">
@@ -32,16 +37,13 @@ const SavedRestaurant = ({ rest }) => {
             {restaurant.name}
           </span>
           <span id="reservation-status" style={{ marginTop: "4px" }}>
-            <button className="remove-button">
-
-            <img
-              alt=""
-              src="https://www.opentable.com/my/NewContent/img/bookmark-filled.svg"
-              style={{marginRight: "4px"}}
-            />
-            <div>
-            Remove from saved restaurants
-            </div>
+            <button className="remove-button" onClick={handleDelete}>
+              <img
+                alt=""
+                src="https://www.opentable.com/my/NewContent/img/bookmark-filled.svg"
+                style={{ marginRight: "4px" }}
+              />
+              <div>Remove from saved restaurants</div>
             </button>
           </span>
           <span id="little-man">

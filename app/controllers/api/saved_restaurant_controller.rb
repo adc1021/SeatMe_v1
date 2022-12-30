@@ -20,7 +20,6 @@ class Api::SavedRestaurantController < ApplicationController
     end
 
     def destroy
-        debugger
         @saved_restaurant = SavedRestaurant.find_by(id: params[:id])
         if @saved_restaurant
             @saved_restaurant.delete

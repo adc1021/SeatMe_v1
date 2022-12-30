@@ -19,7 +19,7 @@ export const receiveSavedRestaurants = (savedRestaurants) => {
   }
 }
 
-export const removeRestaurants = (restaurantId) => {
+export const removeRestaurant = (restaurantId) => {
   return {
     type: REMOVE_SAVED_RESTAURANT,
     restaurantId
@@ -59,12 +59,11 @@ export const createSavedRestaurant = (data) => async (dispatch) => {
 }
 
 export const deleteSavedRestaurant = (savedRestaurantId) => async (dispatch) => {
-  debugger
   try {
     const res = await csrfFetch(`/api/saved_restaurant/${savedRestaurantId}`,
       { method: "DELETE"
     });
-    dispatch(REMOVE_SAVED_RESTAURANT(savedRestaurantId))
+    dispatch(removeRestaurant(savedRestaurantId))
   } catch (err) {
     console.log(err)
   }
@@ -80,7 +79,7 @@ const savedRestaurantReducer = (oldState = {}, action) => {
     case RECEIVE_SAVED_RESTAURANTS:
       return { ...newState, ...action.savedRestaurants }
     case REMOVE_SAVED_RESTAURANT:
-      delete newState[action.savedRestaurant.restaurantId]
+      delete newState[action.savedRestaurant.id]
       return newState
     default:
       return oldState
