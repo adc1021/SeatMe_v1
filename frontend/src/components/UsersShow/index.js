@@ -30,8 +30,8 @@ const UsersShow = () => {
     return state.savedRestaurants ? state.savedRestaurants : {};
   })
 
-  console.log(reservations)
-  console.log(savedRestaurants)
+  // console.log(reservations)
+  // console.log(savedRestaurants)
 
   useEffect(() => {
     dispatch(fetchSavedRestaurants())

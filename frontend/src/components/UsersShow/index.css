@@ -32,3 +32,16 @@
 .saved-rest-container .points-reservations {
     border-bottom: 1px solid rgba(0,0,0,.08);
 }
+
+.remove-button {
+    border: none;
+    background: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+    color: red;
+}

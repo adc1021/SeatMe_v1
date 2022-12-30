@@ -51,7 +51,7 @@
     width: 95%;
     display: flex;
     justify-content: normal;
-    border: 0.0625rem solid #d8d9db;
+    border-bottom: 0.0625rem solid #d8d9db;
     border-radius: 4px;
 }
 

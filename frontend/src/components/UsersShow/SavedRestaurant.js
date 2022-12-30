@@ -1,9 +1,25 @@
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import * as savedRestActions from "../../store/savedRestaurantsReducer";
+import * as restActions from "../../store/restaurantsReducer";
 
-const SavedRestaurant = () => {
+const SavedRestaurant = ({ rest }) => {
+  const dispatch = useDispatch();
+
+  const restaurant = useSelector((state) =>
+    state.restaurants[rest.restaurantId]
+      ? state.restaurants[rest.restaurantId]
+      : {}
+  );
+
+  useEffect(() => {
+    dispatch(restActions.fetchRest(rest.restaurantId));
+  }, []);
+
   return (
     <>
-    <div id="display-info-div">
-        {/* <img id="rest-card-img" alt="" src={restaurantData.photoUrl}></img> */}
+      <div id="display-info-div">
+        <img id="rest-card-img" alt="" src={restaurant.photoUrl}></img>
         <div id="rest-name-span">
           <span
             style={{
@@ -13,28 +29,20 @@ const SavedRestaurant = () => {
               lineHeight: "1.5rem",
             }}
           >
-            {/* {restaurantData.name} */}
+            {restaurant.name}
           </span>
           <span id="reservation-status" style={{ marginTop: "4px" }}>
-            <svg
-              focusable="false"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              id="svg"
-            >
-              <path
-                d="M11.0355339,12.863961 L9.62132034,11.4497475 C9.23079605,
-                11.0592232 8.59763107,11.0592232 8.20710678,11.4497475 C7.81658249,
-                11.8402718 7.81658249,12.4734367 8.20710678,12.863961 L10.3284271,14.9852814
-                C10.5236893,15.1805435 10.7796116,15.2781746 11.0355339,15.2781746 C11.2914562,
-                15.2781746 11.5473785,15.1805435 11.7426407,14.9852814 L15.9852814,10.7426407
-                 C16.3758057,10.3521164 16.3758057,9.71895142 15.9852814,9.32842712
-                 C15.5947571,8.93790283 14.9615921,8.93790283 14.5710678,9.32842712
-                 L11.0355339,12.863961 Z M12,21 C7.02943725,21 3,16.9705627 3,12 C3,7.02943725
-                 7.02943725,3 12,3 C16.9705627,3 21,7.02943725 21,12 C21,16.9705627 16.9705627,21 12,21 Z"
-              ></path>
-            </svg>
-            Reservation confirmed
+            <button className="remove-button">
+
+            <img
+              alt=""
+              src="https://www.opentable.com/my/NewContent/img/bookmark-filled.svg"
+              style={{marginRight: "4px"}}
+            />
+            <div>
+            Remove from saved restaurants
+            </div>
+            </button>
           </span>
           <span id="little-man">
             <svg
@@ -87,12 +95,11 @@ const SavedRestaurant = () => {
             {/* <p style={{marginLeft: "8px"}}>{resData.date.slice(0, 10)}</p>
             <p style={{marginLeft: "8px"}}>{resData.time.slice(11, 16)} PM</p> */}
           </span>
-          <span style={{display: "flex", flexDirection: "row"}}>
-          </span>
+          <span style={{ display: "flex", flexDirection: "row" }}></span>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default SavedRestaurant;
