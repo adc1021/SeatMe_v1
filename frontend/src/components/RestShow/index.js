@@ -6,12 +6,19 @@ import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
+import * as restaurantActions from "../../store/restaurantsReducer"
 
 const RestShow = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
   const [bool, setBool] = useState(true);
+
+  useEffect(() => {
+    // dispatch()
+    dispatch(savedRestActions.fetchSavedRestaurants())
+  }, [dispatch, bool])
+
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
   );
@@ -19,6 +26,18 @@ const RestShow = () => {
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
+
+  const savedRestaurants = useSelector((state) => {
+    return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
+  })
+
+  const savesArr = savedRestaurants ? ( Object.values(savedRestaurants) ) : []
+
+  let currentSavedRestaurant = savesArr.filter((savedRest) => {
+    return savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
+  })
+
+
   // debugger
   // const saveTag = bool ? (
   //   <img
@@ -56,7 +75,7 @@ const RestShow = () => {
             restaurantId: id,
           })
         )
-      : dispatch(savedRestActions.deleteSavedRestaurant({ userId: user.id, restauranId: id }));
+      : dispatch(savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id));
   };
   // const handleSave = (e) => {
   //   e.preventDefault();

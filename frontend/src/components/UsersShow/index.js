@@ -32,7 +32,6 @@ const UsersShow = () => {
 
   console.log(reservations)
   console.log(savedRestaurants)
-  debugger
 
   useEffect(() => {
     dispatch(fetchSavedRestaurants())
