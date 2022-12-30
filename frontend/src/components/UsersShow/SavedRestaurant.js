@@ -2,9 +2,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import * as restActions from "../../store/restaurantsReducer";
+import { useHistory } from "react-router-dom";
 
 const SavedRestaurant = ({ rest }) => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const restaurant = useSelector((state) =>
     state.restaurants[rest.restaurantId]
@@ -18,19 +20,20 @@ const SavedRestaurant = ({ rest }) => {
 
   const handleDelete = (e) => {
     dispatch(savedRestActions.deleteSavedRestaurant(rest.id))
+    window.location.reload(false);
   }
 
   return (
     <>
-    
+
       <div id="display-info-div">
         <img id="rest-card-img" alt="" src={restaurant.photoUrl}></img>
         <div id="rest-name-span">
           <span
             style={{
               width: "100%",
-              fontSize: "1.25rem",
-              fontWeight: "700",
+              fontSize: "1rem",
+              fontWeight: "450",
               lineHeight: "1.5rem",
             }}
           >
