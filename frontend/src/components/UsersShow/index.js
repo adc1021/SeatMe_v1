@@ -74,21 +74,6 @@ const UsersShow = () => {
                         Saved Restaurants
                       </Link>
                     </li>
-                    <li>
-                      <Link to={`/users/${user.id}`} className="link">
-                        Account Details
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to={`/users/${user.id}`} className="link">
-                        Preferences
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to={`/users/${user.id}`} className="link">
-                        Payment Methods
-                      </Link>
-                    </li>
                   </ul>
                 </nav>
                 { toggleReservations && <UserReservations user={user} reservations={reservations}/>}

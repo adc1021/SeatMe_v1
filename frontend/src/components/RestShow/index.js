@@ -6,7 +6,7 @@ import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
-import * as restaurantActions from "../../store/restaurantsReducer"
+import * as restaurantActions from "../../store/restaurantsReducer";
 
 const RestShow = () => {
   const { id } = useParams();
@@ -16,8 +16,8 @@ const RestShow = () => {
 
   useEffect(() => {
     // dispatch()
-    dispatch(savedRestActions.fetchSavedRestaurants())
-  }, [dispatch, bool])
+    dispatch(savedRestActions.fetchSavedRestaurants());
+  }, [dispatch, bool]);
 
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
@@ -29,53 +29,57 @@ const RestShow = () => {
 
   const savedRestaurants = useSelector((state) => {
     return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
-  })
+  });
 
-  const savesArr = savedRestaurants ? ( Object.values(savedRestaurants) ) : []
+  const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
 
   let currentSavedRestaurant = savesArr.filter((savedRest) => {
-    return savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
-  })
-
+    return (
+      savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
+    );
+  });
 
   // debugger
-  // const saveTag = bool ? (
-  //   <img
-  //     alt=""
-  //     id="save-svg"
-  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
-  //   ></img>
-  // ) : (
-  //   <img
-  //     alt=""
-  //     id="save-svg"
-  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
-  //   ></img>
-  // );
-
-  const saveTag = (
+  const saveTag = bool ? (
     <img
       alt=""
       id="save-svg"
       src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
     ></img>
+  ) : (
+    <img
+      alt=""
+      id="save-svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
+    ></img>
   );
+
+  // let saveTag = (
+  //   <img
+  //     alt=""
+  //     id="save-svg"
+  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
+  //   ></img>
+  // );
 
   useEffect(() => {
     dispatch(fetchRest(id));
   }, []);
 
   const handleSave = (e) => {
-    console.log(bool)
+    console.log(bool);
     e.preventDefault();
-    setBool(!bool)
-      bool ? dispatch(
+    setBool(!bool);
+    bool
+      ? dispatch(
           savedRestActions.createSavedRestaurant({
             userId: user.id,
             restaurantId: id,
           })
         )
-      : dispatch(savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id));
+      : dispatch(
+          savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id)
+        );
   };
   // const handleSave = (e) => {
   //   e.preventDefault();
