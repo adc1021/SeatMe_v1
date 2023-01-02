@@ -65,7 +65,7 @@
           menu: "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,
           Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,
           Our Signature Baked Oysters $18.00",
-          average_rating: 4.7,
+          average_rating: 4.1,
           price_point: 50,
           phone_number: "212-371-7777",
           neighborhood: "Midtown West"
@@ -164,7 +164,7 @@
           $29.00,
           The Flatiron
           $49.00",
-          average_rating: 4.6,
+          average_rating: 4.9,
           price_point: 50,
           phone_number: "212-401-7986",
           neighborhood: "Chelsea"
@@ -230,7 +230,7 @@
           $13.00
           Avocado Toast Brunch
           $14.00",
-          average_rating: 4.4,
+          average_rating: 5.0,
           price_point: 18,
           phone_number: "718-366-3272",
           neighborhood: "Bushwick"
@@ -285,7 +285,7 @@
           $24
           cocoa pappardelle & braised wagyu beef ragu
           fresh ricotta",
-          average_rating: 4.8,
+          average_rating: 4.3,
           price_point: 31,
           phone_number: "212-401-7986",
           neighborhood: "Williamsburg",
@@ -332,7 +332,7 @@
           Egg Pizza
           $19.00
           Egg tofu scramble, tomatoes, roasted homemade potatoe, peppers, cashew cheese",
-          average_rating: 4.5,
+          average_rating: 4.0,
           price_point: 29,
           phone_number: "212-777-1608",
           neighborhood: "East Village",
