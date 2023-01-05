@@ -2,7 +2,7 @@
 #sticky-div {
     position: sticky;
     top: 0;
-    z-index: 11;
+    z-index: 0;
 }
 
 article {
@@ -100,4 +100,3 @@ hr {
     border-bottom: 0.0625rem solid #d8d9db;
     border-width: 95%;
 }
-
