@@ -12,12 +12,6 @@ const RestShow = () => {
   const { id } = useParams();
 
   const dispatch = useDispatch();
-  const [bool, setBool] = useState(true);
-
-  useEffect(() => {
-    // dispatch()
-    dispatch(savedRestActions.fetchSavedRestaurants());
-  }, [dispatch, bool]);
 
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
@@ -26,7 +20,6 @@ const RestShow = () => {
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
-
   const savedRestaurants = useSelector((state) => {
     return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
   });
@@ -38,6 +31,12 @@ const RestShow = () => {
       savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
     );
   });
+  const [bool, setBool] = useState(!!currentSavedRestaurant);
+
+  useEffect(() => {
+    // dispatch()
+    dispatch(savedRestActions.fetchSavedRestaurants());
+  }, [dispatch, bool]);
 
   // debugger
   const saveTag = bool ? (
@@ -70,6 +69,7 @@ const RestShow = () => {
     console.log(bool);
     e.preventDefault();
     setBool(!bool);
+    console.log(currentSavedRestaurant);
     bool
       ? dispatch(
           savedRestActions.createSavedRestaurant({
