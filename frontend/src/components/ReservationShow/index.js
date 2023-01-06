@@ -12,6 +12,32 @@ const ReservationShow = ({ resData }) => {
       ? state.restaurants[resData.restaurantId]
       : {}
   );
+  let newDate = new Date(resData.date)
+
+  let day = () => {
+    let weekday = newDate.getDay()
+
+    switch(weekday) {
+      case 1:
+        return "Mon"
+      case 2:
+        return "Tue"
+      case 3:
+        return "Wed"
+      case 4:
+       return "Thu"
+      case 5:
+       return "Fri"
+      case 6:
+       return "Sat"
+      case 7:
+        return "Sun"
+      default:
+        return ""
+      }
+    }
+    console.log(day)
+
 
   return (
     <>
@@ -97,7 +123,8 @@ const ReservationShow = ({ resData }) => {
                 ></path>
               </svg>
             </span>
-            <p style={{marginLeft: "8px"}}>{resData.date.slice(0, 10)}</p>
+            <p style={{marginLeft: "8px"}}>{newDate.date}</p>
+            <p style={{marginLeft: "8px"}}>{day() + ","}</p>
             <p style={{marginLeft: "8px"}}>{resData.time.slice(11, 16)} PM</p>
           </span>
           <span style={{display: "flex", flexDirection: "row"}}>
