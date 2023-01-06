@@ -3,12 +3,15 @@ import ReservationHeader from "../ReservationHeader";
 import Navigation from "../Navigation";
 import RestaurantCarousel from "../RestaurantCarousel";
 import NavBar from "../NavBar";
+import React, { createContext, useEffect, useState } from "react";
 
 const Splash = () => {
+  const [query, setQuery] = useState("")
+
   return (
     <>
       <NavBar />
-      <ReservationHeader />
+      <ReservationHeader setQuery={setQuery} />
       <div id="main-wrap">
         <section id="location-banner">
           <div id="location-div">
@@ -31,7 +34,7 @@ const Splash = () => {
           </div>
         </section>
         <div>
-          <RestaurantCarousel />
+          <RestaurantCarousel query={query}/>
         </div>
       </div>
     </>

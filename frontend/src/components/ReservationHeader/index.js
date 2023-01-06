@@ -1,10 +1,31 @@
-import React, { useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import * as sessionActions from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import "./ReservationHeader.css";
+import { fetchRestaurants } from "../../store/restaurantsReducer";
+import RestaurantCard from "../RestCard";
 
-const ReservationHeader = () => {
+const ReservationHeader = ({ setQuery }) => {
+  // const [query, setQuery] = useState("")
+  const dispatch = useDispatch();
+  const restaurants = useSelector( (state) => {
+    return state.restaurants ? state.restaurants : {};
+  })
+
+
+  useEffect(() => {
+    dispatch(fetchRestaurants())
+  }, [dispatch]);
+
+  // restaurants.filter( restaurant => {
+  //   if (query === "") {
+  //     return restaurant
+  //   } else if (restaurant.cuisine.toLowerCase().includes(query.toLowerCase())) {
+  //     return restaurant
+  //   }
+  // })
+
   return (
     <header className="res-header">
       <div>
@@ -47,6 +68,7 @@ const ReservationHeader = () => {
             id="head-search-bar"
             type="text"
             placeholder="Location, Restaurant, Cuisine"
+            onChange={ e => setQuery(e.target.value)}
           />
         </div>
         <div>

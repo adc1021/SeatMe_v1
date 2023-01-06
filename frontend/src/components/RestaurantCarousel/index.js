@@ -13,9 +13,9 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-const RestaurantCarousel = () => {
+const RestaurantCarousel = ({ query }) => {
   const dispatch = useDispatch();
-
+  // console.log(query)
   const restaurants = useSelector((state) =>
     state.restaurants ? Object.values(state.restaurants) : []
   );
@@ -24,6 +24,16 @@ const RestaurantCarousel = () => {
   useEffect(() => {
     dispatch(restActions.fetchRestaurants());
   }, []);
+
+    const queryResponse = restaurants.filter( (restaurant) => {
+    if (query === "") {
+      return restaurant
+    } else if (restaurant.cuisine.toLowerCase().includes(query.toLowerCase())) {
+      return restaurant
+    }
+  })
+
+  console.log(queryResponse)
 
   return (
     <div id="rest-wrapper">
@@ -53,7 +63,7 @@ const RestaurantCarousel = () => {
                 dragEnabled={false}
               >
                 <Slider>
-                  {restaurants.map((rest, i) => {
+                  {queryResponse.map((rest, i) => {
                     return (
                       <Slide key={rest.id} index={i}>
                         <li id="rest-cards">
