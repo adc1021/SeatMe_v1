@@ -13,6 +13,7 @@ const ReservationShow = ({ resData }) => {
       : {}
   );
   let newDate = new Date(resData.date)
+  let newTime = new Date(resData.time)
 
   let day = () => {
     let weekday = newDate.getDay()
@@ -36,8 +37,49 @@ const ReservationShow = ({ resData }) => {
         return ""
       }
     }
-    console.log(day)
 
+    let month = () => {
+      let num = newDate.getMonth()
+
+      switch(num) {
+        case 0:
+          return "Jan"
+        case 1:
+          return "Feb"
+        case 2:
+          return "Mar"
+        case 3:
+         return "Apr"
+        case 4:
+         return "May"
+        case 5:
+         return "June"
+        case 6:
+          return "July"
+        case 7:
+          return "Aug"
+        case 8:
+          return "Sep"
+        case 9:
+          return "Oct"
+        case 10:
+          return "Nov"
+        case 11:
+          return "Dec"
+        default:
+          return ""
+        }
+      }
+
+      let date = newDate.getDate();
+
+      let hours = () => {
+        debugger
+        let hrs = newTime.getHours()
+        return hrs
+      }
+
+      console.log(hours())
 
   return (
     <>
@@ -125,6 +167,8 @@ const ReservationShow = ({ resData }) => {
             </span>
             <p style={{marginLeft: "8px"}}>{newDate.date}</p>
             <p style={{marginLeft: "8px"}}>{day() + ","}</p>
+            <p style={{marginLeft: "8px"}}>{month() + " " + date}</p>
+            <p style={{marginLeft: "8px"}}>at</p>
             <p style={{marginLeft: "8px"}}>{resData.time.slice(11, 16)} PM</p>
           </span>
           <span style={{display: "flex", flexDirection: "row"}}>
