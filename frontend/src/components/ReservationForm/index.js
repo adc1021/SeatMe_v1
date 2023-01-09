@@ -96,6 +96,7 @@ const ReservationForm = ({ restaurantId }) => {
                 type="date"
                 value={date}
                 className="today"
+                min={new Date().toISOString().split('T')[0]}
                 onChange={(e) => setDate(e.target.value)}
               ></input>
               <select className="today" value={time} onChange={(e) => setTime(e.target.value)}>
