@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import DeleteReservation from "./DeleteReservation";
 import "./ReservationShow.css";
 import UpdateReservation from "./UpdateReservation";
+import { format, addMinutes } from "date-fns";
 
 const ReservationShow = ({ resData }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const ReservationShow = ({ resData }) => {
       : {}
   );
   let newDate = new Date(resData.date)
+  let newTime = new Date(resData.time)
 
   let day = () => {
     let weekday = newDate.getDay()
@@ -73,16 +75,10 @@ const ReservationShow = ({ resData }) => {
       let date = newDate.getDate();
 
       const hour = () => {
-        let hr = newDate.getHours();
-        if(hr === 0) {
-          return 12
-        } else if(0 < hr && hr < 13) {
-          return hr
-        } else if(hr > 12) {
-          return (hr - 12)
-        }
+        return format(addMinutes(newTime, newTime.getTimezoneOffset()), "p");
       }
 
+      console.log(hour())
 
   //     let offset = newEvent.eventDate.getTimezoneOffset();
   // let time = newEvent.eventDate.getTime();
@@ -181,7 +177,8 @@ const ReservationShow = ({ resData }) => {
             <p style={{marginLeft: "8px"}}>{day() + ","}</p>
             <p style={{marginLeft: "8px"}}>{month() + " " + date}</p>
             <p style={{marginLeft: "8px"}}>at</p>
-            <p style={{marginLeft: "8px"}}>{hour() + ":00 PM"}</p>
+            {/* <p style={{marginLeft: "8px"}}>{hour() + ":00 PM"}</p> */}
+            <p style={{marginLeft: "8px"}}>{hour()}</p>
           </span>
           <span style={{display: "flex", flexDirection: "row"}}>
           <UpdateReservation resData={resData}/>

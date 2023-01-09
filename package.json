@@ -15,6 +15,7 @@
     "node": "16.x"
   },
   "dependencies": {
+    "date-fns": "^2.29.3",
     "react-use-navigate": "^0.1.1"
   }
 }
