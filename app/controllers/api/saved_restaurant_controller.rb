@@ -4,7 +4,7 @@ class Api::SavedRestaurantController < ApplicationController
     def create
         @saved_restaurant = SavedRestaurant.new(saved_params)
         if @saved_restaurant.save
-            render :show
+            render `api/saved_restaurant/show`
         else
             render json: @saved_restaurant.errors.full_messages, status: 422
         end
