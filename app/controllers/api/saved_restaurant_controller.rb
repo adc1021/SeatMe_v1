@@ -17,6 +17,9 @@ class Api::SavedRestaurantController < ApplicationController
     def index
         # debugger
         @saved_restaurants = SavedRestaurant.all
+        if @saved_restaurants.length > 0
+            render :index
+        end
     end
 
     def destroy

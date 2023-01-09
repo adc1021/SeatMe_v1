@@ -39,7 +39,6 @@ export const fetchSavedRestaurant = (restaurantId) => async (dispatch) => {
 };
 
 export const fetchSavedRestaurants = () => async (dispatch) => {
-  // debugger
   try {
     const savedRestaurants = await csrfFetch(`/api/saved_restaurant`);
     const data = await savedRestaurants.json();

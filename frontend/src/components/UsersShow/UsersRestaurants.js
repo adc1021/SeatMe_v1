@@ -6,9 +6,9 @@ import SavedRestaurant from "./SavedRestaurant";
 
 const UsersRestaurants = ({ user, reservations }) => {
   const dispatch = useDispatch();
-
   const savedRestaurants = useSelector((state) => {
-    return state.savedRestaurants
+    // debugger
+    return state.savedRestaurants.savedRestaurant
       ? Object.values(state.savedRestaurants.savedRestaurant)
       : [];
   });
