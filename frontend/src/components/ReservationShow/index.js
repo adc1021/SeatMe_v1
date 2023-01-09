@@ -20,19 +20,19 @@ const ReservationShow = ({ resData }) => {
     let weekday = newDate.getDay()
 
     switch(weekday) {
-      case 1:
+      case 0:
         return "Mon"
-      case 2:
+      case 1:
         return "Tue"
-      case 3:
+      case 2:
         return "Wed"
-      case 4:
+      case 3:
        return "Thu"
-      case 5:
+      case 4:
        return "Fri"
-      case 6:
+      case 5:
        return "Sat"
-      case 7:
+      case 6:
         return "Sun"
       default:
         return ""
@@ -72,7 +72,7 @@ const ReservationShow = ({ resData }) => {
         }
       }
 
-      let date = newDate.getDate();
+      let date = newDate.getDate() + 1;
 
       const hour = () => {
         return format(addMinutes(newTime, newTime.getTimezoneOffset()), "p");
