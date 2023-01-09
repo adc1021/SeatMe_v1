@@ -23,6 +23,8 @@ function App() {
         <Route path={"/reservations/:id/update"}>
           <UpdateReservationForm />
         </Route>
+        <Route path={"/user/:id/savedRestaurants"} >
+        </Route>
         <Route path={"/"}>
           <Splash />
         </Route>

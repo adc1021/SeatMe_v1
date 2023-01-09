@@ -11,7 +11,8 @@ const RestaurantCard = ({ restaurantId }) => {
   const restaurant = useSelector((state) =>
     state.restaurants[restaurantId] ? state.restaurants[restaurantId] : {}
   );
-  // debugger
+
+
   const dollarSign = () => {
     if (restaurant.pricePoint < 20) {
       return (
@@ -40,10 +41,73 @@ const RestaurantCard = ({ restaurantId }) => {
     }
   };
 
+  const stars = () => {
+    // debugger
+    if (restaurant.averageRating >= 5.0 ) {
+      return (
+        <div className="star-wrapper small">
+            <div className="star-svg-wrapper">
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+            </div>
+          </div>
+      );
+    } else if (restaurant.averageRating > 4.5 && restaurant.averageRating <= 4.9 ) {
+      return (
+        <div className="star-wrapper small">
+            <div className="star-svg-wrapper">
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-three-quarters-red"></div>
+            </div>
+          </div>
+      );
+    } else if (restaurant.averageRating === 4.5) {
+      return (
+        <div className="star-wrapper small">
+            <div className="star-svg-wrapper">
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-half-red"></div>
+            </div>
+          </div>
+      );
+    } else if (restaurant.averageRating > 4.2 && restaurant.averageRating < 4.5 ) {
+      return (
+        <div className="star-wrapper small">
+            <div className="star-svg-wrapper">
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-quarter-red"></div>
+            </div>
+          </div>
+      );
+    } else if (restaurant.averageRating < 4.2 && restaurant.averageRating >= 4.0) {
+      return (
+        <div className="star-wrapper small">
+            <div className="star-svg-wrapper">
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-empty-red"></div>
+            </div>
+          </div>
+      )
+    }
+  }
+
   const handleTime = (e) => {
     e.stopPropagation();
-    // history.replace('restaurants/api')
-    // history.push(`restaurants/${restaurantId}`)
   };
 
   return (
@@ -53,13 +117,16 @@ const RestaurantCard = ({ restaurantId }) => {
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
           <div id="rating-wrapper">
-            <div>
-              <img
-                alt=""
-                id="star-rating"
-                src="https://www.kindpng.com/picc/m/391-3915578_5-star-rating-red-5-star-rating-hd.png"
-              ></img>
+          {/* <div className="star-wrapper small">
+            <div className="star-svg-wrapper">
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-full-red"></div>
+              <div className="star-svg star-half-red"></div>
             </div>
+          </div> */}
+          {stars()}
             <span id="reviews-span">170 reviews</span>
           </div>
           <div id="cuisine-price-wrapper">
@@ -74,7 +141,7 @@ const RestaurantCard = ({ restaurantId }) => {
             </span>
           </div>
           <div id="time-slots">
-            <NavLink id="time-slot-link" to="/show" onClick={handleTime}>
+            <NavLink id="time-slot-link" to={`/restaurants/${restaurantId}`} onClick={handleTime}>
               12:30 PM
             </NavLink>
           </div>

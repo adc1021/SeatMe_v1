@@ -102,10 +102,13 @@ li {
 }
 
 .points-reservations {
-    margin: 32px 16px;
-    min-height: 32rem;
+    margin: 32px 16px 0px;
+    /* min-height: 32rem; */
     width: calc(100% - 15.5rem);
+    border-radius: 2px;
 }
+
+
 
 @media (max-width: 1055px) {
     .points-reservations {

@@ -12,6 +12,86 @@ const ReservationShow = ({ resData }) => {
       ? state.restaurants[resData.restaurantId]
       : {}
   );
+  let newDate = new Date(resData.date)
+
+  let day = () => {
+    let weekday = newDate.getDay()
+
+    switch(weekday) {
+      case 1:
+        return "Mon"
+      case 2:
+        return "Tue"
+      case 3:
+        return "Wed"
+      case 4:
+       return "Thu"
+      case 5:
+       return "Fri"
+      case 6:
+       return "Sat"
+      case 7:
+        return "Sun"
+      default:
+        return ""
+      }
+    }
+
+    let month = () => {
+      let num = newDate.getMonth()
+
+      switch(num) {
+        case 0:
+          return "Jan"
+        case 1:
+          return "Feb"
+        case 2:
+          return "Mar"
+        case 3:
+         return "Apr"
+        case 4:
+         return "May"
+        case 5:
+         return "June"
+        case 6:
+          return "July"
+        case 7:
+          return "Aug"
+        case 8:
+          return "Sep"
+        case 9:
+          return "Oct"
+        case 10:
+          return "Nov"
+        case 11:
+          return "Dec"
+        default:
+          return ""
+        }
+      }
+
+      let date = newDate.getDate();
+
+      const hour = () => {
+        let hr = newDate.getHours();
+        if(hr === 0) {
+          return 12
+        } else if(0 < hr && hr < 13) {
+          return hr
+        } else if(hr > 12) {
+          return (hr - 12)
+        }
+      }
+
+
+  //     let offset = newEvent.eventDate.getTimezoneOffset();
+  // let time = newEvent.eventDate.getTime();
+  // let dateTime = new Date( time - (offset * 60000))
+  // newEvent.eventDate = dateTime
+      // let offset = resData.time.getTimezoneOffset();
+      // let time = resData.time.getHours()
+      // let etcTime  = new Date( time - (offset * 60000)
+      // console.log(etcTime)
 
   return (
     <>
@@ -97,8 +177,11 @@ const ReservationShow = ({ resData }) => {
                 ></path>
               </svg>
             </span>
-            <p style={{marginLeft: "8px"}}>{resData.date.slice(0, 10)}</p>
-            <p style={{marginLeft: "8px"}}>{resData.time.slice(11, 16)} PM</p>
+            <p style={{marginLeft: "8px"}}>{newDate.date}</p>
+            <p style={{marginLeft: "8px"}}>{day() + ","}</p>
+            <p style={{marginLeft: "8px"}}>{month() + " " + date}</p>
+            <p style={{marginLeft: "8px"}}>at</p>
+            <p style={{marginLeft: "8px"}}>{hour() + ":00 PM"}</p>
           </span>
           <span style={{display: "flex", flexDirection: "row"}}>
           <UpdateReservation resData={resData}/>

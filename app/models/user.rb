@@ -29,6 +29,11 @@ class User < ApplicationRecord
 
     has_many :reservations
 
+    has_many :saved_restaurants,
+        through: :saved_restaurants,
+        source: :restaurant,
+        dependent: :destroy 
+
     has_many :rest_reservations,
         through: :reservations,
         source: :restaurant,

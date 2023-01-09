@@ -1,0 +1,97 @@
+.column {
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 1px 0 rgb(0 0 0 / 10%);
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 64.0625em) {
+    .column {
+        position: relative;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        float: left;
+    }
+}
+
+.column:last-child {
+    margin-bottom: 0;
+}
+
+.saves-header {
+    padding: 24px;
+    /* border-bottom: 1px solid rgba(0,0,0,.08); */
+}
+
+.saved-rest-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%
+}
+
+.saved-rest-container .points-reservations {
+    border-bottom: 1px solid rgba(0,0,0,.08);
+}
+
+.remove-button {
+    border: none;
+    background: initial;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 0px;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.star-svg-wrapper {
+    height: 1.2rem;
+    white-space: nowrap;
+}
+
+.star-svg.star-full {
+    background-image: url(https://www.opentable.com/my/NewContent/img/star-full.svg);
+}
+
+.star-svg.star-quarter {
+    background-image: url(https://www.opentable.com/my/NewContent/img/star-quarter.svg);
+}
+
+.star-svg {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+.star-wrapper.small {
+    height: 1rem;
+    width: 5.9375rem;
+    font-size: 1rem;
+}
+
+.star-wrapper {
+    position: relative;
+    float: left;
+    margin-top: 5px;
+}
+
+.reserve-button {
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    line-height: normal;
+    margin: 0 0 1rem;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+    outline: 0;
+    border-radius: 3px;
+    background-color: #da3743;
+    color: #fff;
+    height: 50px;
+    width: 120px;
+    margin-left: 70px;
+}
