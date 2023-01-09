@@ -2,5 +2,20 @@
     font-weight: 700;
     line-height: 36px;
     border-bottom: 0.0625rem solid #d8d9db;
-    
+
+}
+
+#rating-buttons {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.on {
+    color: red;
+}
+
+.off {
+    color: #ccc
 }
