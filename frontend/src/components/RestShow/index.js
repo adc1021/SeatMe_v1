@@ -7,6 +7,7 @@ import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import * as restaurantActions from "../../store/restaurantsReducer";
+import ReviewForm from "../ReviewForm";
 
 const RestShow = () => {
   const { id } = useParams();
@@ -120,7 +121,7 @@ const RestShow = () => {
                     <button className="anchor">Menu</button>
                   </li>
                   <li>
-                    <button className="anchor">Reviews</button>
+                    <button className="anchor" href=".review">Reviews</button>
                   </li>
                 </ol>
               </nav>
@@ -129,6 +130,7 @@ const RestShow = () => {
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
+              <ReviewForm restaurantId={id} userId={user.id}/>
           </div>
           <ReservationForm restaurantId={id} />
         </div>
