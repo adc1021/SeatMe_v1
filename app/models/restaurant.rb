@@ -9,10 +9,12 @@
 #  address        :string           not null
 #  tables         :integer          not null
 #  menu           :text             not null
-#  average_rating :integer          not null
+#  average_rating :float            not null
 #  price_point    :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  phone_number   :string
+#  neighborhood   :string
 #
 class Restaurant < ApplicationRecord
 
