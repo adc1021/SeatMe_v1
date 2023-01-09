@@ -19,8 +19,10 @@ class Restaurant < ApplicationRecord
     has_one_attached :photo
 
     has_many :saves
+    has_many :reviews
 
     has_many :users,
     through: :saves
+
 
 end
