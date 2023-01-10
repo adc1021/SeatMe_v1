@@ -371,6 +371,23 @@
         Reservation.create(date: "12-8-2022", time: "4:00", party_size: 1,
          user_id: 1, restaurant_id: 3)
 
+        Review.create(user_id: 1, restaurant_id: 1, comment: "Excellent experience,
+        would munch again.", overall_rating: 5, food_rating: 5, service_rating: 5,
+        ambience_rating: 5)
+
+        Review.create(user_id: 2, restaurant_id: 1, comment: "Their has been
+        nary a meal that compares to the one I had at this establishment",
+        overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 5)
+
+        Review.create(user_id: 3, restaurant_id: 1, comment: "Best steak of my life.
+        Richard was an excellent waiter",
+        overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 4)
+
+        Review.create(user_id: 4, restaurant_id: 1, comment: "The meal was solid.
+        Just wished the food had come out quicker and the music was a bit too loud
+        for my taste",
+        overall_rating: 3, food_rating: 4, service_rating: 3, ambience_rating: 3)
+
 
     puts "Done!"
   # end
