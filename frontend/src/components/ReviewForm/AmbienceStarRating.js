@@ -2,13 +2,10 @@ import { useState } from "react";
 
 
 const AmbienceStarRating = ({ setAmbience }) => {
-  const [rating, setRating] = useState(0);
-
-  const [hover, setHover] = useState(0)
+  const [rating, setRating] = useState(1);
 
   const handleClick = (e, index) => {
     e.preventDefault();
-
     setRating(index + 1)
     setAmbience(rating)
   }
@@ -24,10 +21,8 @@ const AmbienceStarRating = ({ setAmbience }) => {
        <button
        key={index}
        id="rating-buttons"
-       className={index + 1 <= (hover + 1 || rating) ? "on" : "off"}
+       className={index + 1 <= (rating) ? "on" : "off"}
        onClick={e => handleClick(e, index)}
-       onMouseEnter={() => setHover(index)}
-       // onMouseLeave={() => setRating(index + 1)}
        >
          <span className="star">&#9733;</span>
        </button>

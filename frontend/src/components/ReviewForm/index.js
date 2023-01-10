@@ -18,7 +18,6 @@ const ReviewForm = ({ restaurantId, userId }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     dispatch(reviewActions.createReview({
       restaurantId: restaurantId,
       userId: userId,
@@ -36,7 +35,7 @@ const ReviewForm = ({ restaurantId, userId }) => {
         <h3>Dined here recently? Leave a Review!</h3>
       </div>
         <div style={{marginTop: "15px"}}>
-          <form handleSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <textarea onChange={e => setComment(e.target.value)}></textarea>
             <OverallStarRating setOverall={setOverall}/>
             <FoodStarRating setFood={setFood}/>

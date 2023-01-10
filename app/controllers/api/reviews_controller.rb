@@ -3,10 +3,11 @@ class Api::ReviewsController < ApplicationController
     :comment, :overallRating, :foodRating, :serviceRating, :ambienceRating]
 
     def create
+        debugger
         @review = Review.new(review_params)
 
-        if @reservation.save
-            render `api/reviews/show`
+        if @review.save
+            render `/api/reviews/show`
         else
             render json: { review: nil }
         end
@@ -40,6 +41,7 @@ class Api::ReviewsController < ApplicationController
 
     private
     def review_params
-        params.require(:review).permit(:id, :restaurant_id, :user_id, )
+        params.require(:review).permit(:id, :restaurant_id, :user_id, :comment,
+        :overall_rating, :food_rating, :service_rating, :ambience_rating )
     end
 end
