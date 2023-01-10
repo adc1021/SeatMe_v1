@@ -1,6 +1,11 @@
-import React, { useState } from "react";
-import StarRating from "./StarRating"
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux"
+import OverallStarRating from "./StarRating"
+import ServiceStarRating from "./ServiceStarRating"
+import AmbienceStarRating from "./AmbienceStarRating";
+import FoodStarRating from "./FoodStarRating"
 import './ReviewForm.css'
+import * as reviewActions from "../../store/reviewsReducer"
 
 const ReviewForm = ({ restaurantId, userId }) => {
   const [comment, setComment] = useState("")
@@ -9,6 +14,21 @@ const ReviewForm = ({ restaurantId, userId }) => {
   const [service, setService] = useState(1)
   const [ambience, setAmbience] = useState(1)
 
+  const dispatch = useDispatch()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    dispatch(reviewActions.createReview({
+      restaurantId: restaurantId,
+      userId: userId,
+      comment: comment,
+      overallRating: overall,
+      foodRating: food,
+      serviceRating: service,
+      ambienceRating: ambience
+    }))
+  }
 
   return (
     <>
@@ -16,12 +36,13 @@ const ReviewForm = ({ restaurantId, userId }) => {
         <h3>Dined here recently? Leave a Review!</h3>
       </div>
         <div style={{marginTop: "15px"}}>
-          <form>
+          <form handleSubmit={handleSubmit}>
             <textarea onChange={e => setComment(e.target.value)}></textarea>
-            <StarRating />
-            <StarRating />
-            <StarRating />
-            <StarRating />
+            <OverallStarRating setOverall={setOverall}/>
+            <FoodStarRating setFood={setFood}/>
+            <AmbienceStarRating setAmbience={setAmbience} />
+            <ServiceStarRating setService={setService}/>
+            <button type="submit">POST</button>
           </form>
         </div>
     </>
