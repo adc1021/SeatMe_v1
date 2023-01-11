@@ -8,6 +8,7 @@ import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import * as restaurantActions from "../../store/restaurantsReducer";
 import ReviewForm from "../ReviewForm";
+import ReviewIndex from "../ReviewForm/ReviewIndex";
 
 const RestShow = () => {
   const { id } = useParams();
@@ -131,6 +132,7 @@ const RestShow = () => {
             </section>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
               <ReviewForm restaurantId={id} userId={user.id}/>
+              <ReviewIndex />
           </div>
           <ReservationForm restaurantId={id} />
         </div>

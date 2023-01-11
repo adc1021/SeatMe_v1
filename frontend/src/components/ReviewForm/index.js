@@ -41,7 +41,7 @@ const ReviewForm = ({ restaurantId, userId }) => {
             <FoodStarRating setFood={setFood}/>
             <AmbienceStarRating setAmbience={setAmbience} />
             <ServiceStarRating setService={setService}/>
-            <button type="submit">POST</button>
+            <button type="submit" disabled={!comment }>POST</button>
           </form>
         </div>
     </>

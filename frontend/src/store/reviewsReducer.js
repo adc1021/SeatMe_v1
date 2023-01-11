@@ -35,6 +35,7 @@ export const fetchReview = (reviewId) => async (dispatch) => {
 }
 
 export const fetchReviews = () => async (dispatch) => {
+  debugger
   const res = await csrfFetch(`/api/reviews`);
   if(res.ok) {
     const payload = await res.json();
