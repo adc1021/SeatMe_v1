@@ -13,6 +13,7 @@
   Reservation.destroy_all
   Restaurant.destroy_all
   User.destroy_all
+  Review.destroy_all
 
     puts "Resetting primary keys..."
     # For easy testing, so that after seeding, the first `User` has `id` of 1
@@ -364,13 +365,19 @@
         rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
         rest7.save!
 
-        Reservation.create(date: "12-8-2022", time: "8:00",
+        Reservation.create!(date: "12-8-2024", time: "8:00",
         party_size: 5, user_id: 1, restaurant_id: 1 )
-        Reservation.create(date: "12-12-2022", time: "7:00", party_size: 4,
+        Reservation.create!(date: "12-12-2024", time: "7:00", party_size: 4,
         user_id: 1, restaurant_id: 2 )
-        Reservation.create(date: "12-8-2022", time: "4:00", party_size: 1,
+        Reservation.create!(date: "12-8-2024", time: "4:00", party_size: 1,
          user_id: 1, restaurant_id: 3)
 
+        Review.create!(user_id: 1, restaurant_id: 1, comment: "Good food. I would definitely eat here again!", overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 5)
+        Review.create!(user_id: 2, restaurant_id: 1, comment: "The steak was cooked to perfection. Service was a bit slow, but the venue was beautiful", overall_rating: 4, food_rating: 5, service_rating: 3, ambience_rating: 5)
+
+        SavedRestaurant.create!(user_id: 1, restaurant_id: 1, status: true)
+        SavedRestaurant.create!(user_id: 1, restaurant_id: 2, status: true)
+        SavedRestaurant.create!(user_id: 1, restaurant_id: 5, status: true)
 
     puts "Done!"
   # end

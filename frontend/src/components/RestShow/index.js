@@ -38,8 +38,8 @@ const RestShow = () => {
     dispatch(savedRestActions.fetchSavedRestaurants());
   }, [dispatch, bool]);
 
-  // debugger
-  const saveTag = bool ? (
+  console.log(currentSavedRestaurant)
+  const saveTag = currentSavedRestaurant ? (
     <img
       alt=""
       id="save-svg"
@@ -53,13 +53,6 @@ const RestShow = () => {
     ></img>
   );
 
-  // let saveTag = (
-  //   <img
-  //     alt=""
-  //     id="save-svg"
-  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
-  //   ></img>
-  // );
 
   useEffect(() => {
     dispatch(fetchRest(id));
@@ -75,6 +68,7 @@ const RestShow = () => {
           savedRestActions.createSavedRestaurant({
             userId: user.id,
             restaurantId: id,
+            status: true
           })
         )
       : dispatch(

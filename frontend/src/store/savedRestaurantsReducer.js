@@ -83,7 +83,6 @@ const savedRestaurantReducer = (oldState = {}, action) => {
     case RECEIVE_SAVED_RESTAURANT:
       // newState[action.savedRestaurant.id] = action.savedRestaurant;
       newState[action.savedRestaurant.savedRestaurant.id] = action.savedRestaurant;
-      debugger
       return newState;
     case RECEIVE_SAVED_RESTAURANTS:
       return { ...newState, ...action.savedRestaurants };

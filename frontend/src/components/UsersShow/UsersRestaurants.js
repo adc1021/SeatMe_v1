@@ -12,7 +12,7 @@ const UsersRestaurants = ({ user, reservations }) => {
       ? Object.values(state.savedRestaurants.savedRestaurant)
       : [];
   });
-
+  debugger 
   useEffect(() => {
     dispatch(savedRestActions.fetchSavedRestaurants());
   }, [dispatch]);
