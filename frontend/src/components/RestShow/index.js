@@ -132,7 +132,7 @@ const RestShow = () => {
             </section>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
               <ReviewForm restaurantId={id} userId={user.id}/>
-              <ReviewIndex />
+              <ReviewIndex restId={id}/>
           </div>
           <ReservationForm restaurantId={id} />
         </div>

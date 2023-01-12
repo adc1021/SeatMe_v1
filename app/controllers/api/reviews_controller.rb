@@ -3,18 +3,18 @@ class Api::ReviewsController < ApplicationController
     :comment, :overallRating, :foodRating, :serviceRating, :ambienceRating]
 
     def create
-        debugger
         @review = Review.new(review_params)
 
         if @review.save
-            render `/api/reviews/show`
+            render json: "success!"
         else
             render json: { review: nil }
         end
     end
 
     def index
-        @reviews = current_user.reviews
+        @restaurant = Restaurant.find_by(id: params[:restaurant_id])
+        @reviews = @restaurant.reviews
     end
 
     def show

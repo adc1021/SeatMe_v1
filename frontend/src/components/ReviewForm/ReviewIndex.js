@@ -2,20 +2,24 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
 import * as reviewActions from "../../store/reviewsReducer"
 
-const ReviewIndex = () => {
+const ReviewIndex = ({ restId }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(reviewActions.fetchReviews())
-  }, [dispatch])
+    dispatch(reviewActions.fetchReviews(restId))
+  }, [dispatch, restId])
 
-  useSelector((state) => {
-    return state.reviews ? state.reviews : {}
+  const reviews = useSelector((state) => {
+    // debugger
+    return state.reviews ? Object.values(state.reviews.reviews) : []
   })
 
   return(
     <>
-
+     {reviews.map((review) => {
+      // debugger
+      return <h1>{review.comment}</h1>
+     })}
     </>
   )
 }

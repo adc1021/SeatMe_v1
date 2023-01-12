@@ -5,10 +5,8 @@ json.reviews do
     end
   end
 end
-json.restaurants do
-  @restaurants.each do |rest|
-    json.set! rest.id do
-      json.partial! 'api/restaurants/restaurant', restaurant: rest
-    end
-  end
+json.restaurant do
+    json.extract! @restaurant, :id, :name, :description, :cuisine, :address,
+    :tables, :menu, :average_rating, :price_point
+    json.photoUrl url_for(@restaurant.photo)
 end

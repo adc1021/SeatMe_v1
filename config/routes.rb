@@ -18,7 +18,12 @@ Rails.application.routes.draw do
     resources :reviews, only: [:show, :destroy, :update, :create, :index]
     resources :reservations, only: [:show, :destroy, :update, :create, :index]
     resources :saved_restaurant, only: [:create, :show, :destroy, :index]
+
+    resources :restaurants, only: [:show] do
+      resources :reviews, only: [:index]
+    end
   end
+
 
   # get '/restaurants/:id', to: 'restaurants#show'
   post 'api/test', to: 'application#test'

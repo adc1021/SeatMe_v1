@@ -23,9 +23,9 @@ const SignupForm = () => {
     ).catch(async (res) => {
       let data;
       try {
-        data = await res.clone().json();
+        data = await res.clone().json(); // clones the response object to store in new var converted to json
       } catch {
-        data = await res.text();
+        data = await res.text(); //takes res and reads to completion, returned promise resolves with a string
       }
       if (data?.errors) setErrors(data.errors);
       else if (data) setErrors([data]);

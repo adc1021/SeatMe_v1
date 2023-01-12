@@ -364,11 +364,11 @@
         rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
         rest7.save!
 
-        Reservation.create(date: "12-8-2022", time: "8:00",
+        Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
         party_size: 5, user_id: 1, restaurant_id: 1 )
-        Reservation.create(date: "12-12-2022", time: "7:00", party_size: 4,
+        Reservation.create(date: DateTime.new(2024,4,7, 7,30,6), time: DateTime.new(2024,4,7, 7,30,6), party_size: 4,
         user_id: 1, restaurant_id: 2 )
-        Reservation.create(date: "12-8-2022", time: "4:00", party_size: 1,
+        Reservation.create(date: DateTime.new(2024,2,11, 7,45,6), time: DateTime.new(2024,2,11, 7,45,6), party_size: 1,
          user_id: 1, restaurant_id: 3)
 
         Review.create(user_id: 1, restaurant_id: 1, comment: "Excellent experience,
@@ -388,6 +388,11 @@
         for my taste",
         overall_rating: 3, food_rating: 4, service_rating: 3, ambience_rating: 3)
 
+
+        SavedRestaurant.create(user_id: 1, restaurant_id: 1)
+        SavedRestaurant.create(user_id: 1, restaurant_id: 3)
+        SavedRestaurant.create(user_id: 1, restaurant_id: 5)
+        SavedRestaurant.create(user_id: 1, restaurant_id: 7)
 
     puts "Done!"
   # end
