@@ -38,6 +38,27 @@
     .review-box {
         flex-direction: row;
     }
+
+    .user-name {
+        margin: 0 0 4px;
+        width: 100%;
+    }
+
+    .user-review-count {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .comment-bubble {
+        display: inline;
+        height: 16px;
+        width: 16px;
+    }
+
+    .num-display {
+        color: #6f737b;
+
+    }
 }
 
 .user-section {
@@ -67,4 +88,28 @@
     justify-content: center;
     margin: 0 8px 8px;
     width: 3rem;
+}
+
+.user-name {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.user-review-count {
+    align-items: center;
+    text-align: center;
+}
+
+.comment-bubble {
+    font-size: 0;
+    line-height: 1;
+    min-width: 1.5rem;
+}
+
+.num-display {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin-left: 5px;
 }
