@@ -26,3 +26,45 @@
     align-items: center;
     justify-content: space-between;
 }
+
+.review-box {
+    border-bottom: 0.0625rem solid #d8d9db;
+    display: flex;
+    padding: 16px 0;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .review-box {
+        flex-direction: row;
+    }
+}
+
+.user-section {
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 16px;
+    position: relative;
+    text-align: center;
+    width: 6rem;
+}
+
+.user-logo {
+    background-color:  #df4e96;
+}
+
+.user-logo-effects {
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 500;
+    height: 3rem;
+    justify-content: center;
+    margin: 0 8px 8px;
+    width: 3rem;
+}

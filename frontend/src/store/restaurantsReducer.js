@@ -46,7 +46,6 @@ const restaurantsReducer = (oldState = {}, action) => {
     case RECEIVE_RESTAURANT:
       newState[action.restaurant.id] = action.restaurant;
       return newState;
-    case RECEIVE_RESERVATIONS:
     case RECEIVE_RESTAURANTS:
       return { ...newState, ...action.restaurants }
     default:
