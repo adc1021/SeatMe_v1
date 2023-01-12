@@ -113,3 +113,8 @@
     line-height: 1.25rem;
     margin-left: 5px;
 }
+
+.review-stars {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}

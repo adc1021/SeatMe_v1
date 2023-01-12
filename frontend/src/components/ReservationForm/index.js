@@ -32,7 +32,7 @@ const ReservationForm = ({ restaurantId }) => {
   };
 
   return (
-    <div style={{ width: "20rem" }}>
+    <div style={{ width: "20rem", zIndex: "2" }}>
       <div id="sticky-div">
         <article>
           <h2 id="input-field">Make a reservation</h2>
