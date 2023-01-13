@@ -180,3 +180,26 @@ article {
     color: #0060B6;
     text-decoration: none;
 }
+
+.rating-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 8px;
+    text-transform: capitalize;
+}
+
+.rating-title-number {
+    color: #da3743;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.rating-title-number::after {
+    color: #2d333f;
+    content: "\B7";
+    padding: 0 4px;
+}
+
+.rating-title-number:last-of-type::after {
+    display: none;
+}

@@ -73,6 +73,14 @@ const ReviewIndex = ({ restId }) => {
                 </div>
                 <p style={{margin: "0"}}>Dined on December 22, 2022</p>
               </section>
+              <span className="rating-title">overall</span>
+              <span className="rating-title-number">{review.overallRating}</span>
+              <span className="rating-title">food</span>
+              <span className="rating-title-number">{review.foodRating}</span>
+              <span className="rating-title">service</span>
+              <span className="rating-title-number">{review.serviceRating}</span>
+              <span className="rating-title">ambience</span>
+              <span className="rating-title-number">{review.ambienceRating}</span>
             </section>
           </li>
           </>
