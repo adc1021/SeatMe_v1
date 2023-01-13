@@ -34,7 +34,7 @@ const ReviewForm = ({ restaurantId, userId }) => {
       <div className="review">
         <h3>Dined here recently? Leave a Review!</h3>
       </div>
-        <div style={{marginTop: "15px"}}>
+        <div className="review" style={{marginTop: "15px", marginBottom: "60px", padding: "15px"}}>
           <form onSubmit={handleSubmit}>
             <textarea onChange={e => setComment(e.target.value)}></textarea>
             <OverallStarRating setOverall={setOverall}/>

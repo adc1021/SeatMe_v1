@@ -203,3 +203,37 @@ article {
 .rating-title-number:last-of-type::after {
     display: none;
 }
+
+.users-comment {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    margin: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.users-comment-font {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.inline-styling {
+    line-height: 24px;
+    max-height: 72px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+}
+
+.read-more-button {
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0;
+    color: #da3743;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    margin: 0;
+    outline: none;
+}
