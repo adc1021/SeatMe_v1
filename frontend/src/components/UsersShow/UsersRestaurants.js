@@ -7,19 +7,16 @@ import SavedRestaurant from "./SavedRestaurant";
 const UsersRestaurants = ({ user, reservations }) => {
   const dispatch = useDispatch();
   const savedRestaurants = useSelector((state) => {
-    // debugger
     return state.savedRestaurants.savedRestaurant
       ? Object.values(state.savedRestaurants.savedRestaurant)
       : [];
   });
+  console.log(user)
 
   useEffect(() => {
-    dispatch(savedRestActions.fetchSavedRestaurants());
+    dispatch(savedRestActions.fetchSavedRestaurants(user.id));
   }, [dispatch]);
 
-  const savedArr = savedRestaurants.filter((rest) => {
-    return rest.userId === user.id;
-  });
 
   return (
     <div className="saved-rest-container">
@@ -32,7 +29,7 @@ const UsersRestaurants = ({ user, reservations }) => {
       </div>
       <div className="points-reservations" style={{ marginTop: "0px" }}>
         <div className="column" style={{ padding: "16px" }}>
-          {savedArr.map((rest) => {
+          {savedRestaurants.map((rest) => {
             return <SavedRestaurant rest={rest}/>
           })
             }

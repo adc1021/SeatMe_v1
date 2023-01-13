@@ -40,7 +40,7 @@ export const fetchSavedRestaurant = (restaurantId) => async (dispatch) => {
 
 export const fetchSavedRestaurants = (userId) => async (dispatch) => {
   try {
-    const savedRestaurants = await csrfFetch(`/api/user/${userId}/saved_restaurant`);
+    const savedRestaurants = await csrfFetch(`/api/users/${userId}/saved_restaurant`);
     const data = await savedRestaurants.json();
     dispatch(receiveSavedRestaurants(data));
   } catch (err) {
