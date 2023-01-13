@@ -28,6 +28,8 @@ const RestShow = () => {
 
   useEffect(() => {
     dispatch(savedRestActions.fetchSavedRestaurant(user.id, id))
+    dispatch(savedRestActions.fetchSavedRestaurants(user.id));
+      dispatch(fetchRest(id));
   }, [dispatch])
 
 
@@ -40,13 +42,7 @@ const RestShow = () => {
   // });
   // const [bool, setBool] = useState(!!currentSavedRestaurant);
 
-  // useEffect(() => {
-  //   // dispatch()
-  //   dispatch(savedRestActions.fetchSavedRestaurants(user.id));
-  //   dispatch(fetchRest(id));
-  // }, [dispatch, bool]);
 
-  // debugger
   // const saveTag = bool ? (
   //   <img
   //     alt=""
