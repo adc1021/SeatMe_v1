@@ -23,78 +23,57 @@ const RestShow = () => {
     state.session.user ? state.session.user : {}
   );
   const savedRestaurants = useSelector((state) => {
-    return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
+    return state.savedRestaurants ? Object.values(state.savedRestaurants.savedRestaurant) : [];
   });
 
-  const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
+  
 
-  let currentSavedRestaurant = savesArr.filter((savedRest) => {
-    return (
-      savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
-    );
-  });
-  const [bool, setBool] = useState(!!currentSavedRestaurant);
+  // const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
 
-  useEffect(() => {
-    // dispatch()
-    dispatch(savedRestActions.fetchSavedRestaurants());
-  }, [dispatch, bool]);
+  // let currentSavedRestaurant = savesArr.filter((savedRest) => {
+  //   return (
+  //     savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
+  //   );
+  // });
+  // const [bool, setBool] = useState(!!currentSavedRestaurant);
+
+  // useEffect(() => {
+  //   // dispatch()
+  //   dispatch(savedRestActions.fetchSavedRestaurants(user.id));
+  //   dispatch(fetchRest(id));
+  // }, [dispatch, bool]);
 
   // debugger
-  const saveTag = bool ? (
-    <img
-      alt=""
-      id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
-    ></img>
-  ) : (
-    <img
-      alt=""
-      id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
-    ></img>
-  );
-
-  // let saveTag = (
+  // const saveTag = bool ? (
   //   <img
   //     alt=""
   //     id="save-svg"
   //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
   //   ></img>
+  // ) : (
+  //   <img
+  //     alt=""
+  //     id="save-svg"
+  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
+  //   ></img>
   // );
 
-  useEffect(() => {
-    dispatch(fetchRest(id));
-  }, []);
-
   const handleSave = (e) => {
-    console.log(bool);
-    e.preventDefault();
-    setBool(!bool);
-    console.log(currentSavedRestaurant);
-    bool
-      ? dispatch(
-          savedRestActions.createSavedRestaurant({
-            userId: user.id,
-            restaurantId: id,
-          })
-        )
-      : dispatch(
-          savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id)
-        );
+    // console.log(bool);
+    // e.preventDefault();
+    // setBool(!bool);
+    // console.log(currentSavedRestaurant);
+    // bool
+    //   ? dispatch(
+    //       savedRestActions.createSavedRestaurant({
+    //         userId: user.id,
+    //         restaurantId: id,
+    //       })
+    //     )
+    //   : dispatch(
+    //       savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id)
+    //     );
   };
-  // const handleSave = (e) => {
-  //   e.preventDefault();
-  //   setBool(!bool);
-  //   bool
-  //     ? dispatch(savedRestActions.deleteSavedRestaurant(id))
-  //     : dispatch(
-  //         savedRestActions.createSavedRestaurant({
-  //           userId: user.id,
-  //           restaurantId: id,
-  //         })
-  //       );
-  // };
 
   return (
     <>
@@ -105,7 +84,7 @@ const RestShow = () => {
           <img id="rest-img" alt="" src={restaurant.photoUrl}></img>
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
-              {saveTag}
+              {/* {saveTag} */}
               <div id="text-div">Save this restaurant</div>
             </div>
           </button>

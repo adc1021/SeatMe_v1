@@ -14,4 +14,6 @@ class SavedRestaurant < ApplicationRecord
 
     belongs_to :restaurant
 
+
+
 end

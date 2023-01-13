@@ -11,7 +11,14 @@ class Api::SavedRestaurantController < ApplicationController
     end
 
     def show
+        user = User.find_by(id: params[:user_id])
+        saved_restaurants = user.saved_restaurants
 
+        saved_restaurants.select do |restaurant|
+            if rest.restaurant_id == params[:restaurant_id]
+                return @restaurant
+            end
+        end
     end
 
     def index

@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     end
 
     resources :users, only: [:show] do
-      resources :saved_restaurant, only: [:index]
+      resources :saved_restaurant, only: [:index, :show]
     end
   end
 
