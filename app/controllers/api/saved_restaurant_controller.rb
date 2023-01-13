@@ -14,11 +14,15 @@ class Api::SavedRestaurantController < ApplicationController
         user = User.find_by(id: params[:user_id])
         saved_restaurants = user.saved_restaurants
 
-        saved_restaurants.select do |restaurant|
-            if rest.restaurant_id == params[:restaurant_id]
-                return @restaurant
-            end
+
+        arr = saved_restaurants.select do |restaurant|
+            # debugger
+            restaurant.restaurant_id == params[:id].to_i
         end
+
+        @saved_restaurant = arr[0]
+        # debugger
+        return @saved_restaurant
     end
 
     def index

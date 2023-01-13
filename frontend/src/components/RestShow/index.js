@@ -23,10 +23,13 @@ const RestShow = () => {
     state.session.user ? state.session.user : {}
   );
   const savedRestaurants = useSelector((state) => {
-    return state.savedRestaurants ? Object.values(state.savedRestaurants.savedRestaurant) : [];
+    return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
   });
 
-  
+  useEffect(() => {
+    dispatch(savedRestActions.fetchSavedRestaurant(user.id, id))
+  }, [dispatch])
+
 
   // const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
 
