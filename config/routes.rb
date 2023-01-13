@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:show] do
       resources :reviews, only: [:index]
     end
+
+    resources :users, only: [:show] do
+      resources :saved_restaurant, only: [:index]
+    end
   end
 
 

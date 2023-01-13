@@ -16,10 +16,13 @@ class Api::SavedRestaurantController < ApplicationController
 
     def index
         # debugger
-        @saved_restaurants = SavedRestaurant.all
-        if @saved_restaurants.length > 0
-            render :index
-        end
+        # @saved_restaurants = SavedRestaurant.all
+        # if @saved_restaurants.length > 0
+        #     render :index
+        # end
+
+        user = User.find_by(id: params[:userId])
+        @saved_restaurants = User.saved_restaurants
     end
 
     def destroy
