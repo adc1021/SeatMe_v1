@@ -26,6 +26,8 @@ const ReviewIndex = ({ restId }) => {
       {reviews.map((review) => {
         // debugger
         return (
+          <>
+          <a id="anchor-name"></a>
           <li className="review-box">
             <section className="user-section">
               <div className="user-logo user-logo-effects">DL</div>
@@ -73,6 +75,7 @@ const ReviewIndex = ({ restId }) => {
               </section>
             </section>
           </li>
+          </>
         );
       })}
     </>

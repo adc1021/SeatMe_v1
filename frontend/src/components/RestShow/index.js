@@ -116,17 +116,20 @@ const RestShow = () => {
               <nav id="anchor-nav">
                 <ol id="nav-ol">
                   <li>
-                    <button className="anchor">Overview</button>
+                    {/* <button className="anchor">Overview</button> */}
+                    <a id="overview-anchor" href="#overview-anchor">Overview</a>
                   </li>
                   <li>
                     <button className="anchor">Menu</button>
                   </li>
                   <li>
-                    <button className="anchor" href=".review">Reviews</button>
+                    {/* <button className="anchor" href=".review">Reviews</button> */}
+                    <a id="overview-anchor" href="#anchor-name">Reviews</a>
                   </li>
                 </ol>
               </nav>
             </section>
+            <a id="overview-anchor"></a>
             <section>
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
