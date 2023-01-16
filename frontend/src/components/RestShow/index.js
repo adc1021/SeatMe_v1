@@ -23,10 +23,7 @@ const RestShow = () => {
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
-  // const savedRestaurants = useSelector((state) => {
-  //   // debugger
-  //   return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
-  // });
+
 
   const savedRestaurant = useSelector((state) => {
     return state.savedRestaurants[id] ? state.savedRestaurants[id] : null;
@@ -63,7 +60,6 @@ const RestShow = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    debugger
     savedRestaurant
       ? dispatch(savedRestActions.deleteSavedRestaurant(savedRestaurant.id))
       : dispatch(
