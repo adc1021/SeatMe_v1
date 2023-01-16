@@ -237,3 +237,14 @@ article {
     margin: 0;
     outline: none;
 }
+
+#buttons-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#delete-button {
+    border: none;
+    background: inherit;
+}

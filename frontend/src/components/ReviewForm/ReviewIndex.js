@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import * as reviewActions from "../../store/reviewsReducer";
 import * as userActions from "../../store/usersReducer";
 import "./ReviewForm.css";
 
 const ReviewIndex = ({ restId, user }) => {
   const dispatch = useDispatch();
+  const history = useHistory()
 
   useEffect(() => {
     dispatch(reviewActions.fetchReviews(restId));
@@ -28,6 +30,12 @@ const ReviewIndex = ({ restId, user }) => {
     if(comment.overflow === "hidden") {
       comment.overflow = "visible";
     }
+  }
+
+  const handleDelete = (e, reviewId) => {
+    e.preventDefault()
+    dispatch(reviewActions.deleteReview(reviewId))
+    history.go(0)
   }
 
   return (
@@ -77,7 +85,7 @@ const ReviewIndex = ({ restId, user }) => {
                       <div className="star-svg star-full-red"></div>
                       <div className="star-svg star-full-red"></div>
                       <div className="star-svg star-full-red"></div>
-                      <div className="star-svg star-full-red"></div>
+                      <div className="star-svg star-half-red"></div>
                     </div>
                   </div>
                   <p style={{ margin: "0" }}>Dined on December 22, 2022</p>
@@ -102,8 +110,11 @@ const ReviewIndex = ({ restId, user }) => {
                   >
                     {review.comment}
                   </span>
-                  <span className="users-comment users-comment-font">
+                  <span className="users-comment users-comment-font" id="buttons-wrap">
                     <button onClick={handleRead} className="read-more-button">+ Read more</button>
+                    {review.userId === user.id ? <button onClick={e => handleDelete(e, review.id)} id="delete-button">
+                      <i class="fa fa-trash-o" style={{color: "#da3743",
+                      fontSize: "20px"}}></i></button> : null}
                   </span>
                 </div>
               </section>
