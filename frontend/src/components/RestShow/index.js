@@ -11,6 +11,7 @@ import ReviewForm from "../ReviewForm";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
 
 const RestShow = () => {
+  // debugger
   const { id } = useParams();
 
   const dispatch = useDispatch();
@@ -22,16 +23,20 @@ const RestShow = () => {
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
-  const savedRestaurants = useSelector((state) => {
-    return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
+  // const savedRestaurants = useSelector((state) => {
+  //   // debugger
+  //   return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
+  // });
+
+  const savedRestaurant = useSelector((state) => {
+    return state.savedRestaurants[id] ? state.savedRestaurants[id] : null;
   });
 
   useEffect(() => {
-    dispatch(savedRestActions.fetchSavedRestaurant(user.id, id))
+    dispatch(savedRestActions.fetchSavedRestaurant(user.id, id));
     dispatch(savedRestActions.fetchSavedRestaurants(user.id));
-      dispatch(fetchRest(id));
-  }, [dispatch])
-
+    dispatch(fetchRest(id));
+  }, [dispatch]);
 
   // const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
 
@@ -42,36 +47,31 @@ const RestShow = () => {
   // });
   // const [bool, setBool] = useState(!!currentSavedRestaurant);
 
-
-  // const saveTag = bool ? (
-  //   <img
-  //     alt=""
-  //     id="save-svg"
-  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
-  //   ></img>
-  // ) : (
-  //   <img
-  //     alt=""
-  //     id="save-svg"
-  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
-  //   ></img>
-  // );
+  const saveTag = savedRestaurant ? (
+    <img
+      alt=""
+      id="save-svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" // red
+    ></img>
+  ) : (
+    <img
+      alt=""
+      id="save-svg"
+      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" //white
+    ></img>
+  );
 
   const handleSave = (e) => {
-    // console.log(bool);
-    // e.preventDefault();
-    // setBool(!bool);
-    // console.log(currentSavedRestaurant);
-    // bool
-    //   ? dispatch(
-    //       savedRestActions.createSavedRestaurant({
-    //         userId: user.id,
-    //         restaurantId: id,
-    //       })
-    //     )
-    //   : dispatch(
-    //       savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id)
-    //     );
+    e.preventDefault();
+    debugger
+    savedRestaurant
+      ? dispatch(savedRestActions.deleteSavedRestaurant(savedRestaurant.id))
+      : dispatch(
+          savedRestActions.createSavedRestaurant({
+            userId: user.id,
+            restaurantId: id,
+          })
+        );
   };
 
   return (
@@ -83,7 +83,7 @@ const RestShow = () => {
           <img id="rest-img" alt="" src={restaurant.photoUrl}></img>
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
-              {/* {saveTag} */}
+              {saveTag}
               <div id="text-div">Save this restaurant</div>
             </div>
           </button>
@@ -95,14 +95,18 @@ const RestShow = () => {
                 <ol id="nav-ol">
                   <li>
                     {/* <button className="anchor">Overview</button> */}
-                    <a id="overview-anchor" href="#overview-anchor">Overview</a>
+                    <a id="overview-anchor" href="#overview-anchor">
+                      Overview
+                    </a>
                   </li>
                   <li>
                     <button className="anchor">Menu</button>
                   </li>
                   <li>
                     {/* <button className="anchor" href=".review">Reviews</button> */}
-                    <a id="overview-anchor" href="#anchor-name">Reviews</a>
+                    <a id="overview-anchor" href="#anchor-name">
+                      Reviews
+                    </a>
                   </li>
                 </ol>
               </nav>
@@ -112,8 +116,8 @@ const RestShow = () => {
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
-              <ReviewForm restaurantId={id} userId={user.id}/>
-              <ReviewIndex restId={id}/>
+            <ReviewForm restaurantId={id} userId={user.id} />
+            <ReviewIndex restId={id} />
           </div>
           <ReservationForm restaurantId={id} />
         </div>

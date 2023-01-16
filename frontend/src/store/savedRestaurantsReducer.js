@@ -82,7 +82,7 @@ const savedRestaurantReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_SAVED_RESTAURANT:
       // newState[action.savedRestaurant.id] = action.savedRestaurant;
-      newState[action.savedRestaurant.savedRestaurant.id] = action.savedRestaurant;
+      newState[action.savedRestaurant.savedRestaurant.restaurantId] = action.savedRestaurant.savedRestaurant;
       return newState;
     case RECEIVE_SAVED_RESTAURANTS:
       return { ...newState, ...action.savedRestaurants };
