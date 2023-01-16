@@ -1,16 +1,19 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import * as restaurantActions from "../../store/restaurantsReducer";
+import ReviewForm from "../ReviewForm";
+import ReviewIndex from "../ReviewForm/ReviewIndex";
 
 const RestShow = () => {
+  // debugger
   const { id } = useParams();
-
+  const history = useHistory()
   const dispatch = useDispatch();
 
   const restaurant = useSelector((state) =>
@@ -20,79 +23,51 @@ const RestShow = () => {
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
-  const savedRestaurants = useSelector((state) => {
-    return state.savedRestaurants ? state.savedRestaurants.savedRestaurant : {};
-  });
 
-  const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
-
-  let currentSavedRestaurant = savesArr.filter((savedRest) => {
-    return (
-      savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
-    );
+  const savedRestaurant = useSelector((state) => {
+    return state.savedRestaurants[id] ? state.savedRestaurants[id] : null;
   });
-  const [bool, setBool] = useState(!!currentSavedRestaurant);
 
   useEffect(() => {
-    // dispatch()
-    dispatch(savedRestActions.fetchSavedRestaurants());
-  }, [dispatch, bool]);
+    dispatch(savedRestActions.fetchSavedRestaurant(user.id, id));
+    dispatch(fetchRest(id));
+  }, [dispatch, id, user.id]);
 
-  // debugger
-  const saveTag = bool ? (
-    <img
-      alt=""
-      id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
-    ></img>
+  // const [bool, setBool] = useState()
+
+  const saveTag = savedRestaurant ? (
+    <>
+      <img
+        alt=""
+        id="save-svg"
+        src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" // red
+        ></img>
+      <div id="text-div">Restaurant saved!</div>
+    </>
   ) : (
-    <img
-      alt=""
-      id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" //red
-    ></img>
+    <>
+      <img
+        alt=""
+        id="save-svg"
+        src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
+        //white
+      ></img>
+      <div id="text-div">Save this restaurant</div>
+    </>
   );
 
-  // let saveTag = (
-  //   <img
-  //     alt=""
-  //     id="save-svg"
-  //     src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" // white
-  //   ></img>
-  // );
-
-  useEffect(() => {
-    dispatch(fetchRest(id));
-  }, []);
-
   const handleSave = (e) => {
-    console.log(bool);
     e.preventDefault();
-    setBool(!bool);
-    console.log(currentSavedRestaurant);
-    bool
-      ? dispatch(
+    savedRestaurant
+      ? dispatch(savedRestActions.deleteSavedRestaurant(savedRestaurant.id))
+      : dispatch(
           savedRestActions.createSavedRestaurant({
             userId: user.id,
             restaurantId: id,
           })
-        )
-      : dispatch(
-          savedRestActions.deleteSavedRestaurant(currentSavedRestaurant[0].id)
         );
+      history.go(0)
   };
-  // const handleSave = (e) => {
-  //   e.preventDefault();
-  //   setBool(!bool);
-  //   bool
-  //     ? dispatch(savedRestActions.deleteSavedRestaurant(id))
-  //     : dispatch(
-  //         savedRestActions.createSavedRestaurant({
-  //           userId: user.id,
-  //           restaurantId: id,
-  //         })
-  //       );
-  // };
 
   return (
     <>
@@ -104,7 +79,7 @@ const RestShow = () => {
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
               {saveTag}
-              <div id="text-div">Save this restaurant</div>
+              {/* <div id="text-div">Save this restaurant</div> */}
             </div>
           </button>
         </div>
@@ -115,20 +90,29 @@ const RestShow = () => {
                 <ol id="nav-ol">
                   <li>
                     <button className="anchor">Overview</button>
+                    {/* <a id="overview-anchor" href="#overview-anchor">
+                      Overview
+                    </a> */}
                   </li>
                   <li>
                     <button className="anchor">Menu</button>
                   </li>
                   <li>
-                    <button className="anchor">Reviews</button>
+                    <button className="anchor" href=".review">Reviews</button>
+                    {/* <a id="overview-anchor" href="#anchor-name">
+                      Reviews
+                    </a> */}
                   </li>
                 </ol>
               </nav>
             </section>
+            <a id="overview-anchor"></a>
             <section>
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
+            <ReviewForm restaurantId={id} user={user} />
+            <ReviewIndex restId={id} user={user}/>
           </div>
           <ReservationForm restaurantId={id} />
         </div>

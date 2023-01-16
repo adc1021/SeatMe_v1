@@ -6,6 +6,7 @@ const RECEIVE_SAVED_RESTAURANTS = "saveRestaurants/RECEIVE_SAVED_RESTAURANTS";
 const REMOVE_SAVED_RESTAURANT = "savedRestaurants/REMOVE_SAVED_RESTAURANT";
 
 export const receiveSavedRestaurant = (savedRestaurant) => {
+  // debugger
   return {
     type: RECEIVE_SAVED_RESTAURANT,
     savedRestaurant,
@@ -26,10 +27,10 @@ export const removeRestaurant = (restaurantId) => {
   };
 };
 
-export const fetchSavedRestaurant = (restaurantId) => async (dispatch) => {
+export const fetchSavedRestaurant = (userId, restaurantId) => async (dispatch) => {
   try {
     const savedRestaurant = await csrfFetch(
-      `/api/savedRestaurant/${restaurantId}`
+      `/api/users/${userId}/saved_restaurant/${restaurantId}`
     );
     const data = await savedRestaurant.json();
     dispatch(receiveSavedRestaurant(data));
@@ -38,9 +39,9 @@ export const fetchSavedRestaurant = (restaurantId) => async (dispatch) => {
   }
 };
 
-export const fetchSavedRestaurants = () => async (dispatch) => {
+export const fetchSavedRestaurants = (userId) => async (dispatch) => {
   try {
-    const savedRestaurants = await csrfFetch(`/api/saved_restaurant`);
+    const savedRestaurants = await csrfFetch(`/api/users/${userId}/saved_restaurant`);
     const data = await savedRestaurants.json();
     dispatch(receiveSavedRestaurants(data));
   } catch (err) {
@@ -81,15 +82,13 @@ const savedRestaurantReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_SAVED_RESTAURANT:
-      // newState[action.savedRestaurant.id] = action.savedRestaurant;
-      newState[action.savedRestaurant.savedRestaurant.id] = action.savedRestaurant;
-      debugger
+      // debugger
+      newState[action.savedRestaurant.savedRestaurant.restaurantId] = action.savedRestaurant.savedRestaurant;
       return newState;
     case RECEIVE_SAVED_RESTAURANTS:
       return { ...newState, ...action.savedRestaurants };
     case REMOVE_SAVED_RESTAURANT:
       console.log(action);
-      // delete newState[action.savedRestaurant.id];
       delete newState.savedRestaurant[action.restaurantId];
       return newState;
     default:

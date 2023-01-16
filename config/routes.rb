@@ -12,13 +12,22 @@ Rails.application.routes.draw do
   # end
   namespace :api, defaults: {format: :json} do
     # ...
-    resources :users, only: [:create, :show]
+    resources :users, only: [:create, :show, :index]
     resource :session, only: [:create, :show, :destroy]
     resources :restaurants, only: [:show, :index, :create]
     resources :reviews, only: [:show, :destroy, :update, :create, :index]
     resources :reservations, only: [:show, :destroy, :update, :create, :index]
     resources :saved_restaurant, only: [:create, :show, :destroy, :index]
+
+    resources :restaurants, only: [:show] do
+      resources :reviews, only: [:index]
+    end
+
+    resources :users, only: [:show] do
+      resources :saved_restaurant, only: [:index, :show]
+    end
   end
+
 
   # get '/restaurants/:id', to: 'restaurants#show'
   post 'api/test', to: 'application#test'

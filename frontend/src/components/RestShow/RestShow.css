@@ -97,7 +97,7 @@ body {
     position: sticky;
     top: -0.0625rem;
     transition: all .15s ease-in-out;
-    /* z-index: 2; */
+    z-index: 2;
 }
 
 #anchor-nav {
@@ -174,4 +174,77 @@ article {
     margin: 0;
     padding: 0 0 0.75rem;
     text-align: center;
+}
+
+#overview-anchor {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+.rating-title {
+    font-size: 14px;
+    font-weight: 700;
+    margin-right: 8px;
+    text-transform: capitalize;
+}
+
+.rating-title-number {
+    color: #da3743;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.rating-title-number::after {
+    color: #2d333f;
+    content: "\B7";
+    padding: 0 4px;
+}
+
+.rating-title-number:last-of-type::after {
+    display: none;
+}
+
+.users-comment {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    margin: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.users-comment-font {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.inline-styling {
+    line-height: 24px;
+    max-height: 72px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+}
+
+.read-more-button {
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0;
+    color: #da3743;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    justify-content: center;
+    margin: 0;
+    outline: none;
+}
+
+#buttons-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+#delete-button {
+    border: none;
+    background: inherit;
 }

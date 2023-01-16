@@ -11,6 +11,7 @@
     align-items: center;
     width: 500px;
     margin: auto;
+    z-index: 10;
   }
 
   #modal-background {

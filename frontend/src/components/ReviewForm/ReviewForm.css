@@ -1,0 +1,134 @@
+.review {
+    font-weight: 700;
+    line-height: 36px;
+    border-bottom: 0.0625rem solid #d8d9db;
+
+}
+
+#rating-buttons {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.on {
+    color: red;
+}
+
+.off {
+    color: #ccc
+}
+
+.rating-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.review-box {
+    border-bottom: 0.0625rem solid #d8d9db;
+    display: flex;
+    padding: 16px 0;
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .review-box {
+        flex-direction: row;
+    }
+
+    .user-name {
+        margin: 0 0 4px;
+        width: 100%;
+    }
+
+    .user-review-count {
+        display: flex;
+        margin-right: 0;
+    }
+
+    .comment-bubble {
+        display: inline;
+        height: 16px;
+        width: 16px;
+    }
+
+    .num-display {
+        color: #6f737b;
+
+    }
+}
+
+.user-section {
+    align-items: center;
+    display: flex;
+    flex: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 16px;
+    position: relative;
+    text-align: center;
+    width: 6rem;
+}
+
+.user-logo {
+    background-color:  #df4e96;
+}
+
+.user-logo-effects {
+    align-items: center;
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    flex-shrink: 0;
+    font-weight: 500;
+    height: 3rem;
+    justify-content: center;
+    margin: 0 8px 8px;
+    width: 3rem;
+}
+
+.user-name {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.user-review-count {
+    align-items: center;
+    text-align: center;
+}
+
+.comment-bubble {
+    font-size: 0;
+    line-height: 1;
+    min-width: 1.5rem;
+}
+
+.num-display {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin-left: 5px;
+}
+
+.review-stars {
+    margin-right: 10px;
+    margin-bottom: 5px;
+}
+
+#submit-button {
+    background-color: #da3743;
+    color: #fff;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: all .3s ease-out;
+    width: 20%;
+    border-radius: 4px;
+    margin-top: 10px;
+}

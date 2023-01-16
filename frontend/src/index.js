@@ -11,6 +11,9 @@ import { restoreSession } from "./store/session";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as reservationActions from "./store/reservationsReducer"
+import * as restaurantAcions from "./store/restaurantsReducer"
+import * as reviewActions from "./store/reviewsReducer"
+import * as savedRestaurantActions from "./store/savedRestaurantsReducer"
 
 const store = configureStore();
 
@@ -31,7 +34,10 @@ const initializeApp = () => {
     window.store = store;
     window.csrfFetch = csrfFetch;
     window.sessionActions = sessionActions;
-    window.reservationActions = reservationActions; 
+    window.reservationActions = reservationActions;
+    window.restaurantAcions = restaurantAcions
+    window.reviewActions = reviewActions
+    window.savedRestaurantActions = savedRestaurantActions
   }
 
   function Root() {
