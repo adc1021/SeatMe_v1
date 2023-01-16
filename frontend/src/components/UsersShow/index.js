@@ -35,15 +35,15 @@ const UsersShow = () => {
     dispatch(fetchSavedRestaurants(user.id))
   }, [dispatch])
 
-  const handleReservations = (e) => {
-    setToggleReservations(true)
-    setToggleSaves(false)
-  }
+  // const handleReservations = (e) => {
+  //   setToggleReservations(true)
+  //   setToggleSaves(false)
+  // }
 
-  const handleSaves = (e) => {
-    setToggleSaves(true)
-    setToggleReservations(false)
-  }
+  // const handleSaves = (e) => {
+  //   setToggleSaves(true)
+  //   setToggleReservations(false)
+  // }
 
   return (
     <>
@@ -63,19 +63,19 @@ const UsersShow = () => {
                 <nav id="page-nav">
                   <ul>
                     <li>
-                      <Link to={`/users/${user.id}`} className="link" onClick={handleReservations}>
+                      <Link to={`/users/${user.id}`} className="link">
                         Reservations
                       </Link>
                     </li>
                     <li>
-                      <Link to={`/users/${user.id}`} className="link" onClick={handleSaves} >
+                      <Link to={`/my/favorites`} className="link">
                         Saved Restaurants
                       </Link>
                     </li>
                   </ul>
                 </nav>
                 { toggleReservations && <UserReservations user={user} reservations={reservations}/>}
-                { toggleSaves && <UsersRestaurants user={user} reservations={reservations}/>}
+                {/* <UsersRestaurants user={user} reservations={reservations}/> */}
               </div>
             </div>
           </div>

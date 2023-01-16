@@ -1,16 +1,26 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./index";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import SavedRestaurant from "./SavedRestaurant";
+import NavBar from "../NavBar";
 
-const UsersRestaurants = ({ user, reservations }) => {
+const UsersRestaurants = () => {
   const dispatch = useDispatch();
   const savedRestaurants = useSelector((state) => {
     return state.savedRestaurants.savedRestaurant
       ? Object.values(state.savedRestaurants.savedRestaurant)
       : [];
   });
+  const user = useSelector((state) => {
+    return state.session ? state.session.user : {};
+  });
+
+  const reservations = useSelector((state) => {
+    return state.reservations ? state.reservations : {};
+  });
+
   console.log(user)
 
   useEffect(() => {
@@ -19,6 +29,34 @@ const UsersRestaurants = ({ user, reservations }) => {
 
 
   return (
+    <>
+    <NavBar />
+    <section id="page-container">
+        <header id="users-header">
+          <div id="user-name-div">
+            <h1 id="user-name">
+              {user.firstName} {user.lastName}
+            </h1>
+            <p style={{ color: "#6f737b" }}>0 points</p>
+          </div>
+          <div id="max-width">
+            <div id="user-info">
+              <div id="nav-page-wrapper">
+                <nav id="page-nav">
+                  <ul>
+                    <li>
+                      <Link to={`/users/${user.id}`} className="link">
+                        Reservations
+                      </Link>
+                    </li>
+                    <li style={{width: "100%"}}>
+                      <Link to={`/my/favorites`} className="link">
+                        Saved Restaurants
+                      </Link>
+                    </li>
+                  </ul>
+                </nav>
+                {/* <UsersRestaurants user={user} reservations={reservations}/> */}
     <div className="saved-rest-container">
       <div className="points-reservations">
         <div className="column" style={{ padding: "16px" }}>
@@ -36,6 +74,12 @@ const UsersRestaurants = ({ user, reservations }) => {
         </div>
       </div>
     </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </section>
+    </>
   );
 };
 

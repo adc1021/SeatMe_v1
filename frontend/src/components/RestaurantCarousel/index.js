@@ -37,13 +37,6 @@ const RestaurantCarousel = () => {
         <div id="outer-carousel-div">
           <div id="inner-carousel-div">
             <ul id="restaurant-list">
-              {/* {restaurants.map((rest, i) => {
-                return (
-                  <li id="rest-cards">
-                    <RestaurantCard restaurantId={rest.id} key={rest.id} />
-                  </li>
-                );
-              })} */}
               <CarouselProvider
                 naturalSlideWidth={125}
                 isIntrinsicHeight={true}
@@ -62,9 +55,6 @@ const RestaurantCarousel = () => {
                       </Slide>
                     );
                   })}
-                  {/* {cards.map((card, i) => {
-                return <Slide index={i} key={card.id}>{card}</Slide>
-              })} */}
                 </Slider>
                 <ButtonNext className="scroll-button" id="right-scroll-button">
                   <i class="fa-solid fa-v"></i>

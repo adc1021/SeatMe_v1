@@ -106,6 +106,7 @@ li {
     /* min-height: 32rem; */
     width: calc(100% - 15.5rem);
     border-radius: 2px;
+    margin-left: 35px;
 }
 
 

@@ -6,11 +6,15 @@ import UsersShow from "./components/UsersShow";
 import ReservationsIndex from "./components/ReservationsIndex";
 import UpdateReservation from "./components/ReservationShow/UpdateReservation";
 import UpdateReservationForm from "./components/UpdateReservationForm";
+import UsersRestaurants from "./components/UsersShow/UsersRestaurants";
 
 function App() {
   return (
     <>
       <Switch>
+        <Route path={"/my/favorites"}>
+          <UsersRestaurants />
+        </Route>
         <Route path={"/restaurants/:id"}>
           <RestShow />
         </Route>

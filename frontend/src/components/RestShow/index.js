@@ -7,7 +7,7 @@ import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import * as restaurantActions from "../../store/restaurantsReducer";
-import ReviewForm from "../ReviewForm";
+import ReviewForm from "../ReviewForm/index";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
 
 const RestShow = () => {
