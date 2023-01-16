@@ -49,7 +49,7 @@ const UsersRestaurants = () => {
                         Reservations
                       </Link>
                     </li>
-                    <li>
+                    <li style={{width: "100%"}}>
                       <Link to={`/my/favorites`} className="link">
                         Saved Restaurants
                       </Link>
