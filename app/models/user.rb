@@ -15,15 +15,15 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
     validates :first_name,
         :last_name, :email, :session_token, :phone_number, presence: true
-    validates :first_name, length: { in: 2..30, maximum: 1, message: 'First name is required.' }
-    validates :last_name, length: { in: 2..30, maximum: 1, message: 'Last name is required.' }
+    validates :first_name, length: { in: 2..30, maximum: 1, message: 'is required.' }
+    validates :last_name, length: { in: 2..30, maximum: 1, message: 'is required.' }
     validates :email,
         length: { in: 3..255 },
-        format: { with: URI::MailTo::EMAIL_REGEXP, message: 'Email is required.' },
+        format: { with: URI::MailTo::EMAIL_REGEXP, message: 'is invalid' },
         uniqueness: true
     validates :phone_number, :session_token, uniqueness: true
     validates :phone_number,
-    format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, on: :create, message: 'is not valid' } # added a regexp I found on stack overflow for phone number validation
+    format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, on: :create, message: 'is invalid' } # added a regexp I found on stack overflow for phone number validation
 
 
     has_many :reservations

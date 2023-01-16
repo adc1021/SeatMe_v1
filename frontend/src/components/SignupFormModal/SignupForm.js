@@ -27,17 +27,19 @@ const SignupForm = () => {
       } catch {
         data = await res.text();
       }
+      debugger
       if (data?.errors) setErrors(data.errors);
       else if (data) setErrors([data]);
       else setErrors([res.statusText]);
     });
   };
 
+
   return (
     <>
       <h2>Get Started</h2>
       <p>Enter some information about yourself to get started.</p>
-      <ul>
+      <ul style={{display: "flex", justifyContent: "center"}}>
         {errors.map((error) => (
           <li key={error}>{error}</li>
         ))}
