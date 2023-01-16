@@ -1,5 +1,5 @@
 class Api::SavedRestaurantController < ApplicationController
-    wrap_parameters include: SavedRestaurant.attribute_names + [:userId, :restaurantId]
+    wrap_parameters include: SavedRestaurant.attribute_names + [:id, :userId, :restaurantId]
 
     def create
         @saved_restaurant = SavedRestaurant.new(saved_params)
@@ -43,6 +43,6 @@ class Api::SavedRestaurantController < ApplicationController
     private
 
     def saved_params
-        params.require(:saved_restaurant).permit(:user_id, :restaurant_id)
+        params.require(:saved_restaurant).permit(:id, :user_id, :restaurant_id)
     end
 end

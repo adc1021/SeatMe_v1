@@ -6,6 +6,7 @@ const RECEIVE_SAVED_RESTAURANTS = "saveRestaurants/RECEIVE_SAVED_RESTAURANTS";
 const REMOVE_SAVED_RESTAURANT = "savedRestaurants/REMOVE_SAVED_RESTAURANT";
 
 export const receiveSavedRestaurant = (savedRestaurant) => {
+  // debugger
   return {
     type: RECEIVE_SAVED_RESTAURANT,
     savedRestaurant,
@@ -81,6 +82,7 @@ const savedRestaurantReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_SAVED_RESTAURANT:
+      // debugger
       newState[action.savedRestaurant.savedRestaurant.restaurantId] = action.savedRestaurant.savedRestaurant;
       return newState;
     case RECEIVE_SAVED_RESTAURANTS:

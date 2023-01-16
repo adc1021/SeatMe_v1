@@ -24,38 +24,34 @@ const RestShow = () => {
     state.session.user ? state.session.user : {}
   );
 
-
   const savedRestaurant = useSelector((state) => {
     return state.savedRestaurants[id] ? state.savedRestaurants[id] : null;
   });
 
   useEffect(() => {
     dispatch(savedRestActions.fetchSavedRestaurant(user.id, id));
-    dispatch(savedRestActions.fetchSavedRestaurants(user.id));
     dispatch(fetchRest(id));
   }, [dispatch]);
 
-  // const savesArr = savedRestaurants ? Object.values(savedRestaurants) : [];
-
-  // let currentSavedRestaurant = savesArr.filter((savedRest) => {
-  //   return (
-  //     savedRest.userId === user.id && savedRest.restaurantId === restaurant.id
-  //   );
-  // });
-  // const [bool, setBool] = useState(!!currentSavedRestaurant);
-
   const saveTag = savedRestaurant ? (
-    <img
-      alt=""
-      id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" // red
-    ></img>
+    <>
+      <img
+        alt=""
+        id="save-svg"
+        src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark_selected-b86940.svg" // red
+        ></img>
+      <div id="text-div">Restaurant saved!</div>
+    </>
   ) : (
-    <img
-      alt=""
-      id="save-svg"
-      src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg" //white
-    ></img>
+    <>
+      <img
+        alt=""
+        id="save-svg"
+        src="https://cdn.otstatic.com/cfe/11/images/ic_bookmark-f6a8ce.svg"
+        //white
+      ></img>
+      <div id="text-div">Save this restaurant</div>
+    </>
   );
 
   const handleSave = (e) => {
@@ -80,7 +76,7 @@ const RestShow = () => {
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
               {saveTag}
-              <div id="text-div">Save this restaurant</div>
+              {/* <div id="text-div">Save this restaurant</div> */}
             </div>
           </button>
         </div>

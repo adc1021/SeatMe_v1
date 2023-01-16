@@ -13,6 +13,7 @@ import * as sessionActions from "./store/session";
 import * as reservationActions from "./store/reservationsReducer"
 import * as restaurantAcions from "./store/restaurantsReducer"
 import * as reviewActions from "./store/reviewsReducer"
+import * as savedRestaurantActions from "./store/savedRestaurantsReducer"
 
 const store = configureStore();
 
@@ -36,6 +37,7 @@ const initializeApp = () => {
     window.reservationActions = reservationActions;
     window.restaurantAcions = restaurantAcions
     window.reviewActions = reviewActions
+    window.savedRestaurantActions = savedRestaurantActions
   }
 
   function Root() {
