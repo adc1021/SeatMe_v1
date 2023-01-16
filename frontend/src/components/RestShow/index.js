@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
@@ -13,7 +13,7 @@ import ReviewIndex from "../ReviewForm/ReviewIndex";
 const RestShow = () => {
   // debugger
   const { id } = useParams();
-
+  const history = useHistory()
   const dispatch = useDispatch();
 
   const restaurant = useSelector((state) =>
@@ -66,6 +66,7 @@ const RestShow = () => {
             restaurantId: id,
           })
         );
+      history.go(0)
   };
 
   return (
@@ -88,19 +89,19 @@ const RestShow = () => {
               <nav id="anchor-nav">
                 <ol id="nav-ol">
                   <li>
-                    {/* <button className="anchor">Overview</button> */}
-                    <a id="overview-anchor" href="#overview-anchor">
+                    <button className="anchor">Overview</button>
+                    {/* <a id="overview-anchor" href="#overview-anchor">
                       Overview
-                    </a>
+                    </a> */}
                   </li>
                   <li>
                     <button className="anchor">Menu</button>
                   </li>
                   <li>
-                    {/* <button className="anchor" href=".review">Reviews</button> */}
-                    <a id="overview-anchor" href="#anchor-name">
+                    <button className="anchor" href=".review">Reviews</button>
+                    {/* <a id="overview-anchor" href="#anchor-name">
                       Reviews
-                    </a>
+                    </a> */}
                   </li>
                 </ol>
               </nav>

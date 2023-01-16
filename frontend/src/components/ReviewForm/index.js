@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
+import { useHistory, useParams } from "react-router-dom";
 import OverallStarRating from "./StarRating";
 import ServiceStarRating from "./ServiceStarRating";
 import AmbienceStarRating from "./AmbienceStarRating";
@@ -13,7 +14,7 @@ const ReviewForm = ({ restaurantId, user }) => {
   const [food, setFood] = useState(1);
   const [service, setService] = useState(1);
   const [ambience, setAmbience] = useState(1);
-
+  const history = useHistory()
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -32,6 +33,7 @@ const ReviewForm = ({ restaurantId, user }) => {
         commentorLastName: user.lastName,
       })
     );
+    history.go(0)
   };
 
   return (
