@@ -7,7 +7,7 @@ import FoodStarRating from "./FoodStarRating"
 import './ReviewForm.css'
 import * as reviewActions from "../../store/reviewsReducer"
 
-const ReviewForm = ({ restaurantId, userId }) => {
+const ReviewForm = ({ restaurantId, user }) => {
   const [comment, setComment] = useState("")
   const [overall, setOverall] = useState(1)
   const [food, setFood] = useState(1)
@@ -20,12 +20,14 @@ const ReviewForm = ({ restaurantId, userId }) => {
     e.preventDefault();
     dispatch(reviewActions.createReview({
       restaurantId: restaurantId,
-      userId: userId,
+      userId: user.id,
       comment: comment,
       overallRating: overall,
       foodRating: food,
       serviceRating: service,
-      ambienceRating: ambience
+      ambienceRating: ambience,
+      commentorFirstName: user.firstName,
+      commentorLastName: user.lastName
     }))
   }
 
@@ -41,7 +43,7 @@ const ReviewForm = ({ restaurantId, userId }) => {
             <FoodStarRating setFood={setFood}/>
             <AmbienceStarRating setAmbience={setAmbience} />
             <ServiceStarRating setService={setService}/>
-            <button type="submit" disabled={!comment }>POST</button>
+            <button type="submit" disabled={!comment || !user }>POST</button>
           </form>
         </div>
     </>

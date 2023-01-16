@@ -4,7 +4,7 @@ import * as reviewActions from "../../store/reviewsReducer";
 import * as userActions from "../../store/usersReducer";
 import "./ReviewForm.css";
 
-const ReviewIndex = ({ restId }) => {
+const ReviewIndex = ({ restId, user }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -39,8 +39,8 @@ const ReviewIndex = ({ restId }) => {
             <a id="anchor-name"></a>
             <li className="review-box">
               <section className="user-section">
-                <div className="user-logo user-logo-effects">DL</div>
-                <p className="user-name">Demo Lition</p>
+                <div className="user-logo user-logo-effects">{review.commentorFirstName[0]}{review.commentorLastName[0]}</div>
+                <p className="user-name">{review.commentorFirstName} {review.commentorLastName}</p>
                 <div className="user-review-count">
                   <span className="comment-bubble">
                     <svg>

@@ -1,6 +1,6 @@
 class Api::ReviewsController < ApplicationController
     wrap_parameters include: User.attribute_names + [:id, :restaurantId, :userId,
-    :comment, :overallRating, :foodRating, :serviceRating, :ambienceRating]
+    :comment, :overallRating, :foodRating, :serviceRating, :ambienceRating, :commentorFirstName, :commentorLastName]
 
     def create
         @review = Review.new(review_params)
@@ -42,6 +42,7 @@ class Api::ReviewsController < ApplicationController
     private
     def review_params
         params.require(:review).permit(:id, :restaurant_id, :user_id, :comment,
-        :overall_rating, :food_rating, :service_rating, :ambience_rating )
+        :overall_rating, :food_rating, :service_rating, :ambience_rating,
+        :commentorFirstName, :commentorLastName )
     end
 end

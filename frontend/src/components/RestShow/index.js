@@ -31,7 +31,9 @@ const RestShow = () => {
   useEffect(() => {
     dispatch(savedRestActions.fetchSavedRestaurant(user.id, id));
     dispatch(fetchRest(id));
-  }, [dispatch]);
+  }, [dispatch, id, user.id]);
+
+  // const [bool, setBool] = useState()
 
   const saveTag = savedRestaurant ? (
     <>
@@ -108,8 +110,8 @@ const RestShow = () => {
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
-            <ReviewForm restaurantId={id} userId={user.id} />
-            <ReviewIndex restId={id} />
+            <ReviewForm restaurantId={id} user={user} />
+            <ReviewIndex restId={id} user={user}/>
           </div>
           <ReservationForm restaurantId={id} />
         </div>

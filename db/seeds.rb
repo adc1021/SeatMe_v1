@@ -41,8 +41,8 @@
       phone_number: '123-456-7555'
     )
     User.create!(
-      first_name: 'Brogan',
-      last_name: 'Manfredi',
+      first_name: 'Alfred',
+      last_name: 'Hitchcock',
       email: 'broMan@gmail.io',
       phone_number: '123-456-2321'
     )
@@ -373,20 +373,23 @@
 
         Review.create(user_id: 1, restaurant_id: 1, comment: "Excellent experience,
         would munch again.", overall_rating: 5, food_rating: 5, service_rating: 5,
-        ambience_rating: 5)
+        ambience_rating: 5, commentor_first_name: "Demo", commentor_last_name: "-lition")
 
         Review.create(user_id: 2, restaurant_id: 1, comment: "Their has been
         nary a meal that compares to the one I had at this establishment",
-        overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 5)
+        overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 5,
+        commentor_first_name: "Hulk", commentor_last_name: "Hogan")
 
         Review.create(user_id: 3, restaurant_id: 1, comment: "Best steak of my life.
         Richard was an excellent waiter",
-        overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 4)
+        overall_rating: 5, food_rating: 5, service_rating: 5, ambience_rating: 4,
+        commentor_first_name: "Kelly", commentor_last_name: "Jones")
 
         Review.create(user_id: 4, restaurant_id: 1, comment: "The meal was solid.
         Just wished the food had come out quicker and the music was a bit too loud
         for my taste",
-        overall_rating: 3, food_rating: 4, service_rating: 3, ambience_rating: 3)
+        overall_rating: 3, food_rating: 4, service_rating: 3, ambience_rating: 3,
+        commentor_first_name: "Alfred", commentor_last_name: "Hitchcock")
 
 
         SavedRestaurant.create(user_id: 1, restaurant_id: 1)
