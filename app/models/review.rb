@@ -14,7 +14,7 @@
 #  updated_at      :datetime         not null
 #
 class Review < ApplicationRecord
-
+    # validates :comment,length: { in: 1..180, message: 'Comment cannot exceed 180 characters' }
     belongs_to :user
 
     belongs_to :restaurant

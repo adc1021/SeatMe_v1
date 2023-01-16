@@ -118,3 +118,17 @@
     margin-right: 10px;
     margin-bottom: 5px;
 }
+
+#submit-button {
+    background-color: #da3743;
+    color: #fff;
+    height: 3rem;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    transition: all .3s ease-out;
+    width: 20%;
+    border-radius: 4px;
+    margin-top: 10px;
+}

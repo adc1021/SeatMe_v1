@@ -4,7 +4,6 @@ class Api::ReviewsController < ApplicationController
 
     def create
         @review = Review.new(review_params)
-
         if @review.save
             render json: "success!"
         else
@@ -43,6 +42,6 @@ class Api::ReviewsController < ApplicationController
     def review_params
         params.require(:review).permit(:id, :restaurant_id, :user_id, :comment,
         :overall_rating, :food_rating, :service_rating, :ambience_rating,
-        :commentorFirstName, :commentorLastName )
+        :commentor_first_name, :commentor_last_name )
     end
 end
