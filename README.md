@@ -14,3 +14,16 @@ Restaurants can be saved to users profile. Reservations can be scheduled, update
 - Hosting: Render
 - Other technologies: AWS S3, Pure React Carousel 
 
+## Features 
+
+1. **User Authentication**
+
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/111291271/212965477-955718a6-555c-44e0-a6fd-2ebcc05f7fe2.gif)
+
+2. **Restaurant Reservations**
+
+![ezgif com-gif-maker (5)](https://user-images.githubusercontent.com/111291271/212984156-d74ee6b2-92d9-47ac-9255-3846934fe5dc.gif)
+
+3. **Leaving Comments**
+
+![ezgif com-gif-maker (6)](https://user-images.githubusercontent.com/111291271/212985670-02f561f1-59b4-4432-8940-c710910deabe.gif)
