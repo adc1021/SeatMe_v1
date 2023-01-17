@@ -7,8 +7,8 @@ const AmbienceStarRating = ({ setAmbience }) => {
   const handleClick = (e, index) => {
     e.preventDefault();
     setRating(index + 1)
-    setAmbience(rating)
   }
+  setAmbience(rating)
 
   return (
     <div className="rating-logo">

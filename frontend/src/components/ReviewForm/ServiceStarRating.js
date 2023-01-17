@@ -8,8 +8,8 @@ const ServiceStarRating = ({ setService }) => {
     e.preventDefault();
 
     setRating(index + 1)
-    setService(rating)
   }
+  setService(rating)
 
   return (
     <div className="rating-logo">

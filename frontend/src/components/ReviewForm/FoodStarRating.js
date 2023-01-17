@@ -8,8 +8,8 @@ const FoodStarRating = ({ setFood }) => {
     e.preventDefault();
 
     setRating(index + 1);
-    setFood(rating);
   };
+  setFood(rating);
 
   return (
     <div className="rating-logo">

@@ -19,7 +19,7 @@ const ReviewForm = ({ restaurantId, user }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    debugger;
+
     dispatch(
       reviewActions.createReview({
         restaurantId: restaurantId,

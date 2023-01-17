@@ -5,10 +5,11 @@ const OverallStarRating = ({ setOverall }) => {
 
   const handleClick = (e, index) => {
     e.preventDefault();
-
     setRating(index + 1);
-    setOverall(rating);
+
   };
+
+  setOverall(rating)
 
   return (
     <div className="rating-logo">
