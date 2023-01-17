@@ -21,17 +21,16 @@ const UsersRestaurants = () => {
     return state.reservations ? state.reservations : {};
   });
 
-  console.log(user)
+  console.log(user);
 
   useEffect(() => {
     dispatch(savedRestActions.fetchSavedRestaurants(user.id));
   }, [dispatch]);
 
-
   return (
     <>
-    <NavBar />
-    <section id="page-container">
+      <NavBar />
+      <section id="page-container">
         <header id="users-header">
           <div id="user-name-div">
             <h1 id="user-name">
@@ -49,7 +48,7 @@ const UsersRestaurants = () => {
                         Reservations
                       </Link>
                     </li>
-                    <li style={{width: "100%"}}>
+                    <li style={{ width: "100%" }}>
                       <Link to={`/my/favorites`} className="link">
                         Saved Restaurants
                       </Link>
@@ -57,23 +56,31 @@ const UsersRestaurants = () => {
                   </ul>
                 </nav>
                 {/* <UsersRestaurants user={user} reservations={reservations}/> */}
-    <div className="saved-rest-container">
-      <div className="points-reservations">
-        <div className="column" style={{ padding: "16px" }}>
-          <h2 style={{ margin: "0px" }} className="saves-header">
-            Saved Restaurants
-          </h2>
-        </div>
-      </div>
-      <div className="points-reservations" style={{ marginTop: "0px" }}>
-        <div className="column" style={{ padding: "16px" }}>
-          {savedRestaurants.map((rest) => {
-            return <SavedRestaurant rest={rest}/>
-          })
-            }
-        </div>
-      </div>
-    </div>
+                <div className="saved-rest-container">
+                  <div className="points-reservations">
+                    <div className="column" style={{ padding: "16px" }}>
+                      <h2 style={{ margin: "0px" }} className="saves-header">
+                        Saved Restaurants
+                      </h2>
+                    </div>
+                  </div>
+                  <div
+                    className="points-reservations"
+                    style={{ marginTop: "0px" }}
+                  >
+                    <div className="column" style={{ padding: "16px" }}>
+                      {savedRestaurants.length === 0 ? (
+                        <p style={{fontWeight: "600", paddingLeft: "25px"}}>
+                          You have no favorite restaurants to show on this list.
+                        </p>
+                      ) : (
+                        savedRestaurants.map((rest) => {
+                          return <SavedRestaurant rest={rest} />;
+                        })
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

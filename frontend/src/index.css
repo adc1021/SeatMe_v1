@@ -224,11 +224,11 @@ section {
     max-height: 70rem;
     position: absolute;
     right: 0;
-    top: 100%;
+    top: 85%;
     transition: transform .15s ease-out,opacity .15s ease-out,position .15s ease-out,max-height 0s;
-    width: 9.375rem;
+    width: 15.375rem;
     z-index: 100;
-    margin-right: 18px;
+    margin-right: 32px;
 
 }
 

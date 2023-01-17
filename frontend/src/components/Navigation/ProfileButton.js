@@ -37,6 +37,10 @@ function ProfileButton({ user }) {
     history.push(`/users/${user.id}`)
   }
 
+  const savedRestRedirect = (e) => {
+    history.push(`/my/favorites`)
+  }
+
   return (
     <>
       <div>
@@ -53,6 +57,7 @@ function ProfileButton({ user }) {
         <div className="profile-dropdown">
             <span id="name-span">Hello, {user.firstName}!</span>
             <button onClick={profileRedirect} id="profile-show-button">My Profile</button>
+            <button onClick={savedRestRedirect} id="profile-show-button">My Saved Restaurants</button>
             <button onClick={logout} id="logout-button">Sign Out</button>
 
         </div>

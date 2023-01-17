@@ -33,7 +33,6 @@ const RestShow = () => {
     dispatch(fetchRest(id));
   }, [dispatch, id, user.id]);
 
-  // const [bool, setBool] = useState()
 
   const saveTag = savedRestaurant ? (
     <>

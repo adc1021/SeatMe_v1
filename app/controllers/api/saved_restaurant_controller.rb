@@ -23,8 +23,6 @@ class Api::SavedRestaurantController < ApplicationController
                 @saved_restaurant = arr[0]
             end
         end
-
-        # debugger
     end
 
     def index
