@@ -44,18 +44,17 @@ const UsersRestaurants = () => {
                 <nav id="page-nav">
                   <ul>
                     <li>
-                      <Link to={`/users/${user.id}`} className="link">
+                      <Link to={`/users/${user.id}`} id="off" className="link">
                         Reservations
                       </Link>
                     </li>
                     <li style={{ width: "100%" }}>
-                      <Link to={`/my/favorites`} className="link">
+                      <Link to={`/my/favorites`} id="on" className="link">
                         Saved Restaurants
                       </Link>
                     </li>
                   </ul>
                 </nav>
-                {/* <UsersRestaurants user={user} reservations={reservations}/> */}
                 <div className="saved-rest-container">
                   <div className="points-reservations">
                     <div className="column" style={{ padding: "16px" }}>

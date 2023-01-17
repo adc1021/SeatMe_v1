@@ -157,3 +157,16 @@ h5 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
+#on {
+    font-weight: 700;
+    outline: transparent solid 2px;
+}
+
+#off {
+    display: block;
+    color: #999;
+    /* position: relative; */
+    /* margin-top: 0.5rem; */
+    /* padding: 0.5rem; */
+}

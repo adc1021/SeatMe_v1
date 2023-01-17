@@ -11,8 +11,8 @@ import { fetchSavedRestaurants } from "../../store/savedRestaurantsReducer";
 
 const UsersShow = () => {
   const userId = useParams()
-  const [toggleReservations, setToggleReservations] = useState(true)
-  const [toggleSaves, setToggleSaves] = useState(false)
+  const [change, setChange] = useState("Reservations")
+  const [text, setText] = useState("")
   const dispatch = useDispatch();
   const user = useSelector((state) => {
     return state.session ? state.session.user : {};
@@ -30,20 +30,15 @@ const UsersShow = () => {
     return state.savedRestaurants ? state.savedRestaurants : {};
   })
 
-  // debugger
   useEffect(() => {
     dispatch(fetchSavedRestaurants(user.id))
   }, [dispatch])
 
-  // const handleReservations = (e) => {
-  //   setToggleReservations(true)
-  //   setToggleSaves(false)
-  // }
-
-  // const handleSaves = (e) => {
-  //   setToggleSaves(true)
-  //   setToggleReservations(false)
-  // }
+  const handleSwitch = (e) => {
+    let text = e.target.innerHTML;
+    // setText(text)
+    setChange(text)
+  }
 
   return (
     <>
@@ -63,19 +58,18 @@ const UsersShow = () => {
                 <nav id="page-nav">
                   <ul>
                     <li>
-                      <Link to={`/users/${user.id}`} className="link">
+                      <Link to={`/users/${user.id}`}  id="on" className="link">
                         Reservations
                       </Link>
                     </li>
                     <li>
-                      <Link to={`/my/favorites`} className="link">
+                      <Link to={`/my/favorites`} id="off" className="link">
                         Saved Restaurants
                       </Link>
                     </li>
                   </ul>
                 </nav>
-                { toggleReservations && <UserReservations user={user} reservations={reservations}/>}
-                {/* <UsersRestaurants user={user} reservations={reservations}/> */}
+                <UserReservations user={user} reservations={reservations}/>
               </div>
             </div>
           </div>
