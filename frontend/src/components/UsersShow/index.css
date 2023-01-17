@@ -94,5 +94,8 @@
     color: #fff;
     height: 50px;
     width: 120px;
-    margin-left: 70px;
+    /* position:relative; bottom: 5px; */
+    /* position:absolute;
+    top: 50px;
+    right: 20px; */
 }

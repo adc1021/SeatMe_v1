@@ -63,7 +63,7 @@ const SavedRestaurant = ({ rest }) => {
           <p style={{ fontSize: "0.875rem" }}>{restaurant.address}</p>
           <span style={{ display: "flex", flexDirection: "row" }}></span>
         </div>
-        <div>
+        <div style={{paddingLeft: "20px"}}>
           <button className="reserve-button" onClick={handleReserve}>Reserve Now</button>
         </div>
       </div>

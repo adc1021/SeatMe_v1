@@ -1,16 +1,28 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import * as restActions from "../../store/restaurantsReducer";
 import { NavLink, useHistory } from "react-router-dom";
 import "./RestCard.css";
 import { useEffect } from "react";
 import useNavigate from "react-use-navigate";
+import * as reviewActions from "../../store/reviewsReducer"
 
 const RestaurantCard = ({ restaurantId }) => {
   let history = useHistory();
+  const dispatch = useDispatch();
 
   const restaurant = useSelector((state) =>
     state.restaurants[restaurantId] ? state.restaurants[restaurantId] : {}
   );
+
+  const reviews = useSelector((state) => {
+    // debugger
+    return state.reviews.reviews ? Object.values(state.reviews.reviews) : [];
+  });
+  // debugger
+
+  useEffect(() => {
+    dispatch(reviewActions.fetchReviews(restaurantId));
+  }, [dispatch, restaurantId]);
 
 
   const dollarSign = () => {
@@ -117,17 +129,8 @@ const RestaurantCard = ({ restaurantId }) => {
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
           <div id="rating-wrapper">
-          {/* <div className="star-wrapper small">
-            <div className="star-svg-wrapper">
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-half-red"></div>
-            </div>
-          </div> */}
           {stars()}
-            <span id="reviews-span">170 reviews</span>
+            <span id="reviews-span">{reviews.length} reviews</span>
           </div>
           <div id="cuisine-price-wrapper">
             <span id="cuisine-span">{restaurant.cuisine}</span>
