@@ -20,19 +20,19 @@ class Api::RestaurantsController < ApplicationController
     # if @restaurants
     #   render 'api/restaurants/index'
     # else
-    #   render json: { restaurant: nil }
+    #   render json: { restaurants: nil }
     # end
   end
 
-  def create
-    @restaurant = Restaurant.new(restaurant_params)
+  # def create
+  #   @restaurant = Restaurant.new(restaurant_params)
 
-    if @restaurant.save
-      render `api/restaurants/show`
-    else
-      render json: { restaurant: nil}
-    end
-  end
+  #   if @restaurant.save
+  #     render `api/restaurants/show`
+  #   else
+  #     render json: { restaurant: nil}
+  #   end
+  # end
 
   private
   def restaurant_params

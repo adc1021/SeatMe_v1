@@ -3,7 +3,7 @@ import * as restActions from "../../store/restaurantsReducer";
 import { NavLink, useHistory } from "react-router-dom";
 import "./RestCard.css";
 import { useEffect } from "react";
-import useNavigate from "react-use-navigate";
+// import useNavigate from "react-use-navigate";
 import * as reviewActions from "../../store/reviewsReducer"
 
 const RestaurantCard = ({ restaurantId }) => {

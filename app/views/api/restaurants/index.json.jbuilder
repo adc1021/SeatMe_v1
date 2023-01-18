@@ -1,7 +1,8 @@
-@restaurants.each do |restaurant|
-  json.set! restaurant.id do
-
-    json.partial! 'restaurant', restaurant: restaurant
-    json.photoUrl url_for(restaurant.photo)
+json.restaurants do
+  @restaurants.each do |restaurant|
+    json.set! restaurant.id do
+      json.partial! 'api/restaurants/restaurant', restaurant: restaurant
+      json.photoUrl url_for(restaurant.photo)
+    end
   end
 end
