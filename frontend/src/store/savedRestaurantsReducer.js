@@ -82,13 +82,11 @@ const savedRestaurantReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_SAVED_RESTAURANT:
-      // debugger
       newState[action.savedRestaurant.savedRestaurant.restaurantId] = action.savedRestaurant.savedRestaurant;
       return newState;
     case RECEIVE_SAVED_RESTAURANTS:
       return { ...newState, ...action.savedRestaurants };
     case REMOVE_SAVED_RESTAURANT:
-      console.log(action);
       delete newState.savedRestaurant[action.restaurantId];
       return newState;
     default:

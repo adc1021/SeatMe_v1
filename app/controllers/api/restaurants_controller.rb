@@ -1,5 +1,6 @@
 class Api::RestaurantsController < ApplicationController
 
+
   def show
     @restaurant = Restaurant.find_by(id: params[:id]) if params[:id]
 
@@ -23,13 +24,20 @@ class Api::RestaurantsController < ApplicationController
     # end
   end
 
-  # def create
-  #   @restaurant = Restaurant.new()
-  # end
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+
+    if @restaurant.save
+      render `api/restaurants/show`
+    else
+      render json: { restaurant: nil}
+    end
+  end
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :cuisine)
+    params.require(:restaurant).permit(:name, :cuisine, :description, :address,
+    :tables, :menu, :average_rating, :price_point, :phone_number, :neighborhood)
   end
 
 end

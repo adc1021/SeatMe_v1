@@ -21,8 +21,6 @@ const UsersRestaurants = () => {
     return state.reservations ? state.reservations : {};
   });
 
-  console.log(user);
-
   useEffect(() => {
     dispatch(savedRestActions.fetchSavedRestaurants(user.id));
   }, [dispatch]);
