@@ -71,14 +71,16 @@
           phone_number: "212-371-7777",
           neighborhood: "Midtown West"
         )
-
+              puts rest1
         image1 = URI.open("https://seatme-dev.s3.amazonaws.com/Quality_meats_card.jpeg")
+        puts image1
         rest1.photo.attach(io: image1, filename: "Quality_meats_card.jpeg")
         rest1.save!
+        puts rest1
 
-        image101 = URI.open("https://seatme-dev.s3.amazonaws.com/Quality_Meats_show.jpeg")
-        rest1.photo.attach(io: image101, filename: "Quality_Meats_show.jpeg")
-        rest1.save!
+        # image101 = URI.open("https://seatme-dev.s3.amazonaws.com/Quality_Meats_show.jpeg")
+        # rest1.photo.attach(io: image101, filename: "Quality_Meats_show.jpeg")
+        # rest1.save!
 
         rest2 = Restaurant.create(
           name: "Nice Matin",
@@ -142,9 +144,9 @@
           neighborhood: "Upper West Side"
         )
 
-        image2 = URI.open("https://seatme-dev.s3.amazonaws.com/nice_matin_card.jpeg")
-        rest2.photo.attach(io: image2, filename: "nice_matin_card.jpeg")
-        rest2.save!
+        # image2 = URI.open("https://seatme-dev.s3.amazonaws.com/nice_matin_card.jpeg")
+        # rest2.photo.attach(io: image2, filename: "nice_matin_card.jpeg")
+        # rest2.save!
 
         rest3 = Restaurant.create(
           name: "Cote NYC",
@@ -171,9 +173,9 @@
           neighborhood: "Chelsea"
           )
 
-          image3 = URI.open("https://seatme-dev.s3.amazonaws.com/Cote_card.jpeg")
-          rest3.photo.attach(io: image3, filename: "Cote_card.jpeg")
-          rest3.save!
+          # image3 = URI.open("https://seatme-dev.s3.amazonaws.com/Cote_card.jpeg")
+          # rest3.photo.attach(io: image3, filename: "Cote_card.jpeg")
+          # rest3.save!
 
           # image3_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Cote_show.jpeg")
           # rest3.photo.attach(io: image3_1, filename: "Cote_show.jpeg")
@@ -237,9 +239,9 @@
           neighborhood: "Bushwick"
         )
 
-        image4 = URI.open("https://seatme-dev.s3.amazonaws.com/seawolf_card.jpeg")
-        rest4.photo.attach(io: image4, filename: "seawolf_card.jpeg")
-        rest4.save!
+        # image4 = URI.open("https://seatme-dev.s3.amazonaws.com/seawolf_card.jpeg")
+        # rest4.photo.attach(io: image4, filename: "seawolf_card.jpeg")
+        # rest4.save!
 
         rest5 = Restaurant.create(
           name: "Meadowsweet",
@@ -292,9 +294,9 @@
           neighborhood: "Williamsburg",
         )
 
-        image5 = URI.open("https://seatme-dev.s3.amazonaws.com/Meadowsweet_card.jpeg")
-        rest5.photo.attach(io: image5, filename: "Meadowsweet_card.jpeg")
-        rest5.save!
+        # image5 = URI.open("https://seatme-dev.s3.amazonaws.com/Meadowsweet_card.jpeg")
+        # rest5.photo.attach(io: image5, filename: "Meadowsweet_card.jpeg")
+        # rest5.save!
 
         rest6 = Restaurant.create(
           name: "Double Zero",
@@ -339,9 +341,9 @@
           neighborhood: "East Village",
         )
 
-        image6 = URI.open("https://seatme-dev.s3.amazonaws.com/double_zero_card.jpeg")
-        rest6.photo.attach(io: image6, filename: "double_zero_card.jpeg")
-        rest6.save!
+        # image6 = URI.open("https://seatme-dev.s3.amazonaws.com/double_zero_card.jpeg")
+        # rest6.photo.attach(io: image6, filename: "double_zero_card.jpeg")
+        # rest6.save!
 
 
         rest7 = Restaurant.create(
@@ -361,9 +363,9 @@
           neighborhood: "Lower East Side",
         )
 
-        image7 = URI.open("https://seatme-dev.s3.amazonaws.com/bar_primi_card.jpeg")
-        rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
-        rest7.save!
+        # image7 = URI.open("https://seatme-dev.s3.amazonaws.com/bar_primi_card.jpeg")
+        # rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
+        # rest7.save!
 
         Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
         party_size: 5, user_id: 1, restaurant_id: 1 )

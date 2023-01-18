@@ -4,9 +4,14 @@ import DeleteReservation from "./DeleteReservation";
 import "./ReservationShow.css";
 import UpdateReservation from "./UpdateReservation";
 import { format, addMinutes } from "date-fns";
+import * as restActions from "../../store/restaurantsReducer"
 
 const ReservationShow = ({ resData }) => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(restActions.fetchRest(resData.restaurantId))
+  }, [dispatch, resData.restaurantId])
 
   const restaurantData = useSelector((state) =>
     state.restaurants[resData.restaurantId]
