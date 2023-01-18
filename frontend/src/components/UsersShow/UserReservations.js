@@ -7,8 +7,6 @@ const UserReservations = ({ user, reservations }) => {
   const filteredArr = resArr.filter( (res) => {
     return res.userId === user.id
   })
-
-  console.log(filteredArr)
   return (
     <>
     <div className="points-reservations">
