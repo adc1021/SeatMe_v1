@@ -24,19 +24,12 @@ class Api::RestaurantsController < ApplicationController
   end
 
   # def create
-  #   @restaurant = Restaurant.new(restaurant_params)
-
-  #   if @restaurant.save
-  #     render `api/restaurants/show`
-  #   else
-  #     render json: { restaurant: nil}
-  #   end
+  #   @restaurant = Restaurant.new()
   # end
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:name, :cuisine, :description, :address,
-    :tables, :menu, :average_rating, :price_point, :phone_number, :neighborhood)
+    params.require(:restaurant).permit(:name, :cuisine)
   end
 
 end
