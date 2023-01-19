@@ -10,6 +10,7 @@
   require "open-uri"
   puts "Destroying tables..."
   # Unnecessary if using `rails db:seed:replant`
+  Review.destroy_all
   SavedRestaurant.destroy_all
   Reservation.destroy_all
   Restaurant.destroy_all
