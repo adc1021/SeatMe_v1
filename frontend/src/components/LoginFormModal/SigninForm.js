@@ -39,6 +39,9 @@ const SigninForm = () => {
 
   const handleClick = (e) => {
     setInputType(!inputType);
+    setErrors([])
+    setEmail("")
+    setPhoneNumber("")
   };
 
   const handleDemo = (e) => {
@@ -134,7 +137,7 @@ const SigninForm = () => {
             </button>
           </form>
           <button className="toggle" onClick={handleClick} value={inputType}>
-            Use phone instead
+            Use phone number instead
           </button>
           <button className="demo-button" onClick={handleDemo}>
             Sign In as Demo User

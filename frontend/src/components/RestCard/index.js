@@ -145,7 +145,7 @@ const RestaurantCard = ({ restaurantId }) => {
           </div>
           <div id="time-slots">
             <NavLink id="time-slot-link" to={`/restaurants/${restaurantId}`} onClick={handleTime}>
-              12:30 PM
+              12:00 PM
             </NavLink>
           </div>
         </div>

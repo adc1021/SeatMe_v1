@@ -18,7 +18,7 @@ class Api::SessionsController < ApplicationController
       login(@user)
       render 'api/users/show'
     else
-      render json: { errors: ['Phone number is required.'] }, status: 422
+        render json: { errors: ['User input is invalid. Please try again.'] }, status: 422
     end
   end
 
