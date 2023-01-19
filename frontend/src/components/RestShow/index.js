@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
+import { useHistory, useParams, useLocation } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
@@ -11,10 +11,10 @@ import ReviewForm from "../ReviewForm/index";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
 
 const RestShow = () => {
-  // debugger
   const { id } = useParams();
   const history = useHistory()
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}

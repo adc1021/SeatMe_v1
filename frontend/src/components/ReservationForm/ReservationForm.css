@@ -100,3 +100,10 @@ hr {
     border-bottom: 0.0625rem solid #d8d9db;
     border-width: 95%;
 }
+
+.chart-span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 16px;
+}
