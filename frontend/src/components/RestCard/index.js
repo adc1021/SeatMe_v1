@@ -128,8 +128,8 @@ const RestaurantCard = ({ restaurantId }) => {
         <img alt="" src={restaurant.photoUrl} id="filler-image"></img>
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
-          <div id="rating-wrapper">
-          {stars()}
+          <div style={{display: "flex", alignItems: "center"}}>
+            {stars()}
             <span id="reviews-span">{reviews.length} reviews</span>
           </div>
           <div id="cuisine-price-wrapper">

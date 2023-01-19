@@ -248,3 +248,20 @@ article {
     border: none;
     background: inherit;
 }
+
+.overview-header-wrapper {
+    grid-gap: 16px;
+    align-items: center;
+    column-count: 4;
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto;
+    margin-top: 16px;
+}
+
+#rating-display {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    margin-left: 7px;
+}

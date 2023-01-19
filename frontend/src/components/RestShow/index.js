@@ -9,6 +9,7 @@ import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import * as restaurantActions from "../../store/restaurantsReducer";
 import ReviewForm from "../ReviewForm/index";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
+import RestOverviewheader from "./RestOverviewheader";
 
 const RestShow = () => {
   const { id } = useParams();
@@ -109,6 +110,7 @@ const RestShow = () => {
             <section>
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
+            <RestOverviewheader restaurant={restaurant}/>
             <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
             <ReviewForm restaurantId={id} user={user} />
             <ReviewIndex restId={id} user={user}/>
