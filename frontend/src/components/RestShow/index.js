@@ -21,8 +21,6 @@ const RestShow = () => {
     state.restaurants[id] ? state.restaurants[id] : {}
   );
 
-  let photoShow = restaurant.photoUrls[1]
-
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );

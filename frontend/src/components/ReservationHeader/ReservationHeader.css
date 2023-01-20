@@ -15,6 +15,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-radius: 4;
 }
 
 #res-header-title {
@@ -69,6 +70,8 @@
     font-size: 16px;
     outline: none;
     text-decoration: none;
+    background: inherit;
+    border-radius: 4px;
 }
 
 #date-menu {
@@ -85,6 +88,7 @@
 #time-container {
     border-right: 0.0625rem solid #0000000f;
     min-height: 3rem;
+
 }
 
 #party-size {
@@ -94,15 +98,24 @@
 #head-search-bar {
     margin-left: 15px;
     min-width: 18.125rem;
-    border-radius: 4px;;
-    background: white;
-    height: 3rem;
+    border: none;
+    background: none;
     font-size: 16px;
     outline: none;
 }
 /*  */
+#magnifying-glass {
+    transform: rotate(-45deg);
+    padding: 5px;
+}
 
-
+#search-div {
+    margin-left: 10px;
+    background-color: white;
+    border-radius: 4px;
+    height: 3rem;
+    align-items: center;
+}
 
 #sub-date-menu {
     align-items: center;
@@ -148,4 +161,14 @@ header {
 #cont-button:hover {
     transition: all 0.3s ease-out 0s;
     background-color: rgb(148, 32, 39);
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  display: block;
+  width: 80%;
+  border: none;
+  font-size: large;
+  font: inherit;
 }
