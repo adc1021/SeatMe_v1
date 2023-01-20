@@ -368,6 +368,200 @@
         rest7.photo.attach(io: image7, filename: "bar_primi_card.jpeg")
         rest7.save!
 
+        rest8 = Restaurant.create(
+          name: "Oceana",
+          description: "Oceana has a 70 seat Cafe with a 18 seat marble bar.
+          Great for lunch, after work cocktails & snacks, pre-theater dinner
+          and post-theater desserts. Spring and Summer bring a 50 seat outdoor
+          dining area and our new West Park Beer Garden 200 person capacity,
+           private dining options include our Chefs Table with seating for up
+            to 6, our new Chefs Counter for 6, Wine Room for 18, and our Grand
+            Salon for 80. Full buyouts are also available.",
+          cuisine: "American",
+          address: "120 West 49th Street, New York, NY 10020",
+          tables: 60,
+          menu: "Shigoku $3.00, Rocky Reef $3.00, Kumamoto $3.00,
+          Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,
+          Our Signature Baked Oysters $18.00",
+          average_rating: 4.6,
+          price_point: 40,
+          phone_number: "212-759-5941",
+          neighborhood: "Midtown West"
+        )
+
+        image8 = URI.open("https://seatme-dev.s3.amazonaws.com/Oceana_Restaurant_card.jpeg")
+        rest8.photo.attach(io: image8, filename: "Oceana_Restaurant_card.jpeg")
+        # debugger
+        rest8.images
+        rest8.save!
+
+        rest9 = Restaurant.create(
+          name: "Estiatorio Milos – Hudson Yards",
+          description: "Milos at Hudson Yards features an open kitchen,
+          private dining rooms, walls of glass overlooking the Hudson River,
+          and a spectacular outdoor terrace. Milos' signature fish market
+          showcases the daily catch, where guests can choose the fish they will
+          dine on. There is also an international wine collection featuring
+          wines from Greece and around the world.",
+          cuisine: "Greek",
+          address: "20 Hudson Yards, Fifth Floor, New York, NY 10001",
+          tables: 60,
+          menu: "RAW FISH
+          MAGIATIKO, Mediterranean Hunter Fish
+          Sashimi or Tartare
+
+          TUNA, Bigeye AAA quality
+          Selected for Milos by our fishmonger at Hawaii's auctions, Sashimi or Tartare
+
+          SALMON, Faroe Islands, Organic
+          Sashimi or Tartare
+
+          LOUP DE MER, Ionian Sea, Greece
+          Sashimi or Ceviche
+
+          TSIPOURA, Ionian Sea, Greece
+          Sashimi
+
+          LETHRINI, Nazare, Portugal
+          Sashimi
+
+          FAGRI, Kythira, Greece
+          Sashimi",
+          average_rating: 4.8,
+          price_point: 51,
+          phone_number: "(646) 907-1970
+          ",
+          neighborhood: "Garment District"
+        )
+
+        image9 = URI.open("https://seatme-dev.s3.amazonaws.com/Estiatorio_Milos_card+.jpeg")
+        rest9.photo.attach(io: image9, filename: "Estiatorio_Milos_card+.jpeg")
+        rest9.save!
+
+        rest10 = Restaurant.create(
+          name: "Passatempo",
+          description: "Italian cafe and restaurant. Our bar is characterized
+          by artisanal Italian beer and well curated Italian wine list.
+          All of our pastas are fresh and homemade. We have a large selection
+          of risottos that you will have you coming back for more.
+          Great food and beverage options for breakfast, lunch and dinner.
+          (All menus available all day)",
+          cuisine: "Italian",
+          address: "20 Hudson Yards, Fifth Floor, New York, NY 10001",
+          tables: 60,
+          menu: "Antipasti
+          Burrata & Veggie
+          $16.00
+          Burrata Imported from Italy, Roasted and Marinated Zucchini & Eggplant Slices
+
+          Insalata Primavera
+          $14.00
+          Shaved Fennel, Orange Wedges, Avocado
+
+          Fancy Caprese
+          $16.00
+          Mozzarella di Bufala DOP, Heirloom Tomatoes, Field Greens
+
+          Shrimp & Mango Salad
+          $22.00
+          Mango Slices, King Prawns, Arugula, Lemon Dressing
+
+          Bresaola
+          $18.00
+          Sliced Cured Beef, Shaved Parmesan, Arugula, Lemon Juice",
+          average_rating: 4.4,
+          price_point: 29,
+          phone_number: "(646) 907-1970
+          ",
+          neighborhood: "Williamsburg"
+        )
+
+        image10 = URI.open("https://seatme-dev.s3.amazonaws.com/Pasatempo_card.jpeg")
+        rest10.photo.attach(io: image10, filename: "Pasatempo_card.jpeg")
+        rest10.save!
+
+        rest11 = Restaurant.create(
+          name: "Guantanamera - Forest Hills",
+          description: "Guantanamera is an instant escape to chic Old Havana.
+          Guantanamera is a friendly, fun, vibrant Cuban restaurant featuring
+          traditional Cuban fare, magnificent mojitos, complimentary hand-rolled
+          cigars, & Live Cuban music. As indelibly Cuban as the classic
+          love song that bestowed its name, Guantanamera, captures the essence
+          of Old Havana with its exotic décor featuring exposed brick,
+          candle-lit tables, rattan-covered ceiling fans, and hand-painted
+          folkloric murals.",
+          cuisine: "Cuban",
+          address: "110-80 Queens Blvd, Queens, NY 11375
+
+          ",
+          tables: 60,
+          menu: "Platos Fuertes | Entrées
+          Sandwich Cubano
+          Classic pressed Cuban sandwich of roast pork, ham, swiss cheese, pickles, mustard
+
+          Bocadito de Pollo
+          Grilled marinated chicken breast sandwich with mayo, tomatoes, lettuce
+
+          Sandwich de Pernil
+          Roasted pork, lettuce, tomatoe, mayonnaise
+
+          Masitas de Puerco
+          Crispy golden pork chunks, cumin scented marinade, congri
+
+          Tilapia al Limon
+          White wine, garlic, lemon sauce
+
+          Arroz con Pollo Criollo
+          Yellow rice, chunks of chicken, mixed vegetables",
+          average_rating: 4.7,
+          price_point: 28,
+          phone_number: "(646) 907-1970
+          ",
+          neighborhood: "Forest Hills"
+        )
+
+        image11 = URI.open("https://seatme-dev.s3.amazonaws.com/Guantanamera_card.jpeg")
+        rest11.photo.attach(io: image11, filename: "Guantanamera_card.jpeg")
+        rest11.save!
+
+        rest12 = Restaurant.create(
+          name: "Serafina Ludlow",
+          description: "Situated on a popular corner in the Lower East Side,
+        in one of Manhattan’s trendiest neighborhoods. Our cozy bar provides
+          a great space to enjoy unique cocktails. The beautiful mosaic
+          pizza oven produces over 20 Serafina pizza varieties, or choose
+          from signature dishes like our Focaccia di Sofia, Tartufo Nero, and
+          other delicious dishes like our homemade pastas, grilled fish and
+          meat, and fresh salads.",
+          cuisine: "Cuban",
+          address: "98 Rivington St, New York, NY 10002",
+          tables: 60,
+          menu: "Antipasti
+          Seasonal Antipasti
+          Ask your server
+
+          MP
+          Meatballs
+          $17.00
+          Homemade meatballs topped with Parmigiano Reggiano, served with tomato sauce, basil & toasted bread
+
+          Calamari
+          $17.00
+          Fried calamari served with our homemade spicy tomato dip
+
+          Bruschetta
+          $13.00
+          Toasted bread with fresh tomatoes, basil, extra virgin olive oil & a touch of garlic",
+          average_rating: 4.5,
+          price_point: 28,
+          phone_number: "(212) 358-9800",
+          neighborhood: "Lower East Side"
+        )
+
+        image12 = URI.open("https://seatme-dev.s3.amazonaws.com/Serafina_card.jpeg")
+        rest12.photo.attach(io: image12, filename: "Serafina_card.jpeg")
+        rest12.save!
+
         Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
         party_size: 5, user_id: 1, restaurant_id: 1 )
         Reservation.create(date: DateTime.new(2024,4,7, 7,30,6), time: DateTime.new(2024,4,7, 7,30,6), party_size: 4,

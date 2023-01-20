@@ -21,7 +21,9 @@
 
 #section-header {
     border-bottom: none;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding-bottom: 0;
     padding: 0 16px;
     min-height: 3rem;
@@ -40,6 +42,8 @@ h2 {
 
 #view-all {
     color: #da3743;
+    width: 80px;
+    float: right;
 }
 
 #outer-carousel-div {
@@ -111,5 +115,5 @@ svg {
 }
 
 @media (min-width: 768px) {
-    
+
 }

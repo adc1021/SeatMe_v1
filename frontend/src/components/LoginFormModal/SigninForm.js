@@ -115,12 +115,6 @@ const SigninForm = () => {
             Enter the email associated with your SeatMe account, social login or
             new email. We'll send a code to that email.
           </p>
-
-          <ul>
-            {errors.map((error) => (
-              <li key={error}>{error}</li>
-            ))}
-          </ul>
           <form onSubmit={handleSubmit}>
             <label>
               <input
@@ -132,6 +126,11 @@ const SigninForm = () => {
                 required
               />
             </label>
+            <ul>
+            {errors.map((error) => (
+              <li className="error-message" key={error}>{error}</li>
+            ))}
+          </ul>
             <button className="cont-button" type="submit">
               Continue
             </button>

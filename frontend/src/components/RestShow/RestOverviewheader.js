@@ -89,6 +89,19 @@ const RestOverviewheader = ({ restaurant }) => {
     }
   };
 
+  let arr = [ "Good for Special Occasions", "Neighborhood Gem", "Date Spot",
+  "Best Food in Town", "Good Vibes", "Ambience Short List", "Romantic", "Good for Groups",
+  "Neigbhorhood Gem", "Innovative", "Great for Scenic Views" ]
+
+  function randomNumber(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  let i = Math.floor(randomNumber(1, arr.length))
+  let j = Math.floor(randomNumber(1, arr.length))
+  let x = Math.floor(randomNumber(1, arr.length))
+
+  debugger
   return (
     <>
       <div className="overview-header-wrapper">
@@ -165,6 +178,31 @@ const RestOverviewheader = ({ restaurant }) => {
             {restaurant.cuisine}
           </span>
         </div>
+      </div>
+      <div style={{display: "flex", marginTop: "16px", display: "flex", alignItems: "center"}}>
+        <span style={{overflow: "hidden", whiteSpace: "nowrap"}}>
+          Top Tags:
+        </span>
+        <ul style={{display: "flex", listStyle: "none", margin: "0", padding: "0"}}>
+          <li className="tag-list">
+            <div className="style-wrapper">
+            {/* Good for Special Occasions */}
+            {arr[i]}
+            </div>
+          </li>
+          <li className="tag-list">
+            <div className="style-wrapper">
+              {/* Romantic */}
+              {arr[j]}
+            </div>
+          </li>
+          <li className="tag-list">
+            <div className="style-wrapper">
+            {/* Neighborhood Gem */}
+            {arr[x]}
+            </div>
+          </li>
+        </ul>
       </div>
     </>
   );

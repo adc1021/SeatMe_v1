@@ -265,3 +265,22 @@ article {
     line-height: 1.25rem;
     margin-left: 7px;
 }
+
+.style-wrapper {
+    border: 0.0625rem solid #d8d9db;
+    border-radius: 1rem;
+    padding: 0.3125rem 16px;
+    text-transform: capitalize;
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+}
+
+.tag-list {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-left: 8px;
+    overflow: hidden;
+    white-space: nowrap
+}
