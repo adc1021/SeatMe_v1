@@ -384,7 +384,7 @@
           Blue Island $3.00, Kusshi $3.00, Barnstable $3.00,
           Our Signature Baked Oysters $18.00",
           average_rating: 4.6,
-          price_point: 40,
+          price_point: 41,
           phone_number: "212-759-5941",
           neighborhood: "Midtown West"
         )

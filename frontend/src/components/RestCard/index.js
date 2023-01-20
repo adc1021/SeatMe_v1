@@ -38,7 +38,7 @@ const RestaurantCard = ({ restaurantId }) => {
           · $$<span id="lighter-dollar">$$</span>
         </span>
       );
-    } else if (restaurant.pricePoint >= 30 && restaurant.pricePoint < 40) {
+    } else if (restaurant.pricePoint >= 30 && restaurant.pricePoint < 49) {
       return (
         <span id="dollar-span">
           · $$$<span id="lighter-dollar">$</span>
