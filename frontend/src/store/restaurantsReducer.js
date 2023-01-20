@@ -20,7 +20,6 @@ export const receiveRestaurants = (restaurants) => {
 }
 
 export const fetchRest = (restaurantId) => async (dispatch) => {
-  debugger
   const res = await csrfFetch(`/api/restaurants/${restaurantId}`);
   if (res.ok) {
     const data = await res.json();

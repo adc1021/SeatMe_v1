@@ -29,7 +29,7 @@ const SavedRestaurant = ({ rest }) => {
   return (
     <>
       <div id="display-info-div">
-        <img id="rest-card-img" alt="" src={restaurant.photoUrl}></img>
+        <img id="rest-card-img" alt="" src={restaurant.photoUrls}></img>
         <div id="rest-name-span">
           <span
             style={{

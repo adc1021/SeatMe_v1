@@ -74,11 +74,8 @@ User.destroy_all
       )
       #       puts rest1
       image1 = URI.open("https://seatme-dev.s3.amazonaws.com/Quality_meats_card.jpeg")
-      # puts image1
       rest1.photos.attach(io: image1, filename: "Quality_meats_card.jpeg")
       rest1.save!
-      # puts rest1
-
       image101 = URI.open("https://seatme-dev.s3.amazonaws.com/Quality_Meats_show.jpeg")
       rest1.photos.attach(io: image101, filename: "Quality_Meats_show.jpeg")
       rest1.save!
@@ -390,7 +387,9 @@ User.destroy_all
       )
 
       image8 = URI.open("https://seatme-dev.s3.amazonaws.com/Oceana_Restaurant_card.jpeg")
+      image8_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Oceana_Restaurant_show.jpeg")
       rest8.photos.attach(io: image8, filename: "Oceana_Restaurant_card.jpeg")
+      rest8.photos.attach(io: image8_1, filename: "Oceana_Restaurant_show.jpeg")
       # debugger
       rest8.save!
 
@@ -434,7 +433,9 @@ User.destroy_all
       )
 
       image9 = URI.open("https://seatme-dev.s3.amazonaws.com/Estiatorio_Milos_card+.jpeg")
+      image9_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Estiatorio_Milos_show+.jpeg")
       rest9.photos.attach(io: image9, filename: "Estiatorio_Milos_card+.jpeg")
+      rest9.photos.attach(io: image9_1, filename: "Estiatorio_Milos_show+.jpeg")
       rest9.save!
 
       rest10 = Restaurant.create(
@@ -476,7 +477,9 @@ User.destroy_all
       )
 
       image10 = URI.open("https://seatme-dev.s3.amazonaws.com/Pasatempo_card.jpeg")
+      image10_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Pasatempo_show.jpeg")
       rest10.photos.attach(io: image10, filename: "Pasatempo_card.jpeg")
+      rest10.photos.attach(io: image10_1, filename: "Pasatempo_show.jpeg")
       rest10.save!
 
       rest11 = Restaurant.create(
@@ -520,7 +523,9 @@ User.destroy_all
       )
 
       image11 = URI.open("https://seatme-dev.s3.amazonaws.com/Guantanamera_card.jpeg")
+      image11_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Guantanamera_show.jpeg")
       rest11.photos.attach(io: image11, filename: "Guantanamera_card.jpeg")
+      rest11.photos.attach(io: image11_1, filename: "Guantanamera_show.jpeg")
       rest11.save!
 
       rest12 = Restaurant.create(
@@ -558,7 +563,9 @@ User.destroy_all
       )
 
       image12 = URI.open("https://seatme-dev.s3.amazonaws.com/Serafina_card.jpeg")
+      image12_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Serafine_show.jpeg")
       rest12.photos.attach(io: image12, filename: "Serafina_card.jpeg")
+      rest12.photos.attach(io: image12_1, filename: "Serafine_show.jpeg")
       rest12.save!
 
       rest13 = Restaurant.create(
@@ -597,7 +604,9 @@ User.destroy_all
       )
 
       image13 = URI.open("https://seatme-dev.s3.amazonaws.com/Extra_Virgin_card.jpeg")
+      image13_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Extra_virgin_show.jpeg")
       rest13.photos.attach(io: image13, filename: "Extra_Virgin_card.jpeg")
+      rest13.photos.attach(io: image13_1, filename: "Extra_virgin_show.jpeg")
       rest13.save!
 
       rest14 = Restaurant.create(
@@ -654,7 +663,9 @@ User.destroy_all
       )
 
       image14 = URI.open("https://seatme-dev.s3.amazonaws.com/the_Little_Owl_card.jpeg")
+      image14_1 = URI.open("https://seatme-dev.s3.amazonaws.com/The_Little_Owl_show.jpeg")
       rest14.photos.attach(io: image14, filename: "the_Little_Owl_card.jpeg")
+      rest14.photos.attach(io: image14_1, filename: "the_Little_Owl_show.jpeg")
       rest14.save!
 
       Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),

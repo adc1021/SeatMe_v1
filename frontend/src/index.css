@@ -255,3 +255,15 @@ section {
     outline: none !important;
     border: none !important;
 }
+
+#outer-body {
+    display: grid;
+    grid-template-columns: 1fr 85vw 1fr;
+    grid-template-rows: 16px auto auto;
+    grid-template-areas:
+        ". header ."
+        ". inner-body ."
+        ". footer .";
+    height: fit-content;
+    background-color: #f6f6f6;
+}

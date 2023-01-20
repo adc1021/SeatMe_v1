@@ -97,7 +97,7 @@ const ReservationShow = ({ resData }) => {
   return (
     <>
       <div id="display-info-div">
-        <img id="rest-card-img" alt="" src={restaurantData.photoUrl}></img>
+        <img id="rest-card-img" alt="" src={restaurantData.photoUrls}></img>
         <div id="rest-name-span">
           <span
             style={{

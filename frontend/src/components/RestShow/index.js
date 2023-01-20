@@ -21,6 +21,8 @@ const RestShow = () => {
     state.restaurants[id] ? state.restaurants[id] : {}
   );
 
+  let photoShow = restaurant.photoUrls[1]
+
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
@@ -69,13 +71,14 @@ const RestShow = () => {
       history.go(0)
   };
 
+
   return (
     <>
       <NavBar />
       <div>
         <div id="img-container">
           <div></div>
-          <img id="rest-img" alt="" src={restaurant.photoUrl}></img>
+          <img id="rest-img" alt="" src={restaurant.photoUrls}></img>
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
               {saveTag}
