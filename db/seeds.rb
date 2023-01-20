@@ -392,7 +392,6 @@
         image8 = URI.open("https://seatme-dev.s3.amazonaws.com/Oceana_Restaurant_card.jpeg")
         rest8.photo.attach(io: image8, filename: "Oceana_Restaurant_card.jpeg")
         # debugger
-        rest8.images
         rest8.save!
 
         rest9 = Restaurant.create(
