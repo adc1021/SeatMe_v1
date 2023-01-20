@@ -562,6 +562,102 @@
         rest12.photo.attach(io: image12, filename: "Serafina_card.jpeg")
         rest12.save!
 
+        rest13 = Restaurant.create(
+          name: "Extra Virgin Restaurant",
+          description: "Extra Virgin is a neighborhood spot that attracts diners
+          from all across the city open for almost 16 years loved by the
+          neighborhood. Located in New York City’s West Village, Extra Virgin
+          is “a little gem of a restaurant… with cooking consistently good and
+          the young staff, attractive and efficient” (The New York Times).
+          In addition to deliciously inventive Mediterranean food and a
+          comfortable but energetic dining room, Extra Virgin offers different
+          varieties of extra virgin oils from around the world each night",
+          cuisine: "Mediterranean",
+          address: "259 W 4th St, New York, NY 10014",
+          tables: 60,
+          menu: "Classics
+          Monday - Baked Lasagna
+          $25.00
+          meat sauce, ricotta, mozzarella, fontina, parmesan, spinach
+
+          Tuesday - Buttermilk Fried Baby Chicken
+          $26.00
+          stuffed with spinach and queso fresco, spiced Cole slaw, bread & butter pickles, mango
+
+          Wednesday - Lemon Sole Almondine
+          $28.00
+          cauliflower gratin, haricot verts, lemon butter
+
+          Thursday - 7 Hour Braised Barbecue Lamb Shank
+          $33.00
+          sweet corn risotto, spinach, corn salsa, crispy onions, rosemary jus",
+          average_rating: 4.4,
+          price_point: 25,
+          phone_number: "(212) 358-9800",
+          neighborhood: "West Village"
+        )
+
+        image13 = URI.open("https://seatme-dev.s3.amazonaws.com/Extra_Virgin_card.jpeg")
+        rest13.photo.attach(io: image13, filename: "Extra_Virgin_card.jpeg")
+        rest13.save!
+
+        rest14 = Restaurant.create(
+          name: "The Little Owl",
+          description: "Little Owl offers bold-flavored Seasonal Mediterranean
+          cuisine with friendly and professional service. Currently, they
+          offer both indoor and outdoor dining for parties up to 6 guests,
+          against the backdrop of their treasured and storied West Village.
+          Both their tented area on Bedford Street and their sidewalk seating
+          along Grove Street are equipped with heaters for guests' warmth.",
+          cuisine: "Mediterranean",
+          address: "90 Bedford Street, New York, NY 10014",
+          tables: 25,
+          menu: "entrées
+          Tender Lamb Shank
+          $38.00
+          warm potato salad, giardiniera, natural jus
+
+          Skate Milanese Sandwich
+          $26.00
+          seeded bun, chinoise slaw, lemon, french fries
+
+          Faroe Island Salmon*
+          $33.00
+          lemon pepper broccoli, avocado crema, roasted tomato
+
+          Grilled & Filleted Daily Fish*
+          $39.00
+          toasted lobster paella
+
+          8 oz. Bacon Cheeseburger*
+          $21.00
+          American cheese, pickle, french fries
+
+          Petit Filet Mignon*
+          $39.00
+          crunchy montrachet potatoes, spinach, red wine
+
+          Crispy Bell & Evans Chicken
+          $32.00
+          brussels sprout home fries, lemon, dijon, garlic, sherry
+
+          Broiled Nova Scotia Halibut
+          $39.00
+          chive mashed potatoes, lemon crème fraiche
+
+          Pork Chop & Butter Beans*
+          $38.00
+          parmesan, wild dandelion",
+          average_rating: 4.8,
+          price_point: 35,
+          phone_number: "(212) 358-9800",
+          neighborhood: "West Village"
+        )
+
+        image14 = URI.open("https://seatme-dev.s3.amazonaws.com/the_Little_Owl_card.jpeg")
+        rest14.photo.attach(io: image14, filename: "the_Little_Owl_card.jpeg")
+        rest14.save!
+
         Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
         party_size: 5, user_id: 1, restaurant_id: 1 )
         Reservation.create(date: DateTime.new(2024,4,7, 7,30,6), time: DateTime.new(2024,4,7, 7,30,6), party_size: 4,
