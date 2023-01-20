@@ -13,7 +13,7 @@ class Api::SavedRestaurantController < ApplicationController
     def show
         user = User.find_by(id: params[:user_id])
         saved_restaurants = user.saved_restaurants
-
+        
         if(saved_restaurants.length > 0)
             arr = saved_restaurants.select do |restaurant|
                 restaurant.restaurant_id == params[:id].to_i

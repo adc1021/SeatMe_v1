@@ -12,8 +12,13 @@ class Api::ReviewsController < ApplicationController
     end
 
     def index
+        # debugger
         @restaurant = Restaurant.find_by(id: params[:restaurant_id])
-        @reviews = @restaurant.reviews
+        if @restaurant
+           @reviews = @restaurant.reviews
+        else
+            render json: { reviews: nil }
+        end
     end
 
     def show
