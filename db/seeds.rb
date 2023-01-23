@@ -49,6 +49,15 @@ User.destroy_all
     phone_number: '123-456-2321'
   )
 
+  30.times do
+    User.create!(
+      first_name: Faker::Name.unique.first_name,
+      last_name: Faker::Name.unique.last_name,
+      email: Faker::Internet.unique.email,
+      phone_number: rand(1000000000..9999999999)
+    )
+  end
+
 
       rest1 = Restaurant.create(
         name: "Quality Meats",
@@ -695,6 +704,51 @@ User.destroy_all
       overall_rating: 3, food_rating: 4, service_rating: 3, ambience_rating: 3,
       commentor_first_name: "Alfred", commentor_last_name: "Hitchcock")
 
+
+      reviews = [
+        'I wish I had known about this place sooner. What a treat!',
+        "Cozy, relaxing, homey. I felt like an old friend every time I was greeted by the staff.",
+        "The food was cold. The only thing that was colder was the waitresses icy personality. Not a pleasant experience",
+        "I came to this particular location for it's close proximity to my home. Even still, I couldn't beat the swarm of people jockeying to get a table",
+        'The table was still filthy when we sat down. I was appalled to see dropping of the previous diners meal. Just disgraceful',
+        "The coffee was scolding hot. I burned my tongue the instant it came into contact. A bit of warming would have been nice.",
+        "The staff was almost as cold and distant as my wife!",
+        "The aroma in the place was just delightful. It reminded me of my grandmothers kitchen",
+        "The food was so spicy! The menu didn't express that at all. I was so dissappointed.",
+        "Great location for families with small children. They were so accomodating to my little ones.",
+        "The drinks came out faster than we could sit down. Service was stupendous all  night.",
+        "I can't imagine going anywhere else. They just really make you feel like you're at home.",
+        "The shrimp was excellent. The eggplant was suspect. And the waiter was a charm.",
+        "The hostess was as rude a hostess as I've ever had. When I asked her why our table wasn't ready, she replied it was our fault for being so early.
+        the only problem with that was it was 40 minutes past the intended time of our reservation.",
+        "Not a bad spot to grab a quick drink with friends. The food is also solid.",
+        "How do I simultaneously praise a location, while also deterring diners from
+          overcrowding my favorite lunch spot?",
+        "I found a hair in my food, but was just happy to know that my food was at least made by a mammal.",
+        "Don't eat here unless you have a desire for painful bowel movements.",
+        "The people next to us were so loud the entire night, and not a thing was done by the staff.",
+        "Everything I've ever eaten here has been twice as good as advertised",
+        "I've never loved a person half as much as I love this restaurant",
+        "Don't go to this location. I mean the food and service are great, but I don't
+        want to have to start fighting people for a seat."
+      ]
+
+      user_ids = User.all.map {|user| user.id}
+      rest_ids = Restaurant.all.map {|rest| rest.id}
+
+      150.times do
+        Review.create!(
+          comment: reviews.sample,
+          user_id: user_ids.sample,
+          restaurant_id: rest_ids.sample,
+          food_rating: rand(2..5),
+          service_rating: rand(2..5),
+          ambience_rating: rand(2..5),
+          overall_rating: 5,
+          commentor_first_name: Faker::Name.unique.first_name,
+          commentor_last_name: Faker::Name.unique.last_name
+        )
+      end
 
       SavedRestaurant.create(user_id: 1, restaurant_id: 1)
       SavedRestaurant.create(user_id: 1, restaurant_id: 3)
