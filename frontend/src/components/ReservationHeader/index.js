@@ -39,7 +39,7 @@ const ReservationHeader = () => {
               onChange={(date) => setStartDate(date)}
             />
           </div>
-          <div>
+          <div id="time-container-wrapper">
             <select id="time-container" className="dropdown">
               <option>11:00 AM</option>
               <option>11:30 AM</option>
@@ -70,7 +70,8 @@ const ReservationHeader = () => {
             </select>
           </div>
           <div id="party-size" className="dropdown">
-            <select id="time-container" className="dropdown">
+            <i id="little-man-icon" className="fa-regular fa-user"></i>
+            <select id="person-container" className="dropdown">
               <option>1 person</option>
               <option>2 people</option>
               <option>3 people</option>
@@ -78,6 +79,8 @@ const ReservationHeader = () => {
           </div>
         </div>
         <div id="search-div">
+          <div id="search-div-container">
+            <div>
           <svg id="magnifying-glass">
             <g style={{ lineHeight: "1" }}>
               <path
@@ -95,10 +98,11 @@ const ReservationHeader = () => {
             </g>
           </svg>
           <input
-            id="head-search-bar"
             type="text"
             placeholder="Location, Restaurant, Cuisine"
           />
+          </div>
+        </div>
         </div>
         <div>
           <button id="cont-button">Let's Go</button>
