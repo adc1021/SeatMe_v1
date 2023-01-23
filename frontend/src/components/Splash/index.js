@@ -3,6 +3,8 @@ import ReservationHeader from "../ReservationHeader";
 import Navigation from "../Navigation";
 import RestaurantCarousel from "../RestaurantCarousel";
 import NavBar from "../NavBar";
+import ReactDatePicker from "react-datepicker";
+
 
 const Splash = () => {
   return (

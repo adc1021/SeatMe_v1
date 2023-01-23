@@ -124,8 +124,7 @@ const RestaurantCard = ({ restaurantId }) => {
 
   return (
     <NavLink to={`restaurants/${restaurantId}`} target="_blank" id="card-body">
-      <div>
-        <img alt="" src={restaurant.photoUrl} id="filler-image"></img>
+        <img alt="" src={restaurant.photoUrls[0]} id="filler-image"></img>
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
           <div style={{display: "flex", alignItems: "center"}}>
@@ -149,7 +148,6 @@ const RestaurantCard = ({ restaurantId }) => {
             </NavLink>
           </div>
         </div>
-      </div>
     </NavLink>
   );
 };

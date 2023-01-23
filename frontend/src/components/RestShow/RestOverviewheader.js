@@ -8,7 +8,7 @@ const RestOverviewheader = ({ restaurant }) => {
 
   useEffect(() => {
     dispatch(reviewActions.fetchReviews(restaurant.id));
-  }, [dispatch, restaurant]);
+  }, [dispatch]);
 
   const reviews = useSelector((state) => {
     // debugger
@@ -101,7 +101,6 @@ const RestOverviewheader = ({ restaurant }) => {
   let j = Math.floor(randomNumber(1, arr.length))
   let x = Math.floor(randomNumber(1, arr.length))
 
-  debugger
   return (
     <>
       <div className="overview-header-wrapper">

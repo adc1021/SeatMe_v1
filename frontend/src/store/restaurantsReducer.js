@@ -20,13 +20,10 @@ export const receiveRestaurants = (restaurants) => {
 }
 
 export const fetchRest = (restaurantId) => async (dispatch) => {
-  // debugger
   const res = await csrfFetch(`/api/restaurants/${restaurantId}`);
   if (res.ok) {
     const data = await res.json();
-    // sessionStorage.setItem("restaurantData", data);
-    dispatch(receiveRest(data.restaurant));
-    // debugger
+    dispatch(receiveRest(data));
   }
 };
 
@@ -44,6 +41,7 @@ const restaurantsReducer = (oldState = {}, action) => {
 
   switch(action.type) {
     case RECEIVE_RESTAURANT:
+      // debugger
       newState[action.restaurant.id] = action.restaurant;
       return newState;
     case RECEIVE_RESTAURANTS:
