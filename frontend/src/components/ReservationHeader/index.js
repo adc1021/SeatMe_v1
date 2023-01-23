@@ -16,12 +16,7 @@ const ReservationHeader = () => {
       <div id="flex-box">
         <div id="date-time-party-container">
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
+            className="date-picker-wrapper"
           >
             <svg>
               <g style={{ lineHeight: "1" }}>

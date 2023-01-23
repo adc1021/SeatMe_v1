@@ -87,6 +87,7 @@
 
 #time-container {
     border-right: 0.0625rem solid #0000000f;
+    border-left: 0.0625rem solid #0000000f;
     min-height: 3rem;
 
 }
@@ -167,8 +168,21 @@ header {
 .react-datepicker__input-container,
 .react-datepicker__input-container input {
   display: block;
-  width: 80%;
+  width: 100px;
   border: none;
   font-size: large;
   font: inherit;
+}
+
+
+.date-picker-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px;
+}
+
+input[type="text" i] {
+    padding: 1px 0px;
+    margin-left: 5px;
 }
