@@ -118,8 +118,8 @@ const RestShow = () => {
             <ReviewIndex restId={id} user={user}/>
           </div>
           <div className="sticky-div">
-            <ReservationForm restaurantId={id} />
-            <OrderDelivery restaurant={restaurant}/>
+            <ReservationForm restaurant={restaurant} />
+            {/* <OrderDelivery restaurant={restaurant}/> */}
           </div>
         </div>
       </div>

@@ -4,8 +4,9 @@ import { useHistory, useParams } from "react-router-dom";
 import "./ReservationForm.css";
 
 import * as reservationActions from "../../store/reservationsReducer";
+import OrderDelivery from "../RestShow/OrderDelivery";
 
-const ReservationForm = ({ restaurantId }) => {
+const ReservationForm = ({ restaurant }) => {
   const dispatch = useDispatch();
   let history = useHistory();
   // debugger
@@ -24,7 +25,7 @@ const ReservationForm = ({ restaurantId }) => {
         partySize,
         date,
         time,
-        restaurantId: restaurantId,
+        restaurantId: restaurant.id,
         userId: user.id,
       })
     );
@@ -32,7 +33,7 @@ const ReservationForm = ({ restaurantId }) => {
   };
 
   return (
-    <div style={{ width: "20rem", zIndex: "2" }}>
+    <div style={{ width: "20rem", zIndex: "2", position: "sticky", top: "0" }}>
         <article className="article-box">
           <h2 className="input-field">Make a reservation</h2>
           <div style={{ margin: "16px -16px 0" }}>
@@ -144,6 +145,7 @@ const ReservationForm = ({ restaurantId }) => {
               </span>
             </span>
         </article>
+        <OrderDelivery restaurant={restaurant}/>
       </div>
   );
 };
