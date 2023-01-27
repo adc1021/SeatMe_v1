@@ -154,18 +154,10 @@ button.anchor {
     display: block;
 }
 
-#sticky-div {
+.sticky-div {
     position: sticky;
     top: 0;
     z-index: 11;
-}
-
-article {
-    background-color: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px #2d333f33;
-    padding: 16px;
-    display: block;
 }
 
 #input-field {
@@ -283,4 +275,20 @@ article {
     margin-left: 8px;
     overflow: hidden;
     white-space: nowrap
+}
+
+.container {
+    margin: 16px 0;
+}
+
+.phone-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #da3743;
+    font-weight: 700;
+    background-color: inherit;
+    border-radius: 4px;
+    border: 0.0625rem solid #d8d9db;
+    padding: 0.3125rem calc(16px - 0.0625rem);
 }

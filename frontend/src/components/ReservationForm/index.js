@@ -33,9 +33,8 @@ const ReservationForm = ({ restaurantId }) => {
 
   return (
     <div style={{ width: "20rem", zIndex: "2" }}>
-      <div id="sticky-div">
-        <article>
-          <h2 id="input-field">Make a reservation</h2>
+        <article className="article-box">
+          <h2 className="input-field">Make a reservation</h2>
           <div style={{ margin: "16px -16px 0" }}>
             <div>
               <label
@@ -146,7 +145,6 @@ const ReservationForm = ({ restaurantId }) => {
             </span>
         </article>
       </div>
-    </div>
   );
 };
 

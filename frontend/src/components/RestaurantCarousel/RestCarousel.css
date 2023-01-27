@@ -32,7 +32,8 @@ h2 {
 #view-all {
     color: #da3743;
     width: 80px;
-    float: right;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 #outer-carousel-div {

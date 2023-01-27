@@ -10,6 +10,7 @@ import * as restaurantActions from "../../store/restaurantsReducer";
 import ReviewForm from "../ReviewForm/index";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
 import RestOverviewheader from "./RestOverviewheader";
+import OrderDelivery from "./OrderDelivery";
 
 const RestShow = () => {
   const { id } = useParams();
@@ -116,7 +117,10 @@ const RestShow = () => {
             <ReviewForm restaurantId={id} user={user} />
             <ReviewIndex restId={id} user={user}/>
           </div>
-          <ReservationForm restaurantId={id} />
+          <div className="sticky-div">
+            <ReservationForm restaurantId={id} />
+            <OrderDelivery restaurant={restaurant}/>
+          </div>
         </div>
       </div>
     </>

@@ -1,11 +1,6 @@
 
-#sticky-div {
-    position: sticky;
-    top: 0;
-    z-index: 0;
-}
 
-article {
+.article-box {
     background-color: #fff;
     border-radius: 4px;
     box-shadow: 0 2px 4px #2d333f33;
@@ -13,7 +8,7 @@ article {
     display: block;
 }
 
-#input-field {
+.input-field {
     border-bottom: 0.0625rem solid #d8d9db;
     color: #2d333f;
     margin: 0;
