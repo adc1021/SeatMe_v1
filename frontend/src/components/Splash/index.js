@@ -4,6 +4,7 @@ import Navigation from "../Navigation";
 import RestaurantCarousel from "../RestaurantCarousel";
 import NavBar from "../NavBar";
 import ReactDatePicker from "react-datepicker";
+import BudgetCarousel from "../RestaurantCarousel/budgetCarousel";
 
 
 const Splash = () => {
@@ -34,6 +35,7 @@ const Splash = () => {
         </section>
         <div>
           <RestaurantCarousel />
+          <BudgetCarousel />
         </div>
       </div>
     </>

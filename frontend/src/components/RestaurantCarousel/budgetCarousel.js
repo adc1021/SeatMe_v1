@@ -13,13 +13,18 @@ import {
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 
-const RestaurantCarousel = () => {
+const BudgetCarousel = () => {
   const dispatch = useDispatch();
 
   const restaurants = useSelector((state) =>
     state.restaurants ? Object.values(state.restaurants) : []
   );
 
+  const budget = restaurants.filter((rest) => {
+    return rest.pricePoint < 30
+  })
+
+  console.log(budget)
   useEffect(() => {
     dispatch(restActions.fetchRestaurants());
   }, []);
@@ -32,7 +37,7 @@ const RestaurantCarousel = () => {
             <ul id="restaurant-list">
         <header id="section-header">
           <div id="Order-takeout">
-            <h2>Order takeout</h2>
+            <h2>Wallet friendly</h2>
           </div>
           <div id="view-all">View All</div>
         </header>
@@ -45,7 +50,7 @@ const RestaurantCarousel = () => {
                 dragEnabled={false}
               >
                 <Slider>
-                  {restaurants.map((rest, i) => {
+                  {budget.map((rest, i) => {
                     return (
                       <Slide key={rest.id} index={i}>
                         <li id="rest-cards">
@@ -70,4 +75,4 @@ const RestaurantCarousel = () => {
   );
 };
 
-export default RestaurantCarousel;
+export default BudgetCarousel;
