@@ -7,28 +7,18 @@ import "./index.css";
 import App from "./App";
 import configureStore from "./store/index";
 import { restoreSession } from "./store/session";
-// import { createUser, loginUser, logoutUser } from './store/usersReducer';
+import  Footer  from '../src/components/Footer/Footer'
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as reservationActions from "./store/reservationsReducer"
 import * as restaurantAcions from "./store/restaurantsReducer"
 import * as reviewActions from "./store/reviewsReducer"
 import * as savedRestaurantActions from "./store/savedRestaurantsReducer"
+import LoginFormModal from "./components/LoginFormModal";
 
 const store = configureStore();
 
 const initializeApp = () => {
-  // let currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
-  // let initialState = {};
-
-  // if (currentUser) {
-  //   initialState = {
-  //     users: {
-  //       [currentUser.id]: currentUser
-  //     }
-  //   };
-  // };
-
 
   if (process.env.NODE_ENV !== "production") {
     window.store = store;
@@ -46,6 +36,7 @@ const initializeApp = () => {
         <Provider store={store}>
           <BrowserRouter>
             <App />
+            <Footer />
           </BrowserRouter>
         </Provider>
       </ModalProvider>
