@@ -39,9 +39,6 @@ const Splash = () => {
           <BudgetCarousel />
         </div>
       </div>
-      <div className="footer">
-
-      </div>
     </>
   );
 };
