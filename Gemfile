@@ -40,12 +40,9 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
-group :development, :test do
+# group :development, :test do
 
-  gem "faker"
-  gem "byebug"
-  # , platforms: %i[ mri mingw x64_mingw ]
-end
+# end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
@@ -54,4 +51,6 @@ group :development do
   gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
+  gem "faker"
+  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
 end
