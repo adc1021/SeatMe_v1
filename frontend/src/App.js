@@ -11,28 +11,27 @@ import UsersRestaurants from "./components/UsersShow/UsersRestaurants";
 function App() {
   return (
     <>
-      <Switch>
-        <Route path={"/my/favorites"}>
-          <UsersRestaurants />
-        </Route>
-        <Route path={"/restaurants/:id"}>
-          <RestShow />
-        </Route>
-        <Route path={"/users/:id"}>
-          <UsersShow />
-        </Route>
-        <Route path={"/user/:id/reservations"}>
-          <ReservationsIndex />
-        </Route>
-        <Route path={"/reservations/:id/update"}>
-          <UpdateReservationForm />
-        </Route>
-        <Route path={"/user/:id/savedRestaurants"} >
-        </Route>
-        <Route path={"/"}>
-          <Splash />
-        </Route>
-      </Switch>
+        <Switch>
+          <Route path={"/my/favorites"}>
+            <UsersRestaurants />
+          </Route>
+          <Route path={"/restaurants/:id"}>
+            <RestShow />
+          </Route>
+          <Route path={"/users/:id"}>
+            <UsersShow />
+          </Route>
+          <Route path={"/user/:id/reservations"}>
+            <ReservationsIndex />
+          </Route>
+          <Route path={"/reservations/:id/update"}>
+            <UpdateReservationForm />
+          </Route>
+          <Route path={"/user/:id/savedRestaurants"}></Route>
+          <Route path={"/"}>
+            <Splash />
+          </Route>
+        </Switch>
     </>
   );
 }
