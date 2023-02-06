@@ -1,0 +1,27 @@
+#footer-wrapper-1 {
+    box-sizing: border-box;
+    max-width: 64rem;
+    padding: 32px 32px 16px;
+    width: 100%;
+}
+
+#footer-wrapper-2 {
+    border-bottom: 0.0625rem solid #fff3;
+    padding-bottom: 16px;
+}
+
+.flex-box-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+@media (min-width: 100rem) {
+    #footer-wrapper-1 {
+        max-width: 80rem;
+    }
+
+    .flex-box-row {
+        flex-direction: row;
+    }
+}
