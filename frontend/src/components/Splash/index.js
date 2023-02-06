@@ -5,6 +5,7 @@ import RestaurantCarousel from "../RestaurantCarousel";
 import NavBar from "../NavBar";
 import ReactDatePicker from "react-datepicker";
 import BudgetCarousel from "../RestaurantCarousel/budgetCarousel";
+import "../Splash/splash.css";
 
 
 const Splash = () => {
@@ -37,6 +38,9 @@ const Splash = () => {
           <RestaurantCarousel />
           <BudgetCarousel />
         </div>
+      </div>
+      <div className="footer">
+
       </div>
     </>
   );
