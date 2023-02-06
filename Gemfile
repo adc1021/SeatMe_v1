@@ -43,6 +43,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "byebug", platforms: %i[ mri mingw x64_mingw ]
+  gem "faker"
 end
 
 group :development do
@@ -52,5 +53,4 @@ group :development do
   gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
-  gem "faker"
 end
