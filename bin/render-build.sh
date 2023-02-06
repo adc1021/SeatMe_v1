@@ -4,6 +4,6 @@
 set -o errexit
 
 npm run build
-bundle install --with development test
+bundle install --without somerandomstring
 rails db:migrate
 rails db:seed #if needed
