@@ -6,7 +6,7 @@ gem "bcrypt"
 gem "jbuilder"
 gem "aws-sdk-s3"
 gem "open-uri"
-
+gem "faker"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
 
@@ -40,9 +40,10 @@ gem "bootsnap", require: false
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem "rack-cors"
 
-# group :development, :test do
+group :development, :test do
+  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
 
-# end
+end
 
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
@@ -51,6 +52,4 @@ group :development do
   gem "pry-rails"
   gem "better_errors"
   gem "binding_of_caller"
-  gem "faker"
-  gem "byebug", platforms: %i[ mri mingw x64_mingw ]
 end
