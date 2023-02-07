@@ -71,6 +71,24 @@
     flex-direction: column;
 }
 
+.ownership-div {
+    padding: 16px 0px;
+}
+
+.ownership-span {
+    color: #d8d9db;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.social-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: 0 8px 8px 0;
+    padding: 0;
+}
+
 @media (min-width: 100rem) {
     #footer-wrapper-1 {
         max-width: 80rem;

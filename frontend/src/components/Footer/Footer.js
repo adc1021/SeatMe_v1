@@ -124,8 +124,20 @@ const Footer = () => {
                   </span>
                 </NavLink>
               </div>
+            <div className='footer-headers'>
+              Check Me Out On
+            </div>
+            <div className='social-button-wrapper'></div>
+              <a className='social-button' target='blank' href="https://www.linkedin.com/in/anthony-chiodi-b5a8a9167">
+                <img src="//cdn.otstatic.com/cfe/11/images/linkedin-b5ed36.svg"></img>
+              </a>
             </div>
           </div>
+          </div>
+          <div className='ownership-div'>
+            <span className='ownership-span'>
+            SeatMe is NOT part of Booking Holdings, the world leader in online travel and related services.
+            </span>
           </div>
         </div>
       </div>
