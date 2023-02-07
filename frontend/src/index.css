@@ -6,6 +6,32 @@ body {
     background-color: #f1f2f4;
 }
 
+
+#mobile-display {
+    display: hidden;
+}
+
+@media only screen and (max-width : 720px) and (max-height : 1280px) {
+    #mobile-display {
+        display: block;
+        z-index: 20;
+        height: 100%;
+        width: 100%;
+        background-color: #0000008f;
+        position: fixed;
+        display: flex;
+        justify-content: center;
+    }
+
+    #mobile-display-div {
+        background-color: white;
+        position: absolute;
+        top: 30%;
+        padding: 10px;
+        border-radius: 5px;
+    }
+}
+
 #display-wrapper {
     display: flex;
     flex-direction: column;
@@ -14,6 +40,7 @@ body {
     width: 100%;
     max-width: 90rem;
 }
+
 #info-bar {
 
     width: 100%;
