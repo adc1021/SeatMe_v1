@@ -1,22 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams, useLocation } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
 import NavBar from "../NavBar";
 import ReservationForm from "../ReservationForm";
 import "./RestShow.css";
 import * as savedRestActions from "../../store/savedRestaurantsReducer";
-import * as restaurantActions from "../../store/restaurantsReducer";
 import ReviewForm from "../ReviewForm/index";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
 import RestOverviewheader from "./RestOverviewheader";
-import OrderDelivery from "./OrderDelivery";
+import NoUserReviewForm from "../ReviewForm/NoUserReviewForm";
 
 const RestShow = () => {
   const { id } = useParams();
   const history = useHistory()
   const dispatch = useDispatch();
-  const location = useLocation();
 
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
@@ -25,7 +23,7 @@ const RestShow = () => {
   const user = useSelector((state) =>
     state.session.user ? state.session.user : {}
   );
-
+  console.log(user)
   const savedRestaurant = useSelector((state) => {
     return state.savedRestaurants[id] ? state.savedRestaurants[id] : null;
   });
@@ -92,18 +90,12 @@ const RestShow = () => {
                 <ol id="nav-ol">
                   <li>
                     <button className="anchor">Overview</button>
-                    {/* <a id="overview-anchor" href="#overview-anchor">
-                      Overview
-                    </a> */}
                   </li>
                   <li>
                     <button className="anchor">Menu</button>
                   </li>
                   <li>
                     <button className="anchor" href=".review">Reviews</button>
-                    {/* <a id="overview-anchor" href="#anchor-name">
-                      Reviews
-                    </a> */}
                   </li>
                 </ol>
               </nav>
@@ -119,7 +111,6 @@ const RestShow = () => {
           </div>
           <div className="sticky-div">
             <ReservationForm restaurant={restaurant} />
-            {/* <OrderDelivery restaurant={restaurant}/> */}
           </div>
         </div>
       </div>

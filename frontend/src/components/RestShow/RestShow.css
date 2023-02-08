@@ -68,12 +68,12 @@ img {
 }
 
 #description-review-div {
-    padding: 0 16px 16px;
-    border-radius: 4px;
+    padding: 0 16px 16px; 
     display: flex;
     justify-content: center;
     margin-top: -51px;
     position: relative;
+    background-color: white;
 }
 
 body {
