@@ -6,6 +6,8 @@ import ServiceStarRating from "./ServiceStarRating";
 import AmbienceStarRating from "./AmbienceStarRating";
 import FoodStarRating from "./FoodStarRating";
 import "./ReviewForm.css";
+import { Modal } from '../../context/Modal'
+import SigninForm from '../LoginFormModal/SigninForm';
 import * as reviewActions from "../../store/reviewsReducer";
 
 const ReviewForm = ({ restaurantId, user }) => {
@@ -16,6 +18,7 @@ const ReviewForm = ({ restaurantId, user }) => {
   const [ambience, setAmbience] = useState(1);
   const history = useHistory()
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,6 +39,10 @@ const ReviewForm = ({ restaurantId, user }) => {
     history.go(0)
   };
 
+  const triggerModal = (e) => {
+    Object.values(user).length > 1 ? setShowModal(false) : setShowModal(true)
+  }
+
   return (
     <>
       <div className="review">
@@ -49,6 +56,7 @@ const ReviewForm = ({ restaurantId, user }) => {
           <textarea
             style={{ resize: "none", height: "200px", width: "575px" }}
             onChange={(e) => setComment(e.target.value)}
+            onClick={(e) => triggerModal(e.target.value)}
           ></textarea>
           <OverallStarRating setOverall={setOverall} />
           <FoodStarRating setFood={setFood} />
@@ -66,6 +74,13 @@ const ReviewForm = ({ restaurantId, user }) => {
           </div>
         </form>
       </div>
+      {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <button onClick={() => setShowModal(false)} className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
+          <SigninForm />
+          
+        </Modal>
+      )}
     </>
   );
 };
