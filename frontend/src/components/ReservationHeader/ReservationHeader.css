@@ -38,7 +38,7 @@
     min-height: 3rem;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 936px) {
     #date-time-party-container {
         display: block;
         flex-direction: column;
