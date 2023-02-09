@@ -113,7 +113,7 @@ const ReviewIndex = ({ restId, user }) => {
                   <span className="users-comment users-comment-font" id="buttons-wrap">
                     <button onClick={handleRead} className="read-more-button">+ Read more</button>
                     {review.userId === user.id ? <button onClick={e => handleDelete(e, review.id)} id="delete-button">
-                      <i class="fa fa-trash-o" style={{color: "#da3743",
+                      <i className="fa fa-trash-o" style={{color: "#da3743",
                       fontSize: "20px"}}></i></button> : null}
                   </span>
                 </div>
