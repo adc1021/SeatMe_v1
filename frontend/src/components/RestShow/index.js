@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { fetchRest } from "../../store/restaurantsReducer";
@@ -9,12 +9,14 @@ import * as savedRestActions from "../../store/savedRestaurantsReducer";
 import ReviewForm from "../ReviewForm/index";
 import ReviewIndex from "../ReviewForm/ReviewIndex";
 import RestOverviewheader from "./RestOverviewheader";
-import NoUserReviewForm from "../ReviewForm/NoUserReviewForm";
+import { Modal } from '../../context/Modal'
+import SigninForm from '../LoginFormModal/SigninForm';
 
 const RestShow = () => {
   const { id } = useParams();
   const history = useHistory()
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
 
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
@@ -57,15 +59,21 @@ const RestShow = () => {
 
   const handleSave = (e) => {
     e.preventDefault();
-    savedRestaurant
-      ? dispatch(savedRestActions.deleteSavedRestaurant(savedRestaurant.id))
-      : dispatch(
-          savedRestActions.createSavedRestaurant({
-            userId: user.id,
-            restaurantId: id,
-          })
-        );
-      history.go(0)
+      // Object.values(user).length > 1 ? setShowModal(false) : setShowModal(true)
+    if(Object.values(user).length > 1) {
+      savedRestaurant
+        ? dispatch(savedRestActions.deleteSavedRestaurant(savedRestaurant.id))
+        : dispatch(
+            savedRestActions.createSavedRestaurant({
+              userId: user.id,
+              restaurantId: id,
+            })
+          );
+        history.go(0)
+      } else {
+        setShowModal(true)
+      }
+
   };
 
 
@@ -79,7 +87,6 @@ const RestShow = () => {
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
               {saveTag}
-              {/* <div id="text-div">Save this restaurant</div> */}
             </div>
           </button>
         </div>
@@ -100,7 +107,6 @@ const RestShow = () => {
                 </ol>
               </nav>
             </section>
-            <a id="overview-anchor"></a>
             <section>
               <h1 id="restaurant-header">{restaurant.name}</h1>
             </section>
@@ -113,6 +119,13 @@ const RestShow = () => {
             <ReservationForm restaurant={restaurant} />
           </div>
         </div>
+        {showModal && (
+        <Modal onClose={() => setShowModal(false)}>
+          <button onClick={() => setShowModal(false)} className="exit-button"><i class="fa-solid fa-xmark fa-xl"></i></button>
+          <SigninForm />
+
+        </Modal>
+      )}
       </div>
     </>
   );
