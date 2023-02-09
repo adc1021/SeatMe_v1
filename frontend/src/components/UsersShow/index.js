@@ -57,12 +57,12 @@ const UsersShow = () => {
               <div id="nav-page-wrapper">
                 <nav id="page-nav">
                   <ul>
-                    <li>
+                    <li className="users-li">
                       <Link to={`/users/${user.id}`}  id="on" className="link">
                         Reservations
                       </Link>
                     </li>
-                    <li>
+                    <li className="users-li">
                       <Link to={`/my/favorites`} id="off" className="link">
                         Saved Restaurants
                       </Link>

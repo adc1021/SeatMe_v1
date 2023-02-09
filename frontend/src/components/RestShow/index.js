@@ -95,13 +95,13 @@ const RestShow = () => {
             <section id="anchor-tags">
               <nav id="anchor-nav">
                 <ol id="nav-ol">
-                  <li>
+                  <li className="anchor-li">
                     <button className="anchor">Overview</button>
                   </li>
-                  <li>
+                  <li className="anchor-li">
                     <button className="anchor">Menu</button>
                   </li>
-                  <li>
+                  <li className="anchor-li">
                     <button className="anchor" href=".review">Reviews</button>
                   </li>
                 </ol>
