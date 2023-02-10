@@ -43,12 +43,12 @@ const UsersRestaurants = () => {
               <div id="nav-page-wrapper">
                 <nav id="page-nav">
                   <ul>
-                    <li>
+                    <li className="users-li">
                       <Link to={`/users/${user.id}`} id="off" className="link">
                         Reservations
                       </Link>
                     </li>
-                    <li style={{ width: "100%" }}>
+                    <li className="users-li save-on">
                       <Link to={`/my/favorites`} id="on" className="link">
                         Saved Restaurants
                       </Link>
