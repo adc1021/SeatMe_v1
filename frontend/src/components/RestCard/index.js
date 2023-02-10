@@ -4,7 +4,7 @@ import { NavLink, useHistory } from "react-router-dom";
 import "./RestCard.css";
 import { useEffect } from "react";
 // import useNavigate from "react-use-navigate";
-import * as reviewActions from "../../store/reviewsReducer"
+import * as reviewActions from "../../store/reviewsReducer";
 
 const RestaurantCard = ({ restaurantId }) => {
   let history = useHistory();
@@ -23,7 +23,6 @@ const RestaurantCard = ({ restaurantId }) => {
   useEffect(() => {
     dispatch(reviewActions.fetchReviews(restaurantId));
   }, [dispatch, restaurantId]);
-
 
   const dollarSign = () => {
     if (restaurant.pricePoint < 20) {
@@ -55,68 +54,77 @@ const RestaurantCard = ({ restaurantId }) => {
 
   const stars = () => {
     // debugger
-    if (restaurant.averageRating >= 5.0 ) {
+    if (restaurant.averageRating >= 5.0) {
       return (
         <div className="star-wrapper small">
-            <div className="star-svg-wrapper">
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-            </div>
+          <div className="star-svg-wrapper">
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
           </div>
+        </div>
       );
-    } else if (restaurant.averageRating > 4.5 && restaurant.averageRating <= 4.9 ) {
+    } else if (
+      restaurant.averageRating > 4.5 &&
+      restaurant.averageRating <= 4.9
+    ) {
       return (
         <div className="star-wrapper small">
-            <div className="star-svg-wrapper">
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-three-quarters-red"></div>
-            </div>
+          <div className="star-svg-wrapper">
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-three-quarters-red"></div>
           </div>
+        </div>
       );
     } else if (restaurant.averageRating === 4.5) {
       return (
         <div className="star-wrapper small">
-            <div className="star-svg-wrapper">
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-half-red"></div>
-            </div>
+          <div className="star-svg-wrapper">
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-half-red"></div>
           </div>
+        </div>
       );
-    } else if (restaurant.averageRating > 4.2 && restaurant.averageRating < 4.5 ) {
+    } else if (
+      restaurant.averageRating > 4.2 &&
+      restaurant.averageRating < 4.5
+    ) {
       return (
         <div className="star-wrapper small">
-            <div className="star-svg-wrapper">
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-quarter-red"></div>
-            </div>
+          <div className="star-svg-wrapper">
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-quarter-red"></div>
           </div>
+        </div>
       );
-    } else if (restaurant.averageRating < 4.2 && restaurant.averageRating >= 4.0) {
+    } else if (
+      restaurant.averageRating < 4.2 &&
+      restaurant.averageRating >= 4.0
+    ) {
       return (
         <div className="star-wrapper small">
-            <div className="star-svg-wrapper">
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-full-red"></div>
-              <div className="star-svg star-empty-red"></div>
-            </div>
+          <div className="star-svg-wrapper">
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-full-red"></div>
+            <div className="star-svg star-empty-red"></div>
           </div>
-      )
+        </div>
+      );
     }
-  }
+  };
 
   const handleTime = (e) => {
     e.stopPropagation();
@@ -124,10 +132,11 @@ const RestaurantCard = ({ restaurantId }) => {
 
   return (
     <NavLink to={`restaurants/${restaurantId}`} target="_blank" id="card-body">
+      <div id="card-wrapper">
         <img alt="" src={restaurant.photoUrls[0]} id="filler-image"></img>
         <div id="restaurant-info">
           <h3 id="rest-header">{restaurant.name}</h3>
-          <div style={{display: "flex", alignItems: "center"}}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             {stars()}
             <span id="reviews-span">{reviews.length} reviews</span>
           </div>
@@ -143,11 +152,16 @@ const RestaurantCard = ({ restaurantId }) => {
             </span>
           </div>
           <div id="time-slots">
-            <NavLink id="time-slot-link" to={`/restaurants/${restaurantId}`} onClick={handleTime}>
+            <NavLink
+              id="time-slot-link"
+              to={`/restaurants/${restaurantId}`}
+              onClick={handleTime}
+            >
               12:00 PM
             </NavLink>
           </div>
         </div>
+      </div>
     </NavLink>
   );
 };

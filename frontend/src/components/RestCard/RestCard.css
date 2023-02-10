@@ -1,4 +1,8 @@
 #card-body {
+    text-decoration: none;
+}
+
+#card-wrapper {
     border: 1px solid #d8d9db;
     border-radius: 4px;
     box-sizing: border-box;
