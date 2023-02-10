@@ -20,6 +20,7 @@ const RestShow = () => {
   const [tagClass, setTagClass] = useState("anchor");
   const [liClass, setLiClass] = useState('anchor-li')
 
+
   const restaurant = useSelector((state) =>
     state.restaurants[id] ? state.restaurants[id] : {}
   );
@@ -86,6 +87,8 @@ const RestShow = () => {
     }
   };
 
+
+
   return (
     <>
       <NavBar />
@@ -106,12 +109,13 @@ const RestShow = () => {
                     <button
                       onClick={(e) => changeClass(e.target.value)}
                       className={tagClass}
+                      href=""
                     >
                       Overview
                     </button>
                   </li>
                   <li className="anchor-li">
-                    <button className="anchor" >Menu</button>
+                    <button className="anchor" href="#how-does-it-work">Menu</button>
                   </li>
                   <li className="anchor-li">
                     <button className="anchor" href=".review">
