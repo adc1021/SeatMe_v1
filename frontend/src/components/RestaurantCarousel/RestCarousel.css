@@ -16,6 +16,7 @@
     padding-bottom: 0;
     min-height: 3rem;
     border-bottom: 0.0625rem solid #d8d9db;
+    margin-bottom: 16px;
 }
 
 #Order-takeout {
