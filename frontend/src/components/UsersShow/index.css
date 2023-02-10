@@ -14,6 +14,17 @@
     }
 }
 
+.sloppy-ul {
+    padding: 8px !important;
+}
+
+a#on.link {
+    width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: pre;
+}
+
 .column:last-child {
     margin-bottom: 0;
 }
