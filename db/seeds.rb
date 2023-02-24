@@ -710,11 +710,200 @@ User.destroy_all
         neighborhood: "Dumbo"
       )
 
-      image15 = URI.open("https://seatme-dev.s3.amazonaws.com/the_Little_Owl_card.jpeg")
-      image15_1 = URI.open("https://seatme-dev.s3.amazonaws.com/The_Little_Owl_show.jpeg")
-      rest15.photos.attach(io: image14, filename: "the_Little_Owl_card.jpeg")
-      rest15.photos.attach(io: image14_1, filename: "the_Little_Owl_show.jpeg")
+      image15 = URI.open("https://seatme-dev.s3.amazonaws.com/Cecconis_card.jpeg")
+      image15_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Cecconis_show.jpeg")
+      rest15.photos.attach(io: image15, filename: "Cecconis_card.jpeg")
+      rest15.photos.attach(io: image15_1, filename: "Cecconis_show.jpeg")
       rest15.save!
+
+      rest16 = Restaurant.create(
+        name: "ECB",
+        description: "We're your next favorite local bar and restaurant, with a
+        full menu of Craft Burgers, Italian dishes and unique Neapolitan Style
+        Pizzas. A one of a kind menu mix, that you never knew you were missing,
+        until you try it. We started with a love for burgers on a busy street on
+        the border of Brooklyn and Queens. Since opening our doors, we've
+        expanded our offerings to a taste of saucy freshness across cuisines.
+        We're still true to our roots, and now we're bringing you NYC's first
+        burger bar meets pizza parlor with a full Italian Menu. We are ECB.",
+        cuisine: "Italian",
+        address: "53-21 Metropolitan Ave, Ridgewood, NY 11385",
+        tables: 60,
+        menu: "Pizza Rossa
+        The Sweet Devil
+        $17.00
+        San Marzano tomatoes, Fior di latte, hot coppa, basil
+
+        Sausage and Peppers
+        $17.00
+        Sweet Italian sausage, fior di latte, parmigiano cheese and Sicilian oregano
+
+        Margherita
+        $14.00
+        Fior di latte, San Marzano tomatoes, olive oil, and basil
+
+        Marinara
+        $12.00
+        San Marzano tomatoes, Sicilian oregano, Kalamata black olives, olive oil
+
+        Metropolitan
+        $17.00
+        San Marzano tomatoes, Fior di latte, Prosciutto Cotto (ham), Crimini mushrooms, basil and olive oil
+
+        Farmer's Choice
+        $17.00
+        San Marzano tomatoes, Fior di latte, marinated baked veggies (eggplant, zucchini, yellow squash and roma tomatoes), basil
+
+        Fire Devil
+        $18.00
+        San Marzano tomatoes, Fior di latte, hot coppa, basil
+
+        The Butcher
+        $22.00
+        San Marzano tomatoes, Fior di latte, sweet Italian sausage, hot coppa, prosciutto di parma (dry cured ham), basil",
+        average_rating: 4.2,
+        price_point: 27,
+        phone_number: "(718) 451-8020",
+        neighborhood: "Ridgewood"
+      )
+
+      image16 = URI.open("https://seatme-dev.s3.amazonaws.com/ECB_Restaurant_card.jpeg")
+      image16_1 = URI.open("https://seatme-dev.s3.amazonaws.com/ECB_restaurant_show.jpeg")
+      rest16.photos.attach(io: image16, filename: "ECB_Restaurant_card.jpeg")
+      rest16.photos.attach(io: image16_1, filename: "ECB_Restaurant_show.jpeg")
+      rest16.save!
+
+      rest17 = Restaurant.create(
+        name: "Katsuya - Manhattan West",
+        description: "He brought modern Japanese cuisine to America. Now chef
+        Katsuya Uechi is bringing it to New York City. Situated in Hudson Yards,
+        NYC's newest destination, Katsuya is attached to Citizens Manhattan West
+        culinary market. Stop by S Bar next door for a drink before dinner, then
+        enjoy Katsuya's unique take on traditional Japanese fare with a sushi-forward
+        menu. The terrace is now open with stunning views of the city and
+        overlooking the Edge observation deck. For large parties and private events,
+        please contact: melissa.martin@c3sbe.com for all inquiries.",
+        cuisine: "Japanese",
+        address: "398 10th Avenue, New York, NY 10001",
+        tables: 55,
+        menu: "Sushi Bar
+        Nigiri (Price per Piece minimum 2 pieces). Sashimi (Price per Piece minimum 2 pieces)
+
+        Maguro
+        Tuna
+
+        O-Toro
+        Tuna Belly
+
+        Sake
+        Salmon
+
+        Binnaga
+        Albacore
+
+        Aji
+        Horse Mackerel
+
+        Unagi
+        Freshwater Eel
+
+        Tamago
+        Egg Omelette
+
+        Hirame
+        Fluke
+
+        Hamachi
+        Yellowtail",
+        average_rating: 4.5,
+        price_point: 45,
+        phone_number: "(718) 451-8020",
+        neighborhood: "Chelsea"
+      )
+
+      image17 = URI.open("https://seatme-dev.s3.amazonaws.com/katsuya_card.jpeg")
+      image17_1 = URI.open("https://seatme-dev.s3.amazonaws.com/katsuya_show.jpeg")
+      rest17.photos.attach(io: image17, filename: "katsuya_card.jpeg")
+      rest17.photos.attach(io: image17_1, filename: "katsuya_show.jpeg")
+      rest17.save!
+
+      rest18 = Restaurant.create(
+        name: "Oceans - New York",
+        description: "Oceans, a locally and globally inspired seafood restaurant,
+        was founded by Vancouver’s award-winning Toptable Group with the
+        philosophy of creating a timeless and approachable dining experience.
+        Executive Chef Andy Kitko sets the vision for the menu inspired by the
+        Pacific, Atlantic, and Mediterranean shores that will feature the
+        freshest catches available all accented by seasonal ingredients.",
+        cuisine: "Seafood",
+        address: "233 Park Ave S, New York, NY 10003",
+        tables: 25,
+        menu: "Sushi Bar
+        Nigiri (Price per Piece minimum 2 pieces). Sashimi (Price per Piece minimum 2 pieces)
+
+        Maguro
+        Tuna
+
+        O-Toro
+        Tuna Belly
+
+        Sake
+        Salmon
+
+        Binnaga
+        Albacore
+
+        Aji
+        Horse Mackerel
+
+        Unagi
+        Freshwater Eel
+
+        Tamago
+        Egg Omelette
+
+        Hirame
+        Fluke
+
+        Hamachi
+        Yellowtail",
+        average_rating: 4.8,
+        price_point: 48,
+        phone_number: "(718) 451-8020",
+        neighborhood: "Union Square"
+      )
+
+      image18 = URI.open("https://seatme-dev.s3.amazonaws.com/oceans_new_york_card.jpeg")
+      image18_1 = URI.open("https://seatme-dev.s3.amazonaws.com/oceans_new_york_show.jpeg")
+      rest18.photos.attach(io: image18, filename: "oceans_new_york_show.jpeg")
+      rest18.photos.attach(io: image18_1, filename: "oceans_new_york_show.jpeg")
+      rest18.save!
+
+      rest19 = Restaurant.create(
+        name: "U Omakase",
+        description: "U Omakase offers a unique take on traditional Omakase dining.
+        Immerse yourself in a communal dining experience featuring a seasonal
+        tasting menu. This experience is meant to be social, sensory,
+        surprising and most of all - fun! With over 40 years of experience,
+        our Veteran Chefs carefully curate a 13-course meal using only
+        the highest quality ingredients.",
+        cuisine: "Sushi",
+        address: "173 Greenpoint Ave, Brooklyn, NY 11222-2301",
+        tables: 15,
+        menu: "View menu on restaurant's website",
+        average_rating: 4.9,
+        price_point: 55,
+        phone_number: "(718) 451-8020",
+        neighborhood: "Greenpoint"
+      )
+
+      image19 = URI.open("https://seatme-dev.s3.amazonaws.com/Omokase_card.jpeg")
+      image19_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Omokase_show.jpeg")
+      rest19.photos.attach(io: image19, filename: "Omokase_show.jpeg")
+      rest19.photos.attach(io: image19_1, filename: "Omokase_show.jpeg")
+      rest19.save!
+
+
 
       Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
       party_size: 5, user_id: 1, restaurant_id: 1 )
