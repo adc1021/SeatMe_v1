@@ -23,8 +23,7 @@ const BudgetCarousel = () => {
   const budget = restaurants.filter((rest) => {
     return rest.pricePoint < 30
   })
-
-  console.log(budget)
+  
   useEffect(() => {
     dispatch(restActions.fetchRestaurants());
   }, []);

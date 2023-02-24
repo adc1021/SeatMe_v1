@@ -1,5 +1,4 @@
 const OrderDelivery = (restaurant) => {
-  console.log(restaurant)
   return(
     <article className="article-box" style={{marginTop: "16px"}}>
       <h2 className="input-field">Order delivery or takeout</h2>

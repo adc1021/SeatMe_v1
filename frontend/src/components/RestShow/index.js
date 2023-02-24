@@ -86,7 +86,7 @@ const RestShow = () => {
       setLiClass('anchor-li')
     }
   };
-
+  console.log(restaurant.photoUrls)
 
 
   return (
