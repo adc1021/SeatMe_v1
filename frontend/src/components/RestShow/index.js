@@ -89,39 +89,41 @@ const RestShow = () => {
             </div>
           </button>
         </div>
-        <div id="description-review-div">
-          <div id="content-div">
-            <section id="anchor-tags">
-              <nav id="anchor-nav">
-                <ol id="nav-ol">
-                  <li>
-                    <button className="anchor">Overview</button>
-                    {/* <a id="overview-anchor" href="#overview-anchor">
-                      Overview
-                    </a> */}
-                  </li>
-                  <li>
-                    <button className="anchor">Menu</button>
-                  </li>
-                  <li>
-                    <button className="anchor" href=".review">Reviews</button>
-                    {/* <a id="overview-anchor" href="#anchor-name">
-                      Reviews
-                    </a> */}
-                  </li>
-                </ol>
-              </nav>
-            </section>
-            <a id="overview-anchor"></a>
-            <section>
-              <h1 id="restaurant-header">{restaurant.name}</h1>
-            </section>
-            <RestOverviewheader restaurant={restaurant}/>
-            <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
-            <ReviewForm restaurantId={id} user={user} />
-            <ReviewIndex restId={id} user={user}/>
+        <div className="index-container">
+          <div id="description-review-div">
+            <div id="content-div">
+              <section id="anchor-tags">
+                <nav id="anchor-nav">
+                  <ol id="nav-ol">
+                    <li>
+                      <button className="anchor">Overview</button>
+                      {/* <a id="overview-anchor" href="#overview-anchor">
+                        Overview
+                      </a> */}
+                    </li>
+                    <li>
+                      <button className="anchor">Menu</button>
+                    </li>
+                    <li>
+                      <button className="anchor" href=".review">Reviews</button>
+                      {/* <a id="overview-anchor" href="#anchor-name">
+                        Reviews
+                      </a> */}
+                    </li>
+                  </ol>
+                </nav>
+              </section>
+              <a id="overview-anchor"></a>
+              <section>
+                <h1 id="restaurant-header">{restaurant.name}</h1>
+              </section>
+              <RestOverviewheader restaurant={restaurant}/>
+              <p style={{ lineHeight: "2rem" }}>{restaurant.description}</p>
+              <ReviewForm restaurantId={id} user={user} />
+              <ReviewIndex restId={id} user={user}/>
+            </div>
+            <ReservationForm restaurantId={id} />
           </div>
-          <ReservationForm restaurantId={id} />
         </div>
       </div>
     </>

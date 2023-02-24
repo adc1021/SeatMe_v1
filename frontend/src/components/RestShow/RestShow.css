@@ -2,6 +2,7 @@
     background-color: #2d333f;
     display: flex;
     position: relative;
+    z-index: -1;
 }
 
 #rest-img {
@@ -344,4 +345,20 @@ article {
     left: 50%;
     position: absolute;
     /* top: 50%; */
+}
+
+.index-container {
+        display: grid;
+        grid-template-columns: 1fr 0.55fr;
+        grid-template-rows: 1fr;
+        grid-auto-columns: 1fr;
+        height: fit-content;
+        gap: 0px 2rem;
+        padding-left: 15vw;
+        padding-right: 15vw;
+        padding-bottom: 5vw;
+        margin-top: 4rem;
+        z-index: 2;
+        background-color: #fff;
+        grid-auto-flow: row;
 }
