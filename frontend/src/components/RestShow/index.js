@@ -69,14 +69,19 @@ const RestShow = () => {
       history.go(0)
   };
 
+  let showPhotos = Array.isArray(restaurant.photoUrls) ? restaurant.photoUrls.slice(1, restaurant.photoUrls.length) :
+    restaurant.photoUrls
 
   return (
     <>
       <NavBar />
       <div>
         <div id="img-container">
-          <div></div>
-          <img id="rest-img" alt="" src={restaurant.photoUrls}></img>
+          <div class="image-grid">
+            { Array.isArray(showPhotos) ? showPhotos.map((url, index) => (
+              <img key={index} class="grid-image" src={url} alt="" /> )) : <img class="grid-image" alt="" src={restaurant.photoUrls}></img> }
+          </div>
+          {/* <img id="rest-img" alt="" src={restaurant.photoUrls}></img> */}
           <button id="save-button" onClick={handleSave}>
             <div id="save-button-div">
               {saveTag}
