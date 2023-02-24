@@ -903,6 +903,158 @@ User.destroy_all
       rest19.photos.attach(io: image19_1, filename: "Omokase_show.jpeg")
       rest19.save!
 
+      rest20 = Restaurant.create(
+        name: "Patrizias of Brooklyn",
+        description: "Patrizia’s has been a family owned establishment for over
+        25 years. Our family is involved in every aspect of the day to day activities
+        to make sure that your dining experience at Patrizia’s is always great.
+        As with Italian tradition, every single customer is treated like family.
+        Each dish is prepared with fresh organic ingredients that use the family’s
+        recipes dating back over 150 years. Aside from dining in, we also provide
+        pick-up, delivery, and catering for all occasions.
+        Superb food, impeccable service, and a unique family atmosphere
+        distinguishes Patrizia’s from any other restaurant and makes it a one
+        of a kind experience. With locations in Williamsburg, Brooklyn;
+        East Tremont & Woodlawn, The Bronx, Staten Island, Long Island,
+        Sheepshead Bay, Manhattan, & Red Bank, New Jersey… Amazing family style
+        dining is just around the corner. Be sure to stop by and experience
+        Patrizia’s for yourself!",
+        cuisine: "Italian",
+        address: "35 Broadway, Brooklyn, NY 11249",
+        tables: 35,
+        menu: "Entrees
+        All Sides of Vegetables - $7
+
+        Chicken Francese or Marsala
+        $19.99
+        Grilled Chicken with Broccoli Rabe
+        $19.99
+        Pollo Parmigiana
+        $19.99
+        Chicken Parmigiana
+
+        Pollo Scarpariello
+        $19.99
+        Boneless Chicken Pieces with Mushrooms, Peppers, Garlic and Oil
+
+        Chicken Pecora
+        $20.99
+        Chicken, Spinach and Goat Cheese
+
+        Skirt Steak and Broccoli Rabe
+        $24.99
+        Grilled Shrimp
+        $23.99
+        Shrimp allo Scoglio
+        $23.99
+        Shrimp in Garlic, Olive Oil and Grape Tomatoes
+
+        Shrimp Parmigiana
+        $22.99
+        Salmon Luciano
+        $22.99
+        With Baby Clams in a Wine Sauce
+
+        Veal Paillard
+        $22.99
+        Grilled Veal with Tomato, Onions and Arugula
+
+        Veal Francese or Marsala
+        $22.99
+        Eggplant Parmigiana
+        $19.99",
+        average_rating: 4.3,
+        price_point: 45,
+        phone_number: "(718) 218-9272",
+        neighborhood: "Williamsburg"
+      )
+
+      image20 = URI.open("https://seatme-dev.s3.amazonaws.com/Patrizias_of_brooklyn_card.png")
+      image20_1 = URI.open("https://seatme-dev.s3.amazonaws.com/Patrizias_of_brooklyn_show.png")
+      rest20.photos.attach(io: image20, filename: "Patrizias_of_brooklyn_card.png")
+      rest20.photos.attach(io: image20_1, filename: "Patrizias_of_brooklyn_show.png")
+      rest20.save!
+
+      rest21 = Restaurant.create(
+        name: "Shalom Japan",
+        description: "Shalom Japan is a unique restaurant in Brooklyn, New York.
+        Found in the hip Williamsburg neighborhood, it is conveniently located
+        near the bridge as well as many different subway lines. The brick walls,
+        simple decor, natural light and chalkboard menus on the walls give
+        Shalom Japan restaurant a casual, comfortable and welcoming vibe.
+        Co-owners and chefs Aaron Israel and Sawako Okochi created a menu that
+        combines both Jewish and Japanese cultures as well as fresh ingredients
+        sourced from local markets. Plates, such as matzoh ball ramen with foie
+        gras dumpling and sake kasu challah with raisin butter, are meant to be
+        shared with the table for dinner. Visit for brunch and enjoy the lox bowl
+        or pastrami-don",
+        cuisine: "Creative Japanese",
+        address: "310 S 4th St, 0, Brooklyn, 11211-8796",
+        tables: 20,
+        menu: "Main
+        Sake Kasu Challah
+        $7.00
+        golden raisin butter
+
+        Caesar Salad
+        $17.00
+        market greens, anchovies, parm, za'atar crumbs
+
+        Beet Jew Egg*
+        $17.00
+        greek yogurt, nigella seeds, olives, dill
+
+        Roasted Kabocha Squash
+        $17.00
+        tofu ricotta, pepitas, balsamic glaze
+
+        Lion's Mane Karaage
+        $17.00
+        japanese fried mushrooms, pickled chilies
+
+        Okonomiyaki
+        $19.00
+        wagyu pastrami, sauerkraut, bonito flakes
+
+        Wagyu Pastrami Sando
+        $22.00
+        house pastrami, gulden's mustard on shokupan, dill pickle
+
+        Matzoh Ball Ramen
+        $19.00
+        chicken broth, char siu chicken, scallion, nori
+
+        Sesame Temomi Mazemen
+        $19.00
+        shiitake mushrooms, shishito, cucumbers, shiso
+
+        Lox Bowl*
+        $27.00
+        rice, ikura, japanese pickles, avocado, fried capers, chili mayo
+
+        Wagyu Beef Hot Pot
+        $32.00
+        ny strip, pastrami, japanese vegetables, dashi broth, ponzu dipping sauce",
+        average_rating: 4.5,
+        price_point: 40,
+        phone_number: "(718) 388-4012",
+        neighborhood: "Williamsburg"
+      )
+
+      image21 = URI.open("https://seatme-dev.s3.amazonaws.com/shalom_japan_card.jpeg")
+      image21_1 = URI.open("https://seatme-dev.s3.amazonaws.com/shalom_japan_show_1.jpeg")
+      image21_2 = URI.open("https://seatme-dev.s3.amazonaws.com/shalom_japan_show_2.jpeg")
+      image21_3 = URI.open("https://seatme-dev.s3.amazonaws.com/shalom_japan_show_3.jpeg")
+      image21_4 = URI.open("https://seatme-dev.s3.amazonaws.com/shalom_japan_show_4.jpeg")
+      image21_5 = URI.open("https://seatme-dev.s3.amazonaws.com/shalom_japan_show_5.jpeg")
+      rest21.photos.attach(io: image21, filename: "shalom_japan_card.jpeg")
+      rest21.photos.attach(io: image21_1, filename: "shalom_japan_show_1.jpeg")
+      rest21.photos.attach(io: image21_2, filename: "shalom_japan_show_2.jpeg")
+      rest21.photos.attach(io: image21_3, filename: "shalom_japan_show_3.jpeg")
+      rest21.photos.attach(io: image21_4, filename: "shalom_japan_show_4.jpeg")
+      rest21.photos.attach(io: image21_5, filename: "shalom_japan_show_5.jpeg")
+      rest21.save!
+
 
 
       Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
