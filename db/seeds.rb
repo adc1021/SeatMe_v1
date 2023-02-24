@@ -677,6 +677,45 @@ User.destroy_all
       rest14.photos.attach(io: image14_1, filename: "the_Little_Owl_show.jpeg")
       rest14.save!
 
+      rest15 = Restaurant.create(
+        name: "Cecconi's Dumbo",
+        description: "Cecconi’s Dumbo is a modern day classic Italian restaurant
+        near Brooklyn Bridge park, specializing in hand-made pasta, wood-fired
+        pizza and other Italian staples. Originating in Venice and with outposts
+      in London and West Hollywood, Cecconi’s has become a critically acclaimed
+        dining destination featuring simply prepared Venetian inspired food.",
+        cuisine: "Italian",
+        address: "55 Water St, Brooklyn, NY 11201",
+        tables: 60,
+        menu: "Wood & Charcoal
+        Whole Cauliflower, Salmoriglio, Lemon Aioli**
+        $23.00
+        Eggplant Parmigiana
+        $26.00
+        Chicken Paillard, Cherry Tomatoes, Arugula
+        $36.00
+        Salmon, Broccolini, Castelvetrano, Pesto
+        $40.00
+        Branzino, Spinach, Tomato, Peppers, Olives
+        $49.00
+        Filet Mignon, Potatoes, Mushroom Sauce
+        $66.00
+        Veal Chop Milanese, Lemon, Sage
+        $72.00
+        Dover Sole, Lemon Butter, Sauteed Spinach
+        $81.00",
+        average_rating: 4.5,
+        price_point: 29,
+        phone_number: "(212) 358-9800",
+        neighborhood: "Dumbo"
+      )
+
+      image15 = URI.open("https://seatme-dev.s3.amazonaws.com/the_Little_Owl_card.jpeg")
+      image15_1 = URI.open("https://seatme-dev.s3.amazonaws.com/The_Little_Owl_show.jpeg")
+      rest15.photos.attach(io: image14, filename: "the_Little_Owl_card.jpeg")
+      rest15.photos.attach(io: image14_1, filename: "the_Little_Owl_show.jpeg")
+      rest15.save!
+
       Reservation.create(date: DateTime.new(2024,2,3,4,5,6), time: DateTime.new(2024,2,3,4,5,6),
       party_size: 5, user_id: 1, restaurant_id: 1 )
       Reservation.create(date: DateTime.new(2024,4,7, 7,30,6), time: DateTime.new(2024,4,7, 7,30,6), party_size: 4,
