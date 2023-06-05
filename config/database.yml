@@ -111,3 +111,4 @@ test:
   password: <%= ENV['DATABASE_PASSWORD'] %>
   host: <%= ENV['DATABASE_HOST'] %>
   port: <%= ENV['DATABASE_PORT'] %>
+  region: <%= ENV['DATABASE_REGION'] %>
