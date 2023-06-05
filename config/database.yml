@@ -101,10 +101,13 @@ test:
   <<: *default
   database: SeatMe_test
 
-production:
+  production:
   <<: *default
   database: SeatMe_production
-  host: <%= ENV['DB_SOCKET_PATH'] || '/cloudsql' %>
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
