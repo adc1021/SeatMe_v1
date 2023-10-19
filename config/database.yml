@@ -4,14 +4,15 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: localhost
-  port: 3000
   username: antho
   password: ixY3z5uvifbFSZS73gWicvp1c6w7PYiy
 
 development:
   <<: *default
   database: SeatMe_development
+  host: localhost
+  port: 5432 # The default port for PostgreSQL
+
 
 test:
   <<: *default
@@ -25,6 +26,9 @@ test:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
-  port: <%= ENV['DATABASE_PORT'] %>
+  host: 127.0.0.1
+  port: 3000
+  sslmode: disable
   region: <%= ENV['DATABASE_REGION'] %>
+    # host: <%= ENV['DATABASE_HOST'] %>
+  # port: <%= ENV['DATABASE_PORT'] %>
