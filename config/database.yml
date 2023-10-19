@@ -26,10 +26,10 @@ test:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: <%= ENV['DATABASE_USERNAME'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: dpg-chuutsvdvk4oliu3kpa0-a
+  host: <%= ENV['DATABASE_HOST'] %>
   port: 3000
   sslmode: disable
   region: <%= ENV['DATABASE_REGION'] %>
-    # host: <%= ENV['DATABASE_HOST'] %>
+
   # port: <%= ENV['DATABASE_PORT'] %>
   # host: 127.0.0.1
