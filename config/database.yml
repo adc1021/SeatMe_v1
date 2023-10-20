@@ -29,6 +29,7 @@ production:
   host: <%= ENV['DATABASE_HOST'] %>
   port: <%= ENV['DATABASE_PORT'] %>
   region: <%= ENV['DATABASE_REGION'] %>
+  url: <% ENV['DATABASE_URL'] %>
 
   # port: <%= ENV['DATABASE_PORT'] %>
   # host: 127.0.0.1
