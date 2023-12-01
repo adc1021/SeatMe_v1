@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
-    wrap_parameters include: User.attribute_names + [:phoneNumber, :firstName, :lastName]
+    wrap_parameters include: User.attribute_names +[:phoneNumber, :firstName,
+    :lastName]
     before_action :require_logged_out, only: [:create]
 
     def create
@@ -22,6 +23,7 @@ class Api::UsersController < ApplicationController
 
     private
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :email, :phone_number)
+        params.require(:user).permit(:first_name, :last_name, :email,
+        :phone_number)
     end
 end
