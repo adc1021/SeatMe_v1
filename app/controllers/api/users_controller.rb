@@ -1,6 +1,5 @@
 class Api::UsersController < ApplicationController
-    wrap_parameters include: User.attribute_names.slice([:phoneNumber, :firstName,
-    :lastName])
+    wrap_parameters include: [:phoneNumber, :firstName,:lastName]
     before_action :require_logged_out, only: [:create]
 
     def create
