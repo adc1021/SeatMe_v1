@@ -23,17 +23,14 @@ class User < ApplicationRecord
         uniqueness: true
     validates :phone_number, :session_token, uniqueness: true
     validates :phone_number,
-    format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/, on: :create, message: 'is invalid' } # added a regexp I found on stack overflow for phone number validation
+    format: { with: /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/,
+    on: :create, message: 'is invalid' } # added a regexp I found on stack overflow for phone number validation
 
 
     has_many :reservations
     has_many :reviews
     has_many :saved_restaurants
 
-    # has_many :saved_restaurants,
-    #     through: :saved_restaurants,
-    #     source: :restaurant,
-    #     dependent: :destroy
 
     has_many :rest_reservations,
         through: :reservations,
